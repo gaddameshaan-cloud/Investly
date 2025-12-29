@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { BookOpen, Brain, Award, ArrowLeft, Sparkles } from 'lucide-react';
 
 function AuthPage({ onLogin }) {
@@ -8,6 +8,7 @@ function AuthPage({ onLogin }) {
   const [isLogin, setIsLogin] = useState(true);
   const [formData, setFormData] = useState({ email: '', password: '', name: '' });
   const [error, setError] = useState('');
+  const [agreedToTerms, setAgreedToTerms] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -17,10 +18,21 @@ function AuthPage({ onLogin }) {
     e.preventDefault();
     setError('');
 
+    // Check if user agreed to terms for signup
+    if (!isLogin && !agreedToTerms) {
+      setError('You must agree to the Terms of Service and Privacy Policy to create an account.');
+      return;
+    }
+
     try {
       const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register';
-      const response = await axios.post(endpoint, formData);
-      onLogin(response.data.user, response.data.token);
+      const requestData = isLogin 
+        ? formData 
+        : { ...formData, agreedToTerms };
+      const response = await axios.post(endpoint, requestData);
+      
+      // Pass isNewUser flag for signup
+      onLogin(response.data.user, response.data.token, !isLogin);
     } catch (err) {
       setError(err.response?.data?.error || 'An error occurred');
     }
@@ -332,25 +344,95 @@ function AuthPage({ onLogin }) {
                 />
               </div>
 
+              {!isLogin && (
+                <div style={{ 
+                  marginBottom: '24px',
+                  padding: '20px',
+                  background: 'rgba(59, 130, 246, 0.05)',
+                  border: '1px solid rgba(59, 130, 246, 0.1)',
+                  borderRadius: '12px'
+                }}>
+                  <label style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: '12px',
+                    cursor: 'pointer',
+                    fontSize: '14px',
+                    lineHeight: '1.5',
+                    color: '#475569'
+                  }}>
+                    <input
+                      type="checkbox"
+                      checked={agreedToTerms}
+                      onChange={(e) => setAgreedToTerms(e.target.checked)}
+                      required={!isLogin}
+                      style={{
+                        width: '18px',
+                        height: '18px',
+                        marginTop: '2px',
+                        cursor: 'pointer',
+                        accentColor: '#3b82f6'
+                      }}
+                    />
+                    <span>
+                      I agree to the{' '}
+                      <Link 
+                        to="/terms-of-service" 
+                        target="_blank"
+                        style={{
+                          color: '#3b82f6',
+                          textDecoration: 'none',
+                          fontWeight: '600'
+                        }}
+                        onMouseEnter={(e) => e.target.style.textDecoration = 'underline'}
+                        onMouseLeave={(e) => e.target.style.textDecoration = 'none'}
+                      >
+                        Terms of Service
+                      </Link>
+                      {' '}and{' '}
+                      <Link 
+                        to="/privacy-policy" 
+                        target="_blank"
+                        style={{
+                          color: '#3b82f6',
+                          textDecoration: 'none',
+                          fontWeight: '600'
+                        }}
+                        onMouseEnter={(e) => e.target.style.textDecoration = 'underline'}
+                        onMouseLeave={(e) => e.target.style.textDecoration = 'none'}
+                      >
+                        Privacy Policy
+                      </Link>
+                    </span>
+                  </label>
+                </div>
+              )}
+
               <button 
                 type="submit" 
+                disabled={!isLogin && !agreedToTerms}
                 style={{ 
                   width: '100%', 
                   marginBottom: '16px',
                   padding: '18px',
                   fontSize: '18px',
                   fontWeight: '800',
-                  background: 'linear-gradient(135deg, #3b82f6 0%, #38bdf8 100%)',
+                  background: (!isLogin && !agreedToTerms) 
+                    ? '#94a3b8' 
+                    : 'linear-gradient(135deg, #3b82f6 0%, #38bdf8 100%)',
                   border: 'none',
                   borderRadius: '12px',
-                  boxShadow: '0 8px 25px rgba(59, 130, 246, 0.3)',
+                  boxShadow: (!isLogin && !agreedToTerms) 
+                    ? '0 4px 15px rgba(148, 163, 184, 0.2)' 
+                    : '0 8px 25px rgba(59, 130, 246, 0.3)',
                   transition: 'all 0.3s',
                   color: 'white',
-                  cursor: 'pointer',
+                  cursor: (!isLogin && !agreedToTerms) ? 'not-allowed' : 'pointer',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  gap: '10px'
+                  gap: '10px',
+                  opacity: (!isLogin && !agreedToTerms) ? 0.6 : 1
                 }}
               >
                 {isLogin ? '🚀 Sign In' : '✨ Create Account'}
@@ -370,7 +452,11 @@ function AuthPage({ onLogin }) {
               }}>
                 {isLogin ? "Don't have an account? " : "Already have an account? "}
                 <button
-                  onClick={() => setIsLogin(!isLogin)}
+                  onClick={() => {
+                    setIsLogin(!isLogin);
+                    setAgreedToTerms(false);
+                    setError('');
+                  }}
                   style={{ 
                     background: 'none', 
                     border: 'none', 

@@ -14,6 +14,11 @@ router.post('/register', async (req, res) => {
       return res.status(400).json({ error: 'Email, password, and name are required' })
     }
 
+    // TODO: Uncomment after running database migration
+    // if (!agreedToTerms) {
+    //   return res.status(400).json({ error: 'You must agree to the Terms of Service and Privacy Policy' })
+    // }
+
     // Check if user already exists (optimized query)
     const { data: existingUser } = await supabaseAdmin
       .from('users')
@@ -36,6 +41,9 @@ router.post('/register', async (req, res) => {
         password: hashedPassword,
         name,
         email_verified: true
+        // TODO: Uncomment after running database migration
+        // terms_accepted_at: new Date().toISOString(),
+        // privacy_policy_accepted_at: new Date().toISOString()
       })
       .select()
       .single()

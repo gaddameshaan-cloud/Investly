@@ -14,26 +14,59 @@ import ForgotPassword from './pages/ForgotPassword';
 import ResetPassword from './pages/ResetPassword';
 import TermsOfService from './pages/TermsOfService';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import OnboardingQuestionnaire from './pages/OnboardingQuestionnaire';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function App() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [needsOnboarding, setNeedsOnboarding] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem('token');
     const userData = localStorage.getItem('user');
     if (token && userData) {
-      setUser(JSON.parse(userData));
+      const user = JSON.parse(userData);
+      setUser(user);
+      
+      // Check if user needs onboarding (only for existing users)
+      checkOnboardingStatus(user.id, token);
     }
     setLoading(false);
   }, []);
 
-  const handleLogin = (userData, token) => {
+  const checkOnboardingStatus = async (userId, token) => {
+    try {
+      const response = await axios.get('/api/user/onboarding-status', {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      
+      // If user hasn't completed onboarding, show it
+      if (!response.data.hasCompletedOnboarding) {
+        setNeedsOnboarding(true);
+      }
+    } catch (error) {
+      console.error('Error checking onboarding status:', error);
+      // If there's an error, don't show onboarding (fail gracefully)
+    }
+  };
+
+  const handleLogin = (userData, token, isNewUser = false) => {
     localStorage.setItem('token', token);
     localStorage.setItem('user', JSON.stringify(userData));
     setUser(userData);
+    
+    // If it's a new user, show onboarding
+    if (isNewUser) {
+      setNeedsOnboarding(true);
+    }
+  };
+
+  const handleOnboardingComplete = () => {
+    setNeedsOnboarding(false);
   };
 
   const handleLogout = () => {
@@ -64,6 +97,18 @@ function App() {
           <h2 style={{ color: '#64748b' }}>Loading...</h2>
         </div>
       </div>
+    );
+  }
+
+  // Show onboarding if user is logged in but needs onboarding
+  if (user && needsOnboarding) {
+    return (
+      <Router>
+        <OnboardingQuestionnaire 
+          user={user} 
+          onComplete={handleOnboardingComplete} 
+        />
+      </Router>
     );
   }
 

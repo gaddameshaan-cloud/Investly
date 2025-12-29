@@ -27,6 +27,7 @@ import aiRoutes from './routes/ai.js';
 import analyticsRoutes from './routes/analytics-supabase.js';
 import conversationsRoutes from './routes/conversations.js';
 import contactRoutes from './routes/contact.js';
+import userRoutes from './routes/user.js';
 
 // Import hybrid routes for lessons and progress
 import lessonRoutes from './routes/lessons-supabase.js';
@@ -53,6 +54,7 @@ app.get('/health', (req, res) => {
 });
 
 app.use('/api/auth', authRoutes);
+app.use('/api/user', userRoutes);
 app.use('/api/lessons', lessonRoutes);
 app.use('/api/progress', progressRoutes);
 app.use('/api/quizzes', quizRoutes);
