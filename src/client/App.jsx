@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import ContactPage from './pages/ContactPage';
@@ -12,6 +13,7 @@ import VerifyEmail from './pages/VerifyEmail';
 import ForgotPassword from './pages/ForgotPassword';
 import ResetPassword from './pages/ResetPassword';
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -82,7 +84,5 @@ function App() {
     </Router>
   );
 }
-
-// Hello world
 
 export default App;
