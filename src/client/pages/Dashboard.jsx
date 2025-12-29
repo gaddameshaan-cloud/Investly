@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { BookOpen, TrendingUp, Award, Brain, LogOut, BarChart } from 'lucide-react';
+import Footer from '../components/Footer';
 
 function Dashboard({ user, onLogout }) {
   const navigate = useNavigate();
@@ -352,50 +353,7 @@ function Dashboard({ user, onLogout }) {
         </div>
       </div>
 
-      {/* Footer */}
-      <div style={{ 
-        background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(14, 165, 233, 0.03) 100%)',
-        backdropFilter: 'blur(10px)',
-        padding: '50px 0',
-        textAlign: 'center',
-        marginTop: '80px',
-        borderTop: '1px solid rgba(59, 130, 246, 0.1)'
-      }}>
-        <div className="container">
-          {/* Disclaimer */}
-          <div style={{
-            background: 'rgba(59, 130, 246, 0.08)',
-            border: '1px solid rgba(59, 130, 246, 0.15)',
-            borderRadius: '12px',
-            padding: '20px 24px',
-            marginBottom: '32px',
-            textAlign: 'left',
-            maxWidth: '800px',
-            margin: '0 auto 32px'
-          }}>
-            <p style={{
-              color: '#475569',
-              fontSize: '14px',
-              fontWeight: '500',
-              margin: 0,
-              lineHeight: '1.6',
-              fontFamily: 'Poppins, sans-serif'
-            }}>
-              <strong style={{ color: '#1e293b' }}>Disclaimer:</strong> Investly provides educational content and tools for learning about finance and investing. This information is for general purposes only and should not be considered financial advice. Always consult a licensed professional before making financial decisions.
-            </p>
-          </div>
-          
-          <p style={{
-            color: '#64748b',
-            fontSize: '16px',
-            fontWeight: '500',
-            margin: 0,
-            fontFamily: 'Poppins, sans-serif'
-          }}>
-            © 2025 Investly Education. All rights reserved.
-          </p>
-        </div>
-      </div>
+      <Footer style={{ marginTop: '80px' }} />
     </div>
   );
 }

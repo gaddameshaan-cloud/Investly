@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Mail, Send, ArrowLeft, Linkedin, Instagram } from 'lucide-react';
+import Footer from '../components/Footer';
 
 function ContactPage() {
   const navigate = useNavigate();
@@ -774,48 +775,12 @@ function ContactPage() {
           </div>
         </div>
 
-        {/* Footer */}
-        <div style={{ 
+        <Footer style={{ 
           background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(56, 189, 248, 0.05) 100%)',
           backdropFilter: 'blur(20px)',
-          padding: '60px 0',
           margin: '80px -24px 0',
-          textAlign: 'center',
           borderTop: '1px solid rgba(56, 189, 248, 0.2)'
-        }}>
-          <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
-            {/* Disclaimer */}
-            <div style={{
-              background: 'rgba(56, 189, 248, 0.08)',
-              border: '1px solid rgba(56, 189, 248, 0.2)',
-              borderRadius: '12px',
-              padding: '20px 24px',
-              marginBottom: '32px',
-              textAlign: 'left'
-            }}>
-              <p style={{
-                color: '#475569',
-                fontSize: '14px',
-                fontWeight: '500',
-                margin: 0,
-                lineHeight: '1.6',
-                fontFamily: 'Poppins, sans-serif'
-              }}>
-                <strong style={{ color: '#1e293b' }}>Disclaimer:</strong> Investly provides educational content and tools for learning about finance and investing. This information is for general purposes only and should not be considered financial advice. Always consult a licensed professional before making financial decisions.
-              </p>
-            </div>
-            
-            <p style={{
-              color: '#64748b',
-              fontSize: '16px',
-              fontWeight: '500',
-              margin: 0,
-              fontFamily: 'Poppins, sans-serif'
-            }}>
-              © 2025 Investly Education. All rights reserved.
-            </p>
-          </div>
-        </div>
+        }} />
       </div>
     </div>
   );

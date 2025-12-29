@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { BookOpen, Brain, Award, Sparkles, Star, BarChart3, Users, TrendingUp, Shield, Zap, ArrowRight, Play, CheckCircle, Target, Lightbulb, Globe, Clock, Award as Trophy, Rocket, ChevronDown, Quote } from 'lucide-react';
+import Footer from '../components/Footer';
 
 function LandingPage() {
   const navigate = useNavigate();
@@ -1725,49 +1726,12 @@ function LandingPage() {
         </div>
       </div>
 
-      {/* Enhanced Footer */}
-      <div style={{ 
+      <Footer style={{
         background: 'rgba(30, 41, 59, 0.95)',
         backdropFilter: 'blur(20px)',
-        padding: '50px 0',
-        textAlign: 'center',
-        position: 'relative',
-        zIndex: 1
-      }}>
-        <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 40px' }}>
-          {/* Enhanced Disclaimer */}
-          <div style={{
-            background: 'rgba(255, 255, 255, 0.05)',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
-            borderRadius: '16px',
-            padding: '24px 32px',
-            marginBottom: '32px',
-            textAlign: 'left',
-            backdropFilter: 'blur(10px)'
-          }}>
-            <p style={{
-              color: 'rgba(255, 255, 255, 0.9)',
-              fontSize: '14px',
-              fontWeight: '500',
-              margin: 0,
-              lineHeight: '1.7',
-              fontFamily: 'Poppins, sans-serif'
-            }}>
-              <strong style={{ color: 'white' }}>Disclaimer:</strong> Investly provides educational content and tools for learning about finance and investing. This information is for general purposes only and should not be considered financial advice. Always consult a licensed professional before making financial decisions.
-            </p>
-          </div>
-          
-          <p style={{
-            color: 'rgba(255, 255, 255, 0.8)',
-            fontSize: '16px',
-            fontWeight: '400',
-            margin: 0,
-            fontFamily: 'Poppins, sans-serif'
-          }}>
-            © 2025 Investly Education. All rights reserved.
-          </p>
-        </div>
-      </div>
+        color: 'rgba(255, 255, 255, 0.8)',
+        borderTop: '1px solid rgba(255, 255, 255, 0.1)'
+      }} />
     </div>
   );
 }
