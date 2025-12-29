@@ -114,7 +114,7 @@ const TermsOfService = () => {
             <h2 style={{ color: '#1e293b', marginTop: '30px', marginBottom: '15px' }}>12. Contact Information</h2>
             <p>
               If you have any questions about these Terms of Service, please contact us through our contact page or email us 
-              at support@investly-education.com.
+              at investly.official@gmail.com.
             </p>
           </div>
         </div>

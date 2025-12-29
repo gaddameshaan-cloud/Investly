@@ -292,7 +292,7 @@ function ContactPage() {
               e.target.style.boxShadow = '0 4px 15px rgba(59, 130, 246, 0.2)';
             }}
           >
-            Get Started
+            Dashboard
           </button>
         </div>
       </nav>

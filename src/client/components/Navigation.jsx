@@ -106,7 +106,7 @@ const Navigation = ({ user, onLogout }) => {
                 transition: 'background 0.2s ease'
               }}
             >
-              Get Started
+              Dashboard
             </Link>
           )}
         </div>

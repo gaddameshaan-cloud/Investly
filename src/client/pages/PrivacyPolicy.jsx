@@ -137,7 +137,7 @@ const PrivacyPolicy = () => {
             <h2 style={{ color: '#1e293b', marginTop: '30px', marginBottom: '15px' }}>12. Contact Us</h2>
             <p>
               If you have any questions about this Privacy Policy or wish to exercise your rights regarding your personal information, 
-              please contact us through our contact page or email us at privacy@investly-education.com.
+              please contact us through our contact page or email us at investly.official@gmail.com.
             </p>
           </div>
         </div>
