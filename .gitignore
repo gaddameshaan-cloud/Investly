@@ -1,0 +1,130 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Production builds
+dist/
+build/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# nyc test coverage
+.nyc_output
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Kiro specific files
+*.md
+!README.md
+.kiro/
+START_HERE.md
+ADDING_CONTENT_GUIDE.md
+APP_IS_RUNNING.md
+ARCHITECTURE.md
+AUTHENTICATION_SETUP_COMPLETE.md
+AUTH_API_DOCUMENTATION.md
+DECADEMY_STYLE_LANDING.md
+DEPLOYMENT.md
+DOCUMENTATION_INDEX.md
+ENHANCED_LANDING_PAGE.md
+FAST_PERFORMANCE_FIX.md
+FEATURES.md
+FIXED_AND_WORKING.md
+LOADING_STATES_FIXED.md
+LOCAL_SETUP_COMPLETE.md
+MIGRATION_COMPLETE.md
+OPEN_THIS_NOW.txt
+PERFORMANCE_FIX.md
+PERFORMANCE_OPTIMIZATIONS.md
+PERFORMANCE_OPTIMIZATIONS_APPLIED.md
+PROJECT_SUMMARY.md
+QUICKSTART.md
+QUICK_FIX_SUMMARY.md
+QUICK_START_AUTH.md
+SAFE_MIGRATION_STEPS.md
+SERVER_STATUS.md
+SUPABASE_MIGRATION_GUIDE.md
+TROUBLESHOOTING.md
+
+# Migration and setup scripts (optional - remove if you want to keep them)
+migrate-to-supabase.js
+setup-supabase.js
+create-supabase-schema.js
+seed-supabase.js
+seed-curriculum-supabase.js
+seed-full-curriculum.js
+apply-performance-optimizations.js
+remove-duplicate-lessons.js
+test-*.js
+verify-setup.js
+quick-test.js
+update-curriculum.js
+test-migration-status.js
+test-supabase-connection.js
+test-supabase-lessons.js
+
+# Batch files
+*.bat
+setup.sh
+install-and-run.bat
+setup.bat
+
+# SQL files (optional - remove if you want to keep them)
+*.sql
