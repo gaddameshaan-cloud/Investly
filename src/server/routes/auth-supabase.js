@@ -1,9 +1,14 @@
 import express from 'express'
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
+import crypto from 'crypto'
 import { supabaseAdmin } from '../database/supabase.js'
+import { sendPasswordResetEmail } from '../utils/email.js'
 
 const router = express.Router()
+
+// Generate random token
+const generateToken = () => crypto.randomBytes(32).toString('hex')
 
 // Register endpoint - stores in Supabase users table
 router.post('/register', async (req, res) => {
@@ -174,6 +179,147 @@ router.get('/me', async (req, res) => {
 // Logout endpoint (client-side token removal)
 router.post('/logout', (req, res) => {
   res.json({ message: 'Logged out successfully' })
+})
+
+// FORGOT PASSWORD - Request password reset
+router.post('/forgot-password', async (req, res) => {
+  try {
+    const { email } = req.body
+
+    if (!email) {
+      return res.status(400).json({ 
+        success: false,
+        error: 'Email is required' 
+      })
+    }
+
+    // Get user from Supabase
+    const { data: userData, error: userError } = await supabaseAdmin
+      .from('users')
+      .select('id, email')
+      .eq('email', email)
+      .maybeSingle()
+
+    if (userError || !userData) {
+      // Don't reveal if email exists for security
+      return res.json({ 
+        success: true,
+        message: 'If that email exists, a password reset link has been sent.' 
+      })
+    }
+
+    const resetToken = generateToken()
+    const tokenExpires = new Date(Date.now() + 60 * 60 * 1000) // 1 hour
+
+    // Update user with reset token
+    const { error: updateError } = await supabaseAdmin
+      .from('users')
+      .update({
+        reset_token: resetToken,
+        reset_token_expires: tokenExpires.toISOString()
+      })
+      .eq('id', userData.id)
+
+    if (updateError) {
+      console.error('Reset token update error:', updateError)
+      return res.status(500).json({ 
+        success: false,
+        error: 'Error processing password reset' 
+      })
+    }
+
+    await sendPasswordResetEmail(email, resetToken)
+    res.json({ 
+      success: true,
+      message: 'If that email exists, a password reset link has been sent.' 
+    })
+
+  } catch (error) {
+    console.error('Forgot password error:', error)
+    res.status(500).json({ 
+      success: false,
+      error: 'An error occurred' 
+    })
+  }
+})
+
+// RESET PASSWORD - Set new password with token
+router.post('/reset-password', async (req, res) => {
+  try {
+    const { token, newPassword } = req.body
+
+    if (!token || !newPassword) {
+      return res.status(400).json({ 
+        success: false,
+        error: 'Token and new password are required' 
+      })
+    }
+
+    if (newPassword.length < 6) {
+      return res.status(400).json({ 
+        success: false,
+        error: 'Password must be at least 6 characters' 
+      })
+    }
+
+    // Find user with valid reset token
+    const { data: userData, error: userError } = await supabaseAdmin
+      .from('users')
+      .select('id, email, reset_token_expires')
+      .eq('reset_token', token)
+      .maybeSingle()
+
+    if (userError || !userData) {
+      return res.status(400).json({ 
+        success: false,
+        error: 'Invalid or expired reset token' 
+      })
+    }
+
+    // Check if token is expired
+    const now = new Date()
+    const tokenExpires = new Date(userData.reset_token_expires)
+    
+    if (now > tokenExpires) {
+      return res.status(400).json({ 
+        success: false,
+        error: 'Reset token has expired' 
+      })
+    }
+
+    // Hash new password
+    const hashedPassword = await bcrypt.hash(newPassword, 10)
+
+    // Update password and clear reset token
+    const { error: updateError } = await supabaseAdmin
+      .from('users')
+      .update({
+        password: hashedPassword,
+        reset_token: null,
+        reset_token_expires: null
+      })
+      .eq('id', userData.id)
+
+    if (updateError) {
+      console.error('Password update error:', updateError)
+      return res.status(500).json({ 
+        success: false,
+        error: 'Error updating password' 
+      })
+    }
+
+    res.json({ 
+      success: true,
+      message: 'Password reset successfully' 
+    })
+
+  } catch (error) {
+    console.error('Reset password error:', error)
+    res.status(500).json({ 
+      success: false,
+      error: 'An error occurred' 
+    })
+  }
 })
 
 export default router
