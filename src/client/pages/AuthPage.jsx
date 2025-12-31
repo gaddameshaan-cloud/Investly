@@ -6,7 +6,7 @@ import { BookOpen, Brain, Award, ArrowLeft, Sparkles } from 'lucide-react';
 function AuthPage({ onLogin }) {
   const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(true);
-  const [formData, setFormData] = useState({ email: '', password: '', name: '' });
+  const [formData, setFormData] = useState({ email: '', password: '', name: '', dateOfBirth: '' });
   const [error, setError] = useState('');
   const [agreedToTerms, setAgreedToTerms] = useState(false);
 
@@ -14,9 +14,36 @@ function AuthPage({ onLogin }) {
     window.scrollTo(0, 0);
   }, []);
 
+  const calculateAge = (dateOfBirth) => {
+    const today = new Date();
+    const birthDate = new Date(dateOfBirth);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    
+    return age;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
+
+    // Age validation for signup
+    if (!isLogin) {
+      if (!formData.dateOfBirth) {
+        setError('Date of birth is required to create an account.');
+        return;
+      }
+
+      const age = calculateAge(formData.dateOfBirth);
+      if (age < 13) {
+        setError('You must be at least 13 years old to create an account.');
+        return;
+      }
+    }
 
     // Check if user agreed to terms for signup
     if (!isLogin && !agreedToTerms) {
@@ -280,26 +307,58 @@ function AuthPage({ onLogin }) {
 
             <form onSubmit={handleSubmit}>
               {!isLogin && (
-                <div style={{ marginBottom: '20px' }}>
-                  <input
-                    type="text"
-                    placeholder="Full Name"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    required={!isLogin}
-                    style={{
-                      width: '100%',
-                      padding: '16px 20px',
-                      fontSize: '16px',
-                      border: '2px solid #e2e8f0',
-                      borderRadius: '12px',
-                      transition: 'all 0.3s',
-                      background: 'white',
-                      color: '#1e293b',
+                <>
+                  <div style={{ marginBottom: '20px' }}>
+                    <input
+                      type="text"
+                      placeholder="Full Name"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      required={!isLogin}
+                      style={{
+                        width: '100%',
+                        padding: '16px 20px',
+                        fontSize: '16px',
+                        border: '2px solid #e2e8f0',
+                        borderRadius: '12px',
+                        transition: 'all 0.3s',
+                        background: 'white',
+                        color: '#1e293b',
+                        fontWeight: '500'
+                      }}
+                    />
+                  </div>
+                  
+                  <div style={{ marginBottom: '20px' }}>
+                    <input
+                      type="date"
+                      placeholder="Date of Birth"
+                      value={formData.dateOfBirth}
+                      onChange={(e) => setFormData({ ...formData, dateOfBirth: e.target.value })}
+                      required={!isLogin}
+                      max={new Date().toISOString().split('T')[0]} // Prevent future dates
+                      style={{
+                        width: '100%',
+                        padding: '16px 20px',
+                        fontSize: '16px',
+                        border: '2px solid #e2e8f0',
+                        borderRadius: '12px',
+                        transition: 'all 0.3s',
+                        background: 'white',
+                        color: '#1e293b',
+                        fontWeight: '500'
+                      }}
+                    />
+                    <p style={{
+                      fontSize: '12px',
+                      color: '#64748b',
+                      margin: '8px 0 0 0',
                       fontWeight: '500'
-                    }}
-                  />
-                </div>
+                    }}>
+                      You must be at least 13 years old to create an account
+                    </p>
+                  </div>
+                </>
               )}
               
               <div style={{ marginBottom: '20px' }}>
@@ -455,6 +514,7 @@ function AuthPage({ onLogin }) {
                   onClick={() => {
                     setIsLogin(!isLogin);
                     setAgreedToTerms(false);
+                    setFormData({ email: '', password: '', name: '', dateOfBirth: '' });
                     setError('');
                   }}
                   style={{ 

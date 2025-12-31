@@ -8,10 +8,24 @@ const router = express.Router()
 // Register endpoint - stores in Supabase users table
 router.post('/register', async (req, res) => {
   try {
-    const { email, password, name } = req.body
+    const { email, password, name, dateOfBirth, agreedToTerms } = req.body
 
-    if (!email || !password || !name) {
-      return res.status(400).json({ error: 'Email, password, and name are required' })
+    if (!email || !password || !name || !dateOfBirth) {
+      return res.status(400).json({ error: 'Email, password, name, and date of birth are required' })
+    }
+
+    // Age validation
+    const today = new Date();
+    const birthDate = new Date(dateOfBirth);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+
+    if (age < 13) {
+      return res.status(400).json({ error: 'You must be at least 13 years old to create an account' })
     }
 
     // TODO: Uncomment after running database migration
@@ -40,6 +54,7 @@ router.post('/register', async (req, res) => {
         email,
         password: hashedPassword,
         name,
+        date_of_birth: dateOfBirth,
         email_verified: true
         // TODO: Uncomment after running database migration
         // terms_accepted_at: new Date().toISOString(),
