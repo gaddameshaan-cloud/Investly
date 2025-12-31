@@ -7,7 +7,7 @@ import { useTheme } from '../context/ThemeContext';
 
 function Dashboard({ user, onLogout }) {
   const navigate = useNavigate();
-  const { theme } = useTheme();
+  const { theme, darkMode } = useTheme();
   const [modules, setModules] = useState([]);
   const [progress, setProgress] = useState([]);
   const [stats, setStats] = useState(null);
@@ -253,7 +253,8 @@ function Dashboard({ user, onLogout }) {
               borderRadius: '16px',
               padding: '24px',
               backdropFilter: 'blur(10px)',
-              animation: 'fadeIn 0.6s ease-out' 
+              animation: 'fadeIn 0.6s ease-out',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.08)'
             }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
@@ -275,15 +276,23 @@ function Dashboard({ user, onLogout }) {
                   <BookOpen size={32} style={{ color: 'white' }} />
                 </div>
               </div>
-              <div className="progress-bar" style={{ marginTop: '20px', height: '8px', background: 'rgba(102, 126, 234, 0.2)' }}>
-                <div className="progress-fill" style={{ width: `${stats.completionRate}%`, background: 'linear-gradient(90deg, #667eea 0%, #764ba2 100%)' }}></div>
+              <div style={{ marginTop: '20px', height: '8px', background: theme.border, borderRadius: '4px' }}>
+                <div style={{ width: `${stats.completionRate}%`, background: 'linear-gradient(90deg, #667eea 0%, #764ba2 100%)', height: '100%', borderRadius: '4px', transition: 'width 0.3s ease' }}></div>
               </div>
             </div>
 
-            <div className="card glass-card" style={{ background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(251, 191, 36, 0.1) 100%)', border: '1px solid rgba(245, 158, 11, 0.2)', animation: 'fadeIn 0.6s ease-out 0.1s backwards' }}>
+            <div style={{ 
+              background: theme.cardBg, 
+              border: `1px solid ${theme.border}`, 
+              borderRadius: '16px',
+              padding: '24px',
+              backdropFilter: 'blur(10px)',
+              animation: 'fadeIn 0.6s ease-out 0.1s backwards',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.08)'
+            }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
-                  <p style={{ color: '#6b7280', marginBottom: '8px', fontSize: '14px', fontWeight: '500' }}>Average Score</p>
+                  <p style={{ color: theme.textSecondary, marginBottom: '8px', fontSize: '14px', fontWeight: '500' }}>Average Score</p>
                   <h3 style={{ fontSize: '36px', fontWeight: '800', color: '#f59e0b', marginBottom: '4px' }}>{stats.averageScore}%</h3>
                   <p style={{ color: '#f59e0b', fontSize: '13px', fontWeight: '600' }}>
                     {stats.averageScore >= 90 ? '🔥 Excellent!' : stats.averageScore >= 70 ? '✨ Great!' : '💪 Keep Going!'}
@@ -295,10 +304,18 @@ function Dashboard({ user, onLogout }) {
               </div>
             </div>
 
-            <div className="card glass-card" style={{ background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(52, 211, 153, 0.1) 100%)', border: '1px solid rgba(16, 185, 129, 0.2)', animation: 'fadeIn 0.6s ease-out 0.2s backwards' }}>
+            <div style={{ 
+              background: theme.cardBg, 
+              border: `1px solid ${theme.border}`, 
+              borderRadius: '16px',
+              padding: '24px',
+              backdropFilter: 'blur(10px)',
+              animation: 'fadeIn 0.6s ease-out 0.2s backwards',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.08)'
+            }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
-                  <p style={{ color: '#6b7280', marginBottom: '8px', fontSize: '14px', fontWeight: '500' }}>Time Spent</p>
+                  <p style={{ color: theme.textSecondary, marginBottom: '8px', fontSize: '14px', fontWeight: '500' }}>Time Spent</p>
                   <h3 style={{ fontSize: '36px', fontWeight: '800', color: '#10b981', marginBottom: '4px' }}>{Math.round((stats.totalTimeSpent || 0) / 60)}h</h3>
                   <p style={{ color: '#10b981', fontSize: '13px', fontWeight: '600' }}>Learning Time</p>
                 </div>
@@ -310,31 +327,82 @@ function Dashboard({ user, onLogout }) {
           </div>
         )}
 
-        <div className="card">
+        <div style={{ 
+          background: theme.cardBg, 
+          border: `1px solid ${theme.border}`, 
+          borderRadius: '16px',
+          padding: '24px',
+          backdropFilter: 'blur(10px)',
+          boxShadow: '0 4px 20px rgba(0,0,0,0.08)'
+        }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
-            <h2 style={{ fontSize: '28px', fontWeight: '700' }}>Learning Modules</h2>
+            <h2 style={{ fontSize: '28px', fontWeight: '700', color: theme.text }}>Learning Modules</h2>
             <div style={{ display: 'flex', gap: '12px' }}>
               <button 
-                className={`btn ${selectedLevel === 'all' ? 'btn-primary' : 'btn-secondary'}`}
                 onClick={() => setSelectedLevel('all')}
+                style={{
+                  padding: '8px 16px',
+                  borderRadius: '8px',
+                  border: 'none',
+                  fontSize: '14px',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  background: selectedLevel === 'all' ? theme.buttonBg : theme.inputBg,
+                  color: selectedLevel === 'all' ? 'white' : theme.textSecondary,
+                  boxShadow: selectedLevel === 'all' ? '0 4px 12px rgba(59, 130, 246, 0.3)' : 'none'
+                }}
               >
                 All Levels
               </button>
               <button 
-                className={`btn ${selectedLevel === 'beginner' ? 'btn-primary' : 'btn-secondary'}`}
                 onClick={() => setSelectedLevel('beginner')}
+                style={{
+                  padding: '8px 16px',
+                  borderRadius: '8px',
+                  border: 'none',
+                  fontSize: '14px',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  background: selectedLevel === 'beginner' ? theme.buttonBg : theme.inputBg,
+                  color: selectedLevel === 'beginner' ? 'white' : theme.textSecondary,
+                  boxShadow: selectedLevel === 'beginner' ? '0 4px 12px rgba(59, 130, 246, 0.3)' : 'none'
+                }}
               >
                 Beginner
               </button>
               <button 
-                className={`btn ${selectedLevel === 'intermediate' ? 'btn-primary' : 'btn-secondary'}`}
                 onClick={() => setSelectedLevel('intermediate')}
+                style={{
+                  padding: '8px 16px',
+                  borderRadius: '8px',
+                  border: 'none',
+                  fontSize: '14px',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  background: selectedLevel === 'intermediate' ? theme.buttonBg : theme.inputBg,
+                  color: selectedLevel === 'intermediate' ? 'white' : theme.textSecondary,
+                  boxShadow: selectedLevel === 'intermediate' ? '0 4px 12px rgba(59, 130, 246, 0.3)' : 'none'
+                }}
               >
                 Intermediate
               </button>
               <button 
-                className={`btn ${selectedLevel === 'advanced' ? 'btn-primary' : 'btn-secondary'}`}
                 onClick={() => setSelectedLevel('advanced')}
+                style={{
+                  padding: '8px 16px',
+                  borderRadius: '8px',
+                  border: 'none',
+                  fontSize: '14px',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  background: selectedLevel === 'advanced' ? theme.buttonBg : theme.inputBg,
+                  color: selectedLevel === 'advanced' ? 'white' : theme.textSecondary,
+                  boxShadow: selectedLevel === 'advanced' ? '0 4px 12px rgba(59, 130, 246, 0.3)' : 'none'
+                }}
               >
                 Advanced
               </button>
@@ -349,23 +417,28 @@ function Dashboard({ user, onLogout }) {
                 <div 
                   key={module.number}
                   onClick={() => navigate(`/module/${module.number}`)}
-                  className="glass-card"
                   style={{
                     padding: '24px',
                     background: moduleProgress.percentage === 100
-                      ? 'linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(52, 211, 153, 0.05) 100%)' 
-                      : 'rgba(255, 255, 255, 0.9)',
-                    border: `2px solid ${moduleProgress.percentage === 100 ? 'rgba(16, 185, 129, 0.3)' : 'rgba(102, 126, 234, 0.1)'}`,
+                      ? (theme.darkMode 
+                          ? 'linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(52, 211, 153, 0.1) 100%)' 
+                          : 'linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(52, 211, 153, 0.05) 100%)')
+                      : theme.cardBg,
+                    border: `2px solid ${moduleProgress.percentage === 100 ? 'rgba(16, 185, 129, 0.3)' : theme.border}`,
                     borderRadius: '16px',
                     cursor: 'pointer',
                     transition: 'all 0.3s ease',
                     animation: `slideIn 0.5s ease-out ${idx * 0.05}s backwards`,
                     position: 'relative',
-                    overflow: 'hidden'
+                    overflow: 'hidden',
+                    backdropFilter: 'blur(10px)',
+                    boxShadow: '0 4px 20px rgba(0,0,0,0.08)'
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = 'translateY(-4px)';
-                    e.currentTarget.style.boxShadow = '0 12px 40px rgba(102, 126, 234, 0.2)';
+                    e.currentTarget.style.boxShadow = theme.darkMode 
+                      ? '0 12px 40px rgba(102, 126, 234, 0.3)' 
+                      : '0 12px 40px rgba(102, 126, 234, 0.2)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.transform = 'translateY(0)';
@@ -389,22 +462,24 @@ function Dashboard({ user, onLogout }) {
                         >
                           {module.level.toUpperCase()}
                         </span>
-                        <span style={{ color: '#64748b', fontSize: '14px', fontWeight: '600' }}>
+                        <span style={{ color: theme.textSecondary, fontSize: '14px', fontWeight: '600' }}>
                           Module {module.number} • {module.lessons.length} lessons
                         </span>
                       </div>
-                      <h3 style={{ fontSize: '22px', fontWeight: '700', marginBottom: '10px', color: '#1f2937' }}>{module.title}</h3>
-                      <p style={{ color: '#6b7280', fontSize: '15px', lineHeight: '1.6', marginBottom: '12px' }}>
+                      <h3 style={{ fontSize: '22px', fontWeight: '700', marginBottom: '10px', color: theme.text }}>{module.title}</h3>
+                      <p style={{ color: theme.textSecondary, fontSize: '15px', lineHeight: '1.6', marginBottom: '12px' }}>
                         {moduleProgress.completed}/{moduleProgress.total} lessons completed • {moduleProgress.percentage}% progress
                       </p>
                       
                       {/* Progress bar */}
-                      <div className="progress-bar" style={{ height: '6px', background: 'rgba(102, 126, 234, 0.2)' }}>
+                      <div style={{ height: '6px', background: theme.border, borderRadius: '3px' }}>
                         <div 
-                          className="progress-fill" 
                           style={{ 
                             width: `${moduleProgress.percentage}%`, 
-                            background: `linear-gradient(90deg, ${getLevelColor(module.level)} 0%, ${getLevelColor(module.level)}dd 100%)`
+                            background: `linear-gradient(90deg, ${getLevelColor(module.level)} 0%, ${getLevelColor(module.level)}dd 100%)`,
+                            height: '100%',
+                            borderRadius: '3px',
+                            transition: 'width 0.3s ease'
                           }}
                         ></div>
                       </div>
