@@ -15,10 +15,13 @@ import ResetPassword from './pages/ResetPassword';
 import TermsOfService from './pages/TermsOfService';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import OnboardingQuestionnaire from './pages/OnboardingQuestionnaire';
+import Settings from './pages/Settings';
+import { ThemeProvider, useTheme } from './context/ThemeContext';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function App() {
+function AppContent() {
+  const { darkMode, setDarkMode } = useTheme();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [needsOnboarding, setNeedsOnboarding] = useState(false);
@@ -129,8 +132,17 @@ function App() {
         <Route path="/quiz/:lessonId" element={user ? <QuizView user={user} /> : <Navigate to="/" />} />
         <Route path="/analytics" element={user ? <Analytics user={user} /> : <Navigate to="/" />} />
         <Route path="/ai-tutor" element={user ? <AITutor user={user} /> : <Navigate to="/" />} />
+        <Route path="/settings" element={user ? <Settings user={user} onLogout={handleLogout} /> : <Navigate to="/" />} />
       </Routes>
     </Router>
+  );
+}
+
+function App() {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
   );
 }
 

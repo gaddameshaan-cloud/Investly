@@ -1,5 +1,6 @@
 import express from 'express';
 import jwt from 'jsonwebtoken';
+import bcrypt from 'bcryptjs';
 import { supabaseAdmin } from '../database/supabase.js';
 
 const router = express.Router();
@@ -98,6 +99,127 @@ router.get('/onboarding-status', authenticateToken, async (req, res) => {
 
   } catch (error) {
     console.error('Onboarding status error:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// Update user profile (name only)
+router.put('/profile', authenticateToken, async (req, res) => {
+  try {
+    const { name } = req.body;
+    
+    if (!name || name.trim().length < 2) {
+      return res.status(400).json({ error: 'Name must be at least 2 characters long' });
+    }
+
+    // Get current user data to track the change
+    const { data: currentUser, error: getCurrentError } = await supabaseAdmin
+      .from('users')
+      .select('name')
+      .eq('id', req.user.id)
+      .single();
+
+    if (getCurrentError) {
+      console.error('Error getting current user:', getCurrentError);
+      return res.status(500).json({ error: 'Failed to get current user data' });
+    }
+
+    // Update user in database
+    const { data, error } = await supabaseAdmin
+      .from('users')
+      .update({ name: name.trim() })
+      .eq('id', req.user.id)
+      .select()
+      .single();
+
+    if (error) {
+      console.error('Error updating profile:', error);
+      return res.status(500).json({ error: 'Failed to update profile' });
+    }
+
+    // Track the username change
+    if (currentUser.name !== name.trim()) {
+      const { error: trackError } = await supabaseAdmin
+        .from('username_changes')
+        .insert({
+          user_id: req.user.id,
+          old_name: currentUser.name,
+          new_name: name.trim()
+        });
+
+      if (trackError) {
+        console.error('Error tracking username change:', trackError);
+        // Don't fail the request if tracking fails
+      }
+    }
+
+    console.log('Profile updated successfully:', data);
+
+    res.json({
+      message: 'Profile updated successfully',
+      user: {
+        id: data.id,
+        email: data.email,
+        name: data.name
+      }
+    });
+
+  } catch (error) {
+    console.error('Profile update error:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// Update user password
+router.put('/password', authenticateToken, async (req, res) => {
+  try {
+    const { currentPassword, newPassword } = req.body;
+    
+    if (!currentPassword || !newPassword) {
+      return res.status(400).json({ error: 'Current password and new password are required' });
+    }
+
+    if (newPassword.length < 6) {
+      return res.status(400).json({ error: 'New password must be at least 6 characters long' });
+    }
+
+    // Get current user data
+    const { data: userData, error: userError } = await supabaseAdmin
+      .from('users')
+      .select('password')
+      .eq('id', req.user.id)
+      .single();
+
+    if (userError || !userData) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    // Verify current password
+    const isValidPassword = await bcrypt.compare(currentPassword, userData.password);
+    if (!isValidPassword) {
+      return res.status(400).json({ error: 'Current password is incorrect' });
+    }
+
+    // Hash new password
+    const hashedNewPassword = await bcrypt.hash(newPassword, 10);
+
+    // Update password in database
+    const { error: updateError } = await supabaseAdmin
+      .from('users')
+      .update({ password: hashedNewPassword })
+      .eq('id', req.user.id);
+
+    if (updateError) {
+      console.error('Error updating password:', updateError);
+      return res.status(500).json({ error: 'Failed to update password' });
+    }
+
+    res.json({
+      message: 'Password updated successfully'
+    });
+
+  } catch (error) {
+    console.error('Password update error:', error);
     res.status(500).json({ error: 'Internal server error' });
   }
 });

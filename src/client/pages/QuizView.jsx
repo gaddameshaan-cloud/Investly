@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { CheckCircle, XCircle, ArrowRight } from 'lucide-react';
 import axios from 'axios';
+import { useTheme } from '../context/ThemeContext';
 
 function QuizView({ user }) {
   const { lessonId } = useParams();
   const navigate = useNavigate();
+  const { theme } = useTheme();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState({});
   const [showResults, setShowResults] = useState(false);
@@ -143,7 +145,7 @@ function QuizView({ user }) {
         display: 'flex', 
         alignItems: 'center', 
         justifyContent: 'center',
-        background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)'
+        background: theme.bg
       }}>
         <div style={{ textAlign: 'center' }}>
           <div style={{ 
@@ -155,7 +157,7 @@ function QuizView({ user }) {
             animation: 'spin 1s linear infinite',
             margin: '0 auto 20px'
           }}></div>
-          <p style={{ color: '#64748b', fontSize: '18px', fontWeight: '600' }}>Loading quiz...</p>
+          <p style={{ color: theme.textSecondary, fontSize: '18px', fontWeight: '600' }}>Loading quiz...</p>
         </div>
       </div>
     );
@@ -168,7 +170,7 @@ function QuizView({ user }) {
         display: 'flex', 
         alignItems: 'center', 
         justifyContent: 'center',
-        background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)'
+        background: theme.bg
       }}>
         <div style={{ textAlign: 'center', maxWidth: '400px', padding: '40px' }}>
           <div style={{ 
@@ -223,10 +225,10 @@ function QuizView({ user }) {
         display: 'flex', 
         alignItems: 'center', 
         justifyContent: 'center',
-        background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)'
+        background: theme.bg
       }}>
         <div style={{ textAlign: 'center' }}>
-          <p style={{ color: '#64748b', fontSize: '18px', fontWeight: '600' }}>No quiz available for this lesson</p>
+          <p style={{ color: theme.textSecondary, fontSize: '18px', fontWeight: '600' }}>No quiz available for this lesson</p>
           <button 
             onClick={() => navigate(`/lesson/${lessonId}`)}
             style={{
@@ -252,8 +254,8 @@ function QuizView({ user }) {
       <div style={{ 
         minHeight: '100vh', 
         background: score >= 70 
-          ? 'linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%)' 
-          : 'linear-gradient(135deg, #fee2e2 0%, #fecaca 100%)',
+          ? theme.bg
+          : theme.bg,
         display: 'flex', 
         alignItems: 'center', 
         justifyContent: 'center',
@@ -262,9 +264,10 @@ function QuizView({ user }) {
         <div className="card glass-card" style={{ 
           maxWidth: '600px', 
           textAlign: 'center',
-          background: 'rgba(255, 255, 255, 0.95)',
+          background: theme.cardBg,
           backdropFilter: 'blur(20px)',
-          animation: 'fadeIn 0.6s ease-out, float 3s ease-in-out infinite'
+          animation: 'fadeIn 0.6s ease-out, float 3s ease-in-out infinite',
+          border: `1px solid ${theme.border}`
         }}>
           <div style={{
             background: score >= 70 
@@ -326,7 +329,7 @@ function QuizView({ user }) {
           
           <p style={{ 
             marginBottom: '36px', 
-            color: '#374151',
+            color: theme.textSecondary,
             fontSize: '18px',
             lineHeight: '1.6',
             padding: '0 20px'
@@ -366,12 +369,13 @@ function QuizView({ user }) {
   const question = questions[currentQuestion];
 
   return (
-    <div style={{ minHeight: '100vh', background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)', paddingTop: '60px', paddingBottom: '40px' }}>
+    <div style={{ minHeight: '100vh', background: theme.bg, paddingTop: '60px', paddingBottom: '40px' }}>
       <div className="container" style={{ maxWidth: '800px' }}>
         <div className="card glass-card" style={{ 
-          background: 'rgba(255, 255, 255, 0.95)',
+          background: theme.cardBg,
           backdropFilter: 'blur(20px)',
-          animation: 'fadeIn 0.6s ease-out'
+          animation: 'fadeIn 0.6s ease-out',
+          border: `1px solid ${theme.border}`
         }}>
           <div style={{ marginBottom: '32px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '16px', alignItems: 'center' }}>
@@ -409,7 +413,7 @@ function QuizView({ user }) {
             fontSize: '32px', 
             marginBottom: '36px',
             fontWeight: '700',
-            color: '#1f2937',
+            color: theme.text,
             lineHeight: '1.4'
           }}>
             {question.question}
@@ -428,9 +432,9 @@ function QuizView({ user }) {
                     padding: '20px 24px',
                     textAlign: 'left',
                     background: isSelected 
-                      ? 'linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.1) 100%)'
-                      : 'white',
-                    border: `2px solid ${isSelected ? '#667eea' : '#e5e7eb'}`,
+                      ? 'rgba(102, 126, 234, 0.15)'
+                      : theme.cardBg,
+                    border: `2px solid ${isSelected ? '#667eea' : theme.border}`,
                     borderRadius: '14px',
                     cursor: 'pointer',
                     fontSize: '17px',
@@ -439,7 +443,7 @@ function QuizView({ user }) {
                     alignItems: 'center',
                     gap: '16px',
                     fontWeight: isSelected ? '600' : '500',
-                    color: '#374151',
+                    color: theme.text,
                     boxShadow: isSelected ? '0 8px 24px rgba(102, 126, 234, 0.2)' : '0 2px 8px rgba(0,0,0,0.05)',
                     transform: isSelected ? 'scale(1.02)' : 'scale(1)'
                   }}
@@ -451,7 +455,7 @@ function QuizView({ user }) {
                   }}
                   onMouseLeave={(e) => {
                     if (!isSelected) {
-                      e.currentTarget.style.borderColor = '#e5e7eb';
+                      e.currentTarget.style.borderColor = theme.border;
                       e.currentTarget.style.transform = 'translateX(0)';
                     }
                   }}
@@ -462,8 +466,8 @@ function QuizView({ user }) {
                     height: '36px',
                     background: isSelected 
                       ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
-                      : '#f3f4f6',
-                    color: isSelected ? 'white' : '#6b7280',
+                      : theme.inputBg,
+                    color: isSelected ? 'white' : theme.textSecondary,
                     borderRadius: '10px',
                     textAlign: 'center',
                     lineHeight: '36px',
@@ -489,8 +493,8 @@ function QuizView({ user }) {
               fontSize: '18px',
               fontWeight: '700',
               background: answers[currentQuestion] === undefined 
-                ? '#d1d5db'
-                : 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                ? theme.inputBorder
+                : theme.buttonBg,
               border: 'none',
               boxShadow: answers[currentQuestion] === undefined 
                 ? 'none'

@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { BookOpen, TrendingUp, Award, Brain, LogOut, BarChart } from 'lucide-react';
+import { BookOpen, TrendingUp, Award, Brain, LogOut, BarChart, Settings } from 'lucide-react';
 import Footer from '../components/Footer';
+import { useTheme } from '../context/ThemeContext';
 
 function Dashboard({ user, onLogout }) {
   const navigate = useNavigate();
+  const { theme } = useTheme();
   const [modules, setModules] = useState([]);
   const [progress, setProgress] = useState([]);
   const [stats, setStats] = useState(null);
@@ -144,8 +146,8 @@ function Dashboard({ user, onLogout }) {
   }
 
   return (
-    <div style={{ minHeight: '100vh', background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)' }}>
-      <nav style={{ background: 'rgba(255, 255, 255, 0.95)', backdropFilter: 'blur(10px)', boxShadow: '0 4px 20px rgba(0,0,0,0.08)', padding: '20px 0', borderBottom: '1px solid rgba(102, 126, 234, 0.1)' }}>
+    <div style={{ minHeight: '100vh', background: theme.bg }}>
+      <nav style={{ background: theme.cardBg, backdropFilter: 'blur(10px)', boxShadow: '0 4px 20px rgba(0,0,0,0.08)', padding: '20px 0', borderBottom: `1px solid ${theme.border}` }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <img 
@@ -161,18 +163,81 @@ function Dashboard({ user, onLogout }) {
             </h1>
           </div>
           <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-            <button className="btn btn-secondary" onClick={() => navigate('/analytics')} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <button 
+              onClick={() => navigate('/analytics')} 
+              style={{ 
+                display: 'flex', 
+                alignItems: 'center', 
+                gap: '8px',
+                background: theme.cardBg,
+                border: `2px solid ${theme.border}`,
+                color: theme.text,
+                padding: '12px 16px',
+                borderRadius: '12px',
+                fontSize: '16px',
+                fontWeight: '600',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease'
+              }}
+            >
               <BarChart size={20} />
               Analytics
             </button>
-            <button className="btn btn-secondary" onClick={() => navigate('/ai-tutor')} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <button 
+              onClick={() => navigate('/ai-tutor')} 
+              style={{ 
+                display: 'flex', 
+                alignItems: 'center', 
+                gap: '8px',
+                background: theme.cardBg,
+                border: `2px solid ${theme.border}`,
+                color: theme.text,
+                padding: '12px 16px',
+                borderRadius: '12px',
+                fontSize: '16px',
+                fontWeight: '600',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease'
+              }}
+            >
               <Brain size={20} />
               AI Tutor
+            </button>
+            <button 
+              onClick={() => navigate('/settings')} 
+              style={{ 
+                display: 'flex', 
+                alignItems: 'center', 
+                gap: '8px',
+                background: theme.cardBg,
+                border: `2px solid ${theme.border}`,
+                color: theme.text,
+                padding: '12px 16px',
+                borderRadius: '12px',
+                fontSize: '16px',
+                fontWeight: '600',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease'
+              }}
+            >
+              <Settings size={20} />
+              Settings
             </button>
             <span style={{ color: '#667eea', fontWeight: '600', padding: '8px 16px', background: 'rgba(102, 126, 234, 0.1)', borderRadius: '10px' }}>
               👋 {user.name}
             </span>
-            <button className="btn btn-secondary" onClick={onLogout} style={{ padding: '12px' }}>
+            <button 
+              onClick={onLogout} 
+              style={{ 
+                padding: '12px',
+                background: theme.cardBg,
+                border: `2px solid ${theme.border}`,
+                color: theme.text,
+                borderRadius: '12px',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease'
+              }}
+            >
               <LogOut size={20} />
             </button>
           </div>
@@ -182,11 +247,28 @@ function Dashboard({ user, onLogout }) {
       <div className="container" style={{ paddingTop: '40px' }}>
         {stats && (
           <div className="grid grid-3" style={{ marginBottom: '40px', gap: '24px' }}>
-            <div className="card glass-card" style={{ background: 'linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%)', border: '1px solid rgba(102, 126, 234, 0.2)', animation: 'fadeIn 0.6s ease-out' }}>
+            <div style={{ 
+              background: theme.cardBg, 
+              border: `1px solid ${theme.border}`, 
+              borderRadius: '16px',
+              padding: '24px',
+              backdropFilter: 'blur(10px)',
+              animation: 'fadeIn 0.6s ease-out' 
+            }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
-                  <p style={{ color: '#6b7280', marginBottom: '8px', fontSize: '14px', fontWeight: '500' }}>Lessons Completed</p>
-                  <h3 className="gradient-text" style={{ fontSize: '36px', fontWeight: '800', marginBottom: '4px' }}>{stats.completedLessons}/{stats.totalLessons}</h3>
+                  <p style={{ color: theme.textSecondary, marginBottom: '8px', fontSize: '14px', fontWeight: '500' }}>Lessons Completed</p>
+                  <h3 style={{ 
+                    fontSize: '36px', 
+                    fontWeight: '800', 
+                    marginBottom: '4px',
+                    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text'
+                  }}>
+                    {stats.completedLessons}/{stats.totalLessons}
+                  </h3>
                   <p style={{ color: '#667eea', fontSize: '13px', fontWeight: '600' }}>{stats.completionRate}% Complete</p>
                 </div>
                 <div style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', padding: '16px', borderRadius: '16px', animation: 'float 3s ease-in-out infinite' }}>

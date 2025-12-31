@@ -3,9 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { ArrowLeft, TrendingUp, Award, Clock, Target } from 'lucide-react';
 import { LineChart, Line, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { useTheme } from '../context/ThemeContext';
 
 function Analytics({ user }) {
   const navigate = useNavigate();
+  const { theme } = useTheme();
   const [stats, setStats] = useState(null);
 
   useEffect(() => {
@@ -37,21 +39,21 @@ function Analytics({ user }) {
   const COLORS = ['#3b82f6', '#f59e0b', '#ec4899'];
 
   return (
-    <div style={{ minHeight: '100vh', background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)' }}>
+    <div style={{ minHeight: '100vh', background: theme.bg }}>
       <div className="container" style={{ paddingTop: '40px' }}>
         <button className="btn btn-secondary glass-card" onClick={() => navigate('/dashboard')} style={{ marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '8px' }}>
           <ArrowLeft size={20} />
           Back to Dashboard
         </button>
 
-        <h1 className="gradient-text" style={{ fontSize: '48px', fontWeight: '800', marginBottom: '40px', animation: 'fadeIn 0.6s ease-out' }}>
+        <h1 className="gradient-text" style={{ fontSize: '48px', fontWeight: '800', marginBottom: '40px', animation: 'fadeIn 0.6s ease-out', color: theme.text }}>
           📊 Your Learning Analytics
         </h1>
 
         <div className="grid grid-2" style={{ marginBottom: '40px', gap: '24px' }}>
           <div className="card glass-card" style={{ 
-            background: 'linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%)',
-            border: '1px solid rgba(102, 126, 234, 0.2)',
+            background: theme.cardBg,
+            border: `1px solid ${theme.border}`,
             animation: 'fadeIn 0.6s ease-out 0.1s backwards'
           }}>
             <div style={{ display: 'flex', alignItems: 'center', marginBottom: '24px', gap: '12px' }}>
@@ -63,21 +65,21 @@ function Analytics({ user }) {
               }}>
                 <Target size={28} style={{ color: 'white' }} />
               </div>
-              <h3 style={{ fontSize: '22px', fontWeight: '700', color: '#1f2937' }}>Overall Progress</h3>
+              <h3 style={{ fontSize: '22px', fontWeight: '700', color: theme.text }}>Overall Progress</h3>
             </div>
             <div style={{ textAlign: 'center', padding: '24px 20px' }}>
               <div className="gradient-text" style={{ fontSize: '72px', fontWeight: '800', marginBottom: '12px', lineHeight: '1' }}>
                 {stats.completionRate}%
               </div>
-              <p style={{ color: '#6b7280', fontSize: '18px', fontWeight: '500' }}>
+              <p style={{ color: theme.textSecondary, fontSize: '18px', fontWeight: '500' }}>
                 🎯 {stats.completedLessons} of {stats.totalLessons} lessons completed
               </p>
             </div>
           </div>
 
           <div className="card glass-card" style={{ 
-            background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(251, 191, 36, 0.1) 100%)',
-            border: '1px solid rgba(245, 158, 11, 0.2)',
+            background: theme.cardBg,
+            border: `1px solid ${theme.border}`,
             animation: 'fadeIn 0.6s ease-out 0.2s backwards'
           }}>
             <div style={{ display: 'flex', alignItems: 'center', marginBottom: '24px', gap: '12px' }}>
@@ -89,12 +91,12 @@ function Analytics({ user }) {
               }}>
                 <Award size={28} style={{ color: 'white' }} />
               </div>
-              <h3 style={{ fontSize: '22px', fontWeight: '700', color: '#1f2937' }}>Performance</h3>
+              <h3 style={{ fontSize: '22px', fontWeight: '700', color: theme.text }}>Performance</h3>
             </div>
             <div style={{ padding: '20px' }}>
               <div style={{ marginBottom: '24px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px', alignItems: 'center' }}>
-                  <span style={{ color: '#6b7280', fontSize: '16px', fontWeight: '500' }}>Average Quiz Score</span>
+                  <span style={{ color: theme.textSecondary, fontSize: '16px', fontWeight: '500' }}>Average Quiz Score</span>
                   <span style={{ fontWeight: '800', fontSize: '28px', color: '#f59e0b' }}>{stats.averageScore}%</span>
                 </div>
                 <div className="progress-bar" style={{ height: '10px', background: 'rgba(245, 158, 11, 0.2)' }}>
@@ -123,9 +125,11 @@ function Analytics({ user }) {
 
         <div className="card glass-card" style={{ 
           marginBottom: '40px',
-          animation: 'fadeIn 0.6s ease-out 0.3s backwards'
+          animation: 'fadeIn 0.6s ease-out 0.3s backwards',
+          background: theme.cardBg,
+          border: `1px solid ${theme.border}`
         }}>
-          <h3 style={{ fontSize: '26px', fontWeight: '700', marginBottom: '28px', color: '#1f2937', display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <h3 style={{ fontSize: '26px', fontWeight: '700', marginBottom: '28px', color: theme.text, display: 'flex', alignItems: 'center', gap: '12px' }}>
             <span style={{ fontSize: '32px' }}>📊</span> Progress by Level
           </h3>
           <ResponsiveContainer width="100%" height={320}>
@@ -154,8 +158,8 @@ function Analytics({ user }) {
         </div>
 
         <div className="grid grid-2">
-          <div className="card">
-            <h3 style={{ fontSize: '24px', fontWeight: '600', marginBottom: '24px' }}>Level Distribution</h3>
+          <div className="card" style={{ background: theme.cardBg, border: `1px solid ${theme.border}` }}>
+            <h3 style={{ fontSize: '24px', fontWeight: '600', marginBottom: '24px', color: theme.text }}>Level Distribution</h3>
             <ResponsiveContainer width="100%" height={250}>
               <PieChart>
                 <Pie
@@ -177,24 +181,24 @@ function Analytics({ user }) {
             </ResponsiveContainer>
           </div>
 
-          <div className="card">
-            <h3 style={{ fontSize: '24px', fontWeight: '600', marginBottom: '24px' }}>Recent Activity</h3>
+          <div className="card" style={{ background: theme.cardBg, border: `1px solid ${theme.border}` }}>
+            <h3 style={{ fontSize: '24px', fontWeight: '600', marginBottom: '24px', color: theme.text }}>Recent Activity</h3>
             <div style={{ maxHeight: '300px', overflowY: 'auto' }}>
               {stats.recentActivity.map((activity, idx) => (
                 <div key={idx} style={{ 
                   padding: '12px', 
-                  borderBottom: '1px solid #e5e7eb',
+                  borderBottom: `1px solid ${theme.border}`,
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center'
                 }}>
                   <div>
-                    <p style={{ fontWeight: '600', marginBottom: '4px' }}>{activity.title}</p>
-                    <p style={{ fontSize: '14px', color: '#6b7280' }}>
+                    <p style={{ fontWeight: '600', marginBottom: '4px', color: theme.text }}>{activity.title}</p>
+                    <p style={{ fontSize: '14px', color: theme.textSecondary }}>
                       {activity.level} • Score: {activity.score}%
                     </p>
                   </div>
-                  <span style={{ fontSize: '12px', color: '#6b7280' }}>
+                  <span style={{ fontSize: '12px', color: theme.textSecondary }}>
                     {new Date(activity.completed_at).toLocaleDateString()}
                   </span>
                 </div>

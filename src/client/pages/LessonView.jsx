@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { ArrowLeft, CheckCircle, Clock } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
 
 function LessonView({ user }) {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { theme } = useTheme();
   const [lesson, setLesson] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -78,7 +80,7 @@ function LessonView({ user }) {
         display: 'flex', 
         alignItems: 'center', 
         justifyContent: 'center',
-        background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)'
+        background: theme.bg
       }}>
         <div style={{ textAlign: 'center' }}>
           <div style={{ 
@@ -90,7 +92,7 @@ function LessonView({ user }) {
             animation: 'spin 1s linear infinite',
             margin: '0 auto 20px'
           }}></div>
-          <p style={{ color: '#64748b', fontSize: '18px', fontWeight: '600' }}>Loading lesson...</p>
+          <p style={{ color: theme.textSecondary, fontSize: '18px', fontWeight: '600' }}>Loading lesson...</p>
         </div>
       </div>
     );
@@ -103,7 +105,7 @@ function LessonView({ user }) {
         display: 'flex', 
         alignItems: 'center', 
         justifyContent: 'center',
-        background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)'
+        background: theme.bg
       }}>
         <div style={{ textAlign: 'center', maxWidth: '400px', padding: '40px' }}>
           <div style={{ 
@@ -158,10 +160,10 @@ function LessonView({ user }) {
         display: 'flex', 
         alignItems: 'center', 
         justifyContent: 'center',
-        background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)'
+        background: theme.bg
       }}>
         <div style={{ textAlign: 'center' }}>
-          <p style={{ color: '#64748b', fontSize: '18px', fontWeight: '600' }}>Lesson not found</p>
+          <p style={{ color: theme.textSecondary, fontSize: '18px', fontWeight: '600' }}>Lesson not found</p>
           <button 
             onClick={() => navigate('/dashboard')}
             style={{
@@ -200,7 +202,7 @@ function LessonView({ user }) {
   }
 
   return (
-    <div style={{ minHeight: '100vh', background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)' }}>
+    <div style={{ minHeight: '100vh', background: theme.bg }}>
       <div className="container" style={{ paddingTop: '40px', maxWidth: '900px' }}>
         {/* Breadcrumb Navigation */}
         <div style={{ 
@@ -209,14 +211,14 @@ function LessonView({ user }) {
           gap: '8px', 
           marginBottom: '16px',
           fontSize: '14px',
-          color: '#64748b'
+          color: theme.textSecondary
         }}>
           <button 
             onClick={() => navigate('/dashboard')}
             style={{
               background: 'none',
               border: 'none',
-              color: '#64748b',
+              color: theme.textSecondary,
               cursor: 'pointer',
               fontSize: '14px',
               fontWeight: '500',
@@ -229,19 +231,19 @@ function LessonView({ user }) {
               e.target.style.background = 'rgba(59, 130, 246, 0.1)';
             }}
             onMouseLeave={(e) => {
-              e.target.style.color = '#64748b';
+              e.target.style.color = theme.textSecondary;
               e.target.style.background = 'none';
             }}
           >
             Dashboard
           </button>
-          <span style={{ color: '#cbd5e1' }}>›</span>
+          <span style={{ color: theme.border }}>›</span>
           <button 
             onClick={() => navigate(`/module/${lesson.module_number}`)}
             style={{
               background: 'none',
               border: 'none',
-              color: '#64748b',
+              color: theme.textSecondary,
               cursor: 'pointer',
               fontSize: '14px',
               fontWeight: '500',
@@ -254,13 +256,13 @@ function LessonView({ user }) {
               e.target.style.background = 'rgba(59, 130, 246, 0.1)';
             }}
             onMouseLeave={(e) => {
-              e.target.style.color = '#64748b';
+              e.target.style.color = theme.textSecondary;
               e.target.style.background = 'none';
             }}
           >
             Module {lesson.module_number}
           </button>
-          <span style={{ color: '#cbd5e1' }}>›</span>
+          <span style={{ color: theme.border }}>›</span>
           <span style={{ color: '#3b82f6', fontWeight: '600' }}>{lesson.title}</span>
         </div>
 
@@ -269,7 +271,7 @@ function LessonView({ user }) {
           Back to Module {lesson.module_number}
         </button>
 
-        <div className="card glass-card" style={{ animation: 'fadeIn 0.6s ease-out', background: 'rgba(255, 255, 255, 0.95)', backdropFilter: 'blur(20px)' }}>
+        <div className="card glass-card" style={{ animation: 'fadeIn 0.6s ease-out', background: theme.cardBg, backdropFilter: 'blur(20px)', border: `1px solid ${theme.border}` }}>
           <div style={{ marginBottom: '28px', display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
             <span className={`badge badge-${lesson.level}`} style={{
               background: `linear-gradient(135deg, ${lesson.level === 'beginner' ? '#3b82f6' : lesson.level === 'intermediate' ? '#f59e0b' : '#ec4899'} 0%, ${lesson.level === 'beginner' ? '#2563eb' : lesson.level === 'intermediate' ? '#d97706' : '#db2777'} 100%)`,
@@ -282,7 +284,7 @@ function LessonView({ user }) {
             }}>
               {lesson.level.toUpperCase()}
             </span>
-            <span style={{ color: '#6b7280', fontSize: '15px', fontWeight: '500' }}>
+            <span style={{ color: theme.textSecondary, fontSize: '15px', fontWeight: '500' }}>
               📚 Module {lesson.module_number} • Lesson {lesson.lesson_number}
             </span>
           </div>
@@ -294,8 +296,8 @@ function LessonView({ user }) {
             <span style={{ color: '#667eea', fontWeight: '600', fontSize: '16px' }}>{lesson.estimated_time} minutes</span>
           </div>
 
-          <div style={{ fontSize: '18px', lineHeight: '1.9', marginBottom: '40px', color: '#374151' }}>
-            <h2 style={{ fontSize: '28px', fontWeight: '700', marginBottom: '20px', color: '#1f2937', display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <div style={{ fontSize: '18px', lineHeight: '1.9', marginBottom: '40px', color: theme.textSecondary }}>
+            <h2 style={{ fontSize: '28px', fontWeight: '700', marginBottom: '20px', color: theme.text, display: 'flex', alignItems: 'center', gap: '10px' }}>
               <span style={{ fontSize: '32px' }}>📖</span> Lesson Content
             </h2>
             <p style={{ background: 'rgba(102, 126, 234, 0.05)', padding: '24px', borderRadius: '16px', borderLeft: '4px solid #667eea' }}>{lesson.content}</p>
@@ -303,13 +305,13 @@ function LessonView({ user }) {
 
           {examples.length > 0 && (
             <div style={{ marginBottom: '40px' }}>
-              <h2 style={{ fontSize: '28px', fontWeight: '700', marginBottom: '20px', color: '#1f2937', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <h2 style={{ fontSize: '28px', fontWeight: '700', marginBottom: '20px', color: theme.text, display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <span style={{ fontSize: '32px' }}>💡</span> Real-World Examples
               </h2>
               <div style={{ background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(251, 191, 36, 0.05) 100%)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(245, 158, 11, 0.2)' }}>
                 <ul style={{ paddingLeft: '24px', lineHeight: '2.2', margin: 0 }}>
                   {examples.map((example, idx) => (
-                    <li key={idx} style={{ fontSize: '17px', color: '#374151', marginBottom: '12px' }}>{example}</li>
+                    <li key={idx} style={{ fontSize: '17px', color: theme.textSecondary, marginBottom: '12px' }}>{example}</li>
                   ))}
                 </ul>
               </div>
@@ -318,7 +320,7 @@ function LessonView({ user }) {
 
           {practiceProblems.length > 0 && (
             <div style={{ marginBottom: '40px' }}>
-              <h2 style={{ fontSize: '28px', fontWeight: '700', marginBottom: '20px', color: '#1f2937', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <h2 style={{ fontSize: '28px', fontWeight: '700', marginBottom: '20px', color: theme.text, display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <span style={{ fontSize: '32px' }}>✏️</span> Practice Problems
               </h2>
               <div style={{ background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(52, 211, 153, 0.05) 100%)', padding: '24px', borderRadius: '16px', border: '1px solid rgba(16, 185, 129, 0.2)' }}>
@@ -326,11 +328,12 @@ function LessonView({ user }) {
                   <div key={idx} style={{ 
                     marginBottom: idx < practiceProblems.length - 1 ? '20px' : '0',
                     padding: '16px',
-                    background: 'white',
+                    background: theme.cardBg,
                     borderRadius: '12px',
-                    boxShadow: '0 2px 8px rgba(0,0,0,0.05)'
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+                    border: `1px solid ${theme.border}`
                   }}>
-                    <p style={{ fontSize: '17px', fontWeight: '600', color: '#374151', margin: 0 }}>
+                    <p style={{ fontSize: '17px', fontWeight: '600', color: theme.textSecondary, margin: 0 }}>
                       <span style={{ 
                         display: 'inline-block',
                         width: '28px',

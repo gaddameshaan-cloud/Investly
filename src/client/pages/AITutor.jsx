@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Send, MessageSquare, Plus, Trash2, Menu, X, Home, TrendingUp, Sparkles } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
 
 function AITutor({ user }) {
   const navigate = useNavigate();
+  const { darkMode, theme } = useTheme();
   const [conversations, setConversations] = useState([]);
   const [currentConversationId, setCurrentConversationId] = useState(null);
   const [messages, setMessages] = useState([]);
@@ -179,23 +181,23 @@ function AITutor({ user }) {
     <div style={{ 
       display: 'flex', 
       height: '100vh', 
-      background: '#f7f7f8',
+      background: darkMode ? '#1a1a1a' : '#f7f7f8',
       overflow: 'hidden'
     }}>
       {/* Sidebar */}
       <div style={{
         width: sidebarOpen ? '280px' : '0',
-        background: '#0f172a',
+        background: darkMode ? '#2d2d2d' : '#0f172a',
         transition: 'width 0.3s ease',
         overflow: 'hidden',
         display: 'flex',
         flexDirection: 'column',
-        borderRight: '1px solid rgba(59, 130, 246, 0.2)'
+        borderRight: `1px solid ${darkMode ? '#404040' : 'rgba(59, 130, 246, 0.2)'}`
       }}>
         {/* Sidebar Header */}
         <div style={{ 
           padding: '16px',
-          borderBottom: '1px solid rgba(59, 130, 246, 0.2)'
+          borderBottom: `1px solid ${darkMode ? '#404040' : 'rgba(59, 130, 246, 0.2)'}`
         }}>
           <button
             onClick={startNewConversation}
@@ -269,7 +271,7 @@ function AITutor({ user }) {
               }}>
                 <MessageSquare size={16} style={{ color: '#3b82f6', flexShrink: 0 }} />
                 <span style={{ 
-                  color: 'white',
+                  color: darkMode ? '#e5e7eb' : 'white',
                   fontSize: '14px',
                   overflow: 'hidden',
                   textOverflow: 'ellipsis',
@@ -303,7 +305,7 @@ function AITutor({ user }) {
         {/* Sidebar Footer */}
         <div style={{ 
           padding: '16px',
-          borderTop: '1px solid rgba(59, 130, 246, 0.2)'
+          borderTop: `1px solid ${darkMode ? '#404040' : 'rgba(59, 130, 246, 0.2)'}`
         }}>
           <button
             onClick={() => navigate('/dashboard')}
@@ -336,13 +338,13 @@ function AITutor({ user }) {
         flex: 1, 
         display: 'flex', 
         flexDirection: 'column',
-        background: '#f7f7f8'
+        background: darkMode ? '#1a1a1a' : '#f7f7f8'
       }}>
         {/* Top Bar */}
         <div style={{
           padding: '16px 24px',
-          background: 'white',
-          borderBottom: '1px solid #e5e7eb',
+          background: darkMode ? '#2d2d2d' : 'white',
+          borderBottom: `1px solid ${darkMode ? '#404040' : '#e5e7eb'}`,
           display: 'flex',
           alignItems: 'center',
           gap: '16px'
@@ -352,7 +354,7 @@ function AITutor({ user }) {
             style={{
               background: 'none',
               border: 'none',
-              color: '#6b7280',
+              color: darkMode ? '#9ca3af' : '#6b7280',
               cursor: 'pointer',
               padding: '8px',
               display: 'flex',
@@ -366,7 +368,7 @@ function AITutor({ user }) {
               margin: 0, 
               fontSize: '18px', 
               fontWeight: '600',
-              color: '#0f172a',
+              color: darkMode ? '#f1f5f9' : '#0f172a',
               display: 'flex',
               alignItems: 'center',
               gap: '10px'
@@ -387,10 +389,10 @@ function AITutor({ user }) {
             </h2>
           </div>
           <span style={{ 
-            color: '#6b7280', 
+            color: darkMode ? '#9ca3af' : '#6b7280', 
             fontSize: '14px',
             padding: '6px 12px',
-            background: '#f3f4f6',
+            background: darkMode ? '#374151' : '#f3f4f6',
             borderRadius: '6px'
           }}>
             {user.name}
@@ -434,14 +436,14 @@ function AITutor({ user }) {
               <h1 style={{ 
                 fontSize: '32px', 
                 fontWeight: '700',
-                color: '#0f172a',
+                color: darkMode ? '#f1f5f9' : '#0f172a',
                 marginBottom: '12px'
               }}>
                 Welcome to AI Finance Tutor
               </h1>
               <p style={{ 
                 fontSize: '16px',
-                color: '#6b7280',
+                color: darkMode ? '#9ca3af' : '#6b7280',
                 marginBottom: '32px',
                 lineHeight: '1.6'
               }}>
@@ -467,8 +469,8 @@ function AITutor({ user }) {
                     onClick={() => handleQuickPrompt(item.prompt)}
                     style={{
                       padding: '16px',
-                      background: 'white',
-                      border: '1px solid #e5e7eb',
+                      background: darkMode ? '#374151' : 'white',
+                      border: `1px solid ${darkMode ? '#4b5563' : '#e5e7eb'}`,
                       borderRadius: '12px',
                       cursor: 'pointer',
                       textAlign: 'left',
@@ -482,7 +484,7 @@ function AITutor({ user }) {
                       e.target.style.boxShadow = '0 4px 12px rgba(59, 130, 246, 0.15)';
                     }}
                     onMouseLeave={(e) => {
-                      e.target.style.borderColor = '#e5e7eb';
+                      e.target.style.borderColor = darkMode ? '#4b5563' : '#e5e7eb';
                       e.target.style.boxShadow = 'none';
                     }}
                   >
@@ -490,7 +492,7 @@ function AITutor({ user }) {
                     <span style={{ 
                       fontSize: '14px',
                       fontWeight: '500',
-                      color: '#374151'
+                      color: darkMode ? '#e5e7eb' : '#374151'
                     }}>
                       {item.text}
                     </span>
@@ -533,7 +535,7 @@ function AITutor({ user }) {
                     <div style={{
                       fontSize: '14px',
                       fontWeight: '600',
-                      color: '#0f172a',
+                      color: darkMode ? '#f1f5f9' : '#0f172a',
                       marginBottom: '8px'
                     }}>
                       {msg.role === 'user' ? 'You' : 'AI Tutor'}
@@ -541,7 +543,7 @@ function AITutor({ user }) {
                     <div style={{
                       fontSize: '15px',
                       lineHeight: '1.7',
-                      color: '#374151',
+                      color: darkMode ? '#d1d5db' : '#374151',
                       whiteSpace: 'pre-wrap'
                     }}>
                       {msg.content}
@@ -573,7 +575,7 @@ function AITutor({ user }) {
                     <div style={{
                       fontSize: '14px',
                       fontWeight: '600',
-                      color: '#0f172a',
+                      color: darkMode ? '#f1f5f9' : '#0f172a',
                       marginBottom: '8px'
                     }}>
                       AI Tutor
@@ -612,8 +614,8 @@ function AITutor({ user }) {
         {/* Input Area */}
         <div style={{
           padding: '20px 24px',
-          background: 'white',
-          borderTop: '1px solid #e5e7eb'
+          background: darkMode ? '#2d2d2d' : 'white',
+          borderTop: `1px solid ${darkMode ? '#404040' : '#e5e7eb'}`
         }}>
           <div style={{ 
             maxWidth: '800px',
@@ -643,17 +645,19 @@ function AITutor({ user }) {
                   width: '100%',
                   padding: '14px 16px',
                   fontSize: '15px',
-                  border: '1px solid #e5e7eb',
+                  border: `1px solid ${darkMode ? '#4b5563' : '#e5e7eb'}`,
                   borderRadius: '12px',
                   resize: 'none',
                   fontFamily: 'inherit',
                   outline: 'none',
                   transition: 'all 0.2s',
                   minHeight: '52px',
-                  maxHeight: '200px'
+                  maxHeight: '200px',
+                  background: darkMode ? '#374151' : 'white',
+                  color: darkMode ? '#f1f5f9' : '#1f2937'
                 }}
                 onFocus={(e) => e.target.style.borderColor = '#3b82f6'}
-                onBlur={(e) => e.target.style.borderColor = '#e5e7eb'}
+                onBlur={(e) => e.target.style.borderColor = darkMode ? '#4b5563' : '#e5e7eb'}
               />
             </div>
             <button
@@ -663,9 +667,9 @@ function AITutor({ user }) {
                 width: '52px',
                 height: '52px',
                 background: loading || !input.trim()
-                  ? '#e5e7eb'
+                  ? (darkMode ? '#4b5563' : '#e5e7eb')
                   : 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
-                color: loading || !input.trim() ? '#9ca3af' : 'white',
+                color: loading || !input.trim() ? (darkMode ? '#9ca3af' : '#9ca3af') : 'white',
                 border: 'none',
                 borderRadius: '12px',
                 cursor: loading || !input.trim() ? 'not-allowed' : 'pointer',
@@ -699,7 +703,7 @@ function AITutor({ user }) {
           <p style={{
             textAlign: 'center',
             fontSize: '12px',
-            color: '#9ca3af',
+            color: darkMode ? '#9ca3af' : '#9ca3af',
             marginTop: '12px',
             marginBottom: 0
           }}>

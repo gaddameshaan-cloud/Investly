@@ -79,7 +79,8 @@ router.post('/register', async (req, res) => {
       user: {
         id: userData.id,
         email: userData.email,
-        name: userData.name
+        name: userData.name,
+        date_of_birth: userData.date_of_birth
       },
       token
     })
@@ -102,7 +103,7 @@ router.post('/login', async (req, res) => {
     // Get user from Supabase (optimized query)
     const { data: userData, error: userError } = await supabaseAdmin
       .from('users')
-      .select('id, email, name, password')
+      .select('id, email, name, password, date_of_birth')
       .eq('email', email)
       .maybeSingle()
 
@@ -128,7 +129,8 @@ router.post('/login', async (req, res) => {
       user: {
         id: userData.id,
         email: userData.email,
-        name: userData.name
+        name: userData.name,
+        date_of_birth: userData.date_of_birth
       },
       token
     })
@@ -153,7 +155,7 @@ router.get('/me', async (req, res) => {
     // Get user from Supabase
     const { data: userData, error: userError } = await supabaseAdmin
       .from('users')
-      .select('id, email, name, email_verified')
+      .select('id, email, name, email_verified, date_of_birth')
       .eq('id', decoded.id)
       .single()
 
