@@ -382,7 +382,7 @@ function AuthPage({ onLogin }) {
                 />
               </div>
               
-              <div style={{ marginBottom: '32px' }}>
+              <div style={{ marginBottom: isLogin ? '20px' : '32px' }}>
                 <input
                   type="password"
                   placeholder="Password"
@@ -401,6 +401,23 @@ function AuthPage({ onLogin }) {
                     fontWeight: '500'
                   }}
                 />
+                {isLogin && (
+                  <div style={{ textAlign: 'right', marginTop: '8px' }}>
+                    <Link 
+                      to="/forgot-password"
+                      style={{
+                        color: '#3b82f6',
+                        textDecoration: 'none',
+                        fontSize: '14px',
+                        fontWeight: '600'
+                      }}
+                      onMouseEnter={(e) => e.target.style.textDecoration = 'underline'}
+                      onMouseLeave={(e) => e.target.style.textDecoration = 'none'}
+                    >
+                      Forgot password?
+                    </Link>
+                  </div>
+                )}
               </div>
 
               {!isLogin && (
