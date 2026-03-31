@@ -69,7 +69,8 @@ router.post('/register', async (req, res) => {
       .single()
 
     if (userError) {
-      return res.status(500).json({ error: 'Failed to create user' })
+      console.error('Supabase user creation error:', userError)
+      return res.status(500).json({ error: 'Failed to create user', details: userError.message })
     }
 
     // Generate JWT token
