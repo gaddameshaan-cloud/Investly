@@ -320,14 +320,6 @@ NODE_ENV=production
 - Offline mode
 - Push notifications for study reminders
 
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
 ## 👥 Support
 
 For questions or support, please open an issue on GitHub.
