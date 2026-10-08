@@ -1,7 +1,7 @@
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = process.env.SUPABASE_URL || 'https://omiyrlxvvvmeenxbrnor.supabase.co'
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9taXlybHh2dnZtZWVueGJybm9yIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2Njc3NDU4MSwiZXhwIjoyMDgyMzUwNTgxfQ.HVUDgthS79-mUIM3CwLQiFmfH2-LHDreAGpITz15Ok0'
+const supabaseUrl = process.env.SUPABASE_URL
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
 
 // Server-side client with service role key for admin operations (optimized)
 export const supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey, {
@@ -28,7 +28,7 @@ export const supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey, {
 // Regular client for user operations (optimized)
 export const supabase = createClient(
   supabaseUrl, 
-  process.env.SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9taXlybHh2dnZtZWVueGJybm9yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjY3NzQ1ODEsImV4cCI6MjA4MjM1MDU4MX0.1VO_ioLyqcOZ8ejYz3fFrmKAKHXWvRSPOwurOFomV7A',
+  process.env.SUPABASE_ANON_KEY,
   {
     auth: {
       autoRefreshToken: false,

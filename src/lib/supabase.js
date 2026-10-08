@@ -1,7 +1,7 @@
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'https://omiyrlxvvvmeenxbrnor.supabase.co'
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9taXlybHh2dnZtZWVueGJybm9yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjY3NzQ1ODEsImV4cCI6MjA4MjM1MDU4MX0.1VO_ioLyqcOZ8ejYz3fFrmKAKHXWvRSPOwurOFomV7A'
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
 
 // Direct frontend Supabase client - bypasses backend entirely
 export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
