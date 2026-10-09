@@ -52,17 +52,17 @@ function QuizView({ user }) {
           {
             question: "What is the primary function of money?",
             options: ["Store of value", "Medium of exchange", "Unit of account", "All of the above"],
-            correct: 3
+            correct_answer: 3
           },
           {
             question: "What does compound interest mean?",
             options: ["Interest on principal only", "Interest on interest", "Fixed interest rate", "Variable interest rate"],
-            correct: 1
+            correct_answer: 1
           },
           {
             question: "What is diversification?",
             options: ["Putting all money in one stock", "Spreading investments across different assets", "Only investing in bonds", "Avoiding the stock market"],
-            correct: 1
+            correct_answer: 1
           }
         ];
       }
@@ -78,17 +78,17 @@ function QuizView({ user }) {
         {
           question: "What is the primary function of money?",
           options: ["Store of value", "Medium of exchange", "Unit of account", "All of the above"],
-          correct: 3
+          correct_answer: 3
         },
         {
           question: "What does compound interest mean?",
           options: ["Interest on principal only", "Interest on interest", "Fixed interest rate", "Variable interest rate"],
-          correct: 1
+          correct_answer: 1
         },
         {
           question: "What is diversification?",
           options: ["Putting all money in one stock", "Spreading investments across different assets", "Only investing in bonds", "Avoiding the stock market"],
-          correct: 1
+          correct_answer: 1
         }
       ]);
     } finally {
@@ -103,7 +103,7 @@ function QuizView({ user }) {
   const handleSubmit = async () => {
     let correct = 0;
     questions.forEach((q, idx) => {
-      if (answers[idx] === q.correct) correct++;
+      if (answers[idx] === q.correct_answer) correct++;
     });
     
     const finalScore = Math.round((correct / questions.length) * 100);

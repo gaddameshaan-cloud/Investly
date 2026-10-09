@@ -1,83 +1,51 @@
-// Complete curriculum with all 90 lessons across 10 modules
-export const curriculumData = [
-  // Module 1: How Money & Markets Work (Beginner)
-  {
+﻿// Complete curriculum with all 90 lessons across 10 modules
+export const curriculumData = [  {
     title: "What Is Money?",
     level: "beginner",
     module_number: 1,
     lesson_number: 1,
-    content: "Money is any item or verifiable record that is generally accepted as payment for goods and services and repayment of debts. The main functions of money are distinguished as: a medium of exchange, a unit of account, a store of value, and sometimes a standard of deferred payment. Throughout history, money has taken many forms including commodity money, representative money, and fiat money.",
-    examples: JSON.stringify([
-      "US Dollar bills serve as a medium of exchange",
-      "Prices listed in dollars show money as unit of account",
-      "Savings accounts store value over time",
-      "Credit allows deferred payment"
-    ]),
-    practice_problems: JSON.stringify([
-      "Identify the three main functions of money in daily transactions",
-      "Explain why barter systems were replaced by money",
-      "Give examples of commodity money from history"
-    ]),
-    estimated_time: 15,
+    content: "Money is one of the most important inventions in human history. Before money existed, people relied on barter — trading goods and services directly with one another. Barter worked when two parties each had what the other wanted, but it quickly broke down as economies grew more complex. Money solved this problem by acting as a universally accepted medium of exchange.\n\nMoney performs three essential functions. First, it is a medium of exchange, meaning people accept it as payment for goods and services without needing to barter. Second, it is a unit of account, providing a standard measure for comparing the value of different things. Third, it is a store of value, allowing people to save purchasing power for future use. A farmer who harvests crops can convert them to money and spend that money months later.\n\nThroughout history, money has taken many forms. Early civilizations used commodity money — things with inherent value like grain, cattle, salt, and precious metals. Gold and silver coins became dominant because they were durable, divisible, portable, and relatively scarce. Over time, paper currency backed by gold emerged, and eventually fiat money — currency declared legal tender by government decree, not backed by any physical commodity — became the global standard.\n\nToday, the US dollar, euro, and most world currencies are fiat money. Their value comes from trust — the public\'s confidence that others will accept them. Central banks like the Federal Reserve manage the supply of money to maintain stability. When too much money chases too few goods, prices rise (inflation); when too little money circulates, economic activity slows.\n\nUnderstanding what money is and how it works is the foundation for understanding everything else in personal finance and investing. Money is not wealth in itself — it is a tool. The goal is to use that tool effectively to build real wealth over time.",
+    examples: JSON.stringify(["Gold coins used as currency in ancient Rome — durable, divisible, portable", "US dollar as fiat money — value backed by government trust, not gold since 1971", "Bitcoin as a digital form of money — scarce, divisible, no central authority", "Salt used as currency in ancient trade routes — origin of the word salary", "Tobacco used as currency in early colonial America", "Mobile payments like Apple Pay as modern digital money"]),
+    practice_problems: JSON.stringify(["Explain how the three functions of money each solve a specific problem with barter systems.", "If inflation is 5% per year, how much would $1,000 worth of goods cost in 10 years?", "Compare commodity money (gold) to fiat money (US dollar). What are the advantages and risks of each?", "Why do people trust fiat money even though it has no intrinsic value? What could cause that trust to break down?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What are the main functions of money?",
-        options: ["Buy and sell", "Medium of exchange, unit of account, store of value", "Save and spend", "Earn and invest"],
-        correct_answer: 1
-      }
+      { question: "Which of the following is NOT one of the three main functions of money?", options: ["Medium of exchange", "Store of value", "Source of credit", "Unit of account"], correct_answer: 2 },
+      { question: "What is fiat money?", options: ["Currency backed by gold reserves", "Currency issued by private banks", "Currency declared legal tender by government decree", "Currency made of precious metals"], correct_answer: 2 },
+      { question: "Which historical problem did money primarily solve?", options: ["Preventing government spending", "The inefficiency of barter systems", "Controlling inflation", "Eliminating poverty"], correct_answer: 1 },
+      { question: "What does it mean for money to be a unit of account?", options: ["It can be saved for future use", "It provides a standard measure for comparing the value of things", "It is accepted as payment everywhere", "It is controlled by the government"], correct_answer: 1 },
+      { question: "Why did gold become widely used as money historically?", options: ["Governments forced people to use it", "It was durable, divisible, portable, and relatively scarce", "It was easy to mine in large quantities", "It had no industrial uses"], correct_answer: 1 }
     ]
-  },
-  {
+  },  {
     title: "Why Inflation Exists",
-    level: "beginner", 
+    level: "beginner",
     module_number: 1,
     lesson_number: 2,
-    content: "Inflation is a general increase in prices and fall in the purchasing value of money. It occurs when the supply of money increases faster than the supply of goods and services. Central banks attempt to limit inflation and avoid deflation to keep the economy running smoothly. Moderate inflation is considered healthy for economic growth.",
-    examples: JSON.stringify([
-      "Coffee that cost $1 in 2000 costs $2 today",
-      "Federal Reserve targets 2% annual inflation",
-      "Wages typically rise with inflation over time",
-      "Fixed-rate loans become cheaper with inflation"
-    ]),
-    practice_problems: JSON.stringify([
-      "Calculate how $100 loses purchasing power with 3% annual inflation",
-      "Explain why moderate inflation encourages spending",
-      "Identify who benefits and who loses from inflation"
-    ]),
-    estimated_time: 18,
+    content: "Inflation is the sustained increase in the general price level of goods and services over time. When inflation is present, each dollar you hold buys less than it did before. A coffee that cost $1.00 in 2000 might cost $2.50 today — that difference is the cumulative effect of inflation. Understanding why inflation exists is critical because it affects everything from how you save money to how you invest it.\n\nInflation arises from several causes. The most common is demand-pull inflation, which occurs when too much money chases too few goods. When consumers have more spending power — due to wage increases, government stimulus, or easy credit — they bid up prices. A second cause is cost-push inflation, where the cost of producing goods rises and businesses pass those costs on to consumers. A third driver is when a central bank increases the money supply faster than economic output grows.\n\nThe US Federal Reserve targets approximately 2% annual inflation. This target is not arbitrary — a small, predictable amount of inflation encourages spending and investment today rather than waiting for lower prices tomorrow. Deflation (falling prices) sounds good but is actually dangerous: when prices fall, consumers delay purchases expecting further declines, which reduces economic activity and can spiral into a depression.\n\nInflation is measured using indexes. The Consumer Price Index (CPI) tracks the cost of a basket of common goods and services — housing, food, transportation, healthcare — and calculates how that cost changes over time. The Personal Consumption Expenditures (PCE) price index is another key measure that the Federal Reserve prefers.\n\nFor personal finance, inflation means your money must work harder just to maintain its value. A savings account earning 1% annually while inflation runs at 3% means your real purchasing power is declining by 2% per year. This is why simply saving money is not enough — you must invest to stay ahead of inflation. Assets like stocks, real estate, and inflation-protected bonds have historically provided returns that exceed inflation over long periods.",
+    examples: JSON.stringify(["US annual inflation averaged about 3.8% from 1960 to 2023, meaning $100 in 1960 needs about $1,000 today to buy the same things", "2022 US inflation peaked at 9.1% — highest in 40 years — largely driven by energy costs and supply chain disruptions", "Federal Reserve 2% inflation target: if met, prices double roughly every 36 years", "Hyperinflation in Zimbabwe (2008): prices doubled every 24 hours at peak", "A basket of groceries costing $100 in 2015 cost about $140 by 2023", "TIPS (Treasury Inflation-Protected Securities): bonds that automatically adjust principal with inflation"]),
+    practice_problems: JSON.stringify(["If inflation averages 3% per year, how much will a $50,000 car cost in 15 years? Use: Future Value = PV x (1 + r)^n", "Your savings account earns 1.5% APY and inflation is 3.2%. What is your real return? Who benefits and who loses?", "Research the CPI basket. What categories have the highest weightings? Why might your personal inflation rate differ from the official CPI?", "Compare how inflation affects: someone holding cash, someone with a 30-year fixed mortgage, and a retiree on a fixed pension."]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What causes inflation?",
-        options: ["Falling prices", "Money supply growing faster than goods/services", "Decreased demand", "Lower wages"],
-        correct_answer: 1
-      }
+      { question: "What is demand-pull inflation?", options: ["Rising production costs pushing prices up", "Too much money chasing too few goods", "Government printing money directly", "Foreign countries raising export prices"], correct_answer: 1 },
+      { question: "Why does the Federal Reserve target 2% inflation rather than 0%?", options: ["To help banks profit more", "To fund government spending", "To encourage spending now and give room to cut rates in recessions", "Because 0% is mathematically impossible"], correct_answer: 2 },
+      { question: "If inflation is 4% and your savings account earns 1.5%, what is happening to your purchasing power?", options: ["Growing by 5.5%", "Shrinking by 2.5%", "Staying the same", "Growing by 1.5%"], correct_answer: 1 },
+      { question: "What index does the Federal Reserve primarily prefer for measuring inflation?", options: ["Dow Jones Industrial Average", "Consumer Price Index (CPI)", "Personal Consumption Expenditures (PCE)", "GDP Deflator"], correct_answer: 2 },
+      { question: "Why is deflation (falling prices) considered economically dangerous?", options: ["It makes imports cheaper", "Consumers delay purchases expecting lower prices, slowing economic activity", "It increases government tax revenue", "It reduces the value of stocks directly"], correct_answer: 1 }
     ]
-  }
-,
-  {
+  },  {
     title: "How Interest Works",
     level: "beginner",
     module_number: 1,
     lesson_number: 3,
-    content: "Interest is payment from a borrower or deposit-taking financial institution to a lender or depositor of an amount above repayment of the principal sum. Simple interest is calculated only on the principal amount, while compound interest is calculated on the principal plus previously earned interest. Understanding interest is crucial for both borrowing and investing decisions.",
-    examples: JSON.stringify([
-      "Savings account earning 2% annual interest",
-      "Credit card charging 18% APR on balances",
-      "Mortgage loan at 4% fixed rate for 30 years",
-      "Compound interest doubling money over time"
-    ]),
-    practice_problems: JSON.stringify([
-      "Calculate simple interest on $1000 at 5% for 3 years",
-      "Compare simple vs compound interest over 10 years",
-      "Determine monthly payment on a $200,000 mortgage"
-    ]),
+    content: "Interest is the cost of borrowing money, or the reward for lending it. When you deposit money in a bank, the bank pays you interest because it is effectively borrowing your money to lend to others. When you take out a loan, you pay interest to the lender for the privilege of using their money. Interest is how capital flows through the economy.\n\nThere are two fundamental types of interest: simple and compound. Simple interest is calculated only on the original principal. If you deposit $1,000 at 5% simple interest per year, you earn $50 each year. After 10 years, you have $1,500. Compound interest is calculated on the principal plus all previously accumulated interest. The same $1,000 at 5% compounded annually grows to $1,629 after 10 years because each year\'s interest earns interest in subsequent years.\n\nCompound interest is one of the most powerful forces in finance. The more frequently interest compounds — annually, quarterly, monthly, or daily — the faster your money grows. Banks typically compound savings account interest daily. Credit card interest also compounds, which is why carrying a balance is so costly. A $5,000 balance at 20% APR with minimum payments can take over 15 years to pay off and cost more than $10,000 in total interest.\n\nInterest rates are expressed as Annual Percentage Rate (APR) for borrowing and Annual Percentage Yield (APY) for savings. APY accounts for compounding frequency and is always higher than or equal to APR for the same nominal rate. When shopping for loans, compare APR; when comparing savings accounts, compare APY.\n\nInterest rates in the broader economy are heavily influenced by the Federal Reserve\'s benchmark federal funds rate. When the Fed raises rates, borrowing becomes more expensive throughout the economy — mortgage rates rise, car loan rates rise, and credit card rates increase. Minimizing interest paid on debt and maximizing interest earned on investments is one of the most reliable paths to building wealth.",
+    examples: JSON.stringify(["Simple interest: $1,000 at 5% for 3 years = $1,150 total", "Compound interest: $1,000 at 5% compounded annually for 10 years = $1,629", "Credit card at 20% APR: $5,000 balance costs thousands in interest with minimum payments", "30-year mortgage at 7%: $300,000 loan results in roughly $419,000 in total interest paid", "High-yield savings at 4.5% APY vs big-bank savings at 0.01% — massive difference over years", "Rule of 72: divide 72 by the interest rate to find years to double money (72 / 6% = 12 years)"]),
+    practice_problems: JSON.stringify(["Calculate simple interest on $2,500 at 4% for 5 years. Then calculate compound interest on the same amount. What is the difference?", "You have $8,000 in credit card debt at 22% APR. If you pay $200 per month, roughly how long will it take to pay off?", "Compare a savings account at 0.05% APY versus a high-yield savings account at 4.5% APY on $10,000 over 5 years.", "Use the Rule of 72 to estimate how long it takes to double money at 4%, 7%, and 10% annual return."]),
     estimated_time: 20,
     quiz: [
-      {
-        question: "What is compound interest?",
-        options: ["Interest on principal only", "Interest on principal plus previous interest", "Fixed interest rate", "Government interest"],
-        correct_answer: 1
-      }
+      { question: "How is compound interest different from simple interest?", options: ["Compound interest is always lower", "Compound interest is calculated on principal plus accumulated interest", "Simple interest grows faster over time", "Compound interest is only used for mortgages"], correct_answer: 1 },
+      { question: "Using the Rule of 72, how long does it take to double your money at 8% annual return?", options: ["8 years", "9 years", "12 years", "16 years"], correct_answer: 1 },
+      { question: "What is the difference between APR and APY?", options: ["APR accounts for compounding; APY does not", "APY accounts for compounding; APR is the simple nominal rate", "They are always identical", "APR is used for savings; APY is used for loans"], correct_answer: 1 },
+      { question: "If the Federal Reserve raises interest rates, what typically happens to mortgage rates?", options: ["They fall because borrowing is encouraged", "They rise because borrowing becomes more expensive", "They stay the same", "They become fixed automatically"], correct_answer: 1 },
+      { question: "You invest $500 at 6% compounded annually. After 2 years, approximately how much do you have?", options: ["$560", "$562", "$600", "$530"], correct_answer: 1 }
     ]
   },
   {
@@ -85,25 +53,16 @@ export const curriculumData = [
     level: "beginner",
     module_number: 1,
     lesson_number: 4,
-    content: "The financial system consists of institutions, markets, and instruments that facilitate the flow of funds in an economy. It includes banks, insurance companies, pension funds, mutual funds, and stock exchanges. The system helps channel savings into productive investments, manages risk, and provides payment mechanisms for economic transactions.",
-    examples: JSON.stringify([
-      "Banks accepting deposits and making loans",
-      "Stock exchanges facilitating company fundraising",
-      "Insurance companies pooling and managing risk",
-      "Payment systems processing transactions"
-    ]),
-    practice_problems: JSON.stringify([
-      "Trace how your bank deposit becomes a business loan",
-      "Explain the role of financial intermediaries",
-      "Identify different types of financial institutions"
-    ]),
-    estimated_time: 22,
+    content: "The financial system is the network of institutions, markets, contracts, and regulations that channels money from those who have it to those who need it. It is the circulatory system of any modern economy — without it, businesses could not fund expansion, governments could not finance infrastructure, and individuals could not buy homes or cars on credit.\n\nThe financial system operates through three main channels. Financial intermediaries such as commercial banks, credit unions, insurance companies, and pension funds pool funds from many savers and deploy them as loans and investments. Financial markets — including stock exchanges, bond markets, and foreign exchange markets — allow buyers and sellers to trade financial instruments directly. Financial infrastructure, including payment systems and clearinghouses, ensures transactions settle safely and efficiently.\n\nBanks sit at the heart of the financial system. When you deposit money, the bank holds a fraction in reserve and lends the rest out. This is called fractional reserve banking. A single $1,000 deposit can ultimately support several thousand dollars in loans as money is deposited, lent, and re-deposited across the banking system — this is the money multiplier effect.\n\nFinancial markets serve a complementary role. The stock market allows companies to raise equity capital by selling ownership stakes to the public. The bond market allows governments and corporations to borrow directly from investors. These markets provide price discovery — a mechanism for determining what things are worth based on supply and demand.\n\nThe financial system is heavily regulated because its failure can devastate entire economies. The 2008 financial crisis demonstrated this clearly: the collapse of mortgage-backed securities triggered a global recession. Regulatory bodies like the SEC, FDIC, and Federal Reserve exist to maintain stability, protect consumers, and prevent systemic collapse.",
+    examples: JSON.stringify(["Commercial bank: accepts deposits, makes mortgage and business loans through fractional reserve banking", "NYSE stock exchange: companies like Apple raise billions by selling shares to millions of investors", "US Treasury bond market: the government borrows trillions from investors worldwide", "Federal Reserve: controls the federal funds rate, influencing all borrowing costs in the economy", "Insurance companies: pool premiums from millions of policyholders to pay claims of the few who suffer losses", "PayPal and Venmo: financial infrastructure enabling instant digital payments"]),
+    practice_problems: JSON.stringify(["Trace the journey of your $1,000 bank deposit. How does fractional reserve banking allow it to support more than $1,000 in total loans?", "What would happen to businesses and homebuyers if the banking system suddenly stopped making loans?", "Compare the role of a commercial bank versus a stock exchange. What different financial needs does each serve?", "Why do governments regulate the financial system heavily? Give two examples of what happens when regulation fails."]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What is the main purpose of the financial system?",
-        options: ["Make profits", "Facilitate flow of funds in economy", "Control government", "Set prices"],
-        correct_answer: 1
-      }
+      { question: "What is the primary role of the financial system?", options: ["Generate tax revenue for government", "Channel funds from savers to borrowers and businesses", "Set prices for goods and services", "Control the money supply directly"], correct_answer: 1 },
+      { question: "What is fractional reserve banking?", options: ["Banks invest all deposits in stocks", "Banks keep only a fraction of deposits in reserve and lend the rest", "Banks divide deposits equally between savings and loans", "Banks must hold 100% of deposits in cash"], correct_answer: 1 },
+      { question: "Which US government body primarily regulates securities markets?", options: ["Federal Reserve", "FDIC", "SEC (Securities and Exchange Commission)", "US Treasury"], correct_answer: 2 },
+      { question: "What does price discovery mean in financial markets?", options: ["The government sets fair prices for assets", "Markets determine asset values through supply and demand", "Analysts calculate the true value of stocks", "Companies announce their stock prices each day"], correct_answer: 1 },
+      { question: "What triggered the 2008 global financial crisis?", options: ["Stock market becoming too large", "Collapse of mortgage-backed securities spreading through the interconnected financial system", "Government budget deficits exceeding limits", "Foreign currency manipulation"], correct_answer: 1 }
     ]
   },
   {
@@ -111,25 +70,16 @@ export const curriculumData = [
     level: "beginner",
     module_number: 1,
     lesson_number: 5,
-    content: "Banks and financial markets serve different but complementary roles in the economy. Banks act as intermediaries, taking deposits and making loans, while markets allow direct trading between buyers and sellers. Banks provide stability and relationship banking, while markets offer price discovery and liquidity. Both are essential for a healthy financial system.",
-    examples: JSON.stringify([
-      "Bank loan vs corporate bond issuance",
-      "Savings account vs money market fund",
-      "Bank credit line vs stock market IPO",
-      "FDIC insurance vs market risk"
-    ]),
-    practice_problems: JSON.stringify([
-      "Compare getting a loan from a bank vs issuing bonds",
-      "Explain advantages and disadvantages of each system",
-      "Identify when companies use banks vs markets"
-    ]),
-    estimated_time: 18,
+    content: "When businesses or individuals need to raise money, they have two broad options: borrow from a bank or access the financial markets directly. These two channels — banking and capital markets — work differently, serve different needs, and carry different advantages and risks.\n\nBanks are financial intermediaries. They accept deposits from savers, pool that capital, and lend it to borrowers. The bank stands between the two parties, taking on credit risk. Banks earn profit from the spread between the interest rate they pay depositors and the higher rate they charge borrowers. Bank relationships are private — loan terms are negotiated directly and there is no public market for those loan contracts.\n\nFinancial markets allow borrowers to access capital directly from investors without a bank as middleman. When a corporation issues bonds, it is borrowing directly from whoever buys those bonds. When a company does an IPO, it sells ownership stakes directly to investors. These instruments then trade publicly on exchanges, creating price transparency and liquidity — investors can sell their holdings to others rather than waiting for the original borrower to repay.\n\nEach channel has distinct advantages. Banks excel at relationship lending — they know their customers, can make judgment calls, and provide flexible credit. They are more accessible to small businesses and individuals who lack the scale for public markets. Capital markets offer lower borrowing costs for large, creditworthy corporations and access to a much wider pool of global investors.\n\nFor individuals, the most relevant distinction is between bank savings products (savings accounts, CDs) and market investments (stocks, bonds, ETFs). Bank products are insured by the FDIC up to $250,000 per account per institution and carry essentially no risk of loss — but offer lower returns. Market investments offer potentially higher returns but carry risk of loss and are not government-insured.",
+    examples: JSON.stringify(["Bank loan: small business borrows $200,000 from a local bank at a negotiated interest rate", "Corporate bond issuance: Apple borrows billions from thousands of investors through the bond market", "FDIC insurance: bank deposits protected up to $250,000 per account per institution", "IPO: a company raises capital by selling shares to public investors, bypassing bank intermediation", "Revolving credit line from a bank: flexible borrowing for businesses with seasonal cash flow", "S&P 500 index fund: investor accesses hundreds of companies equity in one market transaction"]),
+    practice_problems: JSON.stringify(["A startup needs $500,000 to expand. Compare getting a bank loan versus issuing equity to investors.", "Why would a large company like Microsoft prefer to issue bonds rather than borrow from a bank for a multi-billion dollar project?", "You have $10,000. Compare the risk and return of a bank CD at 5%, a corporate bond ETF at 6% expected yield, and an S&P 500 index fund.", "Explain why bank deposits are considered safe while stock market investments are not, even when stock returns are historically higher."]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "How do banks differ from financial markets?",
-        options: ["Banks are government-owned", "Banks act as intermediaries, markets enable direct trading", "Banks are riskier", "Banks only serve individuals"],
-        correct_answer: 1
-      }
+      { question: "What is the key difference between how banks and capital markets provide funding?", options: ["Banks are government-owned; markets are private", "Banks act as intermediaries between savers and borrowers; markets allow direct transactions", "Banks lend only to individuals; markets fund only corporations", "Banks are always cheaper than markets"], correct_answer: 1 },
+      { question: "Up to how much are US bank deposits insured by the FDIC per account per institution?", options: ["$100,000", "$500,000", "$250,000", "$1,000,000"], correct_answer: 2 },
+      { question: "When a large corporation issues bonds to raise money, who does it borrow from?", options: ["The Federal Reserve", "Commercial banks", "Directly from investors who buy the bonds", "The US Treasury"], correct_answer: 2 },
+      { question: "What does liquidity mean in the context of financial markets?", options: ["How much cash a company holds", "The ability to buy or sell an asset quickly at a fair price", "A measure of bank reserves", "The interest rate on savings accounts"], correct_answer: 1 },
+      { question: "Which is generally more accessible for a small business needing a $50,000 loan?", options: ["The stock market", "The bond market", "A commercial bank", "A hedge fund"], correct_answer: 2 }
     ]
   },
   {
@@ -137,25 +87,16 @@ export const curriculumData = [
     level: "beginner",
     module_number: 1,
     lesson_number: 6,
-    content: "People invest to grow their wealth over time, beat inflation, and achieve financial goals like retirement, education, or major purchases. Investment allows money to work for you through compound returns. Without investing, money loses purchasing power due to inflation. Different investments offer different risk-return profiles to match various goals and time horizons.",
-    examples: JSON.stringify([
-      "Retirement savings growing from $100,000 to $500,000",
-      "College fund invested for 18 years",
-      "Emergency fund in high-yield savings",
-      "Stock investments outpacing inflation long-term"
-    ]),
-    practice_problems: JSON.stringify([
-      "Calculate retirement needs and required investment returns",
-      "Compare keeping money in cash vs investing",
-      "Match investment types to different goals"
-    ]),
-    estimated_time: 16,
+    content: "Investing means putting your money to work with the expectation of generating a return over time. People invest for many reasons — to build retirement savings, fund their children\'s education, generate passive income, or simply grow wealth. But at the most fundamental level, there is one reason everyone must invest: inflation.\n\nAs we explored earlier, inflation erodes purchasing power over time. If your money sits in a low-interest savings account earning 0.5% while inflation runs at 3%, your money is effectively losing 2.5% of its real value every year. Over 20 years, this silent tax significantly reduces what your savings can actually buy. Investing is how you stay ahead of inflation and grow real wealth.\n\nThe power of investing lies in compounding returns. When you earn a return on your investments and reinvest those returns, they too start generating returns. Over long time horizons, this creates exponential growth. A single $10,000 investment in the S&P 500 in 1990 would have grown to over $200,000 by 2024, even accounting for market crashes along the way.\n\nPeople invest through many vehicles: stocks (ownership in companies), bonds (loans to governments and corporations), real estate, mutual funds and ETFs (diversified pools of assets). Each carries different levels of risk, expected return, and time horizon suitability. Younger investors typically accept more risk for higher potential returns; older investors closer to retirement typically shift toward safer assets to preserve capital.\n\nIt is important to distinguish investing from speculation and gambling. Investing involves buying assets with a reasonable expectation of long-term value creation based on productive economic activity. Speculation involves buying assets primarily hoping to sell to someone else at a higher price. The key practical takeaway: start investing early, invest consistently, diversify your holdings, and think in years and decades rather than days and months.",
+    examples: JSON.stringify(["$10,000 in an S&P 500 index fund in 1990 grew to over $200,000 by 2024 with roughly 10% average annual return", "Warren Buffett started investing at age 11; 99% of his wealth was built after age 50 — the power of compounding", "$500 per month invested from age 25 at 7% grows to roughly $1.2 million by age 65", "$100,000 under a mattress for 30 years at 3% inflation is worth only about $41,000 in real purchasing power", "Dividend investing: buy dividend-paying stocks, reinvest dividends, grow position without adding new money", "Real estate rental income: property appreciates while rent payments cover the mortgage and generate cash flow"]),
+    practice_problems: JSON.stringify(["You earn $50,000 per year and can save $400 per month. Calculate how much you would have after 30 years at 1% (savings account) versus 8% (index fund). What is the dollar difference?", "At what annual return would your money double in 10 years? Use the Rule of 72.", "Rank by expected return and risk from lowest to highest: US Treasury bonds, S&P 500 index fund, individual tech stocks, savings account.", "Why is starting to invest at age 22 dramatically better than starting at 32, even if you invest the same total dollar amount?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "Why is investing important?",
-        options: ["To get rich quick", "To beat inflation and grow wealth over time", "To avoid taxes", "To impress others"],
-        correct_answer: 1
-      }
+      { question: "What is the most fundamental reason why everyone should invest?", options: ["To get rich quickly", "To beat inflation and preserve purchasing power over time", "To speculate on stock prices", "To avoid paying taxes"], correct_answer: 1 },
+      { question: "Which of the following best describes the power of compounding returns?", options: ["You earn the same fixed amount each year", "Returns on returns create exponential growth over time", "Your principal is protected from market losses", "Compounding only works in savings accounts"], correct_answer: 1 },
+      { question: "What is the difference between investing and speculation?", options: ["Investing is illegal; speculation is regulated", "Investing is based on expected long-term value creation; speculation bets on short-term price movements", "Speculation always makes more money", "They are the same thing"], correct_answer: 1 },
+      { question: "Why do younger investors typically hold more stocks than older investors?", options: ["Younger investors have less to lose", "Younger investors have more time to recover from losses and can take more risk", "Stocks always outperform bonds in the short term", "Older investors are not allowed to buy stocks"], correct_answer: 1 },
+      { question: "If you invest $200 per month from age 25 to 65 at 8% annual return, roughly how much would you have at retirement?", options: ["$96,000 (just your contributions)", "About $200,000", "About $700,000 or more", "About $1,000 per month"], correct_answer: 2 }
     ]
   },
   {
@@ -163,25 +104,16 @@ export const curriculumData = [
     level: "beginner",
     module_number: 1,
     lesson_number: 7,
-    content: "All investments involve some level of risk - the possibility of losing money or not achieving expected returns. Generally, higher potential returns come with higher risk. Safe investments like government bonds offer lower returns but greater certainty. Understanding your risk tolerance and time horizon helps determine appropriate investment choices. Diversification can help manage risk.",
-    examples: JSON.stringify([
-      "Government bonds: low risk, low return",
-      "Stocks: higher risk, higher potential return",
-      "Savings accounts: very safe, very low return",
-      "Diversified portfolio: moderate risk, moderate return"
-    ]),
-    practice_problems: JSON.stringify([
-      "Assess your personal risk tolerance",
-      "Match investments to different risk levels",
-      "Explain the risk-return tradeoff"
-    ]),
-    estimated_time: 17,
+    content: "Every investment decision involves a tradeoff between risk and return. Risk is the possibility that your investment will lose value or not perform as expected. Return is the gain you expect to receive. As a general principle in finance, higher potential returns come with higher risk — there is no free lunch. Understanding this relationship is fundamental to making good financial decisions.\n\nRisk comes in many forms. Market risk is the possibility that the overall market declines, taking your investments down with it. Credit risk is the possibility that a borrower (like a company issuing bonds) defaults and cannot repay. Inflation risk means your returns don\'t keep pace with inflation, losing real purchasing power. Concentration risk occurs when you put too much money into one investment or sector. Liquidity risk means you can\'t sell an investment quickly without a significant loss in price.\n\nAssets are typically categorized on a risk spectrum. At the safest end are US Treasury bills — short-term government debt backed by the full faith and credit of the US government. Next come Treasury bonds, CDs, and money market accounts. Corporate bonds occupy the middle of the spectrum, with riskier (high-yield) bonds offering higher interest. Stocks are more volatile but offer the highest long-term returns. At the riskiest end sit assets like options, leveraged funds, and cryptocurrency.\n\nYour personal risk tolerance depends on three factors: your time horizon (how long before you need the money), your financial capacity to absorb losses (do you have an emergency fund?), and your emotional tolerance for seeing your portfolio decline. A 30-year-old saving for retirement can tolerate significant short-term volatility because they have decades to recover. A retiree drawing down savings cannot afford a 40% portfolio drop.\n\nDiversification is the most practical tool for managing risk. By spreading investments across different asset classes, sectors, and geographies, you reduce the impact of any single investment going badly. The key principle is that diversification reduces risk without necessarily sacrificing expected return — making it one of the few genuine free lunches in finance.",
+    examples: JSON.stringify(["US Treasury bills: essentially zero credit risk because backed by the US government; low return of roughly 4-5% currently", "S&P 500 index: average annual return of about 10% historically, but individual year returns ranged from -38% (2008) to +38% (1995)", "Single stock risk: Enron shareholders lost nearly everything when the company collapsed in 2001 — concentration risk", "High-yield bonds (junk bonds): pay higher interest rates than investment-grade bonds to compensate for higher default risk", "Diversification example: a portfolio of 500 stocks across sectors is far less risky than holding 1 stock", "Emergency fund as risk management: 3-6 months of expenses in cash reduces financial risk from job loss"]),
+    practice_problems: JSON.stringify(["Rank these assets from lowest to highest risk: S&P 500 index fund, US 10-year Treasury bond, single tech stock, bank savings account, Bitcoin.", "If you have a 10-year time horizon, is it better to hold mostly stocks or mostly bonds? Explain using historical data.", "You have $50,000 and are 5 years from retirement. How would you allocate it differently than if you were 30 years from retirement?", "Explain how diversification reduces risk. Use a specific example with two uncorrelated assets."]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What is the relationship between risk and return?",
-        options: ["No relationship", "Higher risk generally means higher potential return", "Lower risk means higher return", "Risk doesn't matter"],
-        correct_answer: 1
-      }
+      { question: "What is the general relationship between risk and return in investing?", options: ["Higher risk always means lower returns", "Higher potential returns typically come with higher risk", "Safe investments always beat risky ones over time", "Risk and return are unrelated"], correct_answer: 1 },
+      { question: "Which of the following has the LOWEST risk?", options: ["Individual tech stocks", "Corporate high-yield bonds", "US Treasury bills", "Cryptocurrency"], correct_answer: 2 },
+      { question: "What is concentration risk?", options: ["Investing in too many countries", "Putting too much money into a single investment or sector", "Holding investments for too long", "Borrowing to invest"], correct_answer: 1 },
+      { question: "Why can a 25-year-old investor generally afford to take more risk than a 60-year-old investor?", options: ["Young people are smarter investors", "The 25-year-old has more time to recover from losses", "Young people pay less in taxes", "Older investors are legally restricted"], correct_answer: 1 },
+      { question: "Which of the following best describes diversification?", options: ["Buying only the best-performing stocks", "Spreading investments across different assets to reduce the impact of any single loss", "Investing in one country only", "Holding cash during market volatility"], correct_answer: 1 }
     ]
   },
   {
@@ -189,53 +121,32 @@ export const curriculumData = [
     level: "beginner",
     module_number: 1,
     lesson_number: 8,
-    content: "The time value of money is the concept that money available today is worth more than the same amount in the future due to its potential earning capacity. This core principle underlies all of finance. A dollar today can be invested to earn returns, making it worth more than a dollar received later. This concept is used in present value calculations and investment decisions.",
-    examples: JSON.stringify([
-      "$100 today vs $100 in 10 years",
-      "Present value of future cash flows",
-      "Why lottery winners choose lump sum vs annuity",
-      "Mortgage payments: mostly interest early on"
-    ]),
-    practice_problems: JSON.stringify([
-      "Calculate present value of $1000 received in 5 years",
-      "Compare investment options using time value",
-      "Explain why early investing is so powerful"
-    ]),
-    estimated_time: 19,
+    content: "The time value of money is one of the most important concepts in all of finance. It states that a dollar today is worth more than a dollar in the future. This is not just an abstract principle — it is the foundation of investment analysis, loan pricing, retirement planning, and business valuation.\n\nWhy is a dollar today worth more than a dollar tomorrow? Three reasons. First, a dollar today can be invested to earn a return, making it worth more in the future. Second, inflation reduces purchasing power over time, so future dollars buy less. Third, there is always some uncertainty about receiving money in the future — you can be certain of money you have today.\n\nThe two key calculations in time value of money are future value and present value. Future value answers: if I invest $X today at rate r for n years, how much will I have? Future Value = PV x (1 + r)^n. Present value answers the reverse: how much is a future payment worth today? Present Value = FV / (1 + r)^n. These formulas are used everywhere in finance — from pricing bonds to calculating whether a business investment makes sense.\n\nA practical application is evaluating an annuity — a series of regular payments. If someone offers you $10,000 per year for 10 years, or a lump sum of $75,000 today, which is better? The answer depends on what interest rate you could earn — you need to discount those future payments back to their present value to compare them fairly.\n\nFor personal finance, the time value of money explains why starting to save early is so powerful. Every year you delay investing costs you not just that year\'s potential returns, but all the compounding returns that money would have generated for decades. A single $5,000 invested at age 22 at 8% per year becomes about $160,000 by age 72 — without adding another dollar. Starting the same investment at age 42 yields only about $34,000 by age 72.",
+    examples: JSON.stringify(["$5,000 invested at age 22 at 8% annually grows to about $160,000 by age 72 — without adding more money", "Present value calculation: $100,000 received in 10 years at 6% discount rate is worth only about $55,839 today", "Mortgage pricing: lender calculates present value of all future payments to determine loan amount", "Business investment: company discounts future cash flows to decide if a $1 million project is worth pursuing today", "Lottery lump sum vs annuity: a $100 million lottery jackpot paid over 20 years is worth far less than a $60 million lump sum today", "Retirement planning: financial advisors discount future retirement needs back to determine how much to save today"]),
+    practice_problems: JSON.stringify(["Calculate the future value of $3,000 invested today at 7% annually for 20 years. Use: FV = PV x (1 + r)^n", "You will receive $50,000 in 8 years. What is its present value today if the discount rate is 5%?", "Someone offers you $1,000 now or $1,200 in two years. Which is better if you can invest at 8% annually?", "Explain why waiting until age 35 to start saving for retirement instead of age 25 can cost you hundreds of thousands of dollars."]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "Why is money today worth more than money in the future?",
-        options: ["Inflation only", "It can be invested to earn returns", "Government policy", "It's not - they're equal"],
-        correct_answer: 1
-      }
+      { question: "Why is a dollar today worth more than a dollar in the future?", options: ["Government policy makes today's money worth more", "Today's money can be invested to earn returns, and future money is uncertain", "Inflation makes future money worth more", "Banks guarantee today's dollar value"], correct_answer: 1 },
+      { question: "What is the formula for future value?", options: ["FV = PV - (r x n)", "FV = PV x (1 + r)^n", "FV = PV / (1 + r)^n", "FV = PV x r x n"], correct_answer: 1 },
+      { question: "What does present value tell you?", options: ["How much money you need to retire", "What a future sum of money is worth in today's dollars", "The current market price of a stock", "Your portfolio's current total value"], correct_answer: 1 },
+      { question: "If you can earn 10% annually, is $10,000 today worth more or less than $12,000 in 3 years?", options: ["Less — $12,000 is always more", "More — $10,000 at 10% for 3 years exceeds $12,000", "Exactly the same", "Cannot be determined"], correct_answer: 1 },
+      { question: "What is the main reason starting to invest at 22 is far better than starting at 32?", options: ["Tax rates are lower when you are young", "You have 10 more years of compounding growth", "Young people pick better investments", "Inflation affects older investors more"], correct_answer: 1 }
     ]
-  }
-,
-  // Module 2: Personal Finance Basics (Beginner)
-  {
+  },  {
     title: "Income vs Expenses",
     level: "beginner",
     module_number: 2,
     lesson_number: 1,
-    content: "Personal finance starts with understanding the difference between income (money coming in) and expenses (money going out). Income includes salary, wages, bonuses, and investment returns. Expenses include housing, food, transportation, and entertainment. The goal is to spend less than you earn, creating a surplus for saving and investing. Tracking both is essential for financial health.",
-    examples: JSON.stringify([
-      "Monthly salary of $4000 vs expenses of $3500",
-      "Fixed expenses: rent, insurance, loan payments",
-      "Variable expenses: groceries, entertainment, gas",
-      "Income sources: job, side hustle, investments"
-    ]),
-    practice_problems: JSON.stringify([
-      "Calculate your monthly income and expenses",
-      "Identify areas to reduce expenses",
-      "Find ways to increase income"
-    ]),
-    estimated_time: 16,
+    content: "The foundation of personal finance is understanding the relationship between income and expenses. Income is all the money that flows into your life — wages, salary, freelance payments, rental income, dividends, and any other source of cash. Expenses are all the money that flows out — rent, food, transportation, subscriptions, and everything else you spend. The difference between these two numbers is the most important metric in personal finance: your cash flow.\n\nPositive cash flow means you spend less than you earn, leaving money available to save and invest. Negative cash flow means you spend more than you earn, which requires drawing down savings or going into debt. Building sustainable wealth requires consistent positive cash flow over time.\n\nIncome can be categorized as active or passive. Active income requires your direct time and labor — your salary, hourly wages, or freelance work. Passive income flows in without direct ongoing effort — rental income, stock dividends, business income, royalties. Building passive income streams over time is a goal of many wealth-building strategies because it frees up time and reduces dependence on a single income source.\n\nExpenses can be divided into fixed and variable. Fixed expenses are the same every month — rent, mortgage payment, car payment, insurance premiums, subscription services. Variable expenses change month to month — groceries, dining out, entertainment, clothing. You have more control over variable expenses and they are the first place to look when trying to free up cash for saving and investing.\n\nThe gap between income and expenses is everything. A person earning $80,000 and spending $75,000 is in worse financial shape than a person earning $60,000 and spending $45,000. The second person saves $15,000 per year — which invested over decades creates significant wealth. The income amount matters less than the gap you maintain.",
+    examples: JSON.stringify(["Salary of $65,000 per year minus $52,000 in annual expenses = $13,000 positive cash flow available to invest", "Active income: working 40 hours per week at $25 per hour produces $52,000 per year — requires continuous time", "Passive income: $200,000 in dividend stocks at 3% yield generates $6,000 per year without working", "Fixed expenses: $1,500 rent, $400 car payment, $200 insurance — predictable, harder to change quickly", "Variable expenses: $600 monthly dining out — can be reduced immediately to free up cash", "Lifestyle inflation: getting a raise but increasing spending by the same amount means no improvement in financial position"]),
+    practice_problems: JSON.stringify(["Track every dollar you spend for one month. Categorize each expense as fixed or variable, essential or discretionary.", "If you earn $55,000 per year and want to save 20% of your income, what is your maximum allowable monthly spending?", "Compare two people: Person A earns $100,000 and saves $500 per month. Person B earns $60,000 and saves $1,000 per month. Who will be wealthier in 30 years at 8% returns?", "List three fixed expenses and three variable expenses in your life. Which ones could you reduce?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What's the fundamental rule of personal finance?",
-        options: ["Spend everything you earn", "Spend less than you earn", "Only buy expensive things", "Avoid all debt"],
-        correct_answer: 1
-      }
+      { question: "What is cash flow in personal finance?", options: ["Your total income for the year", "The difference between your income and your expenses", "The money in your bank account", "Your monthly salary after taxes"], correct_answer: 1 },
+      { question: "Which of the following is an example of passive income?", options: ["Working overtime at your job", "Freelance consulting fees", "Dividends from stocks you own", "A year-end work bonus"], correct_answer: 2 },
+      { question: "What is the difference between fixed and variable expenses?", options: ["Fixed expenses are larger; variable ones are smaller", "Fixed expenses stay the same each month; variable expenses change", "Fixed expenses are needs; variable are wants", "Fixed expenses cannot be reduced; variable can never be changed"], correct_answer: 1 },
+      { question: "A person earns $70,000 and spends $68,000 per year. Another earns $50,000 and spends $35,000. Who is in a better financial position?", options: ["The $70,000 earner because they earn more", "The $50,000 earner because they save $15,000 per year", "They are equal because both have positive cash flow", "The $70,000 earner because they have more to spend"], correct_answer: 1 },
+      { question: "What is lifestyle inflation?", options: ["The rising cost of basic necessities", "Increasing your spending when your income increases, leaving your savings rate unchanged", "Paying too much for luxury goods", "Inflation that affects wealthy people more"], correct_answer: 1 }
     ]
   },
   {
@@ -243,25 +154,16 @@ export const curriculumData = [
     level: "beginner",
     module_number: 2,
     lesson_number: 2,
-    content: "A budget is simply a plan for your money. The 50/30/20 rule provides a simple framework: 50% for needs (housing, food, utilities), 30% for wants (entertainment, dining out), and 20% for savings and debt repayment. Start simple and adjust as needed. The key is awareness of where your money goes and making intentional choices.",
-    examples: JSON.stringify([
-      "$3000 income: $1500 needs, $900 wants, $600 savings",
-      "Needs: rent, groceries, utilities, minimum debt payments",
-      "Wants: restaurants, movies, hobbies, subscriptions",
-      "Savings: emergency fund, retirement, investments"
-    ]),
-    practice_problems: JSON.stringify([
-      "Create a 50/30/20 budget with your income",
-      "Categorize your expenses as needs vs wants",
-      "Identify budget adjustments needed"
-    ]),
-    estimated_time: 18,
+    content: "Budgeting is simply a plan for how you will spend and save your money. Many people avoid budgeting because they think it requires complex spreadsheets or depriving themselves of things they enjoy. In reality, effective budgeting can be done with a few simple rules and does not require tracking every penny.\n\nOne of the most practical frameworks is the 50/30/20 rule. Allocate 50% of your after-tax income to needs (housing, utilities, groceries, transportation, minimum debt payments), 30% to wants (dining out, entertainment, hobbies, subscriptions), and 20% to savings and investments. This framework is simple, flexible, and automatically scales with your income. If your income rises, each category grows proportionally.\n\nAnother approach is pay yourself first. Instead of spending throughout the month and saving whatever is left over (which is usually nothing), automatically transfer a fixed savings amount as soon as you receive your paycheck. Setting up automatic transfers to a savings or investment account removes willpower from the equation — you simply never see the money as available to spend.\n\nZero-based budgeting is a more detailed method where you assign every dollar of income a specific job — savings, bills, groceries, entertainment — until you have allocated all of your income. Every dollar has a purpose, and any month\'s leftover goes to a designated category (usually extra savings or debt payoff).\n\nThe key insight in budgeting is not perfection — it is awareness. Knowing where your money goes is more powerful than any specific system. People who track their spending consistently report spending less simply because they are aware of the patterns. You do not need the most sophisticated budget; you need one you will actually use.",
+    examples: JSON.stringify(["50/30/20 rule on $4,000 monthly take-home: $2,000 needs, $1,200 wants, $800 savings and investments", "Pay yourself first: set up automatic $500 transfer to index fund on payday — treats investing like a non-negotiable bill", "Zero-based budget: $3,500 income broken down to $1,400 rent, $300 food, $200 transport, $400 savings, $200 utilities, $1,000 other spending", "Budgeting apps like YNAB or Mint that automatically categorize transactions from linked accounts", "Envelope system: withdraw cash for variable categories like groceries and dining; when the envelope is empty, spending stops", "Annual expense review: checking subscriptions found $180 per month in forgotten services that were cancelled"]),
+    practice_problems: JSON.stringify(["Apply the 50/30/20 rule to a monthly take-home income of $3,200. What is the exact dollar amount for each category?", "List all your monthly subscriptions. Add up their total cost. Are there any you could cancel without significantly affecting your life?", "Compare the pay-yourself-first method to saving whatever is left over. Why does the first method typically produce better results?", "Design a zero-based budget for a month where your take-home pay is $2,800."]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "In the 50/30/20 rule, what percentage goes to savings?",
-        options: ["50%", "30%", "20%", "10%"],
-        correct_answer: 2
-      }
+      { question: "In the 50/30/20 budgeting rule, what does the 20% represent?", options: ["Needs like housing and food", "Wants like entertainment", "Savings and investments", "Taxes and insurance"], correct_answer: 2 },
+      { question: "What is the core idea behind paying yourself first?", options: ["Spending on personal enjoyment before paying bills", "Automatically saving before you have a chance to spend", "Negotiating lower prices for necessities", "Paying off debt before any other expense"], correct_answer: 1 },
+      { question: "Which budgeting method assigns every single dollar of income to a specific purpose?", options: ["50/30/20 rule", "Envelope system", "Zero-based budgeting", "Pay yourself first"], correct_answer: 2 },
+      { question: "According to the 50/30/20 rule, which of the following is a NEED?", options: ["Netflix subscription", "Monthly gym membership", "Rent payment", "Dining out with friends"], correct_answer: 2 },
+      { question: "What is the most important benefit of tracking your spending?", options: ["It makes you feel guilty so you spend less", "Awareness of spending patterns tends to reduce unnecessary spending automatically", "It helps you pay less in taxes", "It increases your income"], correct_answer: 1 }
     ]
   },
   {
@@ -269,25 +171,16 @@ export const curriculumData = [
     level: "beginner",
     module_number: 2,
     lesson_number: 3,
-    content: "An emergency fund is money set aside for unexpected expenses or financial emergencies. It should cover 3-6 months of living expenses and be kept in a easily accessible account like a high-yield savings account. This fund prevents you from going into debt when unexpected costs arise and provides peace of mind and financial stability.",
-    examples: JSON.stringify([
-      "$2000 monthly expenses = $6000-12000 emergency fund",
-      "Car repair, medical bill, job loss coverage",
-      "High-yield savings account earning 4-5%",
-      "Separate from other savings goals"
-    ]),
-    practice_problems: JSON.stringify([
-      "Calculate your emergency fund target",
-      "Determine monthly savings needed to build it",
-      "Choose appropriate account for emergency fund"
-    ]),
-    estimated_time: 15,
+    content: "An emergency fund is money set aside specifically for unexpected expenses or financial disruptions — a medical emergency, sudden job loss, car breakdown, or urgent home repair. Without one, any unexpected expense forces you to use credit cards or loans, which create debt and stress. An emergency fund is not an investment; it is financial insurance.\n\nThe standard recommendation is to keep three to six months of essential living expenses in your emergency fund. If your monthly essential expenses (rent, food, utilities, transportation, minimum debt payments) total $3,000, your emergency fund should contain $9,000 to $18,000. People with variable income, commission-based jobs, or less stable employment should aim for six to twelve months.\n\nWhere should you keep an emergency fund? The money needs to be instantly accessible and completely safe from loss of principal. A high-yield savings account at an online bank is the best option. These accounts currently pay around 4-5% APY (as of 2024) and are FDIC-insured. Do not invest your emergency fund in stocks or any asset that could decline in value — you need it to be there when you need it, not down 30% during a market crash.\n\nBuilding an emergency fund feels slow when you are also paying off debt and trying to invest. A practical approach: start with a $1,000 baby emergency fund as a first goal. This covers most minor emergencies without needing a credit card. Then focus on debt repayment or investing, and gradually build toward the full three-to-six months goal over time.\n\nThe psychological value of an emergency fund goes beyond the financial. Knowing you have a cushion fundamentally changes your relationship with money and work. You can make better career decisions, negotiate better salaries, and take calculated financial risks when you are not living paycheck to paycheck. Financial security creates options.",
+    examples: JSON.stringify(["Job loss scenario: six-month emergency fund covers rent and expenses while searching for a new position without taking on debt", "Car repair emergency: $1,800 transmission repair paid from savings instead of going on a credit card at 22% APR", "High-yield savings account at 4.5% APY on $15,000 emergency fund earns $675 per year while keeping money accessible", "Medical emergency: $4,000 hospital bill covered without stress because emergency fund was in place", "Freelancer with variable income: keeps 9 months of expenses in emergency fund to handle slow periods", "Baby emergency fund approach: build $1,000 first, then focus on debt, then complete the full fund"]),
+    practice_problems: JSON.stringify(["Calculate your monthly essential expenses (rent, food, utilities, transport, minimum debt payments). What is your 3-month and 6-month emergency fund target?", "Compare putting $10,000 emergency fund in: (a) a big bank savings account at 0.01% APY, (b) a high-yield savings account at 4.5% APY. What is the annual difference?", "You have $500 per month to allocate between building an emergency fund and paying off a credit card at 20% APR. What is the optimal strategy?", "Why should an emergency fund NOT be invested in the stock market, even though the stock market earns more over time?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "How much should an emergency fund cover?",
-        options: ["1 month expenses", "3-6 months expenses", "1 year expenses", "$1000 fixed amount"],
-        correct_answer: 1
-      }
+      { question: "How many months of essential expenses does the standard recommendation suggest keeping in an emergency fund?", options: ["1-2 months", "3-6 months", "8-10 months", "12+ months for everyone"], correct_answer: 1 },
+      { question: "Where is the BEST place to keep an emergency fund?", options: ["A stock index fund", "A high-yield savings account", "Under your mattress", "In a 401(k)"], correct_answer: 1 },
+      { question: "What is the baby emergency fund concept?", options: ["Saving for a child's future expenses", "Starting with $1,000 as a first emergency fund milestone", "A small emergency fund for minor purchases", "Saving 1% of income each month"], correct_answer: 1 },
+      { question: "Why should you NOT invest your emergency fund in stocks?", options: ["Stocks don't earn enough", "Stocks could be down significantly right when you need the money", "It is illegal to use stocks for emergencies", "Stocks take too long to open an account"], correct_answer: 1 },
+      { question: "What is the primary purpose of an emergency fund?", options: ["To earn the highest possible return", "To fund a vacation or large purchase", "To cover unexpected expenses without going into debt", "To replace your retirement savings"], correct_answer: 2 }
     ]
   },
   {
@@ -295,25 +188,16 @@ export const curriculumData = [
     level: "beginner",
     module_number: 2,
     lesson_number: 4,
-    content: "Not all debt is created equal. Good debt helps you build wealth or increase income over time, like mortgages, student loans, or business loans. Bad debt is used for consumption and doesn't improve your financial position, like credit card debt for vacations or luxury items. Good debt typically has lower interest rates and tax benefits.",
-    examples: JSON.stringify([
-      "Good: Mortgage at 4% to buy appreciating home",
-      "Good: Student loan for degree that increases earning potential",
-      "Bad: Credit card debt at 18% for vacation",
-      "Bad: Car loan for expensive car beyond needs"
-    ]),
-    practice_problems: JSON.stringify([
-      "Categorize your current debts as good or bad",
-      "Calculate the true cost of credit card debt",
-      "Prioritize debt payoff strategy"
-    ]),
-    estimated_time: 17,
+    content: "Not all debt is equal. Some debt can help you build wealth and improve your financial position over time. Other debt is a drain on your resources that leaves you worse off. Understanding the difference between good and bad debt helps you make smarter borrowing decisions.\n\nGood debt is borrowed money used to acquire assets that appreciate in value or that generate income over time, where the cost of the debt is reasonable relative to the benefit. The classic examples are mortgages (borrowing to buy a home that may appreciate) and student loans (investing in education that typically increases earning power). Business loans can be good debt if they fund investments that generate more income than the cost of the loan.\n\nBad debt is borrowed money used to fund consumption — spending on things that do not appreciate or generate income. Credit card debt for dining out, vacations, or electronics, payday loans, and car loans on rapidly depreciating vehicles are examples. The interest rates on these debts (often 15-25% or more for credit cards) far exceed any reasonable investment return, making them wealth destroyers.\n\nThe distinction is not always perfectly clear. A car loan could be necessary for getting to a higher-paying job — in that case, it might be justifiable. An expensive private school loan may or may not pay off depending on the field of study and career outcomes. The key questions are: does this debt fund an appreciating asset or increased earning power? Is the interest rate reasonable? Can I comfortably afford the payments?\n\nThe single most important rule in personal finance around debt is: never carry a credit card balance. Credit card interest rates average around 20% APR. No investment reliably returns 20% — so paying off credit card debt is equivalent to earning a guaranteed 20% return. Once high-interest debt is eliminated, redirect those payments into investments.",
+    examples: JSON.stringify(["Good debt: 30-year mortgage at 7% to buy a home that historically appreciates 3-4% annually and builds equity", "Good debt: student loan at 5% for a nursing degree that increases annual income from $35,000 to $75,000", "Bad debt: $8,000 credit card balance at 22% APR spent on vacations and dining — pure consumption financed at high cost", "Bad debt: payday loan at 400% effective APR — borrowing $300 and owing $345 two weeks later", "Borderline debt: car loan at 6% for a $25,000 vehicle — depreciates rapidly but may be necessary for employment", "Good debt used poorly: student loans for a degree with poor career prospects and low earning potential"]),
+    practice_problems: JSON.stringify(["You have $5,000 in credit card debt at 20% APR and $20,000 in student loans at 4.5%. Which should you pay off first and why?", "Classify each as good or bad debt: (a) mortgage at 6.5%, (b) credit card at 19%, (c) student loan at 4%, (d) car loan at 8% for a luxury vehicle.", "If paying off a credit card at 21% APR is equivalent to earning a guaranteed 21% return, why do people still carry balances?", "A person takes out $50,000 in student loans. What annual income increase would make this debt worthwhile? Calculate the break-even."]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What makes debt 'good debt'?",
-        options: ["Low payments", "Helps build wealth or increase income", "From a bank", "Tax deductible"],
-        correct_answer: 1
-      }
+      { question: "What makes debt 'good' from a financial planning perspective?", options: ["Any debt from a reputable bank", "Debt used to acquire appreciating assets or increase earning power at a reasonable cost", "Debt with a monthly payment you can afford", "Debt that is less than 50% of your income"], correct_answer: 1 },
+      { question: "Which of the following is typically considered bad debt?", options: ["A 30-year home mortgage at 6.5%", "A small business loan at 8%", "Credit card balance at 22% APR for dining and entertainment", "A student loan at 4% for a medical degree"], correct_answer: 2 },
+      { question: "Why is paying off a 20% APR credit card mathematically equivalent to earning a 20% investment return?", options: ["Credit cards are government-backed", "Every dollar used to pay off the card saves that dollar's worth of interest charges", "Credit card companies match your payments", "The IRS allows a tax deduction for credit card payoff"], correct_answer: 1 },
+      { question: "What is the average APR on credit cards in the United States?", options: ["5-8%", "10-12%", "Around 20%", "35-40%"], correct_answer: 2 },
+      { question: "A payday loan costs $45 to borrow $300 for two weeks. What is the approximate annual interest rate?", options: ["15%", "45%", "Around 390%", "100%"], correct_answer: 2 }
     ]
   },
   {
@@ -321,25 +205,16 @@ export const curriculumData = [
     level: "beginner",
     module_number: 2,
     lesson_number: 5,
-    content: "A credit score is a number (300-850) that represents your creditworthiness based on your credit history. It affects your ability to get loans and the interest rates you'll pay. Factors include payment history (35%), credit utilization (30%), length of credit history (15%), credit mix (10%), and new credit (10%). Higher scores mean better loan terms.",
-    examples: JSON.stringify([
-      "750+ score: excellent, best rates available",
-      "Payment history: never miss payments",
-      "Credit utilization: keep below 30% of limits",
-      "Length of history: keep old accounts open"
-    ]),
-    practice_problems: JSON.stringify([
-      "Check your credit score and report",
-      "Identify factors affecting your score",
-      "Create plan to improve credit score"
-    ]),
-    estimated_time: 19,
+    content: "A credit score is a three-digit number that summarizes your creditworthiness — how likely you are to repay borrowed money based on your financial history. Lenders, landlords, and even some employers use this number to make decisions. A higher score means better access to credit at lower interest rates; a poor score means higher rates, rejected applications, or being required to put down larger deposits.\n\nThe most widely used scoring model is the FICO score, which ranges from 300 to 850. Scores are categorized roughly as: 300-579 poor, 580-669 fair, 670-739 good, 740-799 very good, 800-850 exceptional. The national average FICO score is around 714. Most lenders want to see at least 670 for standard approval; the best mortgage rates generally require 740 or above.\n\nFive factors determine your FICO score. Payment history (35%) is the most important — paying bills on time every time is the single best thing you can do for your credit. Amounts owed (30%) measures your credit utilization ratio — how much of your available credit you are using. Staying below 30% utilization (ideally below 10%) is recommended. Length of credit history (15%) rewards long-standing accounts. Credit mix (10%) rewards having different types of credit (cards, loans). New credit inquiries (10%) means applying for too many new accounts too quickly hurts your score.\n\nYou can check your credit score for free through many banks, credit card issuers, and the site AnnualCreditReport.com. You are entitled to one free credit report per year from each of the three major bureaus (Equifax, Experian, TransUnion).\n\nBuilding good credit requires patience. Pay every bill on time, keep credit card balances low relative to their limits, avoid opening too many new accounts too quickly, and keep your oldest accounts open even if you rarely use them. These habits, maintained consistently over years, build the strong credit history that unlocks the best financial terms throughout your life.",
+    examples: JSON.stringify(["FICO score of 760 vs 620 on a $300,000 mortgage: could mean the difference of 1.5% in interest rate, saving over $100,000 in total payments", "Credit utilization: having $1,000 balance on a $10,000 limit card is 10% utilization — excellent; $8,000 balance is 80% — hurts score", "Payment history impact: one missed payment can drop a good credit score by 50-100 points and stays on report for 7 years", "Average credit score of 714 in the US means most Americans qualify for standard loan products", "Secured credit card: way to build credit with a $200-500 deposit that becomes your credit limit", "Authorized user strategy: being added to a parent's old, well-managed credit card can boost a thin credit file"]),
+    practice_problems: JSON.stringify(["Your credit card has a $5,000 limit and you have a $2,200 balance. What is your credit utilization rate? Is this good or bad for your score?", "List the five FICO factors and their weights. Which two factors together make up 65% of your score?", "You missed one credit card payment three months ago. What steps can you take to recover your credit score over the next 12 months?", "Compare the total interest paid on a $25,000 car loan at 4.5% (good credit) versus 9.5% (poor credit) over 5 years."]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What's the most important factor in your credit score?",
-        options: ["Credit utilization", "Payment history", "Length of history", "Types of credit"],
-        correct_answer: 1
-      }
+      { question: "What is the FICO score range?", options: ["0 to 100", "300 to 850", "500 to 900", "1 to 1000"], correct_answer: 1 },
+      { question: "Which factor has the GREATEST impact on your FICO credit score?", options: ["Length of credit history", "Credit mix", "Payment history", "New credit inquiries"], correct_answer: 2 },
+      { question: "What is a good credit utilization ratio to maintain?", options: ["Below 30%, ideally below 10%", "50-70% to show you use credit actively", "Above 80% to demonstrate credit need", "Exactly 50%"], correct_answer: 0 },
+      { question: "A FICO score of 750 is considered:", options: ["Poor", "Fair", "Good", "Very good to exceptional"], correct_answer: 3 },
+      { question: "How many free credit reports per year is each American entitled to from each bureau?", options: ["One per year per bureau", "Two per year total", "One every two years", "Unlimited free reports"], correct_answer: 0 }
     ]
   },
   {
@@ -347,25 +222,16 @@ export const curriculumData = [
     level: "beginner",
     module_number: 2,
     lesson_number: 6,
-    content: "While saving money is important, keeping all your money in savings accounts won't build wealth due to inflation. With inflation averaging 2-3% annually and savings accounts paying 1-2%, your purchasing power actually decreases over time. Investing is necessary to grow wealth and maintain purchasing power. Savings are for short-term goals and emergencies; investing is for long-term wealth building.",
-    examples: JSON.stringify([
-      "$10,000 in savings losing purchasing power to inflation",
-      "Savings account: 1% return vs 3% inflation = -2% real return",
-      "Stock market historical average: 10% annual returns",
-      "Compound growth over decades through investing"
-    ]),
-    practice_problems: JSON.stringify([
-      "Calculate inflation's impact on savings over 20 years",
-      "Compare savings vs investment growth scenarios",
-      "Determine appropriate savings vs investment allocation"
-    ]),
-    estimated_time: 16,
+    content: "Many people believe that the path to financial security is simply saving money — spending less than you earn and accumulating cash over time. While saving is absolutely necessary, it is not sufficient on its own. The reason is inflation. If prices rise faster than your savings grow, you are getting poorer even while your bank balance grows.\n\nConsider this: if you save $500 per month for 30 years in a regular savings account earning 0.5% annually, you will accumulate about $208,000. That sounds like a lot. But if you had invested that same $500 per month in a diversified stock market index fund averaging 8% annually, you would have approximately $745,000 — more than three and a half times as much. The difference is not income, not savings rate, not discipline — it is simply the difference between saving and investing.\n\nThe underlying math is relentless. Average US inflation over the past 50 years has been around 3.8% per year. A standard savings account often pays 0.01% to 0.5% at traditional banks. That means savers at big banks are losing approximately 3-4% of real purchasing power per year. Over 20 years, $100,000 kept in a near-zero savings account effectively shrinks to purchasing power of about $45,000 in today\'s dollars.\n\nThe solution is not to abandon saving but to graduate from merely saving to investing. Saving is keeping money safe in cash or cash equivalents (savings accounts, CDs, money market funds) — appropriate for short-term goals and emergency funds. Investing means putting money into productive assets (stocks, bonds, real estate) that grow faster than inflation over the long run.\n\nThe practical sequence: eliminate high-interest debt, build your emergency fund, then invest the rest. Even small amounts invested early create significant wealth over time. The biggest financial mistake most people make is not starting to invest soon enough.",
+    examples: JSON.stringify(["$500 per month for 30 years: savings account at 0.5% = $208,000; index fund at 8% = $745,000 — same effort, very different outcome", "$100,000 in a savings account at 0.01% APY at a big bank for 10 years = $100,100 — nearly zero real growth", "Inflation impact: $50,000 saved in 1994 at 0% return has the purchasing power of about $24,000 today", "Real return calculation: savings account at 0.5% minus 3% inflation = negative 2.5% real return per year", "Treasury I-bonds: government bonds that adjust with inflation — better than cash for medium-term savings", "Index fund investing: S&P 500 historical average return of about 10% per year before inflation, 7% after"]),
+    practice_problems: JSON.stringify(["Calculate the difference between saving $300 per month for 25 years at 0.5% versus investing at 7%. Show your work.", "If inflation averages 3% per year, what is the real value of $80,000 in savings after 20 years at a big bank paying 0.01% APY?", "At what savings account interest rate would you actually keep pace with 3% inflation? Is any current savings account offering this?", "Why do most financial advisors say a long-term investor's biggest risk is not stock market volatility but the failure to invest at all?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "Why isn't saving alone sufficient for building wealth?",
-        options: ["Banks are unsafe", "Inflation erodes purchasing power", "Savings accounts have fees", "It's too complicated"],
-        correct_answer: 1
-      }
+      { question: "Why is saving money in a low-interest account not sufficient for long-term wealth building?", options: ["Banks are not trustworthy", "Inflation erodes purchasing power faster than low interest rates grow savings", "Saving money is illegal over large amounts", "Savings accounts always lose money"], correct_answer: 1 },
+      { question: "What is the approximate historical average annual return of the S&P 500 stock index?", options: ["3-4%", "5-6%", "Around 10% before inflation", "15-20%"], correct_answer: 2 },
+      { question: "What is the real return on a savings account paying 0.5% APY when inflation is 3%?", options: ["+3.5%", "+0.5%", "-2.5%", "0%"], correct_answer: 2 },
+      { question: "What is the correct financial sequence for most people?", options: ["Invest first, save second, pay off debt last", "Eliminate high-interest debt, build emergency fund, then invest", "Save as much cash as possible before considering investing", "Invest everything and worry about debt later"], correct_answer: 1 },
+      { question: "What is a Treasury I-Bond?", options: ["A bond that always pays 10% return", "A government bond that adjusts its interest rate with inflation", "A bond sold only to institutional investors", "A bond backed by gold reserves"], correct_answer: 1 }
     ]
   },
   {
@@ -373,53 +239,32 @@ export const curriculumData = [
     level: "beginner",
     module_number: 2,
     lesson_number: 7,
-    content: "Compound interest is earning interest on your interest. It's the most powerful force in building wealth over time. The earlier you start, the more time compound interest has to work. Even small amounts invested early can grow to large sums due to compounding. This is why starting to invest in your 20s is so much more powerful than waiting until your 40s.",
-    examples: JSON.stringify([
-      "$100/month from age 25-65 = $632,000 at 7% return",
-      "$200/month from age 35-65 = $525,000 at 7% return",
-      "Doubling rule: money doubles every 10 years at 7%",
-      "Einstein allegedly called it the 8th wonder of the world"
-    ]),
-    practice_problems: JSON.stringify([
-      "Calculate compound growth of $1000 over 30 years",
-      "Compare starting at age 25 vs 35 vs 45",
-      "Determine monthly investment needed for retirement goal"
-    ]),
-    estimated_time: 18,
+    content: "Compound interest is often called the eighth wonder of the world — a phrase frequently attributed to Albert Einstein. Whether or not he said it, the sentiment captures something real: compound interest is a mathematical force that, given enough time, creates extraordinary wealth from modest beginnings. Every investor needs to understand it deeply.\n\nSimple interest is linear. If you invest $1,000 at 10% simple interest, you earn $100 every year: $1,100 after year 1, $1,200 after year 2, $1,300 after year 3. The interest is always calculated on the original $1,000 principal. Compound interest is exponential. At 10% compound interest, you earn $100 in year 1 (same as simple). But in year 2, you earn 10% of $1,100 — that is $110. In year 3, you earn 10% of $1,210 — that is $121. Your interest income grows each year because you are earning interest on interest.\n\nThe difference seems small at first but becomes enormous over time. After 30 years, $1,000 at 10% simple interest grows to $4,000. The same $1,000 at 10% compound interest grows to $17,449. After 40 years, it reaches $45,259. After 50 years, $117,391 — from a single $1,000 investment.\n\nCompounding frequency matters too. The more often interest compounds, the faster your money grows. Annual compounding on $10,000 at 8% produces $10,800 after year 1. Monthly compounding at the same nominal rate produces $10,830. The difference is small for one year but meaningful over decades.\n\nThe most important variable in compound interest is time — not the amount invested or the return rate. Starting 10 years earlier can double or triple your final wealth. This is why the single best financial advice for young people is simply: start investing now, even if the amount is small. Time in the market is far more powerful than timing the market.",
+    examples: JSON.stringify(["$1,000 at 10% compounded annually: $1,000 after year 0, $1,100 after year 1, $1,210 after year 2, $1,331 after year 3", "$5,000 invested at 8% annually: grows to $10,795 in 10 years, $23,305 in 20 years, $50,313 in 30 years", "The Roth IRA illustration: $2,000 contributed at age 18 grows to over $100,000 by age 68 at 8% annual return", "Daily compounding: savings account at 4% APR compounds to 4.074% APY due to daily compounding effect", "Warren Buffett example: starting with $114,000 at age 35, he now manages over $100 billion — decades of compounding", "Debt compounding: $5,000 credit card balance at 20% APR with no payments grows to nearly $31,000 in 10 years"]),
+    practice_problems: JSON.stringify(["Calculate the future value of $2,000 invested today at 7% compounded annually for 25 years. Use: FV = 2000 x (1.07)^25", "Compare simple interest vs compound interest on $5,000 at 9% over 20 years. What is the dollar difference?", "At 8% annual compound return, how long does it take $10,000 to grow to $100,000? (Use the Rule of 72 as a guide)", "If you invest $100 per month starting at age 20 at 8% annual return, how much do you have at age 60? How much did you contribute in total?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What is compound interest?",
-        options: ["Interest paid by banks", "Earning interest on your interest", "Government interest", "Credit card interest"],
-        correct_answer: 1
-      }
+      { question: "What makes compound interest more powerful than simple interest?", options: ["It has higher interest rates", "You earn interest on your previously earned interest, creating exponential growth", "Banks guarantee compound returns", "It is always compounded daily"], correct_answer: 1 },
+      { question: "$1,000 at 10% compound interest — how much do you have after 3 years?", options: ["$1,300", "$1,331", "$1,100", "$1,200"], correct_answer: 1 },
+      { question: "Which factor has the MOST dramatic impact on compound interest outcomes?", options: ["The initial amount invested", "The interest rate", "Time — how long the money compounds", "Compounding frequency"], correct_answer: 2 },
+      { question: "Compound interest is described as dangerous in what context?", options: ["When applied to savings", "When applied to debt — a credit card balance grows exponentially if not paid", "When interest rates are low", "When applied to government bonds"], correct_answer: 1 },
+      { question: "At 8% annual compound return, approximately how long does it take for money to double?", options: ["8 years", "9 years", "12 years", "15 years"], correct_answer: 1 }
     ]
-  }
-,
-  // Module 3: Stock Market Basics (Beginner) - 8 lessons
-  {
+  },  {
     title: "What Is the Stock Market?",
     level: "beginner",
     module_number: 3,
     lesson_number: 1,
-    content: "The stock market is a collection of exchanges where shares of publicly traded companies are bought and sold. It provides companies with access to capital and gives investors ownership stakes in businesses. Major exchanges include NYSE and NASDAQ. The market operates through supply and demand, with prices reflecting investor sentiment about companies' future prospects.",
-    examples: JSON.stringify([
-      "Apple stock trading on NASDAQ",
-      "IPO: company going public for first time",
-      "Market hours: 9:30 AM - 4:00 PM ET",
-      "After-hours trading extending market access"
-    ]),
-    practice_problems: JSON.stringify([
-      "Research a company's stock listing and exchange",
-      "Understand market maker vs limit order book",
-      "Explain how stock prices are determined"
-    ]),
+    content: "The stock market is a marketplace where buyers and sellers trade ownership stakes in publicly listed companies. When you buy a share of Apple or Amazon, you are purchasing a tiny piece of that company — its assets, its earnings, and its future. The stock market is both a mechanism for companies to raise capital and a venue for investors to participate in economic growth.\n\nThe US has two primary stock exchanges. The New York Stock Exchange (NYSE), founded in 1792, is the world\'s largest exchange by market capitalization. The NASDAQ, founded in 1971, is known for technology companies and operates as a fully electronic exchange. Globally, major exchanges include the London Stock Exchange, Tokyo Stock Exchange, and Shanghai Stock Exchange. Together, global stock markets represent over $100 trillion in value.\n\nThe stock market operates through a system of buyers and sellers connected by brokers and electronic trading platforms. When you place an order through your brokerage account, it is routed to the exchange where it is matched with a seller. Prices are set continuously through this supply and demand process — when more people want to buy a stock than sell it, the price rises; when more want to sell, the price falls.\n\nTwo key market indexes track the overall health of the US stock market. The S&P 500 measures the performance of 500 large US companies and is the most widely followed benchmark. The Dow Jones Industrial Average (DJIA) tracks 30 large blue-chip companies and is historically significant though narrower in scope. The NASDAQ Composite is heavily weighted toward technology companies.\n\nFor most investors, the stock market is the single most important vehicle for building long-term wealth. Over the past century, US stocks have returned approximately 10% per year on average — far outpacing inflation and alternative asset classes. The key is long-term perspective: short-term market movements are unpredictable, but long-term, the stock market has consistently rewarded patient investors.",
+    examples: JSON.stringify(["NYSE listing: companies must meet strict requirements for size, governance, and financial reporting to be listed", "S&P 500 index: tracks 500 large US companies representing about 80% of total US stock market value", "IPO example: when a private company like Airbnb went public in 2020, it raised $3.5 billion by selling shares to public investors", "Bull market: S&P 500 rose from 2009 low of 676 to 2022 high of 4,796 — an 810% gain over 13 years", "Market capitalization: Apple Inc. became the first US company to reach $3 trillion in market cap in 2022", "Individual stock example: $1,000 invested in Amazon in 2001 was worth over $150,000 by 2021"]),
+    practice_problems: JSON.stringify(["What is the difference between the NYSE and NASDAQ? Why might a technology company prefer to list on NASDAQ?", "If the S&P 500 has averaged 10% annual returns over a century, why do so many individual investors earn less than this?", "Explain the IPO process. Why would a private company choose to go public? What are the downsides?", "Compare the S&P 500, Dow Jones, and NASDAQ Composite. What does each measure and why does it matter?"]),
     estimated_time: 20,
     quiz: [
-      {
-        question: "What is the primary purpose of the stock market?",
-        options: ["Gambling", "Provide companies capital and investors ownership", "Government revenue", "Employment"],
-        correct_answer: 1
-      }
+      { question: "What does buying a share of stock actually represent?", options: ["A loan to the company", "Ownership of a small piece of the company", "A guaranteed annual payment", "A government-backed investment"], correct_answer: 1 },
+      { question: "Which stock market index tracks 500 large US companies?", options: ["Dow Jones Industrial Average", "NASDAQ Composite", "S&P 500", "Russell 2000"], correct_answer: 2 },
+      { question: "What determines stock prices in the market?", options: ["Government regulation", "Company executives", "Supply and demand from buyers and sellers", "The Federal Reserve"], correct_answer: 2 },
+      { question: "What is an IPO?", options: ["A type of savings account", "When a private company first sells shares to public investors", "An index of pharmaceutical companies", "A trading strategy for professionals"], correct_answer: 1 },
+      { question: "What has been the approximate average annual return of the US stock market over the past century?", options: ["3-4%", "6-7%", "Around 10%", "15-20%"], correct_answer: 2 }
     ]
   },
   {
@@ -427,25 +272,16 @@ export const curriculumData = [
     level: "beginner",
     module_number: 3,
     lesson_number: 2,
-    content: "A share of stock represents partial ownership in a company. When you buy shares, you become a shareholder with certain rights including voting on company matters and receiving dividends if paid. Your ownership percentage equals your shares divided by total shares outstanding. Shareholders benefit when the company grows and prospers.",
-    examples: JSON.stringify([
-      "Owning 100 shares of 1 million outstanding = 0.01% ownership",
-      "Voting rights in annual shareholder meetings",
-      "Dividend payments as profit sharing",
-      "Stock appreciation as company value grows"
-    ]),
-    practice_problems: JSON.stringify([
-      "Calculate ownership percentage for given shares",
-      "Research shareholder rights for a public company",
-      "Understand difference between common and preferred stock"
-    ]),
-    estimated_time: 16,
+    content: "When a company issues stock, it divides itself into millions or billions of equal pieces called shares. Each share represents a fractional ownership interest in the company — a claim on its assets and earnings proportional to the percentage of total shares you own. Understanding what a share actually represents helps you think about stock investing as owning businesses, not just trading prices.\n\nCompanies issue stock for one primary reason: to raise capital without taking on debt. By selling ownership stakes to investors, a company can fund expansion, research, acquisitions, or other growth initiatives without paying interest to a lender. In exchange, shareholders gain voting rights on major corporate decisions and a proportional share of any profits distributed as dividends.\n\nStock can be classified as common stock or preferred stock. Common shareholders have voting rights and participate in the company\'s growth and dividends, but they are last in line if the company goes bankrupt. Preferred shareholders have priority over common shareholders for dividend payments and in bankruptcy proceedings, but typically do not have voting rights. Most individual investors own common stock.\n\nMarket capitalization (market cap) is the total value of all a company\'s outstanding shares — calculated as share price multiplied by total shares outstanding. A company with 1 billion shares at $50 per share has a market cap of $50 billion. This is a key metric for sizing and comparing companies: large-cap stocks (over $10 billion) like Apple and Microsoft are considered more stable; small-cap stocks (under $2 billion) are considered more volatile but potentially higher growth.\n\nOwnership also comes with rights. As a shareholder, you can vote on major corporate decisions (board members, mergers, major policy changes) at annual general meetings. You receive annual reports and can attend shareholder meetings. While your individual vote rarely changes outcomes in a large corporation, institutional investors owning millions of shares wield significant influence.",
+    examples: JSON.stringify(["Apple has roughly 15.5 billion shares outstanding; owning 1,000 shares means owning 0.0000065% of Apple", "Market cap calculation: if a company has 500 million shares at $40 each, its market cap is $20 billion", "Common stock voting: one share equals one vote on corporate governance matters at annual meetings", "Preferred stock: often used by startups to attract early investors who want guaranteed dividends before common shareholders", "Large-cap stock example: Microsoft with $3 trillion market cap — highly liquid, widely analyzed, relatively stable", "Small-cap stock: a $500 million regional bank — less analyst coverage, potentially higher growth but higher risk"]),
+    practice_problems: JSON.stringify(["A company has 200 million shares outstanding at a current price of $35. What is its market capitalization?", "If you own 500 shares of a company with 100 million total shares, what percentage do you own? If the company pays a $2 dividend per share, how much do you receive?", "Explain the difference between common stock and preferred stock. Why might a company issue both?", "Why does market capitalization matter more than share price when comparing two companies?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What does owning stock represent?",
-        options: ["Lending money to company", "Partial ownership in company", "Employment contract", "Government bond"],
-        correct_answer: 1
-      }
+      { question: "What does owning a share of stock legally represent?", options: ["A guaranteed annual dividend", "Fractional ownership in the company", "A loan you made to the company", "Rights to the company's products"], correct_answer: 1 },
+      { question: "How is market capitalization calculated?", options: ["Annual revenue divided by share price", "Share price multiplied by total shares outstanding", "Total assets minus total liabilities", "Net income times the P/E ratio"], correct_answer: 1 },
+      { question: "What is the main difference between common and preferred stock?", options: ["Common stock is only for corporations", "Common stock has voting rights; preferred stock has priority for dividends and in bankruptcy", "Preferred stock always earns more", "Common stock is traded on exchanges; preferred is not"], correct_answer: 1 },
+      { question: "A company has 400 million shares outstanding. If its share price is $25, what is its market cap?", options: ["$4 billion", "$10 billion", "$25 billion", "$400 million"], correct_answer: 1 },
+      { question: "What defines a large-cap stock?", options: ["Share price above $100", "Market capitalization over $10 billion", "Company with more than 10,000 employees", "Stock listed on the NYSE"], correct_answer: 1 }
     ]
   },
   {
@@ -453,25 +289,16 @@ export const curriculumData = [
     level: "beginner",
     module_number: 3,
     lesson_number: 3,
-    content: "Stock prices move based on supply and demand, which are influenced by company performance, economic conditions, investor sentiment, and market news. Positive news or strong earnings typically drive prices up, while negative developments drive them down. Market psychology, fear, and greed also play significant roles in short-term price movements.",
-    examples: JSON.stringify([
-      "Earnings beat expectations → stock price rises",
-      "Economic recession fears → market decline",
-      "New product launch → investor optimism",
-      "Interest rate changes affecting all stocks"
-    ]),
-    practice_problems: JSON.stringify([
-      "Track a stock's price movement and identify causes",
-      "Analyze how news affects stock prices",
-      "Understand market sentiment indicators"
-    ]),
-    estimated_time: 18,
+    content: "Stock prices move because the underlying perception of a company\'s value changes. At its core, a stock is worth the present value of all future cash flows the company is expected to generate. When that expectation changes — because of new information, shifting economic conditions, or changes in investor psychology — the stock price adjusts.\n\nThe most direct driver of stock price movements is earnings news. When a company reports quarterly earnings that exceed analyst expectations, its stock typically rises. When earnings disappoint, the stock usually falls. But expectations are baked into the price before the announcement, so a company can report strong earnings and still see its stock fall if the result was less than what investors had anticipated.\n\nBroader economic factors also move stocks. Interest rate changes affect all stocks because they alter the discount rate used to value future earnings — when rates rise, future earnings are worth less today, which pushes stock prices down. Economic data like GDP growth, unemployment, and consumer spending signal the health of the business environment. Geopolitical events like wars, elections, and trade disputes can trigger market-wide movements.\n\nCompany-specific news is also highly influential. A new product launch, leadership change, regulatory approval or rejection, merger announcement, or major contract win all move stock prices. Analyst upgrades or downgrades — when professional analysts change their rating from buy to hold or sell — can move a stock 5-10% in a day.\n\nSentiment and momentum also play a role. Markets are driven partly by human psychology — fear and greed move prices independent of fundamental value. A stock can rise simply because it has been rising and momentum traders pile in. It can fall simply because panic selling begets more selling. This is why short-term stock price movements are notoriously difficult to predict, even for professionals.",
+    examples: JSON.stringify(["Earnings beat: company reports $1.20 EPS vs $1.00 expected — stock jumps 8% after-hours", "Interest rate impact: Federal Reserve raises rates 0.5% — growth stocks fall because future earnings are discounted more heavily", "Company news: FDA approves new drug — pharmaceutical stock surges 40% in a single day", "Analyst downgrade: major investment bank downgrades stock from buy to sell — stock drops 6% on the news", "Macro event: COVID-19 announced as pandemic in March 2020 — S&P 500 fell 34% in 33 days", "Sentiment-driven rally: meme stock GameStop rose from $20 to $483 in January 2021 driven purely by social media momentum"]),
+    practice_problems: JSON.stringify(["A company reports earnings of $2.10 per share. Analysts expected $2.50. Even though the earnings are positive, the stock falls 15%. Explain why.", "If the Federal Reserve raises interest rates significantly, what happens to growth stocks that have most of their expected earnings in the distant future?", "List three company-specific events that would likely cause a stock to rise. List three that would likely cause it to fall.", "How does investor sentiment (fear and greed) influence stock prices in ways that are disconnected from a company's actual business performance?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What primarily drives stock price movements?",
-        options: ["Government decisions", "Supply and demand", "Company employees", "Stock exchanges"],
-        correct_answer: 1
-      }
+      { question: "What is the fundamental driver of a stock's long-term value?", options: ["How popular the company is", "The present value of all future cash flows the company is expected to generate", "The current share price", "The company's age and history"], correct_answer: 1 },
+      { question: "Why can a company report strong earnings and still see its stock price fall?", options: ["The stock market is irrational", "If the earnings were already expected or the guidance disappointed, the stock may fall", "Earnings never directly affect stock prices", "Strong earnings always cause stocks to rise"], correct_answer: 1 },
+      { question: "How do rising interest rates generally affect stock prices?", options: ["Rising rates always boost stock prices", "They tend to push stock prices down by increasing the discount rate on future earnings", "They have no effect on stock prices", "They only affect bond prices, not stocks"], correct_answer: 1 },
+      { question: "GameStop's stock rose from $20 to nearly $500 in 2021 primarily due to:", options: ["Exceptional business performance", "A major acquisition announcement", "Social media-driven momentum and sentiment trading", "A Federal Reserve rate cut"], correct_answer: 2 },
+      { question: "What is an analyst upgrade or downgrade?", options: ["A change in a company's credit rating", "A professional analyst changing their stock recommendation, which can significantly move the price", "A government review of a company's practices", "A change in the stock's exchange listing"], correct_answer: 1 }
     ]
   },
   {
@@ -479,25 +306,16 @@ export const curriculumData = [
     level: "beginner",
     module_number: 3,
     lesson_number: 4,
-    content: "US stock markets operate Monday through Friday, 9:30 AM to 4:00 PM Eastern Time. Pre-market trading occurs 4:00-9:30 AM and after-hours trading runs 4:00-8:00 PM. Extended hours have lower volume and wider spreads. Markets are closed on federal holidays. Global markets operate in different time zones, creating 24-hour trading opportunities.",
-    examples: JSON.stringify([
-      "Regular hours: 9:30 AM - 4:00 PM ET",
-      "Pre-market: earnings announcements impact",
-      "After-hours: lower liquidity, wider spreads",
-      "Holiday closures: Christmas, Thanksgiving, etc."
-    ]),
-    practice_problems: JSON.stringify([
-      "Calculate trading hours in your time zone",
-      "Understand risks of extended hours trading",
-      "Research global market trading times"
-    ]),
-    estimated_time: 14,
+    content: "The US stock market has regular trading hours and mechanisms that govern when and how trades occur. Understanding market hours matters because prices can move significantly outside of regular trading, and the timing of your trades can affect the price you receive.\n\nRegular trading hours for the NYSE and NASDAQ are 9:30 AM to 4:00 PM Eastern Time, Monday through Friday. This is when the majority of volume occurs and when bid-ask spreads are typically tightest — meaning you get the best prices. The market is closed on federal holidays including New Year\'s Day, Martin Luther King Jr. Day, Presidents Day, Good Friday, Memorial Day, Juneteenth, Independence Day, Labor Day, Thanksgiving Day, and Christmas Day.\n\nPre-market trading occurs from 4:00 AM to 9:30 AM Eastern. After-hours trading occurs from 4:00 PM to 8:00 PM Eastern. These sessions are available through most major brokerages and are when significant price movements often occur in response to earnings releases (most companies report earnings after the market close). However, pre-market and after-hours trading has much lower volume, wider bid-ask spreads, and higher volatility — making it riskier for most investors.\n\nThe market open (9:30 AM) and market close (4:00 PM) are the most volatile times of day. The opening auction matches all accumulated overnight orders and often produces large initial swings. The close is when institutional investors and index funds rebalance portfolios, creating another burst of volume and volatility. The mid-day session between 11:30 AM and 2:30 PM is typically the quietest period.\n\nFor long-term investors, market hours are largely irrelevant — you are buying and holding for years, not trying to optimize the minute of execution. But for active traders, understanding market structure and timing is essential for managing execution quality and risk.",
+    examples: JSON.stringify(["Earnings release timing: Apple releases quarterly earnings after 4:00 PM — stock moves significantly in after-hours before next day open", "Federal holiday closure: market closed on Thanksgiving and the day after is a half-day, ending at 1:00 PM ET", "After-hours volatility: a drug company announces FDA rejection at 5 PM — stock falls 60% in after-hours trading", "Pre-market gap: company reports strong earnings before market open — stock opens up 12% from previous close", "Market open volatility: first 30 minutes after 9:30 AM tends to have highest volume and widest price swings", "Limit order advantage: placing limit orders in after-hours prevents buying at inflated prices during thin trading"]),
+    practice_problems: JSON.stringify(["Why would an investor prefer to trade during regular market hours (9:30-4:00) rather than after-hours, even if the stock price moves after-hours?", "A company announces a merger deal after market close on a Friday before a holiday weekend. When will investors first be able to trade on this information?", "What is a bid-ask spread and why is it typically wider in after-hours trading?", "Should a long-term buy-and-hold investor worry about trading during the exact right hour of the day? Explain your reasoning."]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What are regular US stock market hours?",
-        options: ["24/7", "9:30 AM - 4:00 PM ET", "8:00 AM - 5:00 PM ET", "10:00 AM - 3:00 PM ET"],
-        correct_answer: 1
-      }
+      { question: "What are the regular US stock market trading hours?", options: ["8:00 AM to 5:00 PM ET", "9:30 AM to 4:00 PM ET", "9:00 AM to 4:30 PM ET", "10:00 AM to 3:00 PM ET"], correct_answer: 1 },
+      { question: "When do most companies release their quarterly earnings?", options: ["Before market open", "During market hours", "After the market closes at 4:00 PM", "On weekends"], correct_answer: 2 },
+      { question: "Why is after-hours trading generally riskier for ordinary investors?", options: ["It is regulated differently", "Lower volume creates wider bid-ask spreads and more volatile prices", "After-hours prices are not real", "Only institutions can trade after hours"], correct_answer: 1 },
+      { question: "Which time of day typically has the MOST trading volume and volatility?", options: ["Late afternoon, around 3:30-4:00 PM", "Midday, around noon", "Right after the 9:30 AM market open", "Pre-market trading"], correct_answer: 2 },
+      { question: "For a long-term buy-and-hold investor, how important is the exact time of day when placing a trade?", options: ["Extremely important — timing is everything", "Moderately important — always trade at 9:30 AM", "Not very important — over years, minor execution timing matters little", "Should only trade on Mondays"], correct_answer: 2 }
     ]
   },
   {
@@ -505,25 +323,16 @@ export const curriculumData = [
     level: "beginner",
     module_number: 3,
     lesson_number: 5,
-    content: "Long-term investing involves buying and holding stocks for years or decades, focusing on company fundamentals and growth. Trading involves frequent buying and selling to profit from short-term price movements. Long-term investing typically has lower costs, better tax treatment, and historically better returns. Trading requires more time, skill, and often results in higher costs and taxes.",
-    examples: JSON.stringify([
-      "Buy and hold: Warren Buffett's approach",
-      "Day trading: buying and selling same day",
-      "Long-term: compound growth over decades",
-      "Trading: frequent transactions and fees"
-    ]),
-    practice_problems: JSON.stringify([
-      "Compare costs of trading vs long-term investing",
-      "Analyze tax implications of each approach",
-      "Research successful long-term investors"
-    ]),
-    estimated_time: 19,
+    content: "One of the most important decisions a market participant makes is choosing a time horizon. Long-term investing means buying assets and holding them for years or decades, allowing compound growth to work. Trading means buying and selling frequently — sometimes within the same day — attempting to profit from short-term price movements. These two approaches differ fundamentally in their mechanics, tax implications, risk profiles, and the skills required.\n\nLong-term investors benefit from several structural advantages. First, the stock market has historically trended upward over long periods, rewarding patient holders even through volatile periods. Second, long-term capital gains (assets held more than one year) are taxed at 0%, 15%, or 20% — far lower than ordinary income tax rates that apply to short-term gains. Third, long-term investors incur minimal transaction costs and require less time and skill.\n\nActive traders attempt to profit from short-term price movements — a stock rising from $48 to $52 in a week, or a currency pair moving 50 pips in a day. To do this consistently requires developing sophisticated analytical skills, fast execution, strict risk management, and the psychological discipline to cut losses quickly. Research consistently shows that the vast majority of individual traders underperform a simple index fund over time, primarily due to trading costs, taxes, and behavioral biases.\n\nDay trading — buying and selling within a single market session — is the extreme form of active trading. The SEC\'s pattern day trader rule requires accounts that make four or more day trades in five business days to maintain a $25,000 minimum balance. Studies suggest over 70% of day traders lose money, and fewer than 1% earn profits that exceed a simple S&P 500 index fund.\n\nFor most people, the evidence strongly favors long-term investing over active trading. This does not mean passive — it means intentional, diversified, and patient. The legendary investor Jack Bogle built Vanguard on this principle, and the data consistently supports it.",
+    examples: JSON.stringify(["Long-term investing: Warren Buffett bought Coca-Cola in 1988 and still holds it today — decades of compounding dividends and appreciation", "Day trading: attempting to profit from Tesla stock moving from $250 to $255 in a single session by buying and selling within hours", "Tax advantage: stock held 13 months taxed at 15% capital gains rate vs 13 days taxed at 37% ordinary income rate", "Study finding: a Barber and Odean study found individual investors who trade the most earn returns 6.5% below market average per year", "Index fund vs trading: Vanguard S&P 500 index fund has outperformed 80-90% of actively managed funds over 20-year periods", "Transaction costs: a trader making 100 trades per year at $5 per trade pays $500 annually — adds up to thousands over time"]),
+    practice_problems: JSON.stringify(["Compare the after-tax return of selling a stock after 11 months versus 13 months, assuming a $10,000 gain and a 35% income tax bracket.", "Why do most individual day traders lose money despite the stock market generally trending upward over time?", "Design a simple long-term investment strategy for a 28-year-old with $500 per month to invest. What would you recommend and why?", "What psychological factors make short-term trading so difficult even for people with good analytical skills?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What's a key advantage of long-term investing over trading?",
-        options: ["More exciting", "Lower costs and better tax treatment", "Guaranteed profits", "No risk"],
-        correct_answer: 1
-      }
+      { question: "What is the primary tax advantage of long-term investing versus active trading?", options: ["No taxes on investments held over 5 years", "Long-term capital gains are taxed at lower rates than short-term gains", "Active traders can deduct all losses from income", "There is no tax difference between the two"], correct_answer: 1 },
+      { question: "What does research consistently show about individual day traders?", options: ["Most earn returns above the market average", "About 50% are profitable long-term", "The majority lose money and underperform simple index funds", "Day trading is only legal for professionals"], correct_answer: 2 },
+      { question: "What is the SEC pattern day trader rule?", options: ["You must hold stocks for at least one day before selling", "Accounts making 4+ day trades in 5 business days must maintain $25,000 minimum balance", "Day trading is limited to 10 trades per month", "You need a special license to day trade"], correct_answer: 1 },
+      { question: "Why has the S&P 500 index fund outperformed most actively managed funds over 20 years?", options: ["Index funds take more risk", "Index funds have lower costs and benefit from broad market growth without trading friction", "Index funds are backed by the government", "Active managers are required to hold losing stocks"], correct_answer: 1 },
+      { question: "What is the core principle behind long-term buy-and-hold investing?", options: ["Selling at every peak and buying at every dip", "Owning diversified assets for years or decades and letting compound growth work", "Only investing in the 10 best-performing stocks each year", "Rebalancing your portfolio every month"], correct_answer: 1 }
     ]
   },
   {
@@ -531,25 +340,16 @@ export const curriculumData = [
     level: "beginner",
     module_number: 3,
     lesson_number: 6,
-    content: "Index funds are mutual funds or ETFs that track a market index like the S&P 500. They provide instant diversification across hundreds or thousands of stocks with low fees. Instead of trying to beat the market, they match market performance. This passive approach has outperformed most active fund managers over long periods while keeping costs minimal.",
-    examples: JSON.stringify([
-      "S&P 500 index fund owns all 500 companies",
-      "Total stock market fund owns entire US market",
-      "Low expense ratios: 0.03% vs 1%+ for active funds",
-      "Automatic diversification and rebalancing"
-    ]),
-    practice_problems: JSON.stringify([
-      "Compare index fund expense ratios",
-      "Understand different types of index funds",
-      "Calculate impact of fees over 30 years"
-    ]),
-    estimated_time: 17,
+    content: "An index fund is a type of investment fund designed to replicate the performance of a market index — such as the S&P 500, the total US stock market, or the global stock market. Instead of a fund manager picking individual stocks, an index fund simply owns all (or a representative sample) of the stocks in its target index. This passive approach has proven remarkably effective for long-term investors.\n\nThe appeal of index funds comes down to three things: diversification, low cost, and evidence. By holding hundreds or thousands of stocks, an index fund virtually eliminates the risk of any single company\'s failure devastating your portfolio. When Enron or Lehman Brothers collapsed, S&P 500 index fund holders barely noticed because those companies were tiny fractions of the total. Cost is the second advantage. Active funds charge management fees averaging around 0.5% to 1% or more annually; the Vanguard S&P 500 index fund charges just 0.03%. Over decades, that cost difference compounds dramatically. Third, the evidence: over 80-90% of actively managed large-cap funds underperform the S&P 500 index over 20-year periods after fees.\n\nJohn Bogle, founder of Vanguard, popularized index investing in 1975. His insight was that in aggregate, all investors must earn the market return before fees — and after fees, active investors as a group must underperform. The only way to guarantee capturing the market return is to own the market at minimal cost.\n\nIndex funds come in many flavors. Broad market funds own thousands of US stocks. International index funds cover developed or emerging markets outside the US. Bond index funds own diversified baskets of bonds. Sector index funds focus on specific industries. This variety allows investors to construct a comprehensive diversified portfolio using just a handful of index funds.\n\nFor most individual investors — especially those early in their investing journey — a simple portfolio of one or two low-cost index funds is both theoretically sound and practically superior to most alternatives.",
+    examples: JSON.stringify(["Vanguard S&P 500 ETF (VOO): 0.03% expense ratio, tracks 500 largest US companies, $400+ billion in assets", "Total stock market fund: VTSAX owns over 3,800 US stocks — complete US market exposure in one fund", "Three-fund portfolio: US total market fund + international stock fund + bond index fund covers essentially all investable assets", "Cost comparison: active fund at 1% annually on $100,000 costs $1,000/year vs index fund at 0.03% costing $30/year", "S&P SPIVA report: 88% of US large-cap active funds underperformed the S&P 500 over 15 years (2023 data)", "International index: Vanguard Total International Stock ETF (VXUS) covers 7,000+ stocks in 47 countries"]),
+    practice_problems: JSON.stringify(["Compare the total fees paid over 30 years on $50,000 invested: one fund at 1% expense ratio versus one at 0.04%. Assume 8% gross annual return before fees.", "Why do most actively managed funds underperform index funds over long periods, even when managed by intelligent professionals?", "Design a simple three-fund portfolio for a 30-year-old with moderate risk tolerance. Specify which index funds and what allocation percentage.", "What would John Bogle say to someone who claims they have found an active fund manager that consistently beats the market?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What is an index fund's main goal?",
-        options: ["Beat the market", "Match market performance", "Minimize risk", "Maximize dividends"],
-        correct_answer: 1
-      }
+      { question: "What does an index fund do?", options: ["Picks the best individual stocks based on research", "Replicates the performance of a market index by holding all or most stocks in that index", "Guarantees returns above the market average", "Invests only in bonds and safe assets"], correct_answer: 1 },
+      { question: "What is the main cost advantage of index funds over actively managed funds?", options: ["Index funds never lose money", "Index funds charge much lower expense ratios — often 0.03% vs 0.5-1%+ for active funds", "Index funds don't charge any fees", "Active funds charge a success fee only when they win"], correct_answer: 1 },
+      { question: "Over 15-20 year periods, what percentage of active large-cap funds typically underperform the S&P 500?", options: ["About 20-30%", "About 50%", "About 80-90%", "About 100%"], correct_answer: 2 },
+      { question: "Who founded Vanguard and popularized index fund investing?", options: ["Warren Buffett", "George Soros", "John Bogle", "Peter Lynch"], correct_answer: 2 },
+      { question: "What is the expense ratio of the Vanguard S&P 500 ETF (VOO)?", options: ["1.5% per year", "0.5% per year", "0.1% per year", "About 0.03% per year"], correct_answer: 3 }
     ]
   },
   {
@@ -557,25 +357,16 @@ export const curriculumData = [
     level: "beginner",
     module_number: 3,
     lesson_number: 7,
-    content: "ETFs (Exchange-Traded Funds) are baskets of stocks that trade like individual stocks but provide diversification. Individual stocks offer potential for higher returns but come with higher risk and require more research. ETFs are better for beginners and passive investors, while individual stocks suit those who want to research companies and accept higher risk for potential higher returns.",
-    examples: JSON.stringify([
-      "SPY ETF contains 500 stocks in one purchase",
-      "Individual Apple stock: all eggs in one basket",
-      "Sector ETFs: technology, healthcare, energy",
-      "International ETFs: global diversification"
-    ]),
-    practice_problems: JSON.stringify([
-      "Compare risk of ETF vs individual stock",
-      "Research different types of ETFs available",
-      "Understand when to choose each approach"
-    ]),
-    estimated_time: 16,
+    content: "Exchange-Traded Funds (ETFs) and individual stocks are both bought and sold on stock exchanges, but they differ fundamentally in what they are and how they behave in a portfolio. Understanding this distinction helps investors make informed decisions about how to build their holdings.\n\nAn ETF is a basket of securities — stocks, bonds, commodities, or other assets — that trades as a single security on an exchange. When you buy one share of the SPDR S&P 500 ETF (SPY), you are effectively buying a tiny slice of all 500 companies in the S&P 500. ETFs offer instant diversification, professional structuring, and typically low costs. Because they trade on exchanges like stocks, you can buy and sell them throughout the trading day at market prices.\n\nIndividual stocks represent ownership in a single company. When you buy shares of Microsoft, your portfolio\'s performance depends entirely on how Microsoft performs — and nothing else. This concentration creates both the potential for outsize gains (if you pick well) and the potential for severe losses (if the company struggles or collapses).\n\nFor most investors, ETFs provide the better risk-adjusted outcome. Research consistently shows that stock-picking — selecting individual stocks that outperform the market — is extremely difficult even for professional analysts with full-time resources. Most individual investors who concentrate in individual stocks underperform a simple index ETF over time, after accounting for risk.\n\nHowever, individual stocks are not without merit. Some investors enjoy the research process, follow specific industries deeply, or want to own businesses they genuinely understand and believe in. Individual stock investing can be done thoughtfully — through diversification across 20-30 stocks in different sectors, for example — while remaining distinct from index fund investing.\n\nThe practical recommendation for most investors: build a core portfolio of diversified ETFs and, if desired, allocate a smaller portion (10-15% of portfolio) to individual stocks for engagement and potential upside — without betting the whole portfolio on any single company.",
+    examples: JSON.stringify(["SPY (SPDR S&P 500 ETF): one share gives exposure to all 500 companies in the S&P 500, rebalanced automatically", "QQQ (Invesco QQQ): ETF tracking 100 largest NASDAQ companies — heavy technology weighting", "Individual stock risk: Enron stock went from $90 to $0.26 in 2001; investors in S&P 500 ETF barely noticed", "Sector ETF: XLF tracks the financial sector, allowing targeted exposure without picking individual banks", "Core-satellite portfolio: 80% in total market ETF (core) + 20% in individual stocks the investor researches deeply (satellite)", "Cost: most equity ETFs charge 0.03% to 0.20% annually; no ongoing costs beyond the expense ratio"]),
+    practice_problems: JSON.stringify(["You invest $10,000. Compare the risk profile of (a) all in Apple stock, (b) all in S&P 500 ETF, (c) spread across 5 sector ETFs. Which is most diversified?", "Why can an investor who correctly predicts that the technology sector will grow still underperform a tech ETF if they pick the wrong individual tech stocks?", "Design a portfolio for a new investor with $5,000. Would you recommend individual stocks or ETFs? Give specific fund names.", "What is the 'core-satellite' investing approach? How does it balance index investing with individual stock picks?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What's the main advantage of ETFs over individual stocks?",
-        options: ["Higher returns", "Instant diversification", "Lower price", "More voting rights"],
-        correct_answer: 1
-      }
+      { question: "What is an ETF?", options: ["A type of bank savings account", "A basket of securities that trades as a single security on an exchange", "A guaranteed investment contract", "A type of government bond"], correct_answer: 1 },
+      { question: "What is the main risk of concentrating your portfolio in individual stocks?", options: ["Individual stocks never pay dividends", "A single company's failure can severely damage your portfolio", "Individual stocks cannot be sold quickly", "Individual stocks require a financial advisor"], correct_answer: 1 },
+      { question: "When you buy one share of the S&P 500 ETF (SPY), you get exposure to:", options: ["Just the top 10 companies in the S&P 500", "All 500 companies in the S&P 500 proportionally", "Only technology stocks", "US government bonds"], correct_answer: 1 },
+      { question: "What is the core-satellite portfolio approach?", options: ["Investing only in large companies", "A core of diversified index ETFs plus a smaller allocation to individual stocks or specialized funds", "Trading ETFs during the day and stocks at night", "Holding 50% in stocks and 50% in bonds always"], correct_answer: 1 },
+      { question: "Which of the following best explains why ETFs often outperform individual stock picking over time?", options: ["ETFs are guaranteed by the government", "Diversification eliminates single-company risk and avoids the difficulty of consistently picking winners", "ETFs are only available to professional investors", "ETFs have higher returns than individual stocks in all market conditions"], correct_answer: 1 }
     ]
   },
   {
@@ -583,53 +374,32 @@ export const curriculumData = [
     level: "beginner",
     module_number: 3,
     lesson_number: 8,
-    content: "Dividends are payments companies make to shareholders from their profits. They're typically paid quarterly and can provide steady income. Dividend yield is the annual dividend divided by stock price. Some companies pay high dividends, others pay none and reinvest profits for growth. Dividend-paying stocks can provide income and potentially lower volatility.",
-    examples: JSON.stringify([
-      "Microsoft pays $0.68 quarterly = $2.72 annually",
-      "3% dividend yield on $100 stock = $3 annual income",
-      "Dividend aristocrats: 25+ years of increases",
-      "DRIP: reinvesting dividends to buy more shares"
-    ]),
-    practice_problems: JSON.stringify([
-      "Calculate dividend yield for a stock",
-      "Research dividend payment history",
-      "Understand dividend reinvestment plans"
-    ]),
-    estimated_time: 15,
+    content: "A dividend is a cash payment that a company distributes to its shareholders, typically from its profits. When a company earns money, it has several choices: reinvest it back into the business to fund growth, buy back its own stock, pay down debt, or distribute it to shareholders as dividends. Companies that pay regular dividends are typically mature, profitable businesses with more cash than they need for growth opportunities.\n\nDividends are usually expressed as a dollar amount per share per year. A company paying a $2 annual dividend on a $40 stock has a dividend yield of 5% ($2 / $40). Dividend yields vary considerably: utility companies and real estate investment trusts (REITs) often yield 4-6%, while growth-oriented technology companies may pay zero dividends because they reinvest all earnings.\n\nMost dividend-paying companies pay on a quarterly schedule. To receive a dividend, you must own the stock by the ex-dividend date — typically two business days before the record date. If you buy the stock on or after the ex-dividend date, you will not receive the next dividend payment. The actual cash hits your brokerage account on the payment date.\n\nDividend reinvestment is a powerful wealth-building strategy. Rather than taking dividend payments as cash, you automatically use them to buy more shares. Over decades, reinvested dividends can account for a substantial portion of total investment returns. Historical data shows that dividends have contributed roughly 40% of the total return of the S&P 500 since 1926.\n\nFor income investors — especially retirees — dividends provide a steady cash flow from investments without needing to sell shares. A $500,000 portfolio of dividend stocks yielding 4% generates $20,000 per year in income, preserving capital while living off the income stream. Dividend aristocrats — companies that have raised their dividend for 25+ consecutive years — include names like Johnson & Johnson, Coca-Cola, and Procter & Gamble.",
+    examples: JSON.stringify(["Johnson & Johnson: pays quarterly dividends and has raised its dividend for over 60 consecutive years — a Dividend King", "Dividend yield calculation: $1.84 annual dividend on a $46 stock = 4% yield", "Dividend reinvestment: investing $10,000 in an S&P 500 fund in 1990 with dividends reinvested vs not reinvested shows a dramatic wealth difference by 2024", "REIT dividends: Real Estate Investment Trusts are required by law to pay at least 90% of taxable income as dividends — often yielding 4-6%", "Ex-dividend date: stock trades at $50 on ex-div date, then drops roughly by the dividend amount ($1) to $49 — the dividend is extracted from the price", "Dividend aristocrats: 67 S&P 500 companies have raised dividends for 25+ consecutive years as of 2024"]),
+    practice_problems: JSON.stringify(["A stock trades at $60 and pays a $2.40 annual dividend in four quarterly installments. Calculate the dividend yield.", "You own 200 shares of a stock that pays a $0.75 quarterly dividend. How much do you receive per year? If you reinvest dividends and the stock stays at $50, how many new shares do you accumulate per year?", "Compare two investments over 20 years: $10,000 in a stock with 7% price appreciation and no dividends, vs $10,000 in a stock with 5% price appreciation and 3% dividend yield (reinvested). Which outperforms?", "Why might a growth company like Amazon historically pay no dividends while a utility company like Duke Energy pays consistent high dividends?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What are dividends?",
-        options: ["Stock price increases", "Payments to shareholders from profits", "Trading fees", "Government taxes"],
-        correct_answer: 1
-      }
+      { question: "What is a dividend?", options: ["A type of bond interest payment", "A fee charged by brokerages", "Cash paid by a company to its shareholders from profits", "A tax paid on investment gains"], correct_answer: 2 },
+      { question: "How is dividend yield calculated?", options: ["Annual dividend divided by the company's total revenue", "Annual dividend per share divided by the current stock price", "Quarterly dividend multiplied by four", "Total dividends paid divided by number of shareholders"], correct_answer: 1 },
+      { question: "What is the ex-dividend date?", options: ["The date dividends are paid", "The cutoff date by which you must own the stock to receive the upcoming dividend", "The date the company announces its dividend", "The date dividends are taxed"], correct_answer: 1 },
+      { question: "Approximately what portion of the S&P 500's historical total return has come from dividends?", options: ["Less than 5%", "About 10-15%", "About 40%", "Over 70%"], correct_answer: 2 },
+      { question: "What is a Dividend Aristocrat?", options: ["A company that pays the highest dividend yield", "A company that has raised its dividend for 25+ consecutive years", "A fund that only invests in dividend-paying stocks", "A bond with variable interest payments"], correct_answer: 1 }
     ]
-  }
-,
-  // Module 4: Trading Fundamentals (Beginner) - 7 lessons
-  {
+  },  {
     title: "Market Orders vs Limit Orders",
     level: "beginner",
     module_number: 4,
     lesson_number: 1,
-    content: "Market orders execute immediately at the current market price, while limit orders only execute at your specified price or better. Market orders guarantee execution but not price. Limit orders guarantee price but not execution. Understanding order types is crucial for controlling your entry and exit points in trades.",
-    examples: JSON.stringify([
-      "Market order: 'Buy 100 shares now at whatever price'",
-      "Limit order: 'Buy 100 shares only if price is $50 or less'",
-      "Market order fills instantly during market hours",
-      "Limit order may not fill if price doesn't reach limit"
-    ]),
-    practice_problems: JSON.stringify([
-      "Decide when to use market vs limit orders",
-      "Understand bid-ask spread impact on orders",
-      "Practice placing different order types"
-    ]),
-    estimated_time: 18,
+    content: "When you place a trade through your brokerage account, you need to specify not just what to buy or sell, but also how to execute the trade. The two most fundamental order types are market orders and limit orders, and choosing between them affects the price you receive and the certainty of execution.\n\nA market order tells your broker to buy or sell immediately at whatever the current market price is. It prioritizes speed and certainty of execution over price. If you place a market order to buy 100 shares of a stock currently trading at $50, your order will be filled quickly — but if the market is moving fast or the stock is thinly traded, you might pay $50.05 or $50.15 instead of exactly $50. Market orders are best used for highly liquid, large-cap stocks during regular market hours when bid-ask spreads are tight.\n\nA limit order lets you specify the maximum price you are willing to pay (when buying) or the minimum price you will accept (when selling). If you place a limit order to buy at $48, your order will only execute if the stock price drops to $48 or below. If the price never reaches $48, your order stays open (or expires) unfilled. Limit orders give you price control but not execution certainty.\n\nFor buyers, a buy limit order is placed below the current price (you want to pay less). For sellers, a sell limit order is placed above the current price (you want to receive more). Limit orders can be set as day orders (expire at end of trading day) or GTC (good till cancelled, usually 30-90 days depending on the broker).\n\nFor most long-term investors placing trades in large, liquid stocks, market orders are perfectly fine. Limit orders become more valuable when trading smaller or less liquid securities, when you want to buy on a dip, when trading in after-hours sessions, or when you are managing an active portfolio where price precision matters.",
+    examples: JSON.stringify(["Market order to buy Apple at $185: executes immediately at current ask price — might be $185.02 in fast market", "Buy limit order at $48 on a $51 stock: order waits; executes only if stock falls to $48 or below", "Sell limit order at $60 on a $55 stock: will only execute if stock rises to $60 — sets a target exit price", "Slippage example: market order for a thinly traded small-cap stock; requested $12.00 but filled at $12.35 due to low liquidity", "Day order: limit order to buy at $95 expires unfilled at 4:00 PM if stock never drops to $95 during the day", "GTC limit order: remains active for up to 90 days, waiting for the desired price to be reached"]),
+    practice_problems: JSON.stringify(["You want to buy a stock currently trading at $75. You think it is fairly valued and want immediate exposure. What order type do you use?", "You want to buy the same $75 stock but only if it pulls back to $70. What order type and parameters do you set?", "What is slippage and when is it most likely to occur? How do limit orders help prevent slippage?", "You own a stock at $40 and want to take profits if it reaches $50. What order type would you set, and what parameters?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What does a market order guarantee?",
-        options: ["Best price", "Execution", "Profit", "Low fees"],
-        correct_answer: 1
-      }
+      { question: "What does a market order prioritize?", options: ["Getting the exact price you want", "Speed and certainty of execution at the current market price", "Avoiding transaction fees", "Waiting for the best price of the day"], correct_answer: 1 },
+      { question: "What is a buy limit order?", options: ["An order to buy immediately at any price", "An order to buy only if the price drops to your specified level or below", "An order that automatically adjusts as prices change", "An order that expires in one minute"], correct_answer: 1 },
+      { question: "What is slippage?", options: ["A brokerage fee for large orders", "The difference between the expected price and the actual execution price", "A type of trading mistake", "When a limit order expires unfilled"], correct_answer: 1 },
+      { question: "A stock is at $100. You place a sell limit order at $110. When does it execute?", options: ["Immediately at $100", "Only when the stock price rises to $110 or higher", "Only during after-hours trading", "It never executes"], correct_answer: 1 },
+      { question: "What is a GTC order?", options: ["A guaranteed trade at closing price", "Good Till Cancelled — an order that remains active until filled or manually cancelled", "A government-regulated trade condition", "A type of stop-loss order"], correct_answer: 1 }
     ]
   },
   {
@@ -637,1727 +407,1013 @@ export const curriculumData = [
     level: "beginner",
     module_number: 4,
     lesson_number: 2,
-    content: "Stop-loss orders automatically sell your stock when it drops to a specified price, limiting your losses. They help remove emotion from selling decisions and protect against major losses. However, they can be triggered by temporary price dips and don't guarantee the exact stop price in volatile markets. They're essential for risk management.",
-    examples: JSON.stringify([
-      "Buy stock at $100, set stop-loss at $90",
-      "Stock drops to $90, automatically sells",
-      "Limits loss to 10% instead of potentially more",
-      "Trailing stop-loss moves up with stock price"
-    ]),
-    practice_problems: JSON.stringify([
-      "Calculate appropriate stop-loss levels",
-      "Understand different types of stop orders",
-      "Practice setting stop-losses for risk management"
-    ]),
-    estimated_time: 16,
+    content: "A stop-loss order is a risk management tool that automatically sells your position if the price falls to a specified level. By defining your maximum acceptable loss in advance, you remove the emotional decision of when to sell a losing position — a decision most investors make too late or not at all.\n\nHere is how a basic stop-loss works: you buy a stock at $50 and set a stop-loss at $45. If the price falls to $45, your stop order is triggered and a market order is submitted to sell your shares. You have pre-determined that a 10% loss is your maximum tolerance for this position. Without the stop-loss, you might hold indefinitely as the stock falls to $30 or $20, rationalizing that it will recover — a common and costly mistake called the sunk cost fallacy.\n\nA stop-limit order is a variation that triggers a limit order (rather than a market order) when the stop price is hit. This gives you price control but risks non-execution: if the stock gaps down sharply through your limit price, your order may not fill and you hold a rapidly declining position. In fast-falling markets, a stop-loss (which converts to a market order) is more reliable for actually getting out.\n\nA trailing stop is a dynamic stop-loss that moves upward as the stock price rises. If you set a 10% trailing stop on a stock at $50, the stop starts at $45. If the stock rises to $60, the stop rises to $54. If the stock then falls from $60 to $54, you are sold out — locking in a $4 gain while limiting your loss from the high. Trailing stops are excellent tools for protecting gains in trending positions.\n\nImportant caveats: stop-loss orders can be triggered by brief intraday price spikes and whipsaws in volatile stocks, selling you out of good positions at bad times. For long-term investors in broadly diversified portfolios, stops are often counterproductive. They are most valuable for concentrated single-stock positions or active traders managing short-term trades.",
+    examples: JSON.stringify(["Basic stop-loss: buy stock at $80, set stop at $72 (10% below) — automatically exits if stock falls to $72", "Trailing stop example: set 15% trailing stop on $100 stock; rises to $130, stop moves to $110.50; stock falls to $110.50 and you sell, locking in $10.50 gain", "Stop-limit risk: set stop-limit at $45 stop/$44.50 limit; stock gaps to $40 on bad news — order doesn't fill, stuck with bigger loss", "Volatility whipsaw: stock briefly dips to $47 in a volatile session, triggers stop-loss sale; stock immediately rebounds to $55 — sold at the bottom", "Professional use: hedge fund trader buys $500,000 position with 5% stop-loss to cap loss at $25,000", "Mental stop-loss: experienced investors sometimes use discipline instead of orders, with a pre-committed plan to sell at a specific loss"]),
+    practice_problems: JSON.stringify(["You buy 100 shares of a stock at $60. You are willing to lose no more than 12%. At what price do you set your stop-loss? What is your maximum dollar loss?", "Explain the difference between a stop-loss order and a stop-limit order. When would you prefer each?", "You have a trailing stop set at 10% on a stock. The stock rises from $40 to $70, then falls. At what price would you be sold out?", "Why might a stop-loss be counterproductive for a long-term index fund investor? When is it most appropriate to use one?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What is the purpose of a stop-loss order?",
-        options: ["Guarantee profits", "Limit potential losses", "Speed up trades", "Reduce fees"],
-        correct_answer: 1
-      }
+      { question: "What is the primary purpose of a stop-loss order?", options: ["To maximize profits on winning trades", "To automatically sell a position if the price falls to a pre-set level, limiting losses", "To buy more shares when prices drop", "To guarantee execution at a specific price"], correct_answer: 1 },
+      { question: "What happens when a basic stop-loss order is triggered?", options: ["A limit order is placed at the stop price", "A market order is submitted to sell at the current market price", "The position is held until manually reviewed", "The broker calls you for instructions"], correct_answer: 1 },
+      { question: "What is a trailing stop?", options: ["A stop-loss that is always 10% below your purchase price", "A dynamic stop that moves upward as the stock price rises, protecting gains", "A stop-loss that trails the market index", "An order that expires every day"], correct_answer: 1 },
+      { question: "What is a potential downside of stop-loss orders for volatile stocks?", options: ["They are too expensive to use", "Brief price spikes or dips can trigger the stop, selling you out of a good position that immediately recovers", "They only work during after-hours trading", "They require a minimum account balance of $25,000"], correct_answer: 1 },
+      { question: "You buy a stock at $100 and set a 15% stop-loss. At what price is your stop triggered?", options: ["$115", "$90", "$85", "$95"], correct_answer: 2 }
     ]
   },
   {
-    title: "Risk vs Reward",
+    title: "Reading a Stock Quote",
     level: "beginner",
     module_number: 4,
     lesson_number: 3,
-    content: "Every investment involves a tradeoff between risk and potential reward. Higher potential returns typically come with higher risk of loss. Successful investors understand this relationship and only take risks that offer adequate potential rewards. The risk-reward ratio compares potential profit to potential loss before making investment decisions.",
-    examples: JSON.stringify([
-      "Government bonds: low risk, low return (2-3%)",
-      "Blue chip stocks: moderate risk, moderate return (6-8%)",
-      "Growth stocks: high risk, high potential return (10%+)",
-      "Risk-reward ratio: target $300 profit, risk $100 loss = 3:1"
-    ]),
-    practice_problems: JSON.stringify([
-      "Calculate risk-reward ratios for different investments",
-      "Assess your personal risk tolerance",
-      "Match investments to risk preferences"
-    ]),
-    estimated_time: 17,
+    content: "A stock quote is a snapshot of a stock's current trading data. Being able to read and interpret a stock quote helps you understand what is happening with a stock at any moment and provides key metrics for evaluating whether to buy, sell, or hold.\n\nThe most basic elements of a stock quote are the ticker symbol, last price, change, and volume. The ticker symbol is the abbreviated name for the stock (AAPL for Apple, MSFT for Microsoft, TSLA for Tesla). The last price is the most recent trade price. The change shows how much the price has moved from the previous day\'s closing price, expressed as both a dollar amount and a percentage. Volume shows how many shares have traded today — high volume signals active interest, low volume suggests minimal trading activity.\n\nThe bid price is the highest price a buyer is currently willing to pay. The ask price is the lowest price a seller is currently willing to accept. The spread between bid and ask is the market maker\'s profit margin and a cost to you as a trader. For highly liquid large-cap stocks, this spread might be just one penny. For thinly traded small-cap stocks, the spread might be 50 cents or more.\n\nAdditional quote data includes the 52-week high and low (the highest and lowest prices over the past year), the market capitalization, the P/E ratio (price divided by earnings per share), the dividend yield, and the average daily volume. These context metrics help you understand where the current price sits relative to recent history and how the stock is valued.\n\nFor long-term investors, the current quote is just one data point — not a buy or sell signal by itself. A stock at its 52-week high might still be cheap if earnings have grown dramatically; a stock at its 52-week low might still be expensive if business is collapsing. The quote tells you what the market is paying; fundamental analysis tells you what the business is worth.",
+    examples: JSON.stringify(["Apple (AAPL) stock quote: last price $185.50, change +$2.30 (+1.26%), volume 52.3 million shares, bid $185.49, ask $185.50", "52-week high/low: stock currently at $75 with 52-week range of $45-$90 tells you it is between its extremes", "Bid-ask spread: $50.00 bid / $50.01 ask on a liquid large-cap = $0.01 spread; small-cap might be $12.00 bid / $12.40 ask = $0.40 spread", "Volume significance: a stock usually trading 500,000 shares per day suddenly trades 5 million — something important is happening", "After-hours quote: earnings released at 5 PM show after-hours price up 8% from close, signaling a strong open tomorrow", "P/E ratio in the quote: stock at $50 with EPS of $2.50 shows P/E of 20 — investors pay $20 for every $1 of earnings"]),
+    practice_problems: JSON.stringify(["Look up the current stock quote for Apple (AAPL). Identify: last price, 1-day change, 52-week range, P/E ratio, market cap, and daily volume.", "A stock has a bid of $24.75 and ask of $25.25. What is the spread? If you buy 100 shares at the ask and immediately sell at the bid, how much do you lose to the spread?", "A stock just hit a new 52-week high on 3x normal volume. What might this signal? What questions should you ask before buying?", "Explain what the P/E ratio in a stock quote tells you about how the market values the company."]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What's the general relationship between risk and return?",
-        options: ["No relationship", "Higher risk, higher potential return", "Lower risk, higher return", "Risk doesn't affect return"],
-        correct_answer: 1
-      }
+      { question: "What is a ticker symbol?", options: ["The price of a stock in cents", "A company's abbreviated name used to identify its stock on exchanges", "A measure of stock volatility", "The number of shares outstanding"], correct_answer: 1 },
+      { question: "What does the bid-ask spread represent?", options: ["The stock's daily price range", "The difference between what buyers will pay and sellers will accept", "The brokerage commission on a trade", "The difference between today's price and yesterday's close"], correct_answer: 1 },
+      { question: "What does high volume on a stock quote suggest?", options: ["The stock price is high", "There is active trading interest, possibly driven by significant news", "The company is about to pay a dividend", "The stock is overvalued"], correct_answer: 1 },
+      { question: "If a stock's 52-week range is $30-$80 and it currently trades at $32, what can you infer?", options: ["The stock is definitely cheap and should be bought", "The stock is near its 52-week low — further analysis is needed to understand why", "The stock will definitely rise to $80 again", "The company is about to go bankrupt"], correct_answer: 1 },
+      { question: "A stock quote shows P/E ratio of 15. What does this mean?", options: ["The stock has risen 15% this year", "Investors are paying $15 for every $1 of annual earnings", "The stock pays a 15% dividend yield", "The company has been public for 15 years"], correct_answer: 1 }
     ]
   },
   {
-    title: "Position Sizing Basics",
+    title: "What Is a Portfolio?",
     level: "beginner",
     module_number: 4,
     lesson_number: 4,
-    content: "Position sizing determines how much money to invest in each stock or trade. A common rule is never risk more than 1-2% of your total portfolio on a single position. This prevents any one investment from devastating your portfolio. Position size should be based on your risk tolerance, the investment's risk level, and your overall portfolio size.",
-    examples: JSON.stringify([
-      "$10,000 portfolio: risk max $100-200 per position",
-      "High-risk stock: smaller position size",
-      "Diversified ETF: can be larger position",
-      "Stop-loss determines position size calculation"
-    ]),
-    practice_problems: JSON.stringify([
-      "Calculate position sizes for your portfolio",
-      "Understand the 1-2% risk rule",
-      "Adjust position size based on investment risk"
-    ]),
-    estimated_time: 15,
+    content: "A portfolio is the collection of all financial investments owned by an individual or institution. Your portfolio might include stocks, bonds, cash, real estate, mutual funds, ETFs, and other assets. Managing a portfolio means making decisions about which assets to hold, in what proportions, and when to buy or sell — with the goal of achieving your financial objectives within your risk tolerance.\n\nPortfolio construction starts with asset allocation — deciding what percentage of your total portfolio to put into different asset classes. A common framework for a moderate-risk investor might be 60% stocks, 30% bonds, and 10% cash or alternatives. A more aggressive investor might be 90% stocks. A conservative investor near retirement might be 40% stocks and 60% bonds. Asset allocation is the most important portfolio decision — research suggests it accounts for over 90% of long-term portfolio performance variability.\n\nWithin each asset class, you then select specific investments. Within the stock allocation, you might own a mix of US large-cap, US small-cap, and international stocks. Within bonds, you might own government bonds and corporate bonds of varying maturities. This layered diversification reduces risk at multiple levels.\n\nPortfolio performance is tracked against benchmarks — standard reference points like the S&P 500 for US stocks or the Bloomberg Aggregate Bond Index for bonds. If your portfolio consistently underperforms its benchmark, it is a signal to review your investment choices or costs.\n\nA portfolio requires regular maintenance. As markets move, your actual allocations drift from your targets — stocks that have risen become a larger percentage of the portfolio than intended. Rebalancing means selling what has grown and buying what has lagged to restore your target allocations. Most long-term investors rebalance once or twice per year, or when allocations drift more than 5-10 percentage points from targets.",
+    examples: JSON.stringify(["Simple portfolio: $50,000 total — $35,000 in S&P 500 ETF (70%), $10,000 in bond ETF (20%), $5,000 cash (10%)", "Asset allocation shift over life stages: age 25 might be 90% stocks / 10% bonds; age 55 might be 60% / 40%; age 70 might be 40% / 60%", "Portfolio benchmark: comparing your 60/40 portfolio return against the standard 60/40 blend of S&P 500 and US bond index", "Drift and rebalance: stocks rise from 60% to 72% of portfolio; sell some stocks and buy bonds to restore 60/40 target", "Diversification within stocks: $30,000 split into US large-cap ETF, US small-cap ETF, and international ETF", "Portfolio tracking tools: apps like Personal Capital or Morningstar allow tracking all accounts in one dashboard"]),
+    practice_problems: JSON.stringify(["Design an asset allocation for a 35-year-old with moderate risk tolerance. Specify the percentage for each asset class and explain your reasoning.", "Your 60/40 portfolio after a bull market has drifted to 75% stocks / 25% bonds. How do you rebalance it back to 60/40 with $100,000 total assets?", "What is a benchmark and why does it matter for evaluating portfolio performance? Give an example.", "Why does asset allocation account for over 90% of long-term portfolio performance differences between investors?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What's a common rule for position sizing?",
-        options: ["Invest everything in one stock", "Risk 1-2% of portfolio per position", "Always invest $1000", "Buy as many shares as possible"],
-        correct_answer: 1
-      }
+      { question: "What is a portfolio in investing?", options: ["A single stock you own", "The collection of all financial investments owned by an individual", "A type of mutual fund", "A statement from your broker"], correct_answer: 1 },
+      { question: "What is asset allocation?", options: ["Choosing which individual stocks to buy", "Deciding what percentage of your portfolio to put into different asset classes", "Tracking your portfolio's daily performance", "The fees charged by your brokerage"], correct_answer: 1 },
+      { question: "What is portfolio rebalancing?", options: ["Moving all assets to cash during a downturn", "Selling overperforming assets and buying underperforming ones to restore target allocations", "Adding new money to your portfolio monthly", "Switching brokerage accounts for better rates"], correct_answer: 1 },
+      { question: "A 65-year-old retired investor should generally have what kind of asset allocation?", options: ["100% stocks for maximum growth", "Mostly stocks with a small bond allocation for growth", "A higher bond and lower stock allocation to preserve capital", "100% cash for safety"], correct_answer: 2 },
+      { question: "What does it mean if your portfolio underperforms its benchmark consistently?", options: ["Your benchmark is too aggressive", "You should consider reviewing your investment choices and costs", "The market is broken", "You need to trade more frequently"], correct_answer: 1 }
     ]
   },
   {
-    title: "Why Most Beginners Lose",
+    title: "Buying on Margin",
     level: "beginner",
     module_number: 4,
     lesson_number: 5,
-    content: "Most beginning traders lose money due to emotional decisions, lack of strategy, poor risk management, and unrealistic expectations. Common mistakes include chasing hot stocks, panic selling, overtrading, and not having a plan. Successful investing requires discipline, patience, education, and a systematic approach rather than gambling mentality.",
-    examples: JSON.stringify([
-      "FOMO: buying stocks after big gains",
-      "Panic selling during market downturns",
-      "Overtrading and high transaction costs",
-      "No stop-losses or risk management plan"
-    ]),
-    practice_problems: JSON.stringify([
-      "Identify common beginner mistakes",
-      "Develop rules to avoid emotional decisions",
-      "Create a systematic investment approach"
-    ]),
-    estimated_time: 19,
+    content: "Buying on margin means borrowing money from your brokerage to purchase more securities than you could with just your own cash. It is a form of financial leverage — using debt to amplify your potential gains. However, leverage is a double-edged sword: it amplifies losses just as powerfully as gains, and margin investing comes with costs and risks that make it inappropriate for most individual investors.\n\nHere is how margin works. You deposit $10,000 in a margin account. Your broker, under Regulation T set by the Federal Reserve, allows you to borrow up to 50% of the purchase price of securities, meaning you could buy up to $20,000 worth of stock. You\'ve effectively doubled your buying power. If the stock rises 20%, your $20,000 position becomes $24,000 — that is a $4,000 gain on your $10,000 investment, or 40% return (before interest costs). Without margin, the same 20% rise would yield just 20%.\n\nBut if the stock falls 20%, your $20,000 position becomes $16,000. Your broker\'s $10,000 loan is still owed, leaving you with only $6,000 — a 40% loss on your $10,000. If losses continue, the broker issues a margin call — a demand to deposit more cash or sell securities to meet minimum equity requirements. If you cannot meet the margin call, the broker will forcibly sell your positions at the worst possible time.\n\nMargin accounts require a minimum maintenance margin of 25% equity (FINRA requirement; many brokers require 30-35%). If the value of your investments falls enough to push your equity below this threshold, a margin call is triggered.\n\nMargin investing is used by sophisticated traders who understand the risks and have strict risk management systems. For the typical individual investor, the risks — forced selling at lows, interest costs eating into returns, amplified losses — far outweigh the benefits. Most long-term wealth is built without leverage.",
+    examples: JSON.stringify(["Margin amplification: $10,000 own money + $10,000 borrowed = $20,000 position; 20% gain = $4,000 (40% on own money) vs 20% loss = $4,000 loss (40% on own money)", "Margin call scenario: borrowed to buy tech stocks in 2000; 50% market decline triggers margin calls, forced to sell at lows and locked in permanent losses", "Interest cost: margin loan at 8% annually on $50,000 borrowed = $4,000 per year in interest — must earn at least 4% just to break even", "Maintenance margin: broker requires 30% equity; with $20,000 position and $10,000 loan, equity is $10,000 / $20,000 = 50% — safe; if position falls to $14,286, equity = $4,286 / $14,286 = 30% — margin call", "Professional use: hedge funds regularly use leverage but with sophisticated risk management and diversified portfolios", "2008 crisis: many individual investors using margin on financial stocks were wiped out when shares fell 80-95%"]),
+    practice_problems: JSON.stringify(["You have $15,000 in a margin account and borrow $15,000 to buy $30,000 of stock. The stock rises 25%. What is your return on investment? What if it falls 25%?", "At what stock price would you receive a margin call if you have $10,000 equity, owe $10,000, and your broker requires 30% maintenance margin?", "Why is using margin to buy volatile individual stocks far more dangerous than using margin to hold a diversified index fund?", "Calculate the total cost of borrowing $25,000 on margin for one year at 9% interest. How much must your investments return just to cover this cost?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What's a major reason beginners lose money?",
-        options: ["Bad luck", "Emotional decisions and lack of strategy", "Market manipulation", "High fees only"],
-        correct_answer: 1
-      }
+      { question: "What is buying on margin?", options: ["Buying stocks at a discount during market hours", "Borrowing money from your broker to purchase more securities than you could with only your own cash", "A strategy for buying only safe dividend stocks", "Investing in mutual funds with a monthly payment plan"], correct_answer: 1 },
+      { question: "What is a margin call?", options: ["A broker calling to recommend stocks", "A demand to deposit more cash or sell securities when your equity falls below the minimum requirement", "A type of options contract", "A warning that your stock is about to be delisted"], correct_answer: 1 },
+      { question: "Under Regulation T, what is the maximum initial margin for buying securities?", options: ["25%", "50% of the purchase price can be borrowed (50% own funds required)", "75%", "100%"], correct_answer: 1 },
+      { question: "How does margin amplify losses compared to investing only with your own cash?", options: ["It doesn't — losses are capped at the borrowed amount", "Losses are magnified proportionally to the leverage used, potentially exceeding your own capital", "Margin accounts have government loss protection", "Losses are spread over the loan repayment period"], correct_answer: 1 },
+      { question: "For most individual investors, margin investing is:", options: ["The best way to build wealth quickly", "Risky due to interest costs, margin calls, and amplified losses — not recommended", "Required for buying any stock", "Only legal for investors with $500,000+ in assets"], correct_answer: 1 }
     ]
   },
   {
-    title: "Emotions & Trading",
+    title: "Short Selling Basics",
     level: "beginner",
     module_number: 4,
     lesson_number: 6,
-    content: "Emotions are the biggest enemy of successful investing. Fear causes panic selling at the worst times, while greed leads to buying at peaks and taking excessive risks. Successful investors develop systems and rules to remove emotion from decisions. Having a written plan and sticking to it helps overcome emotional impulses that destroy returns.",
-    examples: JSON.stringify([
-      "Fear: selling everything during 2020 market crash",
-      "Greed: buying tech stocks at 2000 peak",
-      "FOMO: chasing meme stocks without research",
-      "Discipline: sticking to investment plan during volatility"
-    ]),
-    practice_problems: JSON.stringify([
-      "Identify your emotional triggers in investing",
-      "Develop rules to counteract emotional decisions",
-      "Practice staying disciplined during market volatility"
-    ]),
-    estimated_time: 18,
+    content: "Short selling is a trading strategy that allows investors to profit from a declining stock price. In regular investing, you buy low and sell high. In short selling, you sell first (at a high price) and buy later (at a lower price) — the reverse sequence. It sounds counterintuitive but is a legitimate and important part of how markets function.\n\nHere is the mechanics: to short sell a stock, you borrow shares from your broker (who borrows them from other clients\'s accounts) and immediately sell them in the market. You now have cash from the sale and an obligation to return those borrowed shares at some future date. If the stock price falls, you buy the shares back at the lower price, return them to the broker, and pocket the difference. If the stock was sold at $50 and repurchased at $35, you made $15 per share profit.\n\nShort selling carries unique and severe risks. In regular investing, your maximum loss is 100% — the stock can go to zero. In short selling, your maximum loss is theoretically unlimited — the stock can rise to any price, and you must eventually buy it back. If you short a $50 stock and it rises to $200, you have a $150 per share loss. Short sellers must also pay any dividends issued during the time they are short, as the borrower receives them.\n\nA short squeeze is a powerful phenomenon where a heavily shorted stock rises rapidly, forcing short sellers to buy shares to cover their positions — which further drives the price up, forcing more short sellers to cover, creating a feedback loop. The GameStop situation in January 2021 is the most famous recent example: GameStop was heavily shorted, and coordinated retail buying triggered a massive short squeeze, driving the stock from $20 to nearly $500.\n\nShort selling requires a margin account and deep understanding of the risks involved. It is primarily used by professional investors and hedge funds as a hedging tool or to express a bearish view on a specific company.",
+    examples: JSON.stringify(["Basic short: borrow 100 shares at $60, sell for $6,000; stock falls to $40, buy back for $4,000, return shares, keep $2,000 profit minus borrowing fees", "Short selling loss: short 100 shares at $30; stock rises to $80; must buy back at $80 for a $5,000 loss on a $3,000 initial sale", "Short squeeze GameStop 2021: heavily shorted stock rose from $20 to $483 as short sellers scrambled to buy back, triggering massive losses for short sellers", "Dividend cost: if you short a stock paying a $2 quarterly dividend, you must pay $2 per share to the original owner for each dividend paid while short", "Hedge fund use: fund holds $10 million in bank stocks but short $3 million in the weakest bank as a hedge against sector risk", "Borrowing fee: hard-to-borrow stocks charge 5-50%+ annual fee for borrowing shares — must factor into profit calculation"]),
+    practice_problems: JSON.stringify(["You short 200 shares of a stock at $45. The stock falls to $30. Calculate your gross profit. Now calculate your profit if the stock rises to $70 instead.", "Why is the potential loss in short selling technically unlimited while the maximum profit is capped?", "Explain the mechanics of a short squeeze. Why does it create a feedback loop?", "A company is reporting earnings next week and you believe the results will disappoint. Is short selling an appropriate strategy? What risks must you consider?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What are the two main emotions that hurt investors?",
-        options: ["Love and hate", "Fear and greed", "Joy and sadness", "Hope and despair"],
-        correct_answer: 1
-      }
+      { question: "What is the basic sequence of a short sell?", options: ["Buy first, then sell higher later", "Sell borrowed shares first at a high price, then buy back later at a lower price to profit", "Hold shares for dividends then sell", "Sell at open, rebuy at close each day"], correct_answer: 1 },
+      { question: "What is the maximum possible loss from a short sale?", options: ["100% of the amount you sold the shares for", "Theoretically unlimited, because the stock price can rise indefinitely", "Limited to 50% by law", "Limited to your margin account balance"], correct_answer: 1 },
+      { question: "What is a short squeeze?", options: ["A method to squeeze extra profits from a short sale", "When a rising stock price forces short sellers to buy shares to cover, which drives the price higher in a feedback loop", "A regulator limiting short selling during volatile markets", "When short sellers agree to hold positions longer"], correct_answer: 1 },
+      { question: "Why must short sellers pay dividends when holding a short position?", options: ["It is a tax on short selling", "They borrowed the shares so the original owner must still receive the dividends", "Dividends automatically close short positions", "The brokerage charges dividends as a fee"], correct_answer: 1 },
+      { question: "Short selling is primarily used by:", options: ["Long-term retirement investors", "Beginners learning about the stock market", "Professional investors and hedge funds hedging risk or expressing bearish views", "Index fund investors"], correct_answer: 2 }
     ]
   },
   {
-    title: "Your First Trade Walkthrough",
+    title: "Brokerage Accounts Explained",
     level: "beginner",
     module_number: 4,
     lesson_number: 7,
-    content: "Before making your first trade, open a brokerage account, fund it, and research your investment. Start small with money you can afford to lose. Choose a simple, diversified investment like an index fund rather than individual stocks. Place a limit order during market hours, monitor the execution, and keep records for taxes. Learn from the experience.",
-    examples: JSON.stringify([
-      "Open account with reputable broker (Fidelity, Schwab, Vanguard)",
-      "Start with $500-1000 to learn",
-      "First purchase: broad market index fund",
-      "Keep detailed records of all transactions"
-    ]),
-    practice_problems: JSON.stringify([
-      "Research and compare brokerage accounts",
-      "Plan your first investment purchase",
-      "Understand tax implications of trading"
-    ]),
-    estimated_time: 22,
+    content: "A brokerage account is a financial account that allows you to buy and sell investments — stocks, bonds, ETFs, mutual funds, options, and more. It is your gateway to the financial markets. Choosing the right brokerage and understanding what types of accounts are available is one of the first practical steps in becoming an investor.\n\nThe most common brokerage account type is the taxable brokerage account, sometimes called a standard or individual account. You can deposit any amount of money, invest in anything the broker offers, and withdraw money at any time. Any gains you realize (by selling investments) are subject to capital gains taxes — short-term (held less than a year) taxed as ordinary income, long-term (held over a year) at preferential rates of 0%, 15%, or 20%.\n\nTax-advantaged accounts are another critical option. Individual Retirement Accounts (IRAs) come in two main forms. A Traditional IRA allows tax-deductible contributions (subject to income limits), and investments grow tax-deferred until withdrawn in retirement, when you pay ordinary income tax. A Roth IRA uses after-tax contributions, but investments grow completely tax-free and qualified withdrawals in retirement are also tax-free — one of the most powerful wealth-building tools available. The 2024 IRA contribution limit is $7,000 per year ($8,000 if age 50+).\n\nMajor US brokerages include Fidelity, Schwab, Vanguard, and TD Ameritrade (now part of Schwab). Online discount brokerages like Robinhood and Webull are popular for beginners. Most brokerages eliminated trading commissions in 2019; today you can trade stocks and ETFs for free at most major platforms. Key factors to compare: investment options, account minimums, research tools, customer service, and educational resources.\n\nCustodian safety matters too. Your brokerage account is protected by SIPC (Securities Investor Protection Corporation) up to $500,000 ($250,000 for cash) in case the brokerage firm fails — not in case your investments lose value.",
+    examples: JSON.stringify(["Taxable account: buy Apple stock, sell it a year later for a gain — pay 15% long-term capital gains tax on profit", "Roth IRA: contribute $7,000 per year from age 22 to 65 at 8% return — over $2 million at retirement, all tax-free", "Traditional IRA: contribute $7,000, deduct it from taxable income this year, pay taxes when withdrawing in retirement", "Commission-free trading: Fidelity, Schwab, and Vanguard all offer $0 commission on stock and ETF trades since 2019", "SIPC protection: if your brokerage goes bankrupt (not market losses), SIPC covers up to $500,000 of your account", "Minimum investment: Fidelity and Schwab have $0 account minimums; Vanguard mutual funds may require $1,000+ initial investment"]),
+    practice_problems: JSON.stringify(["Compare the tax treatment of a Roth IRA versus a Traditional IRA. Which is better for a 25-year-old expecting higher income in the future versus a 55-year-old at peak earnings?", "Calculate the total tax savings of using a Roth IRA versus a taxable account for a 30-year investment of $6,000 per year at 8%, assuming a 22% tax bracket in retirement.", "What factors should you consider when choosing a brokerage? Create a comparison checklist.", "Explain SIPC protection. What does it cover and what does it NOT cover?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What's recommended for a first investment?",
-        options: ["Individual penny stock", "Diversified index fund", "Options trading", "Cryptocurrency"],
-        correct_answer: 1
-      }
+      { question: "What is a taxable brokerage account?", options: ["An account where you never pay taxes", "A standard investment account where capital gains and dividends are subject to taxes", "An account only for professional traders", "An account that requires $10,000 minimum to open"], correct_answer: 1 },
+      { question: "What is the key benefit of a Roth IRA compared to a taxable account?", options: ["You can invest more money per year", "Investments grow tax-free and qualified withdrawals in retirement are completely tax-free", "The government matches your contributions", "You can withdraw money at any time without penalties"], correct_answer: 1 },
+      { question: "What is the 2024 annual contribution limit for an IRA?", options: ["$6,000", "$7,000", "$19,500", "$22,500"], correct_answer: 1 },
+      { question: "What does SIPC insurance cover?", options: ["Investment losses from market declines", "Your account up to $500,000 if your brokerage firm fails (not market losses)", "All losses in your brokerage account", "Only cash, not investments"], correct_answer: 1 },
+      { question: "When were most US brokerages' trading commissions eliminated?", options: ["2010", "2015", "2019", "They have always been free"], correct_answer: 2 }
     ]
-  }
-,
-  // Module 5: Investing Deeper (Intermediate) - 10 lessons
-  {
-    title: "What Is Fundamental Analysis?",
+  },  {
+    title: "Fundamental Analysis Intro",
     level: "intermediate",
     module_number: 5,
     lesson_number: 1,
-    content: "Fundamental analysis evaluates a company's intrinsic value by examining financial statements, business model, competitive position, and economic factors. It focuses on revenue, earnings, debt, cash flow, and growth prospects to determine if a stock is undervalued or overvalued. This approach is used by long-term investors like Warren Buffett.",
-    examples: JSON.stringify([
-      "Analyzing Apple's iPhone sales growth",
-      "Comparing P/E ratios across tech companies",
-      "Evaluating Amazon's cash flow generation",
-      "Assessing Tesla's competitive moat in EVs"
-    ]),
-    practice_problems: JSON.stringify([
-      "Read and analyze a company's 10-K filing",
-      "Calculate key financial ratios",
-      "Compare companies within same industry"
-    ]),
-    estimated_time: 25,
+    content: "Fundamental analysis is the method of evaluating a security by examining the underlying business — its financial health, competitive position, industry dynamics, and management quality. The goal is to determine the intrinsic value of a company and compare it to the current market price. If the intrinsic value is higher than the market price, the stock may be undervalued and worth buying; if lower, it may be overvalued.\n\nThe philosophy behind fundamental analysis is that markets are not perfectly efficient in the short term, but over time, stock prices converge toward their true underlying value. This makes it possible for diligent investors to identify mispriced stocks and profit as the market corrects itself. Warren Buffett, the most celebrated practitioner of fundamental analysis, has built his legendary record by identifying strong businesses trading below their intrinsic value.\n\nFundamental analysis operates at three levels. Macroeconomic analysis examines the overall economic environment — GDP growth, interest rates, inflation, employment trends — to understand the backdrop for all businesses. Industry analysis evaluates the competitive dynamics, growth prospects, regulatory environment, and structural trends of the sector. Company-specific analysis dives into the firm\'s financial statements, competitive advantages, management quality, and growth prospects.\n\nKey financial documents used in fundamental analysis include the income statement (shows revenues, costs, and profitability), the balance sheet (shows assets, liabilities, and equity), and the cash flow statement (shows actual cash generated and spent). These three statements, read together, give a comprehensive picture of a company\'s financial reality.\n\nFundamental analysis is a long-term discipline. A thorough fundamental analysis might take many hours and requires understanding accounting, business strategy, and industry dynamics. The reward is conviction — when you truly understand a business, you can hold through short-term volatility without second-guessing yourself, which is where patient investors generate superior returns.",
+    examples: JSON.stringify(["Warren Buffett buying Coca-Cola in 1988 at a seemingly high price after analyzing its global brand moat, consistent earnings growth, and pricing power", "Intrinsic value calculation: analyst estimates company generates $10 per share in free cash flow, growing 5% per year; at 10% discount rate, fair value is about $200 per share", "Top-down approach: macro analysis shows rising interest rates, which leads to underweighting banks; industry analysis shows EVs growing rapidly, leading to exploring EV battery companies", "Income statement analysis: company revenues growing 20% annually while margins expanding from 10% to 15% — signs of operating leverage and a scaling business", "Balance sheet check: company has $5 per share in cash and no debt — provides a margin of safety and flexibility", "Benjamin Graham approach: buy stocks trading at significant discounts to book value or net asset value — the original value investing framework"]),
+    practice_problems: JSON.stringify(["What is intrinsic value and how does it differ from market price? Why does this gap create investing opportunities?", "Research a company you know (like Apple, Nike, or McDonald's). Without looking at the stock price, describe the business — what competitive advantages does it have? How does it make money?", "Explain the three levels of fundamental analysis (macro, industry, company). Why is all three important rather than just company-level analysis?", "What is the difference between a stock's price and its value? Give a historical example where they diverged significantly."]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What does fundamental analysis focus on?",
-        options: ["Stock price charts", "Company's intrinsic value and financials", "Trading volume", "Market sentiment"],
-        correct_answer: 1
-      }
+      { question: "What is the goal of fundamental analysis?", options: ["To predict short-term stock price movements", "To determine a company's intrinsic value and compare it to the market price", "To analyze trading volume and chart patterns", "To time the market using economic data"], correct_answer: 1 },
+      { question: "What are the three financial statements used in fundamental analysis?", options: ["Trading report, market summary, and analyst ratings", "Income statement, balance sheet, and cash flow statement", "Annual report, quarterly earnings, and dividend history", "Revenue statement, asset report, and debt summary"], correct_answer: 1 },
+      { question: "Warren Buffett's investment philosophy is primarily based on:", options: ["Technical chart analysis", "High-frequency trading algorithms", "Identifying strong businesses trading below their intrinsic value", "Diversifying across all market sectors equally"], correct_answer: 2 },
+      { question: "What does it mean if a stock's intrinsic value is higher than its current market price?", options: ["The stock is overvalued and should be sold", "The stock may be undervalued and could be an attractive purchase", "The company is about to go bankrupt", "The market is perfectly efficient"], correct_answer: 1 },
+      { question: "In fundamental analysis, the three levels of analysis are:", options: ["Daily, weekly, and monthly", "Micro, medium, and macro", "Macro (economy), industry, and company-specific", "Technical, fundamental, and quantitative"], correct_answer: 2 }
     ]
   },
   {
-    title: "Reading a Company's Business",
+    title: "Reading an Income Statement",
     level: "intermediate",
     module_number: 5,
     lesson_number: 2,
-    content: "Understanding a company's business model is crucial for investment decisions. Analyze how the company makes money, its competitive advantages, market position, and growth strategy. Look at revenue sources, customer base, profit margins, and scalability. A simple, understandable business model is often better than a complex one.",
-    examples: JSON.stringify([
-      "Microsoft: software subscriptions and cloud services",
-      "Coca-Cola: global beverage brand with pricing power",
-      "Amazon: e-commerce platform with AWS cloud business",
-      "Berkshire Hathaway: insurance and diversified holdings"
-    ]),
-    practice_problems: JSON.stringify([
-      "Explain a company's business model in simple terms",
-      "Identify revenue streams and profit drivers",
-      "Assess competitive advantages and threats"
-    ]),
-    estimated_time: 22,
+    content: "The income statement (also called the profit and loss statement or P&L) shows how much money a company earned and spent over a specific period — typically a quarter or full year. It is the financial document that most directly answers the question: is this company profitable, and is profitability growing over time?\n\nThe income statement starts at the top with revenue (also called net sales or top line) — the total amount of money the company received from its business activities during the period. From revenue, the cost of goods sold (COGS) is subtracted to arrive at gross profit. COGS includes the direct costs of producing the products or services sold. Gross profit margin (gross profit divided by revenue) measures how efficiently the company produces its products.\n\nFrom gross profit, operating expenses are subtracted — these include research and development (R&D), sales and marketing, and general and administrative (G&A) expenses. The result is operating income (EBIT — Earnings Before Interest and Taxes), which shows how profitable the core business is before financing and tax effects.\n\nAfter operating income, interest expenses on debt and other non-operating items are accounted for to arrive at pre-tax income. After subtracting income taxes, you reach net income — the famous bottom line. Net income is what remains for shareholders, whether paid as dividends or retained in the business.\n\nKey ratios derived from the income statement include the gross margin, operating margin, and net profit margin — each expressing a level of profit as a percentage of revenue. These margins tell you how efficiently the company operates and how competitive pricing pressure affects profitability. Comparing margins over multiple years reveals whether profitability is improving or deteriorating, and comparing them to competitors reveals relative efficiency.",
+    examples: JSON.stringify(["Apple income statement: Revenue $391B, COGS $224B, Gross Profit $167B (42.7% margin), Operating Income $114B, Net Income $97B (24.8% net margin) for fiscal year 2023", "Revenue growth: company grew from $500M to $750M in revenue over 3 years — 50% growth signals strong demand", "Margin expansion: company improved net margin from 5% to 12% over 5 years — significantly more profitable per dollar of revenue", "Loss-making company: many growth companies like Uber operated at a net loss for years while investing heavily in expansion — revenue growing fast but not yet profitable", "EBIT vs net income: a highly leveraged company with strong operating income but large interest payments may show low net income — the debt burden obscures operational strength", "One-time items: company shows huge profit this year due to selling a division — strip out this non-recurring item to see normalized earnings"]),
+    practice_problems: JSON.stringify(["Find Apple's most recent annual income statement. Calculate the gross margin, operating margin, and net margin. Compare to the prior year — are margins improving?", "A company has revenue of $800M, COGS of $500M, operating expenses of $150M, interest expense of $20M, and a 25% tax rate. Calculate gross profit, operating income, and net income.", "Why might an investor focus on operating income rather than net income when comparing two companies with different amounts of debt?", "What does improving gross margin over several years suggest about a company's competitive position?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "Why is understanding business model important?",
-        options: ["It's not important", "Helps assess investment quality and risks", "Required by law", "Impresses others"],
-        correct_answer: 1
-      }
+      { question: "What is revenue on an income statement?", options: ["The company's net profit", "Total money received from business activities before any expenses", "Total assets minus total liabilities", "Cash generated from operations"], correct_answer: 1 },
+      { question: "What is gross profit?", options: ["Net income after all expenses", "Revenue minus cost of goods sold", "Total revenue for the year", "Operating income before taxes"], correct_answer: 1 },
+      { question: "What does the net profit margin measure?", options: ["How much cash the company has", "Net income as a percentage of revenue — how much profit for each dollar of sales", "Total revenue growth rate", "The ratio of debt to equity"], correct_answer: 1 },
+      { question: "EBIT stands for:", options: ["Equity Before Interest Transfers", "Earnings Before Interest and Taxes", "Expected Business Income Total", "Effective Banking Interest Term"], correct_answer: 1 },
+      { question: "Why should investors be cautious about one-time items on an income statement?", options: ["One-time items are illegal", "They inflate or deflate reported profits temporarily and don't reflect ongoing earnings power", "They are only reported in annual statements", "One-time items are not audited"], correct_answer: 1 }
     ]
   },
   {
-    title: "Revenue vs Profit",
+    title: "Balance Sheets Explained",
     level: "intermediate",
     module_number: 5,
     lesson_number: 3,
-    content: "Revenue is the total money a company receives from sales, while profit is what remains after all expenses. Companies can have high revenue but low or negative profit. Profit margins show efficiency - how much profit per dollar of revenue. Both growth and profitability matter, but profitability is ultimately what drives long-term stock value.",
-    examples: JSON.stringify([
-      "Amazon: high revenue, historically low profit margins",
-      "Apple: high revenue and high profit margins",
-      "Startup: growing revenue, negative profit while investing",
-      "Mature company: stable revenue and consistent profit"
-    ]),
-    practice_problems: JSON.stringify([
-      "Calculate profit margins for different companies",
-      "Analyze revenue growth vs profit growth trends",
-      "Understand when losses might be acceptable"
-    ]),
-    estimated_time: 18,
+    content: "The balance sheet is a snapshot of a company\'s financial position at a specific point in time. While the income statement shows performance over a period, the balance sheet shows what the company owns (assets), what it owes (liabilities), and the residual value belonging to shareholders (equity) — all at a single moment. The fundamental equation governing every balance sheet is: Assets = Liabilities + Shareholders\' Equity.\n\nAssets are resources the company controls that have economic value. Current assets are expected to be converted to cash within one year — cash and cash equivalents, accounts receivable (money owed by customers), inventory, and prepaid expenses. Non-current (long-term) assets include property, plant, and equipment (PP&E), intangible assets like patents and brand value, and long-term investments.\n\nLiabilities are financial obligations the company owes to others. Current liabilities are due within one year — accounts payable (money owed to suppliers), short-term debt, accrued expenses, and deferred revenue. Long-term liabilities include bonds payable, long-term loans, and pension obligations. The distinction between current and long-term liabilities matters for assessing liquidity risk.\n\nShareholders\' equity is the residual claim — what would remain for shareholders if all assets were sold and all liabilities paid. It equals paid-in capital (money shareholders invested) plus retained earnings (cumulative profits not paid out as dividends). Book value (shareholders\' equity divided by shares outstanding) is a key reference point for value investors, though it often differs significantly from market value.\n\nKey balance sheet ratios include the current ratio (current assets / current liabilities), which measures short-term liquidity; the debt-to-equity ratio, which measures financial leverage; and the quick ratio (excluding inventory from current assets), a more conservative liquidity measure. These ratios help assess whether a company can meet its obligations and how aggressively it uses debt.",
+    examples: JSON.stringify(["Apple balance sheet 2023: Total Assets $352B, Total Liabilities $290B, Shareholders Equity $62B — highly leveraged but generates massive cash flows", "Current ratio example: $400M current assets / $200M current liabilities = 2.0 ratio — comfortable short-term liquidity position", "Debt-to-equity ratio: company with $200M debt and $100M equity has D/E of 2.0 — high leverage amplifies both gains and risks", "Book value vs market value: company has $10 book value per share but trades at $50 — market values future earnings 5x book value", "Intangible assets: Coca-Cola brand value worth billions is not fully captured on balance sheet under traditional accounting", "Working capital: current assets of $300M minus current liabilities of $150M = $150M working capital — funds day-to-day operations"]),
+    practice_problems: JSON.stringify(["A company has current assets of $500M and current liabilities of $350M. Calculate the current ratio. Is this adequate liquidity?", "Look up Microsoft's balance sheet. What is its debt-to-equity ratio? Does its cash position suggest the debt is manageable?", "Explain why two companies in the same industry can have very different book values per share despite similar market capitalizations.", "What does a negative shareholders' equity mean for a company? Is it always bad?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What's the difference between revenue and profit?",
-        options: ["They're the same", "Revenue is total sales, profit is after expenses", "Profit is always higher", "Revenue includes expenses"],
-        correct_answer: 1
-      }
+      { question: "What fundamental equation governs every balance sheet?", options: ["Revenue = Expenses + Profit", "Assets = Liabilities + Shareholders Equity", "Cash = Debt - Equity", "Total Assets = Total Revenue"], correct_answer: 1 },
+      { question: "What are current assets?", options: ["The company's most valuable assets", "Assets expected to be converted to cash within one year", "Assets purchased in the current year", "Fixed assets like buildings and equipment"], correct_answer: 1 },
+      { question: "What does shareholders' equity represent?", options: ["The market value of all outstanding shares", "What would remain for shareholders if all assets were sold and all liabilities paid", "Annual profit distributed as dividends", "The total value of the company's intellectual property"], correct_answer: 1 },
+      { question: "The current ratio is calculated as:", options: ["Current assets divided by total assets", "Current assets divided by current liabilities", "Cash divided by total debt", "Net income divided by total assets"], correct_answer: 1 },
+      { question: "A high debt-to-equity ratio indicates:", options: ["The company has excellent liquidity", "The company uses significant financial leverage, which amplifies both gains and risks", "The company is profitable", "The company's stock is overvalued"], correct_answer: 1 }
     ]
   },
   {
-    title: "Growth vs Value Stocks",
+    title: "Cash Flow Statements",
     level: "intermediate",
     module_number: 5,
     lesson_number: 4,
-    content: "Growth stocks are companies expected to grow faster than average, often trading at high valuations. Value stocks appear undervalued based on fundamentals, trading at low multiples. Growth stocks offer higher potential returns but more volatility. Value stocks provide stability and dividends but slower growth. Both have periods of outperformance.",
-    examples: JSON.stringify([
-      "Growth: Tesla, Netflix, Amazon in early years",
-      "Value: Berkshire Hathaway, Johnson & Johnson, Coca-Cola",
-      "Growth metrics: high P/E, revenue growth, no dividends",
-      "Value metrics: low P/E, steady dividends, stable earnings"
-    ]),
-    practice_problems: JSON.stringify([
-      "Classify stocks as growth or value",
-      "Compare performance in different market conditions",
-      "Build portfolio with both growth and value stocks"
-    ]),
+    content: "The cash flow statement tracks the actual movement of cash into and out of a business during a specific period. It is arguably the most important of the three financial statements because cash is the lifeblood of a business — a company can report accounting profits while simultaneously running out of cash. Many businesses that failed were profitable on paper but could not pay their bills when they came due.\n\nThe cash flow statement is divided into three sections. Cash from operations (CFO) shows cash generated by the core business activities — collecting from customers, paying suppliers and employees. This is the most important section: a healthy business should consistently generate positive operating cash flow. Free cash flow (FCF), which is operating cash flow minus capital expenditures, is a key metric for valuing businesses.\n\nCash from investing activities shows cash spent on or received from investments — purchasing equipment, acquiring other companies, buying or selling investment securities. Capital expenditures (capex) are the cash spent on maintaining and expanding physical assets. A company investing heavily in growth will show large cash outflows here, which reduces free cash flow but may be necessary for future growth.\n\nCash from financing activities shows cash flows related to debt and equity — borrowing money, repaying debt, issuing stock, buying back stock, and paying dividends. This section shows how the company funds its operations and returns cash to investors.\n\nThe most important insight from the cash flow statement is the reconciliation between net income and actual cash flow. Accounting rules allow many non-cash items — depreciation, stock-based compensation, changes in working capital — that cause net income and cash flow to diverge. When net income is consistently much higher than operating cash flow, it warrants investigation. Companies with rising profits but declining cash flow may have accounting quality issues.",
+    examples: JSON.stringify(["Free cash flow: Amazon operating cash flow of $85B minus capex of $53B = $32B FCF in 2022 — significant cash generating ability", "Cash vs profit divergence: a manufacturer reports $20M net profit but negative operating cash flow because customers are paying slowly (rising receivables) — profit exists only on paper", "Depreciation add-back: company shows $50M net income; cash flow statement adds back $30M depreciation (non-cash charge) to show $80M in operating cash flow", "Capex-heavy business: airline has strong operating cash flow but massive capex for new aircraft — low or negative free cash flow", "Buyback via financing: company uses $2B cash to buy back its own shares — shows as $2B outflow in financing activities", "Acquisition spending: company pays $5B cash to acquire a competitor — shows as $5B outflow in investing activities"]),
+    practice_problems: JSON.stringify(["A company reports net income of $100M but operating cash flow of $40M. What are three possible reasons for this $60M gap?", "Calculate free cash flow: operating cash flow = $500M, capital expenditures = $180M. Is this a capital-light or capital-heavy business?", "Why might an investor prefer free cash flow over net income when valuing a company?", "Find Tesla's cash flow statement for the most recent year. Identify operating cash flow, capex, and free cash flow. Is the business self-funding?"]),
     estimated_time: 20,
     quiz: [
-      {
-        question: "What characterizes a growth stock?",
-        options: ["Low price", "High expected growth rate", "High dividends", "Old company"],
-        correct_answer: 1
-      }
+      { question: "What does the cash flow statement measure?", options: ["The company's total assets and liabilities", "The actual movement of cash into and out of the business", "Revenue and expenses for the period", "The market value of the company's equity"], correct_answer: 1 },
+      { question: "How is free cash flow (FCF) calculated?", options: ["Net income minus dividends paid", "Operating cash flow minus capital expenditures", "Total revenue minus total costs", "Cash from financing minus cash from investing"], correct_answer: 1 },
+      { question: "Which section of the cash flow statement is most important for assessing business health?", options: ["Cash from investing activities", "Cash from financing activities", "Cash from operations (CFO)", "All three sections are equally important"], correct_answer: 2 },
+      { question: "Why can a profitable company still run out of cash?", options: ["Profitable companies never run out of cash", "Accounting profits include non-cash items; actual cash may be flowing out faster than it comes in", "Cash runs out only during recessions", "Tax payments always drain profitable companies' cash"], correct_answer: 1 },
+      { question: "Depreciation is added back in the operating cash flow section because:", options: ["Depreciation is a tax-deductible expense", "It is a non-cash charge that reduces accounting profit but does not actually use cash", "It represents future capital expenditure needs", "Depreciation is an error in accounting that must be corrected"], correct_answer: 1 }
     ]
   },
   {
-    title: "Market Capitalization",
+    title: "P/E Ratio and Valuation",
     level: "intermediate",
     module_number: 5,
     lesson_number: 5,
-    content: "Market capitalization is a company's total value calculated by multiplying share price by shares outstanding. Large-cap stocks (>$10B) are established companies with stability. Mid-cap ($2-10B) offer growth with some stability. Small-cap (<$2B) have high growth potential but more risk. Portfolio diversification should include different market caps.",
-    examples: JSON.stringify([
-      "Apple: $3 trillion market cap (mega-cap)",
-      "Large-cap: Microsoft, Google, Amazon",
-      "Mid-cap: regional banks, specialty retailers",
-      "Small-cap: emerging growth companies"
-    ]),
-    practice_problems: JSON.stringify([
-      "Calculate market cap for given companies",
-      "Understand risk-return profiles by market cap",
-      "Build diversified portfolio across market caps"
-    ]),
-    estimated_time: 17,
+    content: "The price-to-earnings (P/E) ratio is the most widely used valuation metric in stock analysis. It compares a company\'s stock price to its earnings per share, expressing how much investors are willing to pay for each dollar of earnings. A P/E of 20 means investors are paying $20 for every $1 of annual earnings — equivalent to a 5% earnings yield.\n\nTo calculate the P/E ratio: divide the stock price by the earnings per share (EPS). If a stock trades at $100 and earned $5 per share last year, the P/E is 100 / 5 = 20. The trailing P/E uses actual historical earnings; the forward P/E uses analysts\' earnings estimates for the next twelve months. The forward P/E is often more relevant for valuation because markets are forward-looking.\n\nThe appropriate P/E for a stock depends heavily on growth expectations. The PEG ratio (P/E divided by the growth rate) adjusts for growth — a company growing at 20% per year with a P/E of 20 has a PEG of 1.0, which is often considered fairly valued. A PEG above 2.0 may indicate overvaluation; below 1.0 may indicate undervaluation relative to growth. The historical average P/E for the S&P 500 is approximately 15-17.\n\nP/E ratios vary dramatically across sectors and growth phases. Mature utility companies might trade at P/E of 12-15. Stable consumer staples might trade at 18-22. High-growth technology companies during their expansion phase might trade at P/E of 30-50 or higher because investors are paying for future earnings. At the peak of market bubbles, P/E ratios can reach extreme levels — the NASDAQ traded at P/E above 80 during the 1999-2000 bubble.\n\nP/E has limitations. It is based on accounting earnings, which can be manipulated. Companies with no earnings (startups) have no meaningful P/E. Cyclical companies\' earnings swing dramatically with economic cycles, distorting P/E. Always use P/E alongside other metrics: price-to-book, price-to-sales, enterprise value to EBITDA, and dividend yield paint a fuller picture.",
+    examples: JSON.stringify(["Apple P/E calculation: share price $185 / EPS $6.16 = P/E ratio of 30 — investors pay $30 for each $1 of Apple earnings", "S&P 500 historical average P/E of 15-17 means most stocks have traded around these multiples over the past century", "High-growth premium: Amazon traded at P/E of 100+ for years because investors expected dramatic future earnings growth that would eventually justify the price", "PEG ratio: company with P/E of 25 growing earnings at 25% per year has PEG of 1.0 — fairly valued for its growth rate", "1999 dot-com bubble: many technology companies traded at P/E of 100-500 with no profits — bubble burst sent many to zero", "Cyclical company P/E trap: mining company shows P/E of 5 during commodity boom; earnings collapse next year when prices fall — was never as cheap as it appeared"]),
+    practice_problems: JSON.stringify(["A stock trades at $72 and earned $3.60 per share last year. Calculate the P/E ratio. If analysts expect $4.50 EPS next year, what is the forward P/E?", "Company A has a P/E of 35 and is growing earnings at 35% per year. Company B has a P/E of 12 and is growing at 4% per year. Calculate the PEG ratio for each. Which appears better valued relative to growth?", "The S&P 500 has a current P/E of 22 versus its historical average of 15-17. What does this suggest about current market valuations?", "Why is P/E an unreliable metric for valuing companies with no current earnings? What alternative metrics would you use for an early-stage growth company?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "How is market capitalization calculated?",
-        options: ["Share price only", "Share price × shares outstanding", "Annual revenue", "Total assets"],
-        correct_answer: 1
-      }
+      { question: "How is the P/E ratio calculated?", options: ["Revenue divided by net income", "Stock price divided by earnings per share", "Market cap divided by total assets", "Earnings per share divided by dividends"], correct_answer: 1 },
+      { question: "What is the historical average P/E ratio for the S&P 500?", options: ["5-8", "10-12", "15-17", "25-30"], correct_answer: 2 },
+      { question: "What does the PEG ratio measure?", options: ["A company's profitability relative to assets", "The P/E ratio adjusted for earnings growth rate", "Price relative to book value", "The premium over intrinsic value"], correct_answer: 1 },
+      { question: "Why do high-growth companies often have higher P/E ratios than mature companies?", options: ["They are always overvalued", "Investors pay a premium for expected future earnings growth", "High-growth companies earn more per share", "P/E is not applicable to high-growth companies"], correct_answer: 1 },
+      { question: "Which of the following is a key LIMITATION of the P/E ratio?", options: ["It is too difficult to calculate", "It is based on accounting earnings which can be manipulated, and useless for unprofitable companies", "It only applies to technology stocks", "It changes every day so it cannot be used"], correct_answer: 1 }
     ]
   },
   {
-    title: "Economic Moats",
+    title: "Earnings Per Share (EPS)",
     level: "intermediate",
     module_number: 5,
     lesson_number: 6,
-    content: "Economic moats are competitive advantages that protect a company's profits from competitors. Types include brand power, network effects, cost advantages, switching costs, and regulatory protection. Companies with wide moats can maintain high returns on capital and pricing power. Warren Buffett focuses heavily on moats when investing.",
-    examples: JSON.stringify([
-      "Brand moat: Coca-Cola's global brand recognition",
-      "Network effect: Facebook's user base value",
-      "Cost advantage: Walmart's scale and efficiency",
-      "Switching costs: Microsoft Office suite stickiness"
-    ]),
-    practice_problems: JSON.stringify([
-      "Identify moats for different companies",
-      "Assess moat strength and sustainability",
-      "Understand how moats affect pricing power"
-    ]),
-    estimated_time: 21,
+    content: "Earnings per share (EPS) is the portion of a company\'s net income allocated to each outstanding share of common stock. It is one of the most closely watched metrics in finance and the primary driver of stock valuations. When a company reports earnings each quarter, the EPS figure is compared to analyst consensus estimates and to the prior year — these comparisons drive stock price reactions.\n\nThe basic EPS formula is: Net Income divided by Weighted Average Shares Outstanding. If a company earned $1 billion in net income and has 500 million shares outstanding, its basic EPS is $2.00. However, diluted EPS is more commonly used by analysts — it accounts for the potential conversion of all outstanding stock options, warrants, and convertible securities into shares, which would dilute existing shareholders. Diluted EPS is always lower than or equal to basic EPS.\n\nEPS growth is what stock investors ultimately care about most. If a company grows its EPS from $2.00 to $2.50 — a 25% increase — and the market applies the same P/E multiple, the stock price also rises 25%. If EPS contracts, the stock price typically falls. This is why quarterly earnings reports are so market-moving — they are the primary update on whether a company is delivering the profit growth investors are paying for.\n\nCompanies can manipulate EPS through share buybacks. If a company buys back 10% of its outstanding shares, EPS rises 11% (same earnings spread over 10% fewer shares) even if the underlying business hasn\'t grown at all. This is a common practice that inflates EPS-based metrics without necessarily creating fundamental value. Analysts often separate organic earnings growth from EPS growth driven purely by buybacks.\n\nEPS quality matters too. GAAP EPS follows accounting rules and includes all items. Adjusted EPS (or non-GAAP EPS) strips out one-time charges, stock compensation, amortization of acquisitions, and other items companies consider non-recurring. Adjusted EPS is typically higher than GAAP EPS and more favorable — investors should understand what is being excluded and why.",
+    examples: JSON.stringify(["Basic EPS: net income $500M, shares outstanding 200M = $2.50 EPS", "Diluted EPS: same company has 10M stock options outstanding; diluted shares = 210M; diluted EPS = $500M / 210M = $2.38", "EPS beat: analysts expected $1.20; company reports $1.35 — 12.5% beat drives stock up 8% after hours", "Share buyback EPS inflation: company earns $1B with 1B shares (EPS $1.00); buys back 100M shares; now earns same $1B with 900M shares (EPS $1.11) — 11% EPS growth from no business growth", "GAAP vs non-GAAP: company reports GAAP EPS of $1.50 but adjusted EPS of $2.20 after excluding $0.70 of stock-based compensation — investors should scrutinize the difference", "Multi-year EPS growth: company grew EPS from $1.00 in 2015 to $5.00 in 2023 — 5x growth justifies significant stock price appreciation"]),
+    practice_problems: JSON.stringify(["A company has net income of $750M and 300M basic shares outstanding. 30M additional shares could be issued from options. Calculate basic EPS and diluted EPS.", "If a company grows EPS from $3.00 to $3.90 per share and the market applies a steady P/E of 20, what should happen to the stock price?", "Company A: earns $500M, buys back shares to grow EPS 15%. Company B: earns $500M, invests in R&D and grows revenue 15%. Which creates more durable long-term value? Why?", "Why do analysts prefer GAAP EPS over adjusted EPS when evaluating earnings quality?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What is an economic moat?",
-        options: ["Company location", "Competitive advantage protecting profits", "Financial statement", "Stock price pattern"],
-        correct_answer: 1
-      }
+      { question: "What is the basic EPS formula?", options: ["Revenue divided by shares outstanding", "Net income divided by weighted average shares outstanding", "Operating income minus interest expense", "Dividends paid divided by shares outstanding"], correct_answer: 1 },
+      { question: "Why is diluted EPS typically lower than basic EPS?", options: ["Diluted EPS excludes extraordinary items", "Diluted EPS accounts for potential shares from options and convertibles, spreading income over more shares", "Diluted EPS uses a different tax rate", "Diluted EPS is calculated quarterly; basic EPS annually"], correct_answer: 1 },
+      { question: "How do share buybacks affect EPS?", options: ["Buybacks reduce EPS by returning cash to shareholders", "Buybacks increase EPS by reducing the number of shares over which income is spread", "Buybacks have no effect on EPS", "Buybacks reduce net income"], correct_answer: 1 },
+      { question: "What is the difference between GAAP EPS and adjusted (non-GAAP) EPS?", options: ["GAAP EPS is only reported annually", "Adjusted EPS excludes items the company considers non-recurring, typically making it higher than GAAP EPS", "Adjusted EPS is the legally required figure", "GAAP EPS includes dividends; adjusted does not"], correct_answer: 1 },
+      { question: "When a company reports EPS that beats analyst estimates, the stock typically:", options: ["Falls because the estimates were wrong", "Rises because the positive surprise exceeds what was priced in", "Does not move because EPS is already priced in", "Pauses trading for 24 hours"], correct_answer: 1 }
     ]
   },
   {
-    title: "Long-Term Risk Management",
+    title: "Dividend Investing Strategy",
     level: "intermediate",
     module_number: 5,
     lesson_number: 7,
-    content: "Long-term risk management focuses on preserving capital while achieving growth over decades. Key strategies include diversification across assets, geographies, and time periods. Regular rebalancing maintains target allocations. Dollar-cost averaging reduces timing risk. Having appropriate emergency funds and insurance protects against life events that could force early liquidation.",
-    examples: JSON.stringify([
-      "Diversification: stocks, bonds, real estate, international",
-      "Time diversification: regular investing over decades",
-      "Rebalancing: selling high performers, buying underperformers",
-      "Emergency fund prevents forced selling during downturns"
-    ]),
-    practice_problems: JSON.stringify([
-      "Design long-term risk management strategy",
-      "Calculate appropriate emergency fund size",
-      "Plan rebalancing schedule and triggers"
-    ]),
-    estimated_time: 23,
+    content: "Dividend investing is a strategy focused on building a portfolio of stocks that pay regular, growing dividends. The goal is to generate a reliable income stream from investments while also benefiting from long-term capital appreciation. It is particularly popular among income-focused investors, retirees, and those building toward financial independence.\n\nThe core metrics for dividend investing are dividend yield, dividend payout ratio, and dividend growth rate. Dividend yield (annual dividend / stock price) tells you your current income return. The payout ratio (dividends paid / net income) tells you what percentage of earnings is being returned to shareholders — a payout ratio under 60% is generally sustainable; above 80% may be under pressure. The dividend growth rate shows how fast the company has been increasing its dividend — a company growing dividends 8% per year will double your income in 9 years.\n\nThe Dividend Aristocrats — S&P 500 companies that have raised dividends for 25+ consecutive years — represent some of the most financially durable companies in the world. They include Johnson & Johnson, Procter & Gamble, Coca-Cola, Realty Income, and 60+ others. Dividend Kings have raised dividends for 50+ consecutive years. These long records reflect companies with durable competitive advantages and strong cash flow generation.\n\nDividend reinvestment plans (DRIPs) automatically reinvest dividend payments into more shares of the same stock, often commission-free and sometimes at a slight discount. DRIPs supercharge compound growth because you continuously accumulate more shares, which pay more dividends, which buy more shares — a powerful snowball effect.\n\nThe primary risk in dividend investing is the dividend cut — when a company reduces or eliminates its dividend due to financial stress. This simultaneously reduces your income and signals business trouble, which typically causes a sharp stock price decline. Avoiding dividend traps — stocks with unsustainably high yields (above 6-8% in normal environments) because the price has fallen dramatically — requires examining payout ratios and free cash flow coverage.",
+    examples: JSON.stringify(["Dividend aristocrat Realty Income: monthly dividend payer that has raised its dividend for 25+ consecutive years, currently yielding around 5%", "Dividend reinvestment: $10,000 in a 3% yielding dividend stock reinvesting dividends — after 20 years the position may be worth significantly more than $10,000 just from compounding shares", "Payout ratio analysis: company earns $4.00 EPS and pays $2.40 in dividends — 60% payout ratio is sustainable with room for growth", "Dividend trap: stock yields 10% because price fell 50% after company showed signs of financial distress — high yield signals danger, not opportunity", "GE dividend cut 2018: General Electric cut its dividend from $0.12 to $0.01 per share; stock fell 50% on the news — illustrates dividend cut risk", "Procter & Gamble: raised dividend for 67 consecutive years as of 2024 — a Dividend King with 155+ years of dividend payments"]),
+    practice_problems: JSON.stringify(["A stock pays $2.80 in annual dividends and trades at $56. Calculate the dividend yield. If the payout ratio is 70% and EPS is $4.00, is the dividend sustainable?", "You invest $50,000 in a portfolio yielding 3.5% with 6% annual dividend growth. How much annual income do you receive initially? In 10 years?", "Compare dividend investing to growth investing. Under what market conditions does each strategy outperform?", "How do you identify a dividend trap? List three warning signs that a high dividend yield may not be sustainable."]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What's a key component of long-term risk management?",
-        options: ["Frequent trading", "Diversification", "Market timing", "Leverage"],
-        correct_answer: 1
-      }
+      { question: "What is the dividend payout ratio?", options: ["Dividend yield divided by stock price", "Dividends paid as a percentage of net income (dividends / net income)", "The amount of dividends paid per share per year", "Total dividends paid divided by market capitalization"], correct_answer: 1 },
+      { question: "What defines a Dividend Aristocrat?", options: ["Any stock paying a dividend above 4%", "S&P 500 company that has raised dividends for 25+ consecutive years", "A company that pays monthly dividends", "A dividend-focused mutual fund"], correct_answer: 1 },
+      { question: "What is a dividend trap?", options: ["A stock that never pays dividends", "A stock with a deceptively high yield because the price has fallen due to underlying business problems", "Paying too many dividends to shareholders", "A fund that charges high fees for dividend stocks"], correct_answer: 1 },
+      { question: "What is the main benefit of a DRIP (Dividend Reinvestment Plan)?", options: ["It guarantees a higher dividend next year", "Automatically reinvests dividends to buy more shares, compounding returns without effort", "It reduces the tax on dividends", "It allows you to reinvest at below-market prices always"], correct_answer: 1 },
+      { question: "A payout ratio above 80% may indicate:", options: ["An exceptionally profitable company", "The dividend may be under pressure if earnings decline", "The company has no debt", "The stock is definitely a good buy"], correct_answer: 1 }
     ]
   },
   {
-    title: "Portfolio Diversification",
+    title: "Growth vs Value Investing",
     level: "intermediate",
     module_number: 5,
     lesson_number: 8,
-    content: "Diversification spreads risk across different investments to reduce portfolio volatility without necessarily reducing returns. Effective diversification includes different asset classes, sectors, geographies, and company sizes. The goal is to own investments that don't all move in the same direction. Over-diversification can dilute returns, so balance is key.",
-    examples: JSON.stringify([
-      "Asset classes: 60% stocks, 30% bonds, 10% REITs",
-      "Geographic: 70% US, 20% developed international, 10% emerging",
-      "Sectors: technology, healthcare, financials, consumer goods",
-      "Company sizes: large-cap, mid-cap, small-cap mix"
-    ]),
-    practice_problems: JSON.stringify([
-      "Build diversified portfolio allocation",
-      "Understand correlation between different assets",
-      "Calculate portfolio risk vs individual stock risk"
-    ]),
-    estimated_time: 19,
+    content: "Growth investing and value investing represent two distinct philosophies for selecting stocks, each with a different focus, different metrics, and different time periods during which each tends to outperform. Understanding both helps investors position their portfolio and avoid the cognitive traps that come with following only one approach.\n\nGrowth investing focuses on companies expected to grow revenues and earnings significantly faster than the overall market. Growth investors are willing to pay premium valuations — high P/E, P/S, or P/FCF ratios — because they believe the future earnings will justify and eventually exceed the current price. Technology companies, innovative disruptors, and rapidly expanding businesses are typical growth targets. Famous growth investors include Philip Fisher and Peter Lynch.\n\nValue investing focuses on finding stocks trading below their intrinsic value — companies that are cheap relative to their earnings, assets, or cash flows. Value investors apply a margin of safety — they want to buy $1 of value for $0.70 or less. This discipline originated with Benjamin Graham and David Dodd in Security Analysis (1934) and was popularized by Warren Buffett. Value stocks often come from unfavored industries or companies going through temporary difficulties that have depressed the stock price.\n\nHistorically, both approaches have delivered strong long-term returns, though they have distinct performance cycles. Value investing outperformed consistently from the 1930s through the 1990s. Growth investing dramatically outperformed during 2010-2021 as technology companies dominated market returns. Value made a comeback during 2022 as rising interest rates hurt growth stock valuations. Neither strategy consistently dominates across all market environments.\n\nThe false dichotomy: Warren Buffett himself evolved from pure Graham-style value investing to what he calls buying excellent businesses at fair prices — a blend of both philosophies. The best investors find growing companies at reasonable valuations rather than rigidly adhering to either extreme. The practical approach for most investors: combine both through owning broad index funds that include both growth and value stocks automatically.",
+    examples: JSON.stringify(["Growth investing: buying Amazon in 2010 at a P/E of 60+ because the e-commerce and cloud opportunity was massive — holders were rewarded with 20x returns by 2020", "Value investing: Warren Buffett buying Washington Post stock in 1973 during a bear market at a huge discount to its estimated intrinsic value, holding for decades", "Growth trap: buying Pets.com in 1999 at 100x revenue — company went bankrupt in 2000 despite the internet opportunity being real", "Value trap: buying a coal company at 0.5x book value because it looks cheap — business model is in secular decline and cheapness is justified", "Buffett blend: buying Coca-Cola in 1988 — not dirt cheap by Graham standards, but a great business at a fair price with durable competitive advantages", "Factor rotation: value stocks outperformed growth stocks by over 20 percentage points in 2022 as rising rates hit high-multiple growth stocks hardest"]),
+    practice_problems: JSON.stringify(["Compare growth investing and value investing. What metrics does each emphasize? What type of company does each seek?", "A technology company trades at 50x earnings with 30% annual revenue growth. Evaluate it from both a growth and value investor's perspective.", "Explain the concept of a margin of safety. Why did Benjamin Graham consider it the most important principle in investing?", "Why did growth stocks significantly outperform value stocks during 2010-2021, and why did this relationship reverse in 2022?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What's the main benefit of diversification?",
-        options: ["Higher returns", "Reduced risk without necessarily reducing returns", "Lower fees", "Simpler management"],
-        correct_answer: 1
-      }
+      { question: "What is the core focus of value investing?", options: ["Finding companies with the fastest revenue growth", "Buying stocks trading below their intrinsic value with a margin of safety", "Investing in sectors with the best future outlook", "Buying stocks immediately after their IPO"], correct_answer: 1 },
+      { question: "What is the margin of safety in value investing?", options: ["A guaranteed return from bonds", "Buying at a significant discount to intrinsic value as a buffer against errors in valuation", "The minimum acceptable dividend yield", "Holding cash equal to 10% of your portfolio"], correct_answer: 1 },
+      { question: "Growth investors are generally willing to:", options: ["Only buy stocks with very low P/E ratios", "Pay premium valuations expecting future earnings to justify the price", "Avoid technology stocks", "Only invest during market downturns"], correct_answer: 1 },
+      { question: "Who developed the foundational framework for value investing?", options: ["Philip Fisher and Peter Lynch", "Benjamin Graham and David Dodd", "John Bogle and Burton Malkiel", "George Soros and Ray Dalio"], correct_answer: 1 },
+      { question: "Why did growth stocks underperform value stocks significantly in 2022?", options: ["Growth companies reported bad earnings", "Rising interest rates increased the discount rate on distant future earnings, hitting high-multiple growth stocks hardest", "Value investing is always better", "Growth stocks are illegal during inflationary periods"], correct_answer: 1 }
     ]
   },
   {
-    title: "Rebalancing Explained",
+    title: "Sector Investing",
     level: "intermediate",
     module_number: 5,
     lesson_number: 9,
-    content: "Rebalancing involves periodically adjusting your portfolio back to target allocations by selling overweight positions and buying underweight ones. This forces you to sell high and buy low, maintaining desired risk levels. Rebalance annually, when allocations drift 5-10% from targets, or after major market moves. Consider tax implications in taxable accounts.",
-    examples: JSON.stringify([
-      "Target: 60% stocks, 40% bonds",
-      "After growth: 70% stocks, 30% bonds → rebalance",
-      "Sell some stocks, buy bonds to restore 60/40",
-      "Tax-loss harvesting during rebalancing"
-    ]),
-    practice_problems: JSON.stringify([
-      "Calculate when rebalancing is needed",
-      "Understand tax-efficient rebalancing strategies",
-      "Set up systematic rebalancing schedule"
-    ]),
-    estimated_time: 18,
-    quiz: [
-      {
-        question: "What does rebalancing accomplish?",
-        options: ["Increases returns", "Forces selling high and buying low", "Reduces taxes", "Eliminates risk"],
-        correct_answer: 1
-      }
-    ]
-  },
-  {
-    title: "When to Hold vs Sell",
-    level: "intermediate",
-    module_number: 5,
-    lesson_number: 10,
-    content: "Knowing when to sell is as important as knowing what to buy. Sell when fundamentals deteriorate, better opportunities arise, or positions become too large. Don't sell due to short-term volatility or market fear. Tax implications matter - hold over one year for long-term capital gains rates. Have clear criteria for selling before you buy to avoid emotional decisions.",
-    examples: JSON.stringify([
-      "Sell: company loses competitive advantage",
-      "Hold: temporary earnings disappointment in strong company",
-      "Sell: position grows to 10%+ of portfolio",
-      "Hold: market volatility without fundamental change"
-    ]),
-    practice_problems: JSON.stringify([
-      "Develop sell criteria for your investments",
-      "Understand tax implications of selling",
-      "Practice distinguishing temporary vs permanent problems"
-    ]),
+    content: "The stock market is organized into sectors — groups of companies operating in similar industries with shared economic characteristics. The Global Industry Classification Standard (GICS) divides the market into 11 sectors: Information Technology, Healthcare, Financials, Consumer Discretionary, Communication Services, Industrials, Consumer Staples, Energy, Utilities, Real Estate, and Materials. Understanding sector dynamics helps investors position portfolios to take advantage of economic cycles and structural trends.\n\nDifferent sectors perform differently at different points in the economic cycle. Cyclical sectors — those whose revenues rise and fall with economic growth — include Industrials, Materials, Energy, Consumer Discretionary, and Financials. These sectors outperform during economic expansions when consumers and businesses spend freely. Defensive sectors — whose revenues remain relatively stable regardless of economic conditions — include Consumer Staples, Healthcare, and Utilities. These sectors outperform during economic downturns when investors seek stability.\n\nSector rotation is an active strategy of shifting portfolio allocations between sectors based on where we are in the economic cycle. During early recovery, financials and consumer discretionary tend to lead. During expansion, technology and industrials outperform. During late cycle, energy and materials often surge. As recession approaches, defensive sectors like utilities and consumer staples hold up best. While theoretically sound, consistently executing sector rotation is difficult in practice.\n\nSector ETFs make it easy to gain concentrated exposure to specific sectors. SPDR sector ETFs (XLK for technology, XLF for financials, XLE for energy, XLV for healthcare, etc.) are the most widely traded. These allow investors to overweight or underweight sectors relative to the market without picking individual stocks.\n\nLong-term structural trends — the transition to clean energy, the aging of populations, the digitization of commerce — can make certain sectors attractive for multi-decade investment themes regardless of economic cycles. Healthcare, for example, benefits from an aging global population that will spend more on medical services regardless of economic conditions.",
+    examples: JSON.stringify(["Technology sector (XLK): dominated by Apple, Microsoft, NVIDIA; characterized by high margins, network effects, rapid innovation, and premium valuations", "Energy sector during 2022: oil prices surged after Russia-Ukraine war; energy ETF XLE rose 65% in 2022 while S&P 500 fell 18%", "Defensive play: during 2008-2009 recession, Consumer Staples sector fell only 15% while the overall S&P 500 fell 55%", "Healthcare structural trend: US population over 65 expected to double by 2060, driving long-term demand for medical services and drugs", "Sector rotation trade: sell overvalued technology stocks in late bull market, rotate into undervalued energy and materials that benefit from inflation", "REIT sector: Real Estate Investment Trusts pay high dividends and benefit from inflation hedging through rising property values"]),
+    practice_problems: JSON.stringify(["Map the 11 GICS sectors to the economic cycle. Which sectors would you overweight in an early recession? In a late-stage bull market?", "Why did technology stocks perform so well during 2010-2021? What structural and cyclical factors contributed?", "Design a sector allocation for a portfolio: you believe the economy is about to enter a recession. What would you overweight and underweight?", "What are the risks of a sector rotation strategy? Why do most passive investors avoid it?"]),
     estimated_time: 20,
     quiz: [
-      {
-        question: "When should you consider selling a stock?",
-        options: ["After any price decline", "When fundamentals deteriorate", "Every year", "Never"],
-        correct_answer: 1
-      }
+      { question: "How many sectors does the GICS (Global Industry Classification Standard) divide the stock market into?", options: ["8", "10", "11", "15"], correct_answer: 2 },
+      { question: "Which of the following is considered a DEFENSIVE sector?", options: ["Consumer Discretionary", "Technology", "Consumer Staples", "Industrials"], correct_answer: 2 },
+      { question: "What is sector rotation?", options: ["Diversifying equally across all 11 sectors", "Shifting portfolio allocations between sectors based on the economic cycle", "Rotating between stocks within the same sector", "Automatically rebalancing sector ETFs monthly"], correct_answer: 1 },
+      { question: "Which sector ETF tracks technology stocks?", options: ["XLE", "XLF", "XLK", "XLV"], correct_answer: 2 },
+      { question: "Why might Healthcare be considered a good long-term sector investment regardless of economic cycles?", options: ["Healthcare companies pay the highest dividends", "An aging global population will increase healthcare spending regardless of economic conditions", "Healthcare is always the cheapest sector", "The government guarantees healthcare stock returns"], correct_answer: 1 }
     ]
-  }
-,
-  // Module 6: Technical Analysis (Intermediate) - 10 lessons
-  {
-    title: "Candlesticks Explained",
+  },  {
+    title: "What Is Technical Analysis?",
     level: "intermediate",
     module_number: 6,
     lesson_number: 1,
-    content: "Candlestick charts display open, high, low, and close prices for each time period. The body shows open-to-close range, while wicks show high-low range. Green/white candles indicate closing higher than opening, red/black indicate closing lower. Patterns like doji, hammer, and engulfing can signal potential reversals or continuations.",
-    examples: JSON.stringify([
-      "Doji: open equals close, indicates indecision",
-      "Hammer: small body, long lower wick, potential reversal",
-      "Engulfing: large candle engulfs previous, strong signal",
-      "Spinning top: small body, long wicks, uncertainty"
-    ]),
-    practice_problems: JSON.stringify([
-      "Identify basic candlestick patterns on charts",
-      "Understand what different patterns suggest",
-      "Practice reading candlestick formations"
-    ]),
-    estimated_time: 22,
+    content: "Technical analysis is the study of historical price and volume data to forecast future price movements. Unlike fundamental analysis, which examines the underlying business, technical analysis focuses purely on the price chart — the collective footprint of all buyers and sellers. Technical analysts believe that all known information about a stock is already reflected in the price, and that price patterns repeat themselves because human psychology is consistent.\n\nThe foundation of technical analysis rests on three premises. First, the market discounts everything — all relevant information (earnings, news, economic data) is already reflected in the stock price through the actions of millions of participants. Second, prices move in trends — once a trend is established, it tends to continue until a reversal signal appears. Third, history repeats itself — chart patterns recur because they reflect predictable human emotional responses (fear and greed) to similar situations.\n\nTechnical analysis uses charts as its primary tool. A price chart displays the stock price over time, and technical analysts identify patterns, trends, support and resistance levels, and signals from mathematical indicators. The most common chart types are line charts (connect closing prices), bar charts (show open, high, low, close for each period), and candlestick charts (same as bar but with visual color coding for rising versus falling periods).\n\nTechnical analysis is controversial. Academic research, particularly the Efficient Market Hypothesis (EMH), argues that technical analysis cannot consistently predict future prices because markets are efficient. Critics point out that many patterns are identified after the fact and that backtested systems often fail in live trading. Practitioners counter that EMH is not perfectly true, that institutional order flow creates exploitable patterns, and that many professional traders use technical analysis successfully.\n\nIn practice, many investors use both — fundamental analysis to identify what to buy (a strong business at a fair value), and technical analysis to identify when to buy (waiting for a pullback to support or a trend breakout).",
+    examples: JSON.stringify(["Dow Theory (1900s): Charles Dow observed that stock prices move in primary trends, secondary corrections, and daily fluctuations — foundations of modern technical analysis", "Support level: stock bounces off $50 three times — strong buyer interest at that level makes it a support zone", "Trend following: trader buys S&P 500 futures when the 50-day moving average crosses above the 200-day, holds until the cross reverses", "Volume analysis: price breaks out to new highs on 3x normal volume — strong institutional buying confirmed the breakout is genuine", "Chart pattern: head and shoulders pattern has predicted many major market reversals, including the 2000 and 2007 S&P 500 tops", "Algorithmic trading: modern hedge funds use computerized technical analysis systems executing thousands of trades per day based on price patterns"]),
+    practice_problems: JSON.stringify(["What are the three premises of technical analysis? How do they justify using price charts to make investment decisions?", "What is the Efficient Market Hypothesis and how does it challenge technical analysis? What counterarguments do technical analysts make?", "Compare fundamental and technical analysis. What does each tell you, and how might you use both together?", "Why do many technical analysis patterns seem to work? Is it because of self-fulfilling prophecy, genuine market psychology, or statistical noise?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What does a candlestick's body represent?",
-        options: ["High to low range", "Open to close range", "Trading volume", "Time period"],
-        correct_answer: 1
-      }
+      { question: "What is the primary focus of technical analysis?", options: ["Analyzing a company's financial statements", "Studying historical price and volume data to forecast future price movements", "Evaluating management quality and competitive position", "Calculating a company's intrinsic value"], correct_answer: 1 },
+      { question: "Which of the three premises of technical analysis states that markets incorporate all information into prices?", options: ["Prices move in trends", "History repeats itself", "The market discounts everything", "All of the above"], correct_answer: 2 },
+      { question: "What type of chart shows open, high, low, and close prices with color coding?", options: ["Line chart", "Bar chart", "Candlestick chart", "Scatter plot"], correct_answer: 2 },
+      { question: "What is the Efficient Market Hypothesis (EMH) position on technical analysis?", options: ["EMH strongly supports technical analysis", "EMH suggests technical analysis can predict markets better than fundamental analysis", "EMH argues that because markets are efficient, past prices cannot reliably predict future prices", "EMH is irrelevant to technical analysis"], correct_answer: 2 },
+      { question: "How do many successful investors combine technical and fundamental analysis?", options: ["They never mix the two approaches", "Use fundamental analysis to select what to buy and technical analysis to time entry and exit", "Use technical analysis to value companies and fundamental to time trades", "They use fundamental for stocks and technical only for forex"], correct_answer: 1 }
     ]
   },
   {
-    title: "Support Levels",
+    title: "Support and Resistance Levels",
     level: "intermediate",
     module_number: 6,
     lesson_number: 2,
-    content: "Support is a price level where buying interest is strong enough to prevent further decline. It acts like a floor under the stock price. Support can be horizontal (same price level) or diagonal (trendline). The more times a level holds, the stronger the support. When support breaks, it often becomes resistance.",
-    examples: JSON.stringify([
-      "Stock bounces off $50 three times = strong support",
-      "Previous high becomes support after breakout",
-      "Moving averages acting as dynamic support",
-      "Psychological levels like $100 often provide support"
-    ]),
-    practice_problems: JSON.stringify([
-      "Identify support levels on stock charts",
-      "Understand different types of support",
-      "Practice drawing support lines"
-    ]),
+    content: "Support and resistance are the most fundamental concepts in technical analysis. Support is a price level where buying interest has been strong enough to halt or reverse a downtrend — the price tends to bounce up from support. Resistance is a price level where selling pressure has been strong enough to halt or reverse an uptrend — the price tends to stall or reverse at resistance. These levels form because human memory and psychology create consistent price behavior at the same price points.\n\nSupport forms at price levels where buyers previously stepped in aggressively. When a stock falls to $50 and buyers overwhelm sellers, the price bounces to $60. If it falls back to $50 again and bounces, that $50 level is confirmed as support. The more times a level holds, the more significant it becomes. High volume at support makes it even stronger — it indicates that many large participants transacted at that level and will defend it again.\n\nResistance forms at price levels where sellers were previously dominant. If a stock rises from $30 to $55 but consistently fails to break above $55 and retreats, $55 is strong resistance. Investors who bought near the top and are sitting on losses will often sell when the price recovers to their purchase price — known as overhead supply. This creates consistent selling pressure at former highs.\n\nA key principle in technical analysis is that support and resistance switch roles after a breakout. When a stock breaks above resistance on strong volume, that former resistance level typically becomes new support. When a stock breaks below support, that former support becomes new resistance. This role-reversal principle has practical trading implications — after a breakout above resistance, buying on the first pullback to the (now support) level is a common entry strategy.\n\nKey support and resistance levels to watch include: previous highs and lows, round numbers (psychological levels like $50, $100, $200), 52-week highs and lows, and long-term moving averages.",
+    examples: JSON.stringify(["Apple support: stock bounces off $160 three times over six months, making $160 a confirmed support level with buyers consistently stepping in", "Resistance becomes support: S&P 500 breaks above 4,000 in 2021 after months of struggle; 4,000 then becomes a support floor in subsequent pullbacks", "Round number resistance: Bitcoin struggled to break $20,000 for years before finally clearing it in 2020 — round numbers create strong psychological resistance", "52-week high breakout: when a stock breaks to a new 52-week high on heavy volume, there is no overhead supply — all shareholders are profitable and motivated sellers decrease", "Volume at support: heavy volume on a bounce from $45 support confirms significant buyers entered; light volume bounce may be less reliable", "Overhead supply: stock bought at $80 by many investors falls to $40, then rallies back to $80 — original buyers now selling to break even creates resistance at $80"]),
+    practice_problems: JSON.stringify(["Look at the 1-year price chart of any major stock. Identify at least two support levels and two resistance levels. Explain how you identified each.", "A stock breaks above a major resistance level of $75 on high volume. What would you expect the stock to do if it pulls back to $75 next week? Why?", "Why are round numbers like $50, $100, and $500 often significant technical levels even though they have no fundamental meaning?", "Explain the concept of overhead supply. How does it create resistance and why does it eventually get absorbed?"]),
     estimated_time: 20,
     quiz: [
-      {
-        question: "What is a support level?",
-        options: ["Price ceiling", "Price floor where buying emerges", "Average price", "Highest price"],
-        correct_answer: 1
-      }
+      { question: "What is a support level in technical analysis?", options: ["A level where selling pressure consistently overwhelms buyers", "A price level where buying interest has been strong enough to halt or reverse a decline", "The minimum price a stock can reach", "A government price floor on securities"], correct_answer: 1 },
+      { question: "What typically happens when a stock breaks above resistance on high volume?", options: ["The stock immediately falls back to the prior range", "The former resistance level typically becomes new support", "The stock is suspended from trading", "Volume becomes irrelevant after a breakout"], correct_answer: 1 },
+      { question: "What is overhead supply?", options: ["A large inventory of shares available for short selling", "Selling pressure created by investors who bought at higher prices and want to sell when they break even", "Institutional investors buying large blocks of shares", "Shares held in reserve by the company"], correct_answer: 1 },
+      { question: "Why are round numbers like $50 or $100 often significant technical levels?", options: ["They represent fair value calculations", "Human psychology creates strong buy and sell decisions at round numbers", "Brokers charge different fees at round number prices", "They represent book value levels"], correct_answer: 1 },
+      { question: "What does it mean when a stock finds support at a level on high volume?", options: ["The stock is about to collapse", "Significant buyers transacted at that level, making it more likely to hold as support again", "The stock will never trade below that level", "Institutional investors are exiting their positions"], correct_answer: 1 }
     ]
   },
   {
-    title: "Resistance Levels",
+    title: "Trend Lines and Channels",
     level: "intermediate",
     module_number: 6,
     lesson_number: 3,
-    content: "Resistance is a price level where selling pressure prevents further advance. It acts like a ceiling above the stock price. Resistance can be previous highs, round numbers, or moving averages. When resistance is broken with volume, it often becomes support. Multiple tests of resistance without breaking can lead to stronger eventual breakouts.",
-    examples: JSON.stringify([
-      "Stock fails to break above $75 multiple times",
-      "Previous low becomes resistance after breakdown",
-      "200-day moving average acting as resistance",
-      "Round numbers like $50, $100 often create resistance"
-    ]),
-    practice_problems: JSON.stringify([
-      "Identify resistance levels on charts",
-      "Understand resistance-to-support conversion",
-      "Practice recognizing breakout patterns"
-    ]),
-    estimated_time: 19,
+    content: "A trend line is a straight line drawn on a price chart that connects two or more price points and extends into the future to act as a dynamic line of support or resistance. Trend lines are the simplest tool for visualizing the direction and strength of a price trend. They embody one of the most fundamental observations in technical analysis: prices tend to trend, and trends tend to persist.\n\nAn uptrend line is drawn by connecting the series of rising lows on a chart. Each successive low in an uptrend is higher than the previous one — higher lows confirm that buyers are becoming more aggressive over time. The uptrend line drawn beneath these rising lows acts as dynamic support; as long as price stays above it, the uptrend is intact. When price breaks below the uptrend line, it signals potential trend reversal or at least a significant pause.\n\nA downtrend line is drawn by connecting the series of falling highs on a chart. Each successive high in a downtrend is lower than the previous one — lower highs confirm that sellers are consistently winning. The downtrend line drawn above these falling highs acts as dynamic resistance. A break above the downtrend line signals potential reversal.\n\nA price channel forms when you can draw two parallel trend lines — one connecting the highs and one connecting the lows. Within an upward channel, the lower trend line is support and the upper trend line is resistance. Traders often buy near the lower channel line and take profits near the upper channel line, trading the range within the trend.\n\nTrend line analysis requires judgment and practice. Not all touch points align perfectly, and you must avoid forcing lines through data. The most significant trend lines are those connecting at least three validated touch points, those associated with high volume at the touch points, and those that have been respected consistently over weeks or months rather than just days.",
+    examples: JSON.stringify(["S&P 500 uptrend line 2009-2020: connecting successive lows from March 2009 bull market; breach of this line in February 2020 preceded COVID crash", "Bitcoin downtrend: connecting lower highs from late 2021 peak through 2022; breakout above this downtrend line in early 2023 signaled the bear market was ending", "Price channel: stock bounces between $40 support trendline and $55 resistance trendline for 6 months — traders can buy at $40 and sell at $55", "Three-touch validation: trend line touching only two points is preliminary; three or more confirmed touch points makes it highly significant", "Trend line breakout: stock breaks below 18-month uptrend line on 2x normal volume — high-conviction signal of trend change", "Logarithmic vs arithmetic scale: long-term trend lines are more accurately drawn on log scale charts, which proportionally represent percentage changes"]),
+    practice_problems: JSON.stringify(["Draw an uptrend line on any stock that has been in an uptrend for the past year. How many touch points does it have? What happens when price pulls back to the trendline?", "What is the difference between a trend line and a price channel? How would you trade a price channel?", "A stock has been in a clear uptrend for 2 years, but today it breaks below the uptrend line on heavy volume. What are the next steps for a technical trader?", "Why is it important to have at least three touch points before treating a trend line as significant?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What happens when resistance is broken?",
-        options: ["Stock always falls", "Often becomes support", "Nothing changes", "Resistance gets stronger"],
-        correct_answer: 1
-      }
-    ]
-  },
-  {
-    title: "Trendlines",
-    level: "intermediate",
-    module_number: 6,
-    lesson_number: 4,
-    content: "Trendlines connect two or more price points to show the direction of price movement. Uptrend lines connect successive lows, downtrend lines connect successive highs. The more points a trendline connects, the more significant it becomes. Trendline breaks can signal trend changes, especially with increased volume.",
-    examples: JSON.stringify([
-      "Uptrend: connecting higher lows over months",
-      "Downtrend: connecting lower highs during decline",
-      "Channel: parallel trendlines containing price action",
-      "Trendline break with volume confirms trend change"
-    ]),
-    practice_problems: JSON.stringify([
-      "Draw trendlines on various stock charts",
-      "Identify trend direction and strength",
-      "Recognize valid trendline breaks"
-    ]),
-    estimated_time: 21,
-    quiz: [
-      {
-        question: "How do you draw an uptrend line?",
-        options: ["Connect highs", "Connect successive lows", "Connect closes", "Connect opens"],
-        correct_answer: 1
-      }
-    ]
-  },
-  {
-    title: "Breakouts vs Fakeouts",
-    level: "intermediate",
-    module_number: 6,
-    lesson_number: 5,
-    content: "Breakouts occur when price moves decisively beyond support or resistance with increased volume. Fakeouts are false breakouts that quickly reverse. True breakouts often have high volume, follow-through, and retest the broken level as new support/resistance. Fakeouts typically have low volume and immediate reversal. Patience and confirmation help distinguish between them.",
-    examples: JSON.stringify([
-      "True breakout: high volume, sustained move, retest holds",
-      "Fakeout: low volume, immediate reversal below resistance",
-      "Earnings breakout with fundamental catalyst",
-      "End-of-day breakout more reliable than intraday"
-    ]),
-    practice_problems: JSON.stringify([
-      "Identify characteristics of true vs false breakouts",
-      "Understand volume's role in confirming breakouts",
-      "Practice waiting for confirmation before acting"
-    ]),
-    estimated_time: 23,
-    quiz: [
-      {
-        question: "What helps confirm a true breakout?",
-        options: ["Low volume", "High volume and follow-through", "Immediate reversal", "Round numbers"],
-        correct_answer: 1
-      }
-    ]
-  },
-  {
-    title: "Volume Explained",
-    level: "intermediate",
-    module_number: 6,
-    lesson_number: 6,
-    content: "Volume measures the number of shares traded during a given period. High volume confirms price movements, while low volume suggests weak conviction. Volume often increases during breakouts, breakdowns, and trend changes. Volume patterns can precede price movements. Analyzing volume alongside price provides better insight than price alone.",
-    examples: JSON.stringify([
-      "Breakout with 3x average volume = strong signal",
-      "Price rise on declining volume = potential weakness",
-      "Volume spike before earnings announcement",
-      "Accumulation: rising price on increasing volume"
-    ]),
-    practice_problems: JSON.stringify([
-      "Analyze volume patterns with price movements",
-      "Identify volume confirmation signals",
-      "Understand volume's predictive value"
-    ]),
-    estimated_time: 18,
-    quiz: [
-      {
-        question: "What does high volume during a price move indicate?",
-        options: ["Weak signal", "Strong conviction behind the move", "Random noise", "Market manipulation"],
-        correct_answer: 1
-      }
+      { question: "How is an uptrend line constructed?", options: ["Connecting the series of falling highs", "Connecting the series of rising lows in an uptrend", "Drawing a horizontal line at the average price", "Connecting the highest and lowest prices of the year"], correct_answer: 1 },
+      { question: "What does it signal when a stock breaks below a long-standing uptrend line on high volume?", options: ["The uptrend is accelerating", "A potential trend reversal or significant pause in the uptrend", "The stock is about to pay a dividend", "No significant meaning — trend lines are unreliable"], correct_answer: 1 },
+      { question: "What forms a price channel?", options: ["A single trend line and a moving average", "Two parallel trend lines — one connecting highs and one connecting lows", "The 52-week high and low prices", "Two horizontal support and resistance levels"], correct_answer: 1 },
+      { question: "How many touch points are generally needed to validate a trend line as significant?", options: ["At least one clear touch point", "At least two touch points", "At least three validated touch points", "At least ten touch points"], correct_answer: 2 },
+      { question: "In a price channel, where do traders typically buy and sell?", options: ["Buy at the upper channel line; sell at the lower", "Buy near the lower channel line (support trend line); sell near the upper channel line", "Buy at the midpoint; sell when the channel breaks", "Always buy at the breakout; never trade within the channel"], correct_answer: 1 }
     ]
   },
   {
     title: "Moving Averages",
     level: "intermediate",
     module_number: 6,
-    lesson_number: 7,
-    content: "Moving averages smooth price data to identify trends by calculating the average price over a specific number of periods. Simple moving averages (SMA) weight all periods equally, while exponential moving averages (EMA) give more weight to recent prices. Common periods are 20, 50, and 200 days. Moving averages can act as support/resistance and generate trading signals.",
-    examples: JSON.stringify([
-      "50-day MA crossing above 200-day MA = golden cross",
-      "Price above 200-day MA indicates long-term uptrend",
-      "Moving average acting as dynamic support",
-      "Death cross: 50-day MA crossing below 200-day MA"
-    ]),
-    practice_problems: JSON.stringify([
-      "Calculate simple moving averages manually",
-      "Identify moving average crossover signals",
-      "Understand different timeframe implications"
-    ]),
+    lesson_number: 4,
+    content: "A moving average is a widely used technical indicator that smooths out price data by creating a constantly updated average price over a specified number of periods. By smoothing out daily noise, moving averages help traders and investors identify the underlying trend direction more clearly. They are among the most versatile and widely followed indicators in all of technical analysis.\n\nThe simple moving average (SMA) is calculated by adding the closing prices over a specified number of periods and dividing by that number. A 20-day SMA adds the last 20 days of closing prices and divides by 20. As each new day passes, the oldest data point is dropped and the newest is added. The exponential moving average (EMA) assigns more weight to recent prices, making it more responsive to recent price action. Many traders prefer EMAs because they react faster to price changes.\n\nKey moving average periods: the 50-day and 200-day SMAs are the most widely followed on daily charts. The 50-day MA provides guidance on intermediate-term trend; the 200-day MA defines the long-term trend. When a stock is above its 200-day moving average, it is generally considered to be in a long-term uptrend. Below the 200-day, the long-term trend is down.\n\nThe golden cross and death cross are famous moving average signals. A golden cross occurs when the 50-day SMA crosses above the 200-day SMA — historically a bullish signal that has preceded extended market rallies. A death cross occurs when the 50-day SMA crosses below the 200-day SMA — historically a bearish signal. These signals are not perfect and are often lagging, but they capture major trend changes.\n\nMoving averages serve as dynamic support and resistance. In an uptrend, stocks often pull back to their 50-day or 200-day MA and find support. Buying these pullbacks to moving averages is a common technical strategy. When major moving averages are broken, it can signal a trend change.",
+    examples: JSON.stringify(["S&P 500 200-day MA: the index bounced off its 200-day moving average multiple times in 2019 bull market before breaking below it in February 2020 COVID crash", "Golden cross signal: S&P 500 50-day crossed above 200-day in June 2020 as market recovered from COVID lows — preceded major multi-year rally", "Death cross warning: S&P 500 50-day crossed below 200-day in March 2020 during COVID crash and again in early 2022 before significant declines", "Exponential moving average: stock traders prefer 9-day and 21-day EMAs for short-term signals because they respond faster than simple averages", "200-day MA as support: Apple stock pulled back to its 200-day MA in October 2022, found support, and subsequently rallied strongly", "Moving average ribbon: using multiple MAs (20, 50, 100, 200 day) together — when shorter averages are above longer ones, strong uptrend; when stacked in reverse, strong downtrend"]),
+    practice_problems: JSON.stringify(["Calculate the 5-day simple moving average for a stock with closing prices of $50, $52, $49, $53, $55, $57, $54. What is the 5-day SMA on day 7?", "Look at the S&P 500 chart over the past 3 years. Identify the most recent golden cross and death cross. What happened to the market after each signal?", "Why is the 200-day moving average considered the most important long-term indicator for most traders and investors?", "What is the difference between an SMA and an EMA? When might you prefer one over the other?"]),
     estimated_time: 20,
     quiz: [
-      {
-        question: "What is a golden cross?",
-        options: ["Price hitting new high", "50-day MA crossing above 200-day MA", "High volume day", "Dividend payment"],
-        correct_answer: 1
-      }
+      { question: "What is a 50-day simple moving average?", options: ["The highest price over the past 50 days", "The average of the last 50 days' closing prices, updated daily", "A prediction of where the stock will be in 50 days", "The volume average over 50 days"], correct_answer: 1 },
+      { question: "What is a golden cross?", options: ["When a stock reaches a new all-time high", "When the 50-day SMA crosses above the 200-day SMA — a bullish trend signal", "When both moving averages are flat for 50 days", "When a stock's price equals its moving average"], correct_answer: 1 },
+      { question: "What is the main advantage of an exponential moving average (EMA) over a simple moving average (SMA)?", options: ["EMA is more accurate mathematically", "EMA gives more weight to recent prices, making it more responsive to new price action", "EMA uses more data points", "EMA is less volatile"], correct_answer: 1 },
+      { question: "In a strong uptrend, how do traders often use the 200-day moving average?", options: ["As a signal to sell when the price touches it", "As a dynamic support level — buying pullbacks when price returns to the 200-day MA", "As a target price for their investment", "To determine the stock's fair value"], correct_answer: 1 },
+      { question: "What does a death cross signal?", options: ["The company is going bankrupt", "The 50-day SMA crossing below the 200-day SMA — a bearish trend signal", "A stock reaching a 52-week low", "When volume falls dramatically for 50 consecutive days"], correct_answer: 1 }
     ]
   },
   {
-    title: "RSI Explained",
+    title: "RSI (Relative Strength Index)",
+    level: "intermediate",
+    module_number: 6,
+    lesson_number: 5,
+    content: "The Relative Strength Index (RSI) is a momentum oscillator that measures the speed and magnitude of price changes to evaluate whether a security is overbought or oversold. Developed by J. Welles Wilder in 1978, the RSI oscillates between 0 and 100, with readings above 70 traditionally indicating overbought conditions and readings below 30 indicating oversold conditions. It remains one of the most popular technical indicators used by traders worldwide.\n\nThe RSI is calculated over a standard period of 14 days. It compares the average gains versus average losses over that period: RS (Relative Strength) = Average Gain / Average Loss, then RSI = 100 - (100 / (1 + RS)). When a stock has risen sharply for many consecutive days, average gains are much larger than average losses and the RSI rises toward 100. When a stock has fallen sharply, RSI falls toward 0.\n\nThe overbought and oversold levels provide potential reversal signals. An RSI above 70 suggests the stock has risen fast and may be due for a pullback or consolidation. An RSI below 30 suggests the stock has fallen quickly and may be due for a bounce. However, in strong trending markets, RSI can remain overbought or oversold for extended periods — trying to counter-trade a strong trend because RSI is high is a common costly mistake.\n\nRSI divergence is the more powerful signal. Bullish divergence occurs when the stock price makes a new low but RSI makes a higher low — suggesting selling momentum is weakening. Bearish divergence occurs when the stock makes a new high but RSI makes a lower high — suggesting buying momentum is fading. Divergences often precede significant reversals.\n\nFor long-term investors, RSI is most useful as a supplementary timing tool — helping identify moments when a stock you want to own has become oversold (a potentially better entry point) or when a position you are considering selling has become overbought (potentially a better exit).",
+    examples: JSON.stringify(["S&P 500 RSI in March 2020: RSI dropped below 20 during COVID crash — historically extreme oversold reading that preceded a powerful recovery rally", "Overbought Bitcoin 2017: RSI reached 95+ during the parabolic rise to $20,000 — extreme reading preceded a major crash in 2018", "Bearish RSI divergence: S&P 500 made new all-time high in January 2022, but RSI made a lower high — bearish divergence preceded the 2022 bear market", "RSI in uptrend: Amazon's RSI bounced between 50 and 80 for years during its bull run — never became oversold, showing relentless buying pressure", "14-day RSI calculation on stable stock: 7 up days averaging $0.50 gain, 7 down days averaging $0.30 loss — RS = 1.67, RSI = 62.5", "RSI reset: stock pulled back from RSI 80 to RSI 45 in a correction — reset to moderate level creates potential buy opportunity in an ongoing uptrend"]),
+    practice_problems: JSON.stringify(["Look up the current RSI of any major stock or index. Is it overbought, oversold, or neutral? What does this suggest about near-term price action?", "Explain RSI divergence. Draw a hypothetical example of both bullish and bearish divergence and explain what each signals.", "Why should investors be cautious about selling a stock simply because RSI is above 70 in a strong uptrend?", "Design a trading rule using RSI. When would you buy and when would you sell? What filters would you add to improve its reliability?"]),
+    estimated_time: 20,
+    quiz: [
+      { question: "What does RSI measure?", options: ["The relative performance of a stock versus the market", "The speed and magnitude of price changes, indicating overbought or oversold conditions", "The ratio of a stock's price to its earnings", "The volume of shares traded relative to the average"], correct_answer: 1 },
+      { question: "What RSI reading traditionally indicates an overbought condition?", options: ["Above 50", "Above 70", "Above 30", "Above 90"], correct_answer: 1 },
+      { question: "What is bullish RSI divergence?", options: ["RSI and price both making new highs", "Price making a new low while RSI makes a higher low — suggesting selling momentum is weakening", "RSI above 70 while price is rising", "RSI staying above 50 for an extended period"], correct_answer: 1 },
+      { question: "Why can RSI stay above 70 for an extended period without a price reversal?", options: ["RSI calculations are incorrect above 70", "In strong uptrends, momentum can remain high as buyers continuously overpower sellers", "RSI above 70 always predicts an immediate reversal", "Stocks cannot rise when RSI is above 70"], correct_answer: 1 },
+      { question: "The standard RSI period is:", options: ["5 days", "20 days", "14 days", "30 days"], correct_answer: 2 }
+    ]
+  },
+  {
+    title: "MACD Indicator",
+    level: "intermediate",
+    module_number: 6,
+    lesson_number: 6,
+    content: "The Moving Average Convergence Divergence (MACD) is a trend-following momentum indicator that shows the relationship between two exponential moving averages of a stock\'s price. Developed by Gerald Appel in the 1970s, the MACD is one of the most popular and versatile technical indicators, combining both trend direction and momentum into a single visualization.\n\nThe MACD consists of three components. The MACD line is calculated by subtracting the 26-period EMA from the 12-period EMA. The signal line is a 9-period EMA of the MACD line. The histogram shows the difference between the MACD line and the signal line — positive bars (MACD above signal) indicate bullish momentum; negative bars (MACD below signal) indicate bearish momentum. As the histogram bars increase in height, momentum in the prevailing direction is strengthening; as they decrease, momentum is weakening.\n\nThe primary MACD signal is the crossover. When the MACD line crosses above the signal line, it generates a buy signal — the faster EMA is pulling ahead of the slower, indicating increasing upward momentum. When the MACD line crosses below the signal line, it generates a sell signal. Crossovers that occur below the zero line (in negative territory) are considered stronger buy signals; crossovers above the zero line are stronger sell signals.\n\nMACD divergence is similar to RSI divergence and often more powerful. When price makes new highs but the MACD histogram makes lower highs, bullish momentum is fading — a warning sign for bulls. When price makes new lows but MACD histogram makes higher lows (less negative), bearish momentum is fading — a potential bottoming signal.\n\nA key limitation of MACD is that it is a lagging indicator — it is derived from moving averages, which themselves lag price. In choppy, sideways markets, MACD generates many false signals. It works best in trending markets where its trend-following nature is an advantage rather than a liability.",
+    examples: JSON.stringify(["MACD crossover buy signal: MACD line crosses above signal line below zero on S&P 500 in October 2022 — marked the beginning of a significant recovery", "MACD histogram shrinking: stock rising to new highs but MACD histogram getting smaller each day — momentum fading, potential reversal ahead", "MACD zero line crossover: MACD line crossing above zero means the 12-day EMA is above the 26-day EMA — medium-term trend has turned positive", "MACD divergence: stock price made lower lows in early 2023 but MACD made higher lows — bullish divergence preceded strong recovery rally", "False signal in sideways market: stock trading in a tight range generates multiple MACD crossovers — many small losses before the indicator is useful again", "Weekly MACD: using MACD on weekly chart filters out noise and identifies major trend changes more reliably than daily MACD"]),
+    practice_problems: JSON.stringify(["Explain the three components of MACD: the MACD line, the signal line, and the histogram. How is each calculated?", "What does a MACD crossover signal? Why is the location of the crossover (above or below the zero line) important?", "Compare MACD and RSI. What does each measure? In what market conditions is each most useful?", "Why do MACD signals tend to be unreliable in choppy, sideways markets? What could you add to filter out false signals?"]),
+    estimated_time: 20,
+    quiz: [
+      { question: "What does MACD stand for?", options: ["Moving Average Convergence Divergence", "Market Average Cycle Direction", "Mean Adjusted Close Data", "Momentum Adjusted Correlation Divergence"], correct_answer: 0 },
+      { question: "How is the MACD line calculated?", options: ["26-period EMA minus 12-period EMA", "12-period EMA minus 26-period EMA", "12-period SMA minus 26-period SMA", "50-period EMA minus 200-period EMA"], correct_answer: 1 },
+      { question: "What does it signal when the MACD line crosses ABOVE the signal line?", options: ["A sell signal — bearish momentum increasing", "A buy signal — bullish momentum increasing", "No significant signal", "The stock is overbought"], correct_answer: 1 },
+      { question: "What does a shrinking MACD histogram suggest?", options: ["Price is about to accelerate in the current direction", "Momentum in the prevailing direction is fading", "The indicator is malfunctioning", "Volume is declining"], correct_answer: 1 },
+      { question: "Why is MACD considered a lagging indicator?", options: ["It was developed in the 1970s and is outdated", "It is derived from moving averages, which are based on historical prices and always lag current price", "It only updates monthly", "It uses future price projections"], correct_answer: 1 }
+    ]
+  },
+  {
+    title: "Volume Analysis",
+    level: "intermediate",
+    module_number: 6,
+    lesson_number: 7,
+    content: "Volume is the number of shares (or contracts) traded in a security during a given time period. It is one of the most important secondary indicators in technical analysis because it provides context for price movements — it tells you how significant and well-supported a price move is. The principle is simple: volume confirms price. A price move on high volume is more meaningful than the same move on low volume.\n\nHigh volume on a price advance signals strong buying conviction — many participants are willing to pay higher prices, suggesting the move has momentum and institutional support. High volume on a price decline suggests widespread selling, which can accelerate the decline or represent capitulation (panic selling that exhausts sellers). Low volume moves in either direction are suspect — they may reverse easily because fewer participants are committed.\n\nVolume in relation to price trends: in a healthy uptrend, volume tends to expand on up days and contract on down days — buyers are more aggressive on advances than sellers are on pullbacks. When this pattern reverses — volume expanding on down days — it suggests distribution, meaning institutional investors are selling into strength. Volume expanding on up days in a downtrend may signal accumulation — smart money buying as weak hands sell.\n\nBreakouts require volume confirmation. When a stock breaks above a significant resistance level on high volume (typically 1.5-2x or more average volume), the breakout is considered genuine. When price breaks out on low volume, it is suspect — the move may fail and reverse back into the prior range. This is one of the most reliable principles in technical analysis.\n\nOn-Balance Volume (OBV) is a cumulative volume indicator that adds volume on up days and subtracts it on down days. OBV rising while price rises confirms the uptrend; OBV falling while price rises (divergence) suggests the rally lacks support and may be vulnerable.",
+    examples: JSON.stringify(["Breakout confirmation: stock breaks above $80 resistance on 3x average daily volume — strong institutional buying conviction confirms the breakout is real", "Distribution phase: stock price makes new high but volume on up days is shrinking while volume on down days is growing — institutions selling into retail enthusiasm", "Capitulation volume: S&P 500 fell on unprecedented volume in March 2020 during COVID panic — extreme selling volume typically marks bottoms", "Low-volume breakout failure: stock breaks above $50 resistance on below-average volume; retreats to $47 the next week — lack of conviction led to false breakout", "OBV confirmation: stock and OBV both making new highs simultaneously — genuine institutional buying supporting the price advance", "On-Balance Volume divergence: stock at 52-week high but OBV declining for 3 months — institutions distributing shares while price looks strong"]),
+    practice_problems: JSON.stringify(["A stock breaks to a new 52-week high. One day it does this on 3x average volume; another day on 0.5x average volume. Which breakout is more significant? Why?", "What is the pattern of volume in a healthy uptrend vs a distribution phase? How can you identify the difference?", "Look up the volume on any major index ETF (like SPY) during a recent significant decline. Was there a spike in volume? What does that suggest?", "Explain On-Balance Volume (OBV). If a stock's price is rising but OBV is falling, what does this divergence suggest?"]),
+    estimated_time: 20,
+    quiz: [
+      { question: "Why is volume important in technical analysis?", options: ["It determines the company's market capitalization", "It provides context for price movements — high volume gives a move more conviction and significance", "It shows how many investors own the stock", "Volume determines dividend payments"], correct_answer: 1 },
+      { question: "What does a price breakout above resistance on HIGH volume suggest?", options: ["The breakout is likely false and will reverse", "The breakout is confirmed — many buyers are committed to higher prices", "The stock is overbought and will fall", "The company is being acquired"], correct_answer: 1 },
+      { question: "In a healthy uptrend, what should the volume pattern look like?", options: ["High volume on down days; low volume on up days", "Consistently declining volume throughout the trend", "Higher volume on up days, lower volume on pullback days", "Completely flat volume throughout"], correct_answer: 2 },
+      { question: "What is distribution in technical analysis?", options: ["When a company distributes dividends", "When institutional investors are selling shares into strength as retail investors buy", "When volume is spread equally between buyers and sellers", "When a stock is added to a major index"], correct_answer: 1 },
+      { question: "What does On-Balance Volume (OBV) divergence (OBV falling while price rises) suggest?", options: ["Strong institutional buying supporting the rally", "The rally may lack underlying support and could be vulnerable", "Volume is not relevant when prices are rising", "The stock will continue to rise regardless of volume"], correct_answer: 1 }
+    ]
+  },
+  {
+    title: "Candlestick Charts",
     level: "intermediate",
     module_number: 6,
     lesson_number: 8,
-    content: "Relative Strength Index (RSI) is a momentum oscillator that measures the speed and magnitude of price changes on a scale of 0-100. RSI above 70 suggests overbought conditions, below 30 suggests oversold. However, in strong trends, RSI can remain overbought or oversold for extended periods. RSI divergences can signal potential reversals.",
-    examples: JSON.stringify([
-      "RSI above 70: stock may be due for pullback",
-      "RSI below 30: stock may be oversold, potential bounce",
-      "Bullish divergence: price makes lower low, RSI makes higher low",
-      "RSI staying above 40 in uptrend shows strength"
-    ]),
-    practice_problems: JSON.stringify([
-      "Interpret RSI readings in different market conditions",
-      "Identify RSI divergences on charts",
-      "Understand RSI limitations in trending markets"
-    ]),
-    estimated_time: 19,
+    content: "Candlestick charts originated in Japan in the 18th century, developed by rice trader Munehisa Homma. They display the same information as bar charts (open, high, low, close) but in a visually intuitive format that makes it easier to quickly assess the balance of buying and selling pressure for any time period. Candlestick patterns are among the most widely used tools in technical analysis.\n\nEach candlestick has three parts: the body, the upper wick (shadow), and the lower wick. The body shows the range between the opening and closing price. If the close is above the open, the body is typically white or green (bullish candle). If the close is below the open, the body is black or red (bearish candle). The wicks show the full range of trading — the highest and lowest prices reached during the period regardless of where the stock opened and closed.\n\nSingle-candle patterns provide immediate clues about sentiment. A long green body with short wicks shows strong buying pressure throughout the session — buyers were in control. A long red body shows sellers dominated. A doji has a very small body (open nearly equals close) with long wicks in one or both directions — it shows indecision, as neither buyers nor sellers could maintain control. A hammer has a small body near the top of the candle with a long lower wick — the price fell sharply but buyers pushed it back up, suggesting strong support.\n\nMulti-candle patterns have more predictive power. The engulfing pattern is powerful: a bullish engulfing occurs when a small red candle is followed by a large green candle whose body completely engulfs the prior day\'s body — a significant shift in control from sellers to buyers. A bearish engulfing is the reverse. The morning star and evening star are three-candle reversal patterns. The shooting star (small body near the low, long upper wick) signals potential reversal from rally.\n\nCandlestick patterns are more reliable when they occur at significant technical levels (at support, resistance, after long trends) and when accompanied by higher-than-average volume.",
+    examples: JSON.stringify(["Hammer at support: stock falls to $40 support, forms a hammer (long lower wick, small green body) — buyers aggressively defended the level", "Bearish engulfing at resistance: stock approaches $80 resistance, forms large red candle engulfing the prior green candle — significant seller momentum at key level", "Doji at market top: S&P 500 forms a gravestone doji (open and close at the low, long upper wick) after extended rally — indecision at high levels often precedes reversal", "Morning star pattern: three-candle bullish reversal with a gap-down candle, a doji, then a large gap-up green candle — shift from selling to buying pressure", "Long-tailed candle: Bitcoin falls sharply to $30,000 intraday but closes at $38,000 — long lower tail shows buyers absorbed the sell-off aggressively", "Spinning top: small body with equal length upper and lower wicks — shows balance between buyers and sellers, often signals consolidation or transition"]),
+    practice_problems: JSON.stringify(["Describe what information is shown in a single candlestick. What does the body tell you? What do the wicks tell you?", "Identify and explain three bullish candlestick reversal patterns. When are they most significant?", "What is the difference between a doji and a hammer? What does each suggest about buyer and seller behavior?", "Why are candlestick patterns more reliable when they occur at significant support or resistance levels rather than in the middle of a trading range?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What does RSI above 70 typically indicate?",
-        options: ["Oversold", "Overbought", "Neutral", "Strong trend"],
-        correct_answer: 1
-      }
+      { question: "What does a green (white) candlestick body indicate?", options: ["The stock fell during the session", "The closing price was higher than the opening price for the period", "Volume was above average", "The stock reached a new high"], correct_answer: 1 },
+      { question: "What does the wick (shadow) of a candlestick represent?", options: ["The trading volume for the session", "The full price range traded — the high and low beyond the open/close body", "The overnight gap in price", "The dividend payment amount"], correct_answer: 1 },
+      { question: "What does a doji candlestick pattern indicate?", options: ["A strong upward move", "Indecision — the open and close are nearly equal, showing neither buyers nor sellers won decisively", "Extremely high volume", "A guaranteed reversal signal"], correct_answer: 1 },
+      { question: "What is a bullish engulfing pattern?", options: ["A large green candle that completely covers the prior red candle's body — significant shift to buying", "Any green candle after a red candle", "Two consecutive green candles", "A green candle with very long wicks"], correct_answer: 0 },
+      { question: "Candlestick patterns are most reliable when:", options: ["They occur every day regardless of context", "They appear at significant technical levels (support, resistance) and are accompanied by higher volume", "They are used without any other technical indicators", "They occur in the middle of a trending market"], correct_answer: 1 }
     ]
   },
   {
-    title: "MACD Explained",
+    title: "Chart Patterns",
     level: "intermediate",
     module_number: 6,
     lesson_number: 9,
-    content: "MACD (Moving Average Convergence Divergence) shows the relationship between two moving averages of a security's price. It consists of the MACD line (12-day EMA minus 26-day EMA), signal line (9-day EMA of MACD), and histogram (difference between MACD and signal lines). MACD crossovers and divergences can signal trend changes.",
-    examples: JSON.stringify([
-      "MACD line crossing above signal line = bullish signal",
-      "MACD histogram above zero = upward momentum",
-      "Bullish divergence: price falls, MACD rises",
-      "MACD crossing zero line confirms trend change"
-    ]),
-    practice_problems: JSON.stringify([
-      "Interpret MACD crossover signals",
-      "Identify MACD divergences",
-      "Understand histogram significance"
-    ]),
-    estimated_time: 21,
+    content: "Chart patterns are recurring formations on price charts that technical analysts use to anticipate future price movements. They represent the battle between buyers and sellers playing out visually, and because human psychology is consistent, these patterns tend to repeat themselves with reliable directional implications. Chart patterns fall into two categories: continuation patterns (suggesting the prior trend will resume after a pause) and reversal patterns (suggesting the prior trend is ending).\n\nThe head and shoulders pattern is one of the most reliable reversal patterns. It consists of three peaks: a left shoulder, a higher head, and a right shoulder approximately equal to the left. The neckline connects the lows between the peaks. When price breaks below the neckline after forming the right shoulder, it signals a trend reversal from uptrend to downtrend. The price target is calculated by measuring the distance from the head to the neckline and projecting that distance below the neckline. An inverse head and shoulders is the bullish version at market bottoms.\n\nDouble tops and double bottoms are simpler reversal patterns. A double top forms when price hits approximately the same resistance level twice and fails to break through — two peaks at similar price levels signal the uptrend is exhausted. A break below the valley between the two peaks confirms the pattern. A double bottom (W pattern) is the bullish inverse.\n\nCup and handle is a powerful continuation pattern. The cup forms as a U-shaped consolidation after an uptrend; the handle is a brief pullback forming a small downward channel. A breakout above the handle on high volume signals the continuation of the prior uptrend with significant momentum. William O\'Neil, founder of Investor\'s Business Daily, popularized this pattern.\n\nFlag and pennant patterns are shorter-term continuation patterns. After a strong directional move (the flagpole), the price consolidates in a tight range (the flag or pennant). A breakout from the flag in the direction of the original move typically targets a move equal to the flagpole height.",
+    examples: JSON.stringify(["Head and shoulders at S&P 500 2007 top: classic topping pattern formed over months before the 2008 financial crisis breakdown", "Double top failure: stock reaches $100 twice over 3 months but cannot sustain above it; falls to $85 neckline, confirming double top reversal", "Cup and handle: Apple formed a textbook cup and handle in 2019 before breaking out to new all-time highs — William O'Neil's classic pattern", "Inverse head and shoulders at 2009 market bottom: S&P 500 formed inverted head and shoulders at the March 2009 low, signaling the bear market was ending", "Bull flag: stock surges 20% in one week (flagpole), then consolidates sideways for 2 weeks (flag), then breaks out higher — targets another 20% move", "Failed breakout: stock breaks above cup and handle on low volume, quickly falls back — always require volume confirmation"]),
+    practice_problems: JSON.stringify(["Draw a head and shoulders pattern. Identify the two shoulders, the head, and the neckline. At what price would you enter a short position? How do you calculate the price target?", "What is the difference between a continuation pattern and a reversal pattern? Give one example of each.", "Explain the psychology behind a double top pattern. Why do two failures to break resistance signal that an uptrend is exhausted?", "Why do technical analysts require volume confirmation when a chart pattern completes its breakout?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What does MACD measure?",
-        options: ["Volume", "Relationship between two moving averages", "Price volatility", "Market sentiment"],
-        correct_answer: 1
-      }
+      { question: "What is a head and shoulders pattern?", options: ["Three consecutive days of higher highs and lower lows", "A reversal pattern with three peaks (left shoulder, higher head, right shoulder) and a neckline", "A continuation pattern showing strong momentum", "A pattern used only in commodity markets"], correct_answer: 1 },
+      { question: "What does a double top pattern signal?", options: ["The uptrend is likely to continue with two more peaks ahead", "The uptrend may be exhausted — two failed attempts at the same resistance level signal potential reversal", "The stock is being accumulated by institutions", "A strong buying opportunity"], correct_answer: 1 },
+      { question: "What is a cup and handle pattern?", options: ["A bearish reversal pattern", "A continuation pattern: U-shaped consolidation followed by a brief pullback (handle) and breakout", "A pattern for commodity trading only", "A pattern that always lasts exactly 52 weeks"], correct_answer: 1 },
+      { question: "What does a bull flag pattern consist of?", options: ["A strong upward move followed by a slight downward consolidation, then a continuation higher", "Two equal peaks followed by a sharp decline", "Three consecutive lower highs", "A horizontal trading range after a decline"], correct_answer: 0 },
+      { question: "Why is volume confirmation essential when a chart pattern completes?", options: ["Volume is more important than the pattern itself", "High volume confirms genuine participation — buyers or sellers with conviction — reducing false breakout risk", "Low volume breakouts are more reliable", "Volume never matters in chart pattern analysis"], correct_answer: 1 }
     ]
-  },
-  {
-    title: "Indicator Confluence",
-    level: "intermediate",
-    module_number: 6,
-    lesson_number: 10,
-    content: "Indicator confluence occurs when multiple technical indicators give the same signal, increasing the probability of a successful trade. Combining trend-following indicators (moving averages) with momentum indicators (RSI, MACD) and volume analysis provides more reliable signals than any single indicator. However, avoid over-analyzing with too many indicators.",
-    examples: JSON.stringify([
-      "Breakout + high volume + RSI oversold = strong buy signal",
-      "Support level + 200-day MA + MACD bullish cross",
-      "Multiple timeframe confirmation strengthens signals",
-      "Price, volume, and momentum all aligning"
-    ]),
-    practice_problems: JSON.stringify([
-      "Identify confluence of multiple indicators",
-      "Build systematic approach using indicator combinations",
-      "Understand when indicators conflict"
-    ]),
-    estimated_time: 22,
-    quiz: [
-      {
-        question: "What is indicator confluence?",
-        options: ["Using one indicator", "Multiple indicators giving same signal", "Conflicting signals", "Random indicators"],
-        correct_answer: 1
-      }
-    ]
-  }
-,
-  // Module 7: Other Asset Classes (Intermediate) - 10 lessons
-  {
-    title: "Bonds Explained",
+  },  {
+    title: "Bonds and Fixed Income",
     level: "intermediate",
     module_number: 7,
     lesson_number: 1,
-    content: "Bonds are debt securities where investors lend money to entities (government, corporations) for a defined period at a fixed interest rate. They provide regular income through coupon payments and return principal at maturity. Bond prices move inversely to interest rates. They're generally less risky than stocks and provide portfolio diversification.",
-    examples: JSON.stringify([
-      "10-year Treasury bond paying 4% annually",
-      "Corporate bond with higher yield but more risk",
-      "Municipal bonds with tax advantages",
-      "Bond prices fall when interest rates rise"
-    ]),
-    practice_problems: JSON.stringify([
-      "Calculate bond yield and price relationship",
-      "Compare different types of bonds",
-      "Understand duration and interest rate risk"
-    ]),
-    estimated_time: 24,
+    content: "A bond is a debt instrument — when you buy a bond, you are lending money to the issuer (a government, municipality, or corporation) in exchange for regular interest payments (the coupon) and the return of your principal at maturity. Bonds are called fixed income because they typically pay a predetermined, fixed amount of interest at regular intervals. They are a fundamental part of most diversified investment portfolios.\n\nBonds have several key characteristics. The face value (par value) is the amount the borrower agrees to repay at maturity — typically $1,000 per bond. The coupon rate is the annual interest rate on the face value. A 5% coupon on a $1,000 bond pays $50 per year (usually $25 every six months). The maturity date is when the principal is repaid. Bond duration can range from overnight (T-bills) to 30+ years (long-term Treasury bonds).\n\nBond prices and yields move in opposite directions — this is one of the most important relationships to understand. When market interest rates rise, existing bonds with lower coupon rates become less attractive, so their prices fall to offer a competitive yield. When rates fall, existing bonds with higher coupons become more attractive and their prices rise. A bond bought at par ($1,000) that falls to $950 now has a higher yield to maturity than its original coupon rate.\n\nTypes of bonds differ in risk and return. US Treasury bonds are backed by the full faith and credit of the US government and are considered the safest investment in the world. Municipal bonds are issued by states and local governments and offer tax-exempt interest at the federal level. Corporate bonds are issued by companies — higher-rated (investment grade) bonds are relatively safe; lower-rated (high yield or junk) bonds offer higher interest rates to compensate for higher default risk.\n\nBonds serve as portfolio ballast. They typically move inversely to stocks — during economic downturns when stocks fall, investors rush to safety in Treasury bonds, pushing bond prices up. This negative correlation makes bonds valuable for diversifying equity risk.",
+    examples: JSON.stringify(["US 10-year Treasury bond: yields approximately 4-5% as of 2024, backed by the US government — effectively risk-free for credit purposes", "Corporate bond example: Apple issues 10-year bonds at 3.85% coupon; investors lend Apple money and receive semi-annual interest", "Bond price movement: if you buy a 10-year bond with 3% coupon and rates rise to 5%, your bond's market price falls to about $846 to compensate new buyers", "Municipal bond tax benefit: 4% muni bond is equivalent to 5.88% taxable bond for someone in the 32% tax bracket", "High-yield bond: company with B credit rating issues bonds at 8% yield vs 4.5% for an A-rated company — 3.5% premium for taking more risk", "Bond ladder: own bonds maturing in 1, 2, 3, 4, and 5 years — each year one matures and is reinvested in a new 5-year bond"]),
+    practice_problems: JSON.stringify(["If you buy a $1,000 bond with a 4% coupon and market interest rates rise to 6%, explain what happens to your bond's market value and why.", "Calculate the tax-equivalent yield of a 3.5% municipal bond for an investor in the 24% federal tax bracket.", "Compare the risk and return of: US Treasury bonds, investment-grade corporate bonds, and high-yield (junk) bonds. Rank them from lowest to highest risk.", "Why do bonds typically rise in value during recessions? How does this benefit a portfolio holding both stocks and bonds?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What happens to bond prices when interest rates rise?",
-        options: ["Prices rise", "Prices fall", "No change", "Prices double"],
-        correct_answer: 1
-      }
+      { question: "What is a bond's coupon rate?", options: ["The bond's current market price", "The annual interest rate paid on the bond's face value", "The fee charged by the bond broker", "The bond's return after taxes"], correct_answer: 1 },
+      { question: "What happens to existing bond prices when market interest rates rise?", options: ["Existing bond prices rise proportionally", "Existing bond prices fall to make their yields competitive with new bonds", "Existing bond prices are unaffected", "Existing bonds are repurchased by the issuer"], correct_answer: 1 },
+      { question: "What makes US Treasury bonds the safest bonds?", options: ["They pay the highest interest rates", "They are backed by the full faith and credit of the US government", "They are insured by the FDIC", "They are only available to large institutions"], correct_answer: 1 },
+      { question: "What is a municipal bond's key tax advantage?", options: ["They grow tax-free until maturity", "Interest is exempt from federal income tax (and often state tax)", "You can deduct the purchase price from your taxable income", "Capital gains are taxed at 0% always"], correct_answer: 1 },
+      { question: "Why are bonds typically included in a diversified portfolio alongside stocks?", options: ["Bonds always earn more than stocks", "Bonds and stocks often move in opposite directions, reducing overall portfolio volatility", "Bonds eliminate all investment risk", "Bonds are required by law in retirement accounts"], correct_answer: 1 }
     ]
   },
   {
-    title: "How Interest Rates Affect Markets",
+    title: "Real Estate Investing (REITs)",
     level: "intermediate",
     module_number: 7,
     lesson_number: 2,
-    content: "Interest rates are the cost of borrowing money and affect all financial markets. Rising rates make bonds more attractive relative to stocks, increase borrowing costs for companies, and can slow economic growth. Falling rates stimulate borrowing and spending, often boosting stock prices. The Federal Reserve uses interest rates as a primary monetary policy tool.",
-    examples: JSON.stringify([
-      "Fed raises rates → bond yields up, stock prices often down",
-      "Low rates encourage business investment and expansion",
-      "High rates slow inflation but may cause recession",
-      "Rate changes affect mortgage rates and consumer spending"
-    ]),
-    practice_problems: JSON.stringify([
-      "Analyze how rate changes affect different sectors",
-      "Understand Fed policy and market reactions",
-      "Track relationship between rates and asset prices"
-    ]),
-    estimated_time: 22,
+    content: "Real estate is one of the most proven vehicles for building long-term wealth, offering appreciation, rental income, inflation protection, and tax advantages. However, buying and managing physical property requires significant capital, time, and expertise. Real Estate Investment Trusts (REITs) solve this by allowing investors to access real estate returns through publicly traded securities, combining real estate\'s benefits with the liquidity of stocks.\n\nA REIT is a company that owns, operates, or finances income-producing real estate — such as apartments, office buildings, shopping centers, warehouses, data centers, or hospitals. By law, REITs must distribute at least 90% of their taxable income to shareholders as dividends, which is why they offer much higher dividend yields than typical stocks (often 3-7%). In exchange for this distribution requirement, REITs pay no corporate income tax on distributed income.\n\nEquity REITs own and operate properties — they collect rent from tenants and pass the income to shareholders. Mortgage REITs (mREITs) lend money to real estate owners or buy mortgage-backed securities, earning interest income. Hybrid REITs do both. Equity REITs are far more common and generally more stable. Within equity REITs, specialization matters: data center REITs, industrial/logistics REITs, and residential apartment REITs have been the strongest performers in recent years due to structural tailwinds.\n\nREITs offer several advantages over direct property ownership. They are highly liquid — you can buy and sell shares instantly versus the months-long process of real estate transactions. They require minimal capital — you can invest $500 in a REIT versus a $50,000 down payment on a rental property. They provide instant diversification across many properties. Professional management handles day-to-day operations. The key metric for evaluating REITs is Funds From Operations (FFO) — net income adjusted for depreciation, which distorts earnings for real estate companies.\n\nREIT disadvantages include higher sensitivity to interest rates (because high rates make REIT dividend yields less attractive relative to bonds), limited growth (must pay out 90% of income), and vulnerability to sector-specific downturns (retail REITs suffered severely during COVID).",
+    examples: JSON.stringify(["Realty Income (O): monthly dividend REIT owning over 13,000 properties across the US; 30+ years of dividend growth", "Prologis (PLD): industrial/logistics REIT owning warehouses and distribution centers — benefited enormously from e-commerce growth", "American Tower (AMT): cell tower REIT owning infrastructure for wireless networks; recurring rental income from telecom companies", "Equity Residential (EQR): apartment REIT owning 80,000+ units in urban markets; benefits from housing shortage and rising rents", "REIT vs direct property: $10,000 in Realty Income REIT vs $10,000 down on a $100,000 rental — REIT offers instant liquidity and diversification", "mREIT risk: mortgage REITs like Annaly Capital use leverage to amplify returns — highly sensitive to interest rate changes"]),
+    practice_problems: JSON.stringify(["Why must REITs pay out at least 90% of taxable income? How does this create both an advantage and a limitation for REIT investors?", "Compare investing in a REIT versus buying a direct rental property. Consider capital requirements, liquidity, diversification, and management burden.", "A REIT has FFO of $3.00 per share and trades at $45. What is its FFO multiple (like a P/E for REITs)? Is this expensive or cheap?", "Why might rising interest rates hurt REIT prices even if the underlying properties are performing well?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "How do rising interest rates typically affect stock prices?",
-        options: ["Always positive", "Often negative due to higher borrowing costs", "No effect", "Only affects bonds"],
-        correct_answer: 1
-      }
+      { question: "What percentage of taxable income must a REIT distribute to shareholders by law?", options: ["50%", "75%", "90%", "100%"], correct_answer: 2 },
+      { question: "What is the main advantage REITs have over direct real estate investment?", options: ["REITs always earn higher returns", "REITs offer liquidity, low minimum investment, and instant diversification", "REITs are government-guaranteed", "REITs never decline in value"], correct_answer: 1 },
+      { question: "What is FFO (Funds From Operations) in REIT analysis?", options: ["The total rent collected from tenants", "Net income adjusted for depreciation — a better measure of REIT earnings power than GAAP net income", "The REIT's total borrowings", "Dividends paid to shareholders"], correct_answer: 1 },
+      { question: "Which type of REIT has been among the strongest performers due to e-commerce growth?", options: ["Retail mall REITs", "Office building REITs", "Industrial/logistics warehouse REITs", "Hotel and resort REITs"], correct_answer: 2 },
+      { question: "Why are mortgage REITs (mREITs) generally considered riskier than equity REITs?", options: ["They own more properties", "They use significant leverage and are highly sensitive to interest rate changes", "They pay lower dividends", "They are not publicly traded"], correct_answer: 1 }
     ]
   },
   {
-    title: "Commodities Explained",
+    title: "Commodities Trading",
     level: "intermediate",
     module_number: 7,
     lesson_number: 3,
-    content: "Commodities are raw materials or primary agricultural products that can be bought and sold, such as gold, oil, wheat, and copper. They're often used as inflation hedges since their prices tend to rise with general price levels. Commodity investing can be done through futures, ETFs, or commodity-focused stocks. They add diversification but can be volatile.",
-    examples: JSON.stringify([
-      "Gold as inflation hedge and safe haven",
-      "Oil prices affecting energy stocks and economy",
-      "Agricultural commodities affected by weather",
-      "Copper as economic indicator (industrial demand)"
-    ]),
-    practice_problems: JSON.stringify([
-      "Understand different ways to invest in commodities",
-      "Analyze commodity price drivers",
-      "Assess commodities' role in portfolio diversification"
-    ]),
+    content: "Commodities are raw materials or primary agricultural products that can be bought, sold, and traded. They include energy resources (crude oil, natural gas), metals (gold, silver, copper, aluminum), agricultural products (corn, wheat, soybeans, coffee, sugar), and livestock. Commodities are the basic building blocks of the global economy, and their prices affect everything from food costs to energy bills to manufacturing costs.\n\nCommodity prices are determined by the fundamental forces of supply and demand, but they are uniquely sensitive to factors outside normal business cycles: weather events disrupting crops, geopolitical conflicts affecting oil supply, technological changes altering demand patterns, and currency movements affecting import/export economics. This sensitivity makes commodities highly volatile and somewhat unpredictable compared to stocks and bonds.\n\nInvestors access commodities through several methods. Physical ownership works for gold and silver (coins and bars), but storing oil or wheat is impractical. Commodity futures contracts are the primary mechanism for professional traders — agreements to buy or sell a specific quantity of a commodity at a predetermined price on a future date. Commodity ETFs (like GLD for gold, USO for oil) provide easy equity market access without futures complexity. Commodity producer stocks (mining companies, oil companies, agricultural companies) provide indirect exposure.\n\nGold deserves special attention as both a commodity and a financial asset. Gold has served as a store of value for thousands of years and is often called a safe-haven asset — during times of financial crisis, currency debasement, or extreme inflation, gold tends to hold or increase its value. Central banks globally hold large gold reserves. However, gold produces no income — it generates returns only from price appreciation, making it a speculative rather than income-producing asset.\n\nFor portfolio purposes, commodities provide diversification benefits and serve as an inflation hedge — commodity prices often rise with inflation. However, long-term returns from commodities have historically been lower than stocks, and the volatility is high. Most financial advisors recommend a modest allocation (5-10% maximum) for investors who want commodity exposure.",
+    examples: JSON.stringify(["Gold price history: gold rose from $250 per ounce in 2001 to over $2,000 in 2020 — roughly 8x appreciation over 20 years", "Oil price volatility: WTI crude oil ranged from -$37 per barrel (April 2020 futures) to $130 (March 2022) — extreme price swings possible", "Copper as economic indicator: copper prices often predict economic activity because construction and manufacturing both require large amounts of copper", "Agricultural commodity: wheat prices surged over 50% in 2022 after Russia's invasion of Ukraine — two major wheat exporters disrupted supply", "Gold ETF (GLD): tracks gold price directly, one share equals 1/10th of an ounce of gold — simple way to own gold without storage", "Oil company stock vs oil futures: Exxon stock fell less during 2020 oil crash than oil futures because the company has diversified revenues and cost management"]),
+    practice_problems: JSON.stringify(["Compare three ways an investor can gain exposure to gold: physical gold, GLD ETF, and gold mining stocks. What are the pros and cons of each?", "Why might an investor add a 5% allocation to commodities in a portfolio that is otherwise 60% stocks and 40% bonds? What specific risk does it address?", "Oil prices fell from $107 to $26 per barrel between 2014 and 2016. How did this affect oil-producing countries, oil companies, and consumers differently?", "Is gold a good long-term investment? Compare its 20-year return to the S&P 500 and a bond index. What role does it best serve in a portfolio?"]),
     estimated_time: 20,
     quiz: [
-      {
-        question: "Why are commodities often used as inflation hedges?",
-        options: ["They're always profitable", "Prices tend to rise with inflation", "Government guarantees", "No volatility"],
-        correct_answer: 1
-      }
+      { question: "What category of commodity is crude oil?", options: ["Agricultural", "Precious metals", "Energy", "Livestock"], correct_answer: 2 },
+      { question: "Why is gold considered a safe-haven asset?", options: ["Gold produces consistent dividends", "Gold has historically maintained value during financial crises, currency crises, and high inflation", "Gold prices always rise during stock market rallies", "Gold is backed by the US government"], correct_answer: 1 },
+      { question: "What is a commodity futures contract?", options: ["A stock in a commodity-producing company", "An agreement to buy or sell a specific quantity of a commodity at a predetermined price on a future date", "A certificate representing physical gold ownership", "A commodity-focused mutual fund"], correct_answer: 1 },
+      { question: "What is the maximum commodity allocation most financial advisors suggest for a diversified portfolio?", options: ["25-30%", "50%", "5-10%", "No allocation is recommended"], correct_answer: 2 },
+      { question: "Why do commodity prices tend to rise during periods of high inflation?", options: ["Central banks buy commodities when printing money", "Commodities are physical assets whose prices adjust upward when the currency they are priced in loses value", "Commodity producers lobby for higher prices", "Inflation reduces supply of commodities"], correct_answer: 1 }
     ]
   },
   {
-    title: "Gold vs Stocks",
+    title: "Cryptocurrency Basics",
     level: "intermediate",
     module_number: 7,
     lesson_number: 4,
-    content: "Gold has been a store of value for thousands of years and often performs well during economic uncertainty, inflation, and currency debasement. Stocks represent ownership in productive businesses that can grow earnings over time. Historically, stocks have outperformed gold over long periods, but gold provides portfolio insurance during crises. Both have roles in diversified portfolios.",
-    examples: JSON.stringify([
-      "Gold surge during 2008 financial crisis",
-      "Stocks outperforming gold over 30+ year periods",
-      "Gold holding value during currency crises",
-      "Stocks providing dividends and growth, gold providing stability"
-    ]),
-    practice_problems: JSON.stringify([
-      "Compare long-term returns of gold vs stocks",
-      "Understand when each asset class performs better",
-      "Determine appropriate allocation between gold and stocks"
-    ]),
-    estimated_time: 19,
+    content: "Cryptocurrency is a digital or virtual form of currency that uses cryptography for security and operates on decentralized networks — primarily blockchain technology. Unlike traditional currencies controlled by central banks, most cryptocurrencies operate without a central authority. Bitcoin, created in 2009 by the pseudonymous Satoshi Nakamoto, was the first and remains the largest by market capitalization. Ethereum, launched in 2015, introduced programmable smart contracts and decentralized applications.\n\nBlockchain is the underlying technology of most cryptocurrencies. It is a distributed ledger — a chain of transaction records (blocks) that are cryptographically linked and stored across thousands of computers simultaneously. This decentralized structure makes the record extremely difficult to alter or hack. Every transaction is publicly visible but pseudonymous (linked to wallet addresses, not names).\n\nBitcoin\'s core value proposition is its fixed supply — only 21 million Bitcoin will ever exist, encoded in the protocol. This scarcity, combined with growing demand, has historically driven price appreciation. Bitcoin advocates argue it is digital gold — a scarce, censorship-resistant store of value that cannot be inflated away by government printing. Critics argue it has no intrinsic value, generates no cash flows, consumes excessive energy, and is primarily speculative.\n\nThe cryptocurrency market is extremely volatile. Bitcoin has experienced multiple drawdowns of 80%+ from its highs. In 2022, the total cryptocurrency market lost roughly $2 trillion in value. The sector faces significant regulatory uncertainty, exchange failures (FTX collapsed in 2022), and technological risks. Investors considering cryptocurrency should understand they are participating in a highly speculative, relatively young asset class.\n\nFor most investors, a small speculative allocation (1-5% of portfolio maximum) to Bitcoin or a broad crypto index is the most prudent approach — enough to participate in the potential upside without catastrophic portfolio damage if the asset class fails. Never invest more in cryptocurrency than you are prepared to lose entirely.",
+    examples: JSON.stringify(["Bitcoin price history: $0.01 in 2010, $67,000 at November 2021 peak, fell to $16,000 by end 2022, recovered to $70,000+ in 2024", "Ethereum smart contracts: programmable code on the blockchain enables DeFi applications, NFTs, and decentralized exchanges without intermediaries", "Bitcoin halving: every 210,000 blocks (approximately every 4 years) the reward for mining new Bitcoin is cut in half — built-in supply reduction mechanism", "FTX collapse 2022: major crypto exchange went bankrupt due to fraud, causing billions in customer losses — counterparty risk in unregulated venues", "Bitcoin 21 million supply cap: unlike the US dollar which has over $20 trillion in circulation, only 21 million Bitcoin will ever exist", "Crypto portfolio allocation: financial advisors generally suggest treating crypto as speculative — no more than 1-5% of total portfolio"]),
+    practice_problems: JSON.stringify(["What properties does Bitcoin share with gold as a store of value? What properties does gold have that Bitcoin lacks?", "If the cryptocurrency market can fall 80% from its peak (as it did in 2018 and 2022), how should this inform position sizing in your portfolio?", "What is blockchain technology? How does it provide security without a central authority?", "Compare the investment thesis for Bitcoin versus Ethereum. What different use cases and value sources does each claim?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What's gold's primary advantage over stocks?",
-        options: ["Higher returns", "Store of value during uncertainty", "Pays dividends", "More liquid"],
-        correct_answer: 1
-      }
+      { question: "What is the maximum supply of Bitcoin that will ever exist?", options: ["1 million", "10 million", "21 million", "Unlimited"], correct_answer: 2 },
+      { question: "What is a blockchain?", options: ["A type of cryptocurrency wallet", "A distributed ledger of transaction records that are cryptographically linked and stored across many computers", "A centralized exchange for cryptocurrencies", "A government-issued digital currency"], correct_answer: 1 },
+      { question: "Bitcoin is often compared to gold primarily because:", options: ["Both are used in manufacturing", "Both have fixed or limited supply and serve as potential stores of value outside the traditional financial system", "Both are backed by governments", "Both generate dividend income"], correct_answer: 1 },
+      { question: "What was the significance of the FTX collapse in 2022?", options: ["It caused Bitcoin's price to rise", "It demonstrated counterparty and fraud risk in unregulated cryptocurrency exchanges", "It proved cryptocurrencies have no value", "It caused the US government to ban Bitcoin"], correct_answer: 1 },
+      { question: "What is a Bitcoin halving?", options: ["When Bitcoin's price falls 50%", "A protocol event every ~4 years that cuts the mining reward in half, reducing new Bitcoin supply growth", "When a Bitcoin wallet splits between two users", "When Bitcoin's network transaction fees double"], correct_answer: 1 }
     ]
   },
   {
-    title: "Real Estate Basics",
+    title: "Options Contracts Intro",
     level: "intermediate",
     module_number: 7,
     lesson_number: 5,
-    content: "Real estate investing involves purchasing property to generate rental income or capital appreciation. Benefits include steady cash flow, tax advantages, inflation hedge, and leverage opportunities. Challenges include illiquidity, high transaction costs, property management, and concentration risk. Real estate can be accessed through direct ownership, REITs, or real estate crowdfunding platforms.",
-    examples: JSON.stringify([
-      "Rental property generating $1000/month cash flow",
-      "House appreciation from $200k to $300k over 10 years",
-      "Tax benefits: depreciation, mortgage interest deduction",
-      "Leverage: $50k down payment controlling $250k property"
-    ]),
-    practice_problems: JSON.stringify([
-      "Calculate rental property cash flow and returns",
-      "Understand real estate tax advantages",
-      "Compare direct ownership vs REIT investing"
-    ]),
-    estimated_time: 25,
+    content: "An options contract gives the buyer the right, but not the obligation, to buy or sell an underlying asset at a specified price (the strike price) on or before a specified date (expiration). Options are derivatives — their value is derived from an underlying asset such as a stock, ETF, or index. They are powerful tools for hedging risk, generating income, or speculating with leverage, but they require careful understanding before use.\n\nThere are two types of options. A call option gives the buyer the right to buy the underlying asset at the strike price. Calls are used when you expect the underlying to rise. A put option gives the buyer the right to sell the underlying asset at the strike price. Puts are used when you expect the underlying to fall, or to protect (hedge) an existing long position against downside.\n\nFor each options contract, there are two parties: the buyer (who pays the premium) and the seller/writer (who collects the premium and takes on the obligation). The buyer of a call profits if the stock rises above the strike price before expiration. The seller of a call profits if the stock stays below the strike price (the option expires worthless, and the seller keeps the premium).\n\nOptions are priced using several factors encapsulated in the Black-Scholes model: the underlying stock price, the strike price, the time until expiration (time value — more time means more premium), volatility (higher volatility means more expensive options), the risk-free interest rate, and dividends. The most important factor for many retail options traders is the implied volatility — the market\'s expectation of future price movement.\n\nThe options Greeks are measures of an option\'s price sensitivity. Delta measures how much the option price changes for each $1 move in the underlying. Theta represents time decay — options lose value every day as they approach expiration. Vega measures sensitivity to changes in implied volatility. Understanding the Greeks is essential for managing options positions effectively.",
+    examples: JSON.stringify(["Call option example: buy Apple $190 call expiring in 30 days for $3 premium; if Apple rises to $200, the call is worth $10 — a 233% return on premium paid", "Put option as insurance: own 100 shares of SPY at $400; buy SPY $380 put for $5 — costs $500 but protects against portfolio losses below $380", "Covered call income: own 100 shares at $50; sell a $55 call for $2 premium; if stock stays below $55, collect $200 in income", "Options time decay: option bought with 30 days to expiration loses value each day even if the stock doesn't move — seller benefits from time decay", "Implied volatility premium: options become expensive before earnings announcements because the expected move is large — selling options before earnings can be profitable if the move is smaller than expected", "Total loss risk: buyer of a $3 call option can lose 100% of the $300 paid if the stock doesn't reach the strike price before expiration"]),
+    practice_problems: JSON.stringify(["Explain the difference between a call option and a put option. Give an example of when you would buy each.", "You buy 1 call option contract (100 shares) on a stock at the $50 strike price for $2.50 premium. At expiration, the stock is at $55. Calculate your profit. What if the stock is at $49?", "Explain theta (time decay). Why does this make buying options with very short expirations risky?", "What is a covered call strategy? Who would use it and why?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What's a key advantage of real estate investing?",
-        options: ["No risk", "Steady cash flow and inflation hedge", "Always appreciates", "No taxes"],
-        correct_answer: 1
-      }
+      { question: "What does a call option give its buyer the right to do?", options: ["Sell the underlying stock at the strike price", "Buy the underlying stock at the strike price on or before expiration", "Receive dividends from the underlying stock", "Borrow shares to short sell"], correct_answer: 1 },
+      { question: "What happens to an options buyer if the option expires out of the money (unfavorably)?", options: ["They must exercise the option", "They lose the premium paid — the option expires worthless", "They receive the stock at current market price", "They automatically receive a refund"], correct_answer: 1 },
+      { question: "What is theta in options trading?", options: ["The options price sensitivity to stock price changes", "Time decay — the rate at which an option loses value as it approaches expiration", "The volatility premium in the option price", "The interest rate component of option pricing"], correct_answer: 1 },
+      { question: "What is a covered call strategy?", options: ["Buying a call option on a stock you don't own", "Selling a call option on stock you already own to generate premium income", "Buying both a call and put at the same strike", "Hedging with options against market declines"], correct_answer: 1 },
+      { question: "What is implied volatility in options pricing?", options: ["The historical volatility of the stock over the past year", "The market's expectation of future price movement embedded in the option's price", "The difference between the strike price and current stock price", "The probability that the option expires in the money"], correct_answer: 1 }
     ]
   },
   {
-    title: "REITs Explained",
+    title: "Futures Contracts",
     level: "intermediate",
     module_number: 7,
     lesson_number: 6,
-    content: "Real Estate Investment Trusts (REITs) are companies that own, operate, or finance income-producing real estate. They must distribute at least 90% of taxable income as dividends, making them attractive for income investors. REITs provide real estate exposure without direct property ownership, offering liquidity, diversification, and professional management.",
-    examples: JSON.stringify([
-      "Residential REIT owning apartment complexes",
-      "Commercial REIT owning office buildings and malls",
-      "Healthcare REIT owning hospitals and senior housing",
-      "REIT ETFs providing diversified real estate exposure"
-    ]),
-    practice_problems: JSON.stringify([
-      "Compare different types of REITs",
-      "Analyze REIT dividend yields and sustainability",
-      "Understand REIT valuation metrics"
-    ]),
-    estimated_time: 21,
+    content: "A futures contract is a standardized legal agreement to buy or sell a specific quantity of an asset at a predetermined price at a specified time in the future. Unlike options, futures create an obligation for both parties — the buyer must buy and the seller must sell at the agreed price on the delivery date, unless the contract is offset before delivery. Futures markets exist for commodities, stock indexes, currencies, interest rates, and more.\n\nFutures were originally created for agricultural producers. A wheat farmer planting a crop in spring does not know what price wheat will fetch at harvest in October. By selling futures contracts, the farmer locks in a guaranteed sale price, eliminating harvest price risk. The buyer of those futures (perhaps a flour manufacturer) locks in a guaranteed purchase price, eliminating the risk of prices rising before they can buy.\n\nFutures use significant leverage. The margin required to hold a futures contract is typically 5-15% of the contract\'s total value. A $100,000 oil futures contract might require only $10,000 in margin — 10x leverage. This means a 10% move in oil prices doubles or wipes out the entire margin. This leverage makes futures both potentially very profitable and potentially very dangerous. Futures traders can lose more than their initial investment if positions move against them significantly.\n\nMajor futures markets include: CME Group (Chicago Mercantile Exchange) for agricultural, energy, and financial futures; NYMEX for oil and gas; CBOT for agricultural commodities and bonds. Financial futures are heavily used by institutional investors — S&P 500 futures allow hedge funds and pension funds to hedge equity exposure quickly without selling their underlying stock holdings.\n\nFor individual retail investors, futures are generally inappropriate due to their complexity, leverage, and 24-hour trading nature. More accessible alternatives for commodity exposure include ETFs or commodity producer stocks. However, understanding futures is valuable for comprehending how commodity prices and financial hedging work in the broader economy.",
+    examples: JSON.stringify(["Agricultural hedging: wheat farmer sells futures at $7.00 per bushel in April for October delivery; harvest arrives and price is $5.50 — farmer still receives $7.00 due to futures hedge", "Oil futures leverage: $95,000 crude oil futures contract requires $4,500 margin; oil falls 5%, contract loses $4,750 — more than the entire margin, triggering a margin call", "S&P 500 futures: pension fund holds $500M in stocks; sells S&P 500 futures contracts to hedge temporarily during uncertain period without selling actual holdings", "Rolling contracts: futures have expiration dates; traders must roll (close the expiring contract and open a new one) to maintain continuous exposure", "Backwardation vs contango: oil futures in backwardation (near-term contracts cost more than future ones) vs contango (future contracts cost more) — affects return for ETF investors", "Index futures arbitrage: if S&P 500 futures trade significantly above fair value, arbitrageurs buy the stocks and sell futures, bringing prices in line"]),
+    practice_problems: JSON.stringify(["Explain why a corn farmer would use futures to hedge their crop. Who takes the other side of this trade and what is their motivation?", "A silver futures contract covers 5,000 ounces. Silver is at $25/oz, so the contract is worth $125,000. Required margin is $8,000. If silver falls to $23, what is the loss and what does this mean for the margin?", "What is the difference between a futures contract and an options contract? What obligation does each create?", "Why do most individual investors use commodity ETFs rather than futures contracts for commodity exposure?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What must REITs distribute as dividends?",
-        options: ["50% of income", "90% of taxable income", "All profits", "Nothing required"],
-        correct_answer: 1
-      }
+      { question: "What obligation does a futures contract create?", options: ["The buyer has the right but not the obligation to buy", "Both buyer and seller are obligated to complete the transaction at the agreed price unless the contract is offset", "Only the seller is obligated; the buyer can walk away", "No obligation — futures are purely speculative"], correct_answer: 1 },
+      { question: "Why were futures markets originally created?", options: ["For speculative trading by banks", "To allow agricultural producers and buyers to lock in prices and reduce harvest price risk", "As an alternative to the stock market", "To help governments manage currency exchange rates"], correct_answer: 1 },
+      { question: "What does the high leverage in futures trading mean for investors?", options: ["Higher leverage always leads to higher returns", "Small price movements create large gains or losses relative to the initial margin — can lose more than deposited", "Leverage protects against large losses", "Leverage is fixed at 2x for all futures contracts"], correct_answer: 1 },
+      { question: "How do institutional investors use S&P 500 futures?", options: ["To buy stocks at a discount", "To hedge equity exposure quickly without selling their underlying stock holdings", "As a replacement for owning stocks", "To receive daily dividends"], correct_answer: 1 },
+      { question: "What is rolling a futures contract?", options: ["Converting futures to options before expiration", "Closing an expiring contract and opening a new one to maintain continuous exposure", "Extending the delivery date by paying additional fees", "Canceling the contract and receiving a refund"], correct_answer: 1 }
     ]
   },
   {
-    title: "Currency Markets (Forex)",
+    title: "Foreign Exchange (Forex)",
     level: "intermediate",
     module_number: 7,
     lesson_number: 7,
-    content: "The foreign exchange (forex) market is where currencies are traded. It's the world's largest financial market, operating 24/5. Currency values are affected by interest rates, economic growth, political stability, and trade balances. Forex trading involves high leverage and risk. For most investors, currency exposure comes through international stock and bond investments.",
-    examples: JSON.stringify([
-      "EUR/USD exchange rate fluctuations",
-      "Strong dollar making US exports more expensive",
-      "Emerging market currencies during crises",
-      "Currency hedging in international investments"
-    ]),
-    practice_problems: JSON.stringify([
-      "Understand factors affecting currency values",
-      "Analyze impact of currency changes on investments",
-      "Learn about currency hedging strategies"
-    ]),
-    estimated_time: 23,
+    content: "The foreign exchange market (Forex or FX) is the global marketplace for trading national currencies. It is the world\'s largest financial market by volume — over $7 trillion is traded daily, dwarfing the stock market\'s $200 billion daily volume. Unlike stock markets, Forex operates 24 hours a day, five days a week, across major financial centers: Sydney, Tokyo, London, and New York.\n\nForex exchange rates determine how much of one currency you receive in exchange for another. When you travel abroad and exchange US dollars for euros, you are participating in the Forex market. Exchange rates fluctuate continuously based on economic fundamentals: interest rate differentials between countries, inflation rates, economic growth, political stability, and market sentiment. When a country\'s interest rates rise, its currency often strengthens because global capital flows toward higher yields.\n\nCurrencies are traded in pairs. The EUR/USD pair is the most traded in the world. The quote EUR/USD = 1.10 means one euro costs $1.10. If the dollar strengthens, the EUR/USD rate falls (it costs fewer dollars to buy a euro). Major pairs include EUR/USD, USD/JPY, GBP/USD, and USD/CHF. Emerging market currencies (Brazilian real, South African rand, Turkish lira) are more volatile.\n\nForex trading uses extreme leverage — retail platforms commonly offer 50:1 or higher leverage, meaning a $1,000 deposit can control $50,000 in currency. This makes Forex trading extremely risky. Studies show that over 70% of retail Forex traders lose money. The market is dominated by institutional players (banks, hedge funds, central banks) with vastly superior information, technology, and risk management.\n\nFor individual investors, Forex exposure comes naturally through international investments. When a US investor holds international stocks, currency movements affect returns — if the euro falls 5% against the dollar, European stock returns are reduced by 5% when converted back to dollars. This currency risk can be managed through currency-hedged ETFs.",
+    examples: JSON.stringify(["EUR/USD pair: most traded currency pair globally; central bank policy divergence between US Fed and European Central Bank drives movements", "Dollar strengthening in 2022: US dollar rose 15% against major currencies due to Fed rate hikes — hurt US multinationals reporting foreign earnings in weaker currencies", "Currency impact on international investing: S&P 500 returned 28% in 2023 in dollar terms; if dollar had weakened, international investors would have made even more", "Yen carry trade: investors borrow Japanese yen at near-zero interest rates and invest in higher-yielding assets elsewhere — popular strategy that can unwind rapidly", "Currency hedged ETFs: HEDJ (WisdomTree Europe Hedged Equity) removes euro/dollar currency risk for US investors holding European stocks", "Central bank intervention: Swiss National Bank intervened in 2015, suddenly removing the franc's peg to the euro — caused extreme volatility that wiped out many retail Forex accounts"]),
+    practice_problems: JSON.stringify(["If EUR/USD is 1.08 and you convert $10,000 to euros, how many euros do you receive? If EUR/USD later moves to 1.15 and you convert back, how many dollars do you have?", "A US investor holds $50,000 in European stocks. The stocks rise 10% in euro terms, but the euro falls 8% against the dollar. What is the dollar return?", "Why do most retail Forex traders lose money? What structural advantages do institutional traders have?", "Explain how interest rate differentials between countries affect currency exchange rates. Use a real example."]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What's the world's largest financial market?",
-        options: ["Stock market", "Bond market", "Foreign exchange (forex)", "Commodity market"],
-        correct_answer: 2
-      }
+      { question: "What is the daily trading volume of the global Forex market?", options: ["About $200 billion", "About $1 trillion", "Over $7 trillion", "About $500 billion"], correct_answer: 2 },
+      { question: "What does the EUR/USD rate of 1.10 mean?", options: ["One US dollar costs $1.10 in euros", "One euro costs $1.10 in US dollars", "The euro is 10% stronger than the dollar", "Exchange commissions are 1.10%"], correct_answer: 1 },
+      { question: "What typically happens to a country's currency when its central bank raises interest rates?", options: ["The currency typically weakens", "The currency typically strengthens as capital flows toward higher yields", "Currency is unaffected by interest rates", "The currency becomes pegged to the dollar"], correct_answer: 1 },
+      { question: "Why is retail Forex trading considered very risky?", options: ["It is illegal in most countries", "Extreme leverage and institutional dominance mean over 70% of retail traders lose money", "Returns are taxed at 50% rate", "Forex trading requires a minimum of $100,000"], correct_answer: 1 },
+      { question: "What is a currency-hedged ETF?", options: ["An ETF that only invests in US dollars", "An ETF that removes currency exchange rate risk for international investments", "An ETF that speculates on currency movements", "An ETF that only holds foreign currency"], correct_answer: 1 }
     ]
   },
   {
-    title: "Crypto at a High Level",
+    title: "Mutual Funds",
     level: "intermediate",
     module_number: 7,
     lesson_number: 8,
-    content: "Cryptocurrency is digital money secured by cryptography and typically decentralized through blockchain technology. Bitcoin was the first cryptocurrency, followed by thousands of others. Crypto is highly volatile, speculative, and regulatory uncertainty exists. Some view it as digital gold or future money, others as speculative bubble. Small allocations (1-5%) may be appropriate for risk-tolerant investors.",
-    examples: JSON.stringify([
-      "Bitcoin as 'digital gold' store of value",
-      "Ethereum enabling smart contracts and DeFi",
-      "Extreme volatility: 50%+ price swings common",
-      "Regulatory uncertainty affecting prices"
-    ]),
-    practice_problems: JSON.stringify([
-      "Understand blockchain technology basics",
-      "Analyze crypto's role in investment portfolios",
-      "Research major cryptocurrencies and their purposes"
-    ]),
-    estimated_time: 22,
+    content: "A mutual fund is an investment vehicle that pools money from many investors and invests that pooled capital in a diversified portfolio of securities — stocks, bonds, or other assets. Each investor owns shares in the mutual fund proportional to their investment, and the fund\'s professional manager makes all buy and sell decisions. Mutual funds were the dominant retail investment vehicle for decades before the rise of ETFs.\n\nThe key difference between mutual funds and ETFs lies in how they trade. Mutual funds are priced once per day — you buy or sell at the Net Asset Value (NAV) calculated at the end of each trading day. ETFs trade throughout the day like stocks at market prices. This makes ETFs more flexible but also means they can trade at small premiums or discounts to NAV. For long-term investors, this difference is largely irrelevant.\n\nMutual funds come in two main types. Actively managed funds employ professional portfolio managers who research stocks and make decisions to try to beat a benchmark. Passively managed funds (index funds) simply track a market index. As we discussed in Module 3, the vast majority of actively managed funds underperform their benchmark over 10-20 year periods after fees. The average expense ratio for actively managed mutual funds is around 0.5-1.0%, while passive index funds charge as little as 0.03%.\n\nMutual fund share classes add complexity. Class A shares typically charge a front-end load (sales commission paid when buying, usually 4-5.75%). Class B shares charge back-end loads (paid when selling). Class C shares charge annual fees rather than loads. No-load funds charge no sales commissions. Investors should always look for no-load, low-expense-ratio funds — paying a 5% load upfront dramatically reduces long-term returns.\n\nDespite ETF competition, mutual funds remain enormous — Vanguard, Fidelity, and Schwab manage trillions in mutual fund assets. They are the primary investment vehicle in most 401(k) plans. Key Vanguard and Fidelity index mutual funds are excellent choices for long-term investors who prefer mutual fund mechanics over ETFs.",
+    examples: JSON.stringify(["Vanguard Total Stock Market Index Fund (VTSAX): $1.4 trillion in assets, 0.04% expense ratio, tracks the entire US stock market — one of the world's largest index mutual funds", "Fidelity ZERO funds: Fidelity offers index mutual funds with 0% expense ratio — no annual fee at all for broad market exposure", "Active vs passive over 20 years: SPIVA data shows approximately 88% of active large-cap mutual funds underperform the S&P 500 over 20 years", "Front-end load impact: investing $10,000 in a 5.75% load fund means $575 goes to the broker immediately; only $9,425 is invested", "401(k) mutual fund selection: most employer 401(k) plans offer a menu of mutual funds; identifying the lowest-cost index funds is the key decision", "Minimum investment: Vanguard Admiral Shares often require $3,000 minimum but charge lower fees than Investor Shares; Fidelity index funds have $0 minimum"]),
+    practice_problems: JSON.stringify(["Compare an actively managed mutual fund with 1.0% expense ratio versus a passive index fund with 0.04% expense ratio on a $50,000 investment over 30 years at 8% gross return. What is the dollar cost difference?", "What is the difference between a front-end load and a no-load mutual fund? Why should most investors prefer no-load funds?", "In your 401(k) plan, you see 15 mutual fund options. How would you select which ones to invest in?", "Compare mutual funds versus ETFs for a long-term buy-and-hold investor. Which would you recommend and why?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What's a key characteristic of cryptocurrency?",
-        options: ["Government controlled", "High volatility and speculation", "Guaranteed returns", "No technology risk"],
-        correct_answer: 1
-      }
+      { question: "How often are mutual fund NAVs (prices) calculated?", options: ["Continuously throughout the day", "Once per day after market close", "Weekly", "Monthly"], correct_answer: 1 },
+      { question: "What is a front-end load on a mutual fund?", options: ["An annual management fee", "A sales commission paid when buying shares, typically 4-5.75%", "A performance fee charged when returns are positive", "A fee for accessing the fund's research"], correct_answer: 1 },
+      { question: "What is the primary reason actively managed mutual funds often underperform index funds?", options: ["Active managers lack intelligence", "Active fund managers make poor investment decisions", "Higher fees and transaction costs make it difficult to consistently beat the market after expenses", "Index funds are only available to wealthy investors"], correct_answer: 2 },
+      { question: "Which mutual fund company is known for pioneering index fund investing and offering extremely low expense ratios?", options: ["Goldman Sachs", "BlackRock", "Vanguard", "JPMorgan"], correct_answer: 2 },
+      { question: "What is the typical expense ratio range for actively managed mutual funds?", options: ["0.01% to 0.05%", "0.5% to 1.0%", "2% to 5%", "10% to 15%"], correct_answer: 1 }
     ]
   },
   {
-    title: "Risk Across Asset Classes",
+    title: "Alternative Investments",
     level: "intermediate",
     module_number: 7,
     lesson_number: 9,
-    content: "Different asset classes have different risk profiles. Stocks have market risk and volatility but growth potential. Bonds have interest rate and credit risk but provide stability. Real estate has illiquidity and concentration risk but inflation protection. Commodities have volatility but diversification benefits. Understanding each asset's risks helps build appropriate portfolios.",
-    examples: JSON.stringify([
-      "Stocks: market crashes but long-term growth",
-      "Bonds: interest rate risk but steady income",
-      "Real estate: illiquid but tangible asset",
-      "Commodities: volatile but inflation hedge"
-    ]),
-    practice_problems: JSON.stringify([
-      "Assess risk levels of different asset classes",
-      "Understand how risks change over time",
-      "Build portfolio considering various risks"
-    ]),
+    content: "Alternative investments are asset classes that fall outside the traditional categories of stocks, bonds, and cash. They include private equity, hedge funds, venture capital, private credit, infrastructure, commodities, collectibles, and more. Historically the domain of institutional investors and ultra-high-net-worth individuals, alternatives have become increasingly accessible to retail investors through new fund structures and platforms.\n\nPrivate equity involves investing in companies that are not publicly traded. Private equity firms typically acquire companies (often using significant leverage), improve operations, and eventually sell or take the company public. Private equity has historically delivered returns above public markets, but investments are typically illiquid for 5-10 years and require large minimum investments. Performance among private equity funds varies enormously — top-quartile funds significantly outperform; bottom-quartile funds may underperform public markets.\n\nHedge funds are private investment vehicles that employ a wide range of strategies — long/short equity, global macro, merger arbitrage, quantitative strategies — to generate returns regardless of market direction. They typically charge 2% management fees plus 20% performance fees (2 and 20). Only accredited investors (over $1 million net worth or $200,000 annual income) can access traditional hedge funds. Performance data shows many hedge funds have underperformed simple index funds over the past decade after fees.\n\nVenture capital (VC) funds invest in early-stage startup companies with high growth potential. Returns are extremely skewed — most VC investments return nothing, but a few massive successes (Google, Facebook, Airbnb, Uber when they were private) generate enormous returns. VC is highly illiquid and appropriate only for sophisticated investors who understand they may lose most of their investment.\n\nFor retail investors, alternative investment exposure has become accessible through: REITs (covered earlier), commodity ETFs, Business Development Companies (BDCs) offering private credit returns, interval funds, and platforms like Fundrise or YieldStreet offering fractional real estate and private credit investments.",
+    examples: JSON.stringify(["Private equity Blackstone: manages $1+ trillion in private equity, real estate, and credit; delivered 15%+ average annual returns to investors over decades", "Hedge fund performance: S&P 500 returned 213% over 2010-2020 decade; average hedge fund returned about 36% — vast underperformance after high fees", "Venture capital: $100,000 invested in Facebook's Series A in 2005 would have been worth over $2 billion at IPO — illustrates VC home run potential", "Business Development Company (BDC): Ares Capital provides loans to middle-market companies, trading on NYSE with 9-10% dividend yield — accessible private credit", "Fundrise platform: allows retail investors to invest in private real estate with $10 minimums; offers returns historically above public REITs with lower liquidity", "Accredited investor requirement: investing in most hedge funds and private equity requires $1M+ net worth (excluding primary residence) or $200K+ annual income"]),
+    practice_problems: JSON.stringify(["Why have most hedge funds underperformed the S&P 500 index over the past decade despite their sophisticated strategies?", "What is the risk-return profile of venture capital investing? Why should most retail investors have minimal or no direct VC exposure?", "A private equity fund charges 2% management fee and 20% carried interest. If the fund earns 20% gross return on $100M, what are the total fees? What does the investor net?", "Compare REITs versus direct real estate and private equity real estate for a retail investor. Which provides the best combination of returns, liquidity, and accessibility?"]),
     estimated_time: 20,
     quiz: [
-      {
-        question: "What's the main risk of bonds?",
-        options: ["No risk", "Interest rate and credit risk", "Too much growth", "Currency only"],
-        correct_answer: 1
-      }
+      { question: "What is private equity?", options: ["Stocks listed on private stock exchanges", "Investing in companies that are not publicly traded, typically for 5-10 year illiquid periods", "A type of government bond", "The equity portion of a private individual's net worth"], correct_answer: 1 },
+      { question: "What does 'accredited investor' status require?", options: ["Passing a financial knowledge test", "Net worth over $1 million (excluding primary residence) or income over $200,000 annually", "Having a financial advisor", "Investing a minimum of $100,000"], correct_answer: 1 },
+      { question: "What is the typical hedge fund fee structure?", options: ["1% annual management fee only", "No fees — performance fees only when profitable", "2% management fee plus 20% performance fee (2 and 20)", "0.5% expense ratio like index funds"], correct_answer: 2 },
+      { question: "What is venture capital investing?", options: ["Investing in established large public companies", "Investing in early-stage startup companies with high growth potential and high failure risk", "A conservative bond investment strategy", "Investing in government infrastructure projects"], correct_answer: 1 },
+      { question: "How can ordinary retail investors access private real estate returns?", options: ["They cannot — it requires $500,000 minimum", "Through REITs, platforms like Fundrise, or real estate interval funds", "Only through private equity funds", "By forming partnerships with institutional investors"], correct_answer: 1 }
     ]
-  },
-  {
-    title: "Asset Correlation",
+  },  {
+    title: "Position Sizing",
     level: "intermediate",
-    module_number: 7,
-    lesson_number: 10,
-    content: "Correlation measures how different assets move in relation to each other. Perfect positive correlation (1.0) means assets move together, perfect negative correlation (-1.0) means they move opposite, zero correlation means no relationship. Effective diversification requires assets with low or negative correlations. Correlations can change during market stress when many assets move together.",
-    examples: JSON.stringify([
-      "Stocks and bonds often negatively correlated",
-      "Gold and dollar typically negatively correlated",
-      "During 2008 crisis, most assets fell together",
-      "International diversification reduces correlation"
-    ]),
-    practice_problems: JSON.stringify([
-      "Calculate correlation between different assets",
-      "Understand how correlations change over time",
-      "Build portfolio using correlation analysis"
-    ]),
-    estimated_time: 18,
-    quiz: [
-      {
-        question: "What does zero correlation between assets mean?",
-        options: ["They move together", "They move opposite", "No relationship in movement", "One is riskier"],
-        correct_answer: 2
-      }
-    ]
-  }
-,
-  // Module 8: Trading Strategy & Risk (Advanced) - 10 lessons
-  {
-    title: "What Is a Trading Edge?",
-    level: "advanced",
     module_number: 8,
     lesson_number: 1,
-    content: "A trading edge is a systematic advantage that gives you a higher probability of success over many trades. It could be superior information, better analysis, emotional discipline, or systematic approach. Without an edge, trading becomes gambling. Edges can be fundamental (better company analysis), technical (pattern recognition), or behavioral (discipline when others panic). Developing and maintaining an edge requires continuous learning and adaptation.",
-    examples: JSON.stringify([
-      "Value investing edge: buying undervalued companies",
-      "Technical edge: recognizing reliable chart patterns",
-      "Information edge: understanding industry trends",
-      "Behavioral edge: staying calm during market panics"
-    ]),
-    practice_problems: JSON.stringify([
-      "Identify potential sources of trading edge",
-      "Develop systematic approach to capture edge",
-      "Test and measure your edge over time"
-    ]),
-    estimated_time: 26,
+    content: "Position sizing is the process of determining how much capital to allocate to any single investment. It is one of the most critical and underappreciated aspects of portfolio management. Even a strategy that is right more often than it is wrong can lose money if the losses on wrong positions dwarf the gains on winning ones. Proper position sizing ensures that no single investment can cause catastrophic portfolio damage.\n\nThe fixed percentage rule is the simplest approach: never risk more than a fixed percentage (commonly 1-2%) of your total portfolio on any single trade. If you have a $100,000 portfolio and follow a 2% rule, you risk no more than $2,000 on any single position. If your stop-loss is 10% below your entry price, you buy at most $20,000 worth (because 10% of $20,000 = $2,000 risk). This rule ensures that even a long losing streak cannot wipe out your portfolio.\n\nThe Kelly Criterion is a more sophisticated mathematical formula for optimal position sizing: f = (bp - q) / b, where b is the ratio of potential gain to potential loss, p is the probability of winning, and q is the probability of losing. The Kelly formula tells you the theoretically optimal fraction of your capital to invest. However, full Kelly is often too aggressive — most professional traders use half-Kelly or quarter-Kelly to reduce volatility while still capturing most of the mathematical advantage.\n\nConcentration risk increases dramatically as position sizes grow. A 2% allocation losing everything is a 2% portfolio loss — painful but manageable. A 20% allocation in a single stock that goes to zero is devastating. Famous examples abound of investors who concentrated heavily in a single stock (often their employer\'s stock) and suffered catastrophic losses when that company failed.\n\nFor long-term investors in diversified index funds, position sizing is built into the fund structure — you automatically own hundreds of companies with diversified weightings. Position sizing becomes critical when investing in individual stocks, managing an active trading portfolio, or using leveraged instruments.",
+    examples: JSON.stringify(["2% risk rule: $50,000 portfolio, risk 2% per trade = $1,000 maximum risk; stock at $100 with stop at $90 (10% stop) = position size of $10,000 (100 shares)", "Kelly Criterion example: strategy wins 55% of the time with 1:1 payoff; Kelly says invest f = (1 x 0.55 - 0.45) / 1 = 10% of portfolio", "Concentration disaster: Enron employees had 60%+ of retirement savings in company stock — lost everything when Enron collapsed in 2001", "Professional trader sizing: hedge fund manager never allocates more than 5% of fund to any single stock regardless of conviction level", "Diversification by position count: holding 50 equally-sized positions means each is 2% — one going to zero costs only 2%", "Volatility-adjusted sizing: more volatile stocks get smaller position sizes; stable dividend stocks get larger positions for equal risk"]),
+    practice_problems: JSON.stringify(["You have a $30,000 portfolio and follow a 1% risk rule. You want to buy a stock at $50 with a stop-loss at $45. What is your maximum position size?", "Explain why position sizing matters more than the win rate of your investment strategy in determining long-term outcomes.", "If you own 25 positions of equal size and one goes to zero, what is the impact on your portfolio? Compare this to having 5 positions of equal size.", "Why did many Enron employees suffer catastrophic retirement losses? What position sizing principle would have prevented this?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What is a trading edge?",
-        options: ["Guaranteed profits", "Systematic advantage over many trades", "Inside information", "Lucky guesses"],
-        correct_answer: 1
-      }
+      { question: "What is the purpose of position sizing in investing?", options: ["To maximize returns on each investment", "To determine how much capital to allocate to each investment to control risk", "To ensure you buy the most shares possible", "To time the market perfectly"], correct_answer: 1 },
+      { question: "Under the 2% risk rule with a $50,000 portfolio and a 10% stop-loss, what is the maximum position size?", options: ["$1,000", "$5,000", "$10,000", "$20,000"], correct_answer: 2 },
+      { question: "What does the Kelly Criterion calculate?", options: ["The optimal time to buy a stock", "The theoretically optimal fraction of capital to invest based on win probability and payoff ratio", "The fair value of a stock option", "The number of positions in an ideal portfolio"], correct_answer: 1 },
+      { question: "Why is excessive concentration in a single stock dangerous?", options: ["Single stocks never pay dividends", "A single company's failure can cause catastrophic, unrecoverable portfolio losses", "Concentrated portfolios have higher tax rates", "Single stocks are more volatile than ETFs by regulation"], correct_answer: 1 },
+      { question: "What position sizing problem did Enron employees face?", options: ["They did not invest enough in company stock", "They had too much of their retirement savings concentrated in a single company's stock", "They used too much leverage to buy Enron stock", "They invested in Enron options rather than stock"], correct_answer: 1 }
     ]
   },
   {
-    title: "Probability in Trading",
-    level: "advanced",
+    title: "Risk/Reward Ratio",
+    level: "intermediate",
     module_number: 8,
     lesson_number: 2,
-    content: "Trading is a probability game where no single trade is guaranteed, but over many trades, probabilities play out. Understanding win rates, average wins vs losses, and expected value helps evaluate strategies. A strategy with 40% win rate can be profitable if average wins are much larger than average losses. Focus on process and probabilities, not individual trade outcomes.",
-    examples: JSON.stringify([
-      "40% win rate, $300 avg win, $100 avg loss = profitable",
-      "70% win rate, $50 avg win, $200 avg loss = unprofitable",
-      "Coin flip: 50% probability but known over many flips",
-      "Casino edge: small but consistent over many bets"
-    ]),
-    practice_problems: JSON.stringify([
-      "Calculate expected value of trading strategies",
-      "Understand how win rate relates to profitability",
-      "Develop probabilistic thinking about markets"
-    ]),
-    estimated_time: 24,
+    content: "The risk/reward ratio compares the potential profit of a trade or investment to the potential loss. It is one of the most fundamental metrics for evaluating whether an investment opportunity is worth pursuing. Even if you are right only 40% of the time, you can be profitable if your average winner is much larger than your average loser.\n\nCalculating the risk/reward ratio is straightforward: divide the potential reward by the potential risk. If you buy a stock at $50 expecting it to rise to $65 (a $15 potential gain), and you place a stop-loss at $45 (a $5 potential loss), your risk/reward ratio is 3:1 ($15 / $5). A 3:1 ratio means you stand to make three times what you risk. This is generally considered a good minimum threshold for active trading.\n\nThe math of risk/reward reveals why this ratio is critical. At a 3:1 ratio, you only need to be right 25% of the time to break even (before commissions). If you win 50% of your trades at a 3:1 ratio, you are very profitable: 5 wins × $3 gain = $15, 5 losses × $1 loss = $5, net profit $10 on 10 trades. Conversely, a 1:1 ratio requires you to be right more than 50% of the time just to break even.\n\nMany amateur investors do the opposite — they take small profits quickly and let losses run hoping for a recovery. This creates an unfavorable ratio: small winners and large losers. Professional traders typically do the opposite: cut losses quickly and let winners run. The discipline to take a defined loss when your stop is hit — rather than holding and hoping — is what separates sustainable traders from those who blow up their accounts.\n\nFor long-term investors, the concept translates differently. Instead of calculating explicit risk/reward on every trade, they assess: what is my potential upside over 3-5 years if this business succeeds, versus what is my downside if I am wrong about the business or the valuation? A stock with 100% upside potential and 20% downside (perhaps protected by strong balance sheet or sum-of-parts value) has a 5:1 ratio that justifies investment.",
+    examples: JSON.stringify(["Trade example: buy stock at $40, target $52 (+$12 reward), stop at $36 (-$4 risk) = 3:1 risk/reward ratio", "Break-even analysis: at 3:1 ratio, need only 25% win rate to break even; at 1:1 ratio, need 50%+ win rate", "Long-term investment: analyst estimates 80% upside over 3 years if thesis correct; 15% downside if wrong — 5.3:1 ratio justifies the investment", "Professional standard: many traders require minimum 2:1 or 3:1 ratio before entering a trade", "Loss of discipline: trader buys at $50, stock falls to $40, holds hoping for recovery; stock falls to $25 — small initial risk became catastrophic unplanned loss", "Trade journal: tracking your actual risk/reward ratios over time reveals whether your strategy has mathematical edge"]),
+    practice_problems: JSON.stringify(["You buy a stock at $60, set a price target of $80, and a stop-loss at $54. Calculate the risk/reward ratio. If you make this trade 10 times with a 40% win rate, what is your net profit or loss?", "At a 2:1 risk/reward ratio, what win rate do you need to break even? What win rate generates a 20% return on risk?", "Explain the trap of taking small profits quickly and letting losses run. How does this create an unfavorable risk/reward ratio over time?", "Design a trade on a stock you follow: identify entry price, target price, and stop-loss. Calculate the risk/reward ratio."]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "Can a strategy with 40% win rate be profitable?",
-        options: ["Never", "Yes, if average wins exceed average losses sufficiently", "Only with luck", "Only in bull markets"],
-        correct_answer: 1
-      }
+      { question: "How is the risk/reward ratio calculated?", options: ["Risk divided by reward", "Potential reward divided by potential risk", "Win rate times average gain", "Total portfolio value divided by number of positions"], correct_answer: 1 },
+      { question: "What break-even win rate is required for a strategy with a 3:1 risk/reward ratio?", options: ["50%", "33%", "25%", "40%"], correct_answer: 2 },
+      { question: "You buy a stock at $100, target $130, stop at $90. What is the risk/reward ratio?", options: ["3:1", "1:3", "1.3:1", "10:3"], correct_answer: 0 },
+      { question: "What is the amateur investing mistake related to risk/reward?", options: ["Setting too high a target price", "Taking small profits quickly while letting losses run, creating an unfavorable ratio", "Using stop-losses on every trade", "Investing in too many different stocks"], correct_answer: 1 },
+      { question: "Why do professional traders often require at least a 2:1 risk/reward ratio before entering a trade?", options: ["Regulations require it", "It provides a mathematical edge — even a moderate win rate produces consistent profits", "Higher ratios guarantee profits", "It is the maximum ratio allowed by brokerages"], correct_answer: 1 }
     ]
   },
   {
-    title: "Win Rate vs Risk-Reward",
-    level: "advanced",
+    title: "Diversification Strategies",
+    level: "intermediate",
     module_number: 8,
     lesson_number: 3,
-    content: "Win rate and risk-reward ratio work together to determine profitability. High win rate strategies often have lower risk-reward ratios, while low win rate strategies need higher risk-reward ratios. The key is finding the right balance. Many successful traders prefer lower win rates with higher risk-reward ratios because it's easier to let winners run than to be right frequently.",
-    examples: JSON.stringify([
-      "Scalping: 80% win rate, 1:1 risk-reward",
-      "Swing trading: 50% win rate, 2:1 risk-reward",
-      "Trend following: 30% win rate, 3:1 risk-reward",
-      "Breakeven: 50% win rate needs 1:1 risk-reward minimum"
-    ]),
-    practice_problems: JSON.stringify([
-      "Calculate breakeven win rates for different risk-reward ratios",
-      "Analyze your natural trading style preferences",
-      "Optimize win rate and risk-reward balance"
-    ]),
-    estimated_time: 22,
+    content: "Diversification is the practice of spreading investments across different assets to reduce the impact of any single investment performing poorly. Harry Markowitz formalized this concept in Modern Portfolio Theory (MPT) in 1952, for which he won the Nobel Prize in Economics. The core insight is that combining assets that do not move perfectly in tandem creates a portfolio with better risk-adjusted returns than any individual asset held alone.\n\nCorrelation is the key concept in diversification. Correlation measures how closely two investments move together, ranging from +1.0 (perfect positive correlation — they always move together) to -1.0 (perfect negative correlation — when one rises, the other falls). Adding an asset with low or negative correlation to an existing portfolio reduces overall volatility without necessarily reducing expected return. This is sometimes called the only free lunch in finance.\n\nDiversification operates at multiple levels. Asset class diversification means holding stocks, bonds, real estate, and possibly commodities — which historically have low correlations with each other. Geographic diversification means holding both US and international stocks — different economies cycle out of phase. Sector diversification within stocks means holding across all major industries rather than concentrating in one. Company diversification means holding many companies rather than just a few.\n\nThe diversification benefit is not unlimited. With only 1 stock, your risk is enormous — one company failure can wipe you out. Adding a second stock cuts that risk dramatically. By the time you hold 20-30 stocks across different sectors, you have eliminated most company-specific (idiosyncratic) risk. Beyond 30-50 stocks, you are essentially replicating the market and your returns will closely track the index — at that point, an index fund is more efficient.\n\nImportant limitation: diversification reduces company-specific risk, but it cannot eliminate market risk (systemic risk). During the 2008 financial crisis, nearly all stocks fell together regardless of sector, geography, or individual company quality. Only assets like US Treasury bonds, gold, and cash maintained value — reminding us that true diversification requires assets that behave differently in extreme market stress.",
+    examples: JSON.stringify(["Correlation example: S&P 500 and US Treasury bonds have had roughly -0.2 to -0.4 correlation historically — combining them reduces portfolio volatility", "Geographic diversification: US stocks fell 18% in 2022 while some international markets declined less or differently — partial offset from geographic spread", "Sector concentration risk: technology stocks fell 35-60% in 2022 bear market; investor concentrated in tech suffered more than diversified investor", "Company-specific risk elimination: owning 30 stocks in different sectors vs 5 stocks — individual bankruptcy of one company has far less impact", "Correlation during crisis: in 2008, stocks globally fell together; only Treasury bonds and gold provided meaningful diversification", "Efficient portfolio: adding international stocks, bonds, and REITs to a pure US equity portfolio improves the risk/return ratio historically"]),
+    practice_problems: JSON.stringify(["Explain the concept of correlation in diversification. Why does adding an asset with low correlation to your portfolio improve risk-adjusted returns?", "You have $100,000 invested in 5 technology stocks. They all fall 40% simultaneously. How much damage would you have suffered if you had instead held a diversified index fund?", "How many stocks do most research studies suggest are needed to eliminate most company-specific risk? Why doesn't adding more stocks beyond that number help much?", "Why does diversification fail to protect portfolios during market crashes like 2008? What asset classes did provide protection?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What win rate is needed to break even with 2:1 risk-reward?",
-        options: ["50%", "33%", "67%", "25%"],
-        correct_answer: 1
-      }
+      { question: "Who formalized diversification in Modern Portfolio Theory and won the Nobel Prize for it?", options: ["Warren Buffett", "John Maynard Keynes", "Harry Markowitz", "Eugene Fama"], correct_answer: 2 },
+      { question: "What does a correlation of -1.0 between two assets mean?", options: ["They always move in the same direction", "They move in exactly opposite directions — when one rises, the other falls", "They are completely unrelated", "One asset is twice as volatile as the other"], correct_answer: 1 },
+      { question: "What type of risk does diversification REDUCE but CANNOT eliminate?", options: ["Company-specific risk", "Market risk (systemic risk)", "Sector-specific risk", "Management quality risk"], correct_answer: 1 },
+      { question: "Approximately how many stocks do you need to eliminate most company-specific risk through diversification?", options: ["5-10 stocks", "20-30 stocks across different sectors", "100+ stocks minimum", "Only 2-3 stocks if chosen well"], correct_answer: 1 },
+      { question: "Why is combining stocks and bonds considered a diversification benefit?", options: ["Bonds always return more than stocks", "Bonds and stocks often move in opposite directions, reducing portfolio volatility", "Bonds eliminate all stock market risk", "The government guarantees bond returns"], correct_answer: 1 }
     ]
   },
   {
-    title: "Expectancy Explained",
-    level: "advanced",
+    title: "Hedging Basics",
+    level: "intermediate",
     module_number: 8,
     lesson_number: 4,
-    content: "Expectancy is the average amount you can expect to win or lose per trade over many trades. It's calculated as (Win Rate × Average Win) - (Loss Rate × Average Loss). Positive expectancy means profitable strategy over time. Expectancy helps compare different strategies and position sizing decisions. It's more important than win rate alone.",
-    examples: JSON.stringify([
-      "Expectancy = (0.6 × $200) - (0.4 × $100) = $80 per trade",
-      "Strategy A: $50 expectancy, Strategy B: $30 expectancy",
-      "Higher expectancy allows larger position sizes",
-      "Negative expectancy means losing strategy long-term"
-    ]),
-    practice_problems: JSON.stringify([
-      "Calculate expectancy for different trading strategies",
-      "Compare strategies using expectancy analysis",
-      "Understand how expectancy affects position sizing"
-    ]),
-    estimated_time: 21,
+    content: "Hedging is a risk management strategy that involves taking an offsetting position in a related security to reduce the risk of adverse price movements. It is insurance against specific financial risks. While hedging reduces potential losses, it also reduces potential gains — you are paying a cost (the hedge) to reduce uncertainty. The goal is not to profit from the hedge, but to limit damage to your primary position.\n\nThe most common hedging instruments for equity investors are put options and inverse ETFs. Buying put options on your stock holdings or on a market index (like the S&P 500) gives you the right to sell at a set price — if the market falls sharply, your puts rise in value, partially offsetting the loss in your stock portfolio. This is portfolio insurance. Inverse ETFs (like SH, which moves opposite to the S&P 500) allow investors to hedge without options, though they have structural decay problems when held long-term.\n\nNatural hedges exist when two parts of a business or portfolio offset each other automatically. An airline that hedges fuel costs by purchasing oil futures is using a natural hedge. A US multinational with euro revenues but dollar costs might hold euro-denominated debt to naturally hedge currency risk. For investors, holding both stocks and bonds creates a natural hedge — bonds typically rise when stocks fall.\n\nHedging costs money. Put options require paying a premium. Short positions require paying borrow fees and may receive margin calls. Inverse ETFs have higher expense ratios and compounding decay. The cost of hedging reduces returns when the hedge isn\'t needed. Most long-term investors decide the cost of permanent hedging is too high relative to the protection provided — instead, they accept market risk and rely on diversification and time horizon as their primary risk management tools.\n\nFor sophisticated portfolio managers, delta hedging neutralizes the risk of small price movements in options positions. Pairs trading hedges sector and market risk by going long one security and short a correlated one. Currency hedging protects international portfolios from exchange rate movements. Each strategy has specific applications and costs.",
+    examples: JSON.stringify(["Portfolio insurance: own $200,000 in S&P 500 ETFs; buy SPY put options at $380 strike for $5 per share = $1,000 cost to protect 100 shares against a fall below $380", "Airline fuel hedging: Southwest Airlines famously hedged fuel costs through oil futures in 2008, saving hundreds of millions when oil spiked to $147/barrel", "Inverse ETF: SH (ProShares Short S&P 500) rises approximately 1% when S&P 500 falls 1% — simple but has compounding decay over time", "Currency hedge: US investor in European stocks buys euro futures to offset currency risk; if euro falls 5%, currency position gains approximately 5%", "Natural hedge in portfolio: 60% stocks + 40% bonds provides natural hedge — bonds rose in value in 2001, 2002, 2008 when stocks fell sharply", "Options collar: own stock at $100, buy $90 put (protection), sell $115 call (caps upside) — zero cost hedge if put and call premiums offset"]),
+    practice_problems: JSON.stringify(["You own 500 shares of a stock at $80. You are worried about an upcoming earnings report. Buy $75 puts for $2 each. What is your total hedge cost? What happens if the stock falls to $60?", "Why do most long-term investors choose not to permanently hedge their portfolios even though they could afford to?", "Explain how Southwest Airlines used oil futures to hedge fuel costs. What risk did this manage and what risk did it create?", "Compare a put option hedge versus an inverse ETF hedge for protecting a stock portfolio. What are the advantages and disadvantages of each?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What does positive expectancy indicate?",
-        options: ["Guaranteed profits", "Profitable strategy over many trades", "High win rate", "Low risk"],
-        correct_answer: 1
-      }
+      { question: "What is hedging?", options: ["Buying more of an investment when it falls", "Taking an offsetting position to reduce the risk of adverse price movements in your primary position", "Diversifying across 100 different stocks", "Selling investments before a market crash"], correct_answer: 1 },
+      { question: "What does buying put options on your stock portfolio accomplish?", options: ["Increases your potential gains", "Provides downside protection — if stocks fall, the puts rise in value to offset some losses", "Generates income from premiums", "Eliminates all portfolio risk"], correct_answer: 1 },
+      { question: "What is a natural hedge?", options: ["Investing in nature-related companies", "When two positions in a portfolio automatically offset each other's risk", "Using only natural commodities as hedges", "A hedge that requires no cost or maintenance"], correct_answer: 1 },
+      { question: "What is the main cost of maintaining a permanent hedge on a portfolio?", options: ["It is illegal to hedge permanently", "The cost reduces returns during periods when the hedge is not needed", "Hedges cannot be maintained for more than 90 days", "Hedging increases portfolio taxes significantly"], correct_answer: 1 },
+      { question: "An investor owns 1,000 shares at $50 and buys put options with a $45 strike for $2 each. What is the total cost of the hedge?", options: ["$500", "$1,000", "$2,000", "$5,000"], correct_answer: 2 }
     ]
   },
   {
-    title: "Drawdowns",
-    level: "advanced",
+    title: "Tax-Advantaged Accounts (401k, IRA)",
+    level: "intermediate",
     module_number: 8,
     lesson_number: 5,
-    content: "Drawdown is the decline from peak to trough in account value, expressed as a percentage. Maximum drawdown is the largest peak-to-trough decline. All trading strategies experience drawdowns - it's normal and expected. Understanding and preparing for drawdowns psychologically and financially is crucial. Position sizing should account for expected maximum drawdowns.",
-    examples: JSON.stringify([
-      "Account drops from $100k to $80k = 20% drawdown",
-      "Strategy historically has 30% maximum drawdown",
-      "Drawdown recovery: 25% loss needs 33% gain to recover",
-      "Psychological impact: drawdowns feel worse than equivalent gains feel good"
-    ]),
-    practice_problems: JSON.stringify([
-      "Calculate drawdown and recovery requirements",
-      "Analyze historical drawdowns of strategies",
-      "Prepare psychologically for inevitable drawdowns"
-    ]),
-    estimated_time: 23,
+    content: "Tax-advantaged retirement accounts are among the most powerful wealth-building tools available to US investors. By sheltering investments from taxes on growth, dividends, and capital gains, these accounts dramatically compound wealth more effectively than taxable accounts. Understanding how to maximize contributions to these accounts is foundational to any serious retirement strategy.\n\nThe 401(k) is an employer-sponsored retirement plan that allows employees to contribute pre-tax dollars from their paycheck. Contributions reduce your taxable income in the year made — a $20,000 contribution reduces your federal taxes by $20,000 times your marginal tax rate. Investments grow tax-deferred until withdrawal in retirement. For 2024, the contribution limit is $23,000 ($30,500 for those 50+). Many employers match employee contributions up to a percentage of salary — the most common match is 50% on the first 6% of salary. Always contribute at least enough to capture the full employer match — it is an immediate 50-100% return on your contribution.\n\nThe Individual Retirement Account (IRA) comes in two primary forms. The Traditional IRA offers tax-deductible contributions (subject to income limits if you have a workplace plan) and tax-deferred growth. Withdrawals in retirement are taxed as ordinary income. The Roth IRA uses after-tax contributions but investments grow completely tax-free and qualified withdrawals (after age 59.5 and 5-year holding period) are also tax-free. For most young investors in lower tax brackets today who expect higher taxes in retirement, the Roth IRA is the superior choice. The 2024 IRA contribution limit is $7,000 ($8,000 if 50+).\n\nThe Roth IRA\'s tax-free growth advantage is enormous over long time horizons. $7,000 contributed at age 22 growing at 8% annually reaches approximately $224,000 by age 67 — entirely tax-free. The equivalent growth in a taxable account might net $150,000 after capital gains taxes over the period.\n\nFor high-income earners who exceed Roth IRA income limits ($161,000 for single filers in 2024), the backdoor Roth IRA strategy allows making non-deductible Traditional IRA contributions and immediately converting them to Roth — legally accessing tax-free growth.",
+    examples: JSON.stringify(["401(k) employer match: earn $60,000, contribute 6% = $3,600; employer matches 50% = $1,800 free money; declining this is leaving salary on the table", "Roth IRA tax-free growth: $6,000 invested at 22, grows to $224,000 by 67 at 8% — all tax-free vs taxable account needing to pay capital gains tax on gains", "401(k) tax reduction: contribute $23,000 to 401(k) in 22% tax bracket — immediately save $5,060 in federal taxes", "Required Minimum Distributions: Traditional IRA and 401(k) require minimum withdrawals starting at age 73; Roth IRA has no RMDs during original owner's lifetime", "HSA triple tax advantage: Health Savings Account contributions are tax-deductible, growth is tax-free, and withdrawals for medical expenses are tax-free", "Roth income limits 2024: single filers earning over $161,000 cannot contribute directly to Roth IRA — use backdoor Roth strategy instead"]),
+    practice_problems: JSON.stringify(["Your employer offers a 401(k) with 100% match on first 4% of salary. You earn $70,000. How much should you contribute minimum? What is the dollar value of the match you would receive?", "Compare contributing $7,000 to a Roth IRA versus investing the same $7,000 in a taxable account, assuming 8% annual return and 25% capital gains tax on all gains after 30 years.", "At what income level should a person choose a Traditional IRA over a Roth IRA? What factors matter in this decision?", "What is the backdoor Roth IRA strategy? Who needs it and why?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "If an account drops from $100k to $75k, what's the drawdown?",
-        options: ["25%", "$25k", "75%", "33%"],
-        correct_answer: 0
-      }
+      { question: "What is the 2024 annual contribution limit for a 401(k)?", options: ["$7,000", "$19,500", "$23,000", "$30,000"], correct_answer: 2 },
+      { question: "What is the main benefit of a Roth IRA versus a Traditional IRA?", options: ["Higher contribution limits", "Contributions are tax deductible", "Investments grow tax-free and qualified withdrawals are completely tax-free", "No early withdrawal penalty ever"], correct_answer: 2 },
+      { question: "Why is capturing your employer's 401(k) match the first priority in retirement savings?", options: ["Employer matches are tax-free always", "An employer match is an immediate 50-100% return on your contribution — unbeatable guaranteed return", "Employer match funds cannot lose value", "401(k) matching is required by law for all employers"], correct_answer: 1 },
+      { question: "What does tax-deferred growth mean in a Traditional IRA?", options: ["You never pay taxes on the money", "Gains and income are not taxed until withdrawal, allowing reinvestment of the full pre-tax amount", "Taxes are prepaid at contribution", "You pay taxes at a reduced rate every year"], correct_answer: 1 },
+      { question: "At what age can you begin taking qualified Roth IRA withdrawals tax-free?", options: ["55", "59.5", "62", "65"], correct_answer: 1 }
     ]
   },
   {
-    title: "Strategy Backtesting (Conceptual)",
-    level: "advanced",
+    title: "Dollar-Cost Averaging",
+    level: "intermediate",
     module_number: 8,
     lesson_number: 6,
-    content: "Backtesting involves testing trading strategies on historical data to evaluate performance. It helps identify strategy strengths, weaknesses, and expected returns. However, backtesting has limitations: past performance doesn't guarantee future results, data can be biased, and market conditions change. Use backtesting as one tool among many for strategy evaluation.",
-    examples: JSON.stringify([
-      "Testing moving average crossover on 10 years of data",
-      "Analyzing strategy performance in different market conditions",
-      "Identifying periods where strategy underperformed",
-      "Curve fitting: over-optimizing to historical data"
-    ]),
-    practice_problems: JSON.stringify([
-      "Understand backtesting methodology and limitations",
-      "Analyze backtest results critically",
-      "Avoid curve fitting and over-optimization"
-    ]),
-    estimated_time: 25,
+    content: "Dollar-cost averaging (DCA) is an investment strategy of investing a fixed dollar amount at regular intervals regardless of market conditions. Rather than trying to time the market and invest a lump sum at the perfect moment, you invest consistently — say $500 every month — regardless of whether the market is up or down. This approach automatically buys more shares when prices are low and fewer shares when prices are high.\n\nThe mathematical benefit of DCA is that it lowers your average cost per share compared to investing the same total at the peak price. Consider investing $1,000 per month for three months in a volatile stock. Month 1: stock at $50, buy 20 shares. Month 2: stock falls to $25, buy 40 shares. Month 3: stock recovers to $40, buy 25 shares. You own 85 shares at an average cost of $35.29 per share ($3,000 / 85 shares), even though the stock averaged $38.33 over the three months. Your average cost is lower than the average price.\n\nDCA\'s deeper benefit is behavioral: it removes the paralyzing question of when to invest. Many investors hold cash indefinitely waiting for the perfect entry point — which never comes — and miss years of compound growth. DCA installs a systematic process that eliminates this decision entirely. Regular automatic contributions to a retirement account or investment account ensure you are always participating in market growth.\n\nAcademic research presents a nuance: given that markets trend upward over time, investing a lump sum immediately typically outperforms DCA by a meaningful margin over long periods (approximately 60-70% of the time historically). Lump-sum investing wins because the money is in the market longer. However, DCA wins in declining markets and dramatically reduces the regret of investing everything right before a crash. For most people receiving regular income, DCA is the only practical option anyway — you can only invest from each paycheck.\n\nDCA works best for: regular contributions from a paycheck, investments during high-valuation markets, and investors prone to emotional decision-making. It is less optimal when you already have a large sum to invest in a strongly trending market.",
+    examples: JSON.stringify(["Monthly 401(k) contribution: automatically investing $1,000 per month from each paycheck buys more shares during bear markets and fewer during bull markets", "DCA vs lump sum comparison: DCA into S&P 500 over 12 months of monthly contributions averages out to roughly market average entry price", "DCA in bear market: investor who continued $500 monthly contributions during 2009 bear market purchased shares at historic lows — dramatically reduced average cost", "COVID opportunity: investors who continued regular contributions in February-March 2020 bought at the lowest prices in years; S&P 500 recovered fully by August 2020", "Automatic investment plan: set up automatic $200 monthly transfer to Vanguard index fund on the 15th of each month — removes all decision-making", "DCA downside: lump-sum $50,000 invested in S&P 500 in January outperforms DCA over same year if market rises steadily — money in market earlier wins in uptrending conditions"]),
+    practice_problems: JSON.stringify(["You invest $500 per month for 4 months when a stock is priced at $100, $80, $60, $90. Calculate the total shares purchased, total invested, and average cost per share.", "Compare lump-sum investing $12,000 in January versus DCA of $1,000 per month for 12 months in a market that rises steadily 10% over the year. Which strategy produces better results?", "Why does DCA outperform lump-sum investing when the market is declining? Use a numerical example.", "What is the primary behavioral benefit of dollar-cost averaging for the average investor?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What's a major limitation of backtesting?",
-        options: ["Too accurate", "Past performance doesn't guarantee future results", "Too expensive", "Not detailed enough"],
-        correct_answer: 1
-      }
+      { question: "What is dollar-cost averaging?", options: ["Investing a lump sum at the lowest market price", "Investing a fixed dollar amount at regular intervals regardless of market conditions", "Averaging the cost between two brokerages", "Buying equal dollar amounts of different assets simultaneously"], correct_answer: 1 },
+      { question: "How does DCA automatically reduce your average cost per share in a volatile market?", options: ["DCA only buys when prices are falling", "Fixed dollar amounts buy more shares when prices are low and fewer when prices are high", "DCA waits for exact price averages before purchasing", "DCA uses market timing algorithms"], correct_answer: 1 },
+      { question: "In research comparing DCA to lump-sum investing, which typically performs better over long periods in uptrending markets?", options: ["DCA, because it reduces risk", "Lump-sum investing, because more money is in the market sooner", "They always produce identical results", "DCA because of the lower average cost"], correct_answer: 1 },
+      { question: "What is the primary behavioral benefit of dollar-cost averaging?", options: ["It guarantees profits", "It removes the emotional decision of when to invest, ensuring consistent market participation", "It reduces taxes on capital gains", "It eliminates all market risk"], correct_answer: 1 },
+      { question: "When is DCA most valuable compared to lump-sum investing?", options: ["Always — DCA is always superior", "In declining or volatile markets, and for investors prone to emotional decision-making", "Only in bond markets", "When investing less than $1,000 total"], correct_answer: 1 }
     ]
   },
   {
-    title: "Overtrading",
-    level: "advanced",
+    title: "Rebalancing a Portfolio",
+    level: "intermediate",
     module_number: 8,
     lesson_number: 7,
-    content: "Overtrading is excessive buying and selling that reduces returns through increased costs and poor decision-making. It's often driven by boredom, FOMO, or need for action. Overtrading leads to higher transaction costs, more tax implications, and emotional exhaustion. Quality over quantity - fewer, better trades often produce superior results than frequent trading.",
-    examples: JSON.stringify([
-      "Day trader making 50+ trades per day vs 2-3 quality setups",
-      "Chasing every market move instead of waiting for best opportunities",
-      "Transaction costs eating into profits from frequent trading",
-      "Emotional burnout from constant market monitoring"
-    ]),
-    practice_problems: JSON.stringify([
-      "Identify signs of overtrading in your behavior",
-      "Calculate impact of transaction costs on returns",
-      "Develop patience and selectivity in trading"
-    ]),
+    content: "Portfolio rebalancing is the process of realigning portfolio weights back to target allocations after market movements have caused them to drift. If you start with a 60% stocks / 40% bonds portfolio and stocks have a strong year, rising to 70% of your portfolio, rebalancing means selling some stocks and buying bonds to restore the 60/40 target. It is a disciplined, systematic approach to maintaining your intended risk profile.\n\nDrift occurs naturally as different assets perform differently. A 70/30 stock/bond portfolio in 2019 became roughly 80/20 by 2021 as stocks dramatically outperformed. Without rebalancing, your actual risk exposure diverges from your intended risk tolerance. The investor who thought they had a moderate-risk portfolio is now implicitly running a much more aggressive one.\n\nRebalancing has two mechanical benefits. First, it enforces buy-low, sell-high discipline — you are systematically selling assets that have risen (expensive) and buying assets that have fallen (relatively cheap). Second, over long periods, rebalancing improves risk-adjusted returns (the Sharpe ratio) even if the absolute returns are sometimes slightly lower than letting winners run.\n\nThere are two common rebalancing approaches. Calendar-based rebalancing means you rebalance on a fixed schedule — annually is the most common. Threshold-based rebalancing means you rebalance whenever any allocation drifts more than 5 percentage points from its target. Research suggests threshold-based rebalancing is slightly more efficient, but annual rebalancing is simpler and good enough for most investors.\n\nTax considerations matter significantly. In taxable accounts, rebalancing by selling appreciated assets triggers capital gains taxes. Tax-efficient rebalancing strategies include: directing new contributions to underweight assets (avoids selling), rebalancing within tax-advantaged accounts (no tax triggered), and using tax-loss harvesting opportunities to rebalance while generating tax losses.",
+    examples: JSON.stringify(["Portfolio drift: started 60/40, stocks rose 20% and bonds rose 3%; new ratio is 65/35; rebalance by selling $6,250 in stocks and buying $6,250 in bonds on $100,000 portfolio", "Annual rebalance trigger: check portfolio every January 1; if any allocation is off by more than 5%, rebalance all at once", "Tax-smart rebalancing: instead of selling stocks in taxable account to rebalance, redirect monthly contributions to bond fund until ratio is restored", "401(k) rebalancing: most employer plans offer automatic rebalancing — set and forget approach that maintains risk profile", "Rebalancing in bear market: 60/40 portfolio during 2022 stocks bear market — bonds held up better; rebalancing meant buying stocks at lower prices and selling bonds at higher prices — effective buy-low sell-high", "Over-rebalancing harm: trading costs from too-frequent rebalancing (monthly or weekly) eat into returns — annual is usually optimal frequency"]),
+    practice_problems: JSON.stringify(["Your portfolio is currently $120,000: $84,000 in stocks (70%) and $36,000 in bonds (30%). Your target is 60% stocks / 40% bonds. How much do you sell in stocks and buy in bonds to rebalance?", "Why does rebalancing enforce a buy-low, sell-high discipline? Explain with a specific example.", "Compare calendar-based rebalancing versus threshold-based rebalancing. When might each be more appropriate?", "You have a taxable brokerage account with large unrealized gains in stocks. What rebalancing strategy would minimize your tax liability?"]),
     estimated_time: 20,
     quiz: [
-      {
-        question: "What's a main cause of overtrading?",
-        options: ["Too much money", "Boredom and need for action", "Market volatility", "Good opportunities"],
-        correct_answer: 1
-      }
+      { question: "Why do portfolios need rebalancing over time?", options: ["Markets close portfolios for maintenance", "Different assets perform differently, causing actual allocations to drift from target allocations", "Rebalancing is required by law annually", "New tax laws require portfolio adjustments each year"], correct_answer: 1 },
+      { question: "What investing discipline does rebalancing automatically enforce?", options: ["Buy-and-hold forever without any changes", "Buy-low, sell-high — selling overperforming assets and buying underperforming ones to restore targets", "Momentum investing — buying winners and selling losers", "Tax-loss harvesting regardless of portfolio allocation"], correct_answer: 1 },
+      { question: "What is threshold-based rebalancing?", options: ["Rebalancing on the same date every year", "Rebalancing whenever any allocation drifts more than a set percentage from target (e.g., 5%)", "Rebalancing based on the portfolio value threshold ($100,000+)", "Only rebalancing when markets fall more than 20%"], correct_answer: 1 },
+      { question: "What is the most tax-efficient way to rebalance in a taxable account?", options: ["Sell overweight assets and pay capital gains taxes", "Direct new contributions to underweight assets instead of selling appreciated ones", "Transfer assets between brokerages", "Withdraw money and re-invest after one year"], correct_answer: 1 },
+      { question: "How often do most financial advisors recommend rebalancing?", options: ["Daily", "Monthly", "Annually is sufficient for most investors", "Only when markets fall more than 40%"], correct_answer: 2 }
     ]
   },
   {
-    title: "Trade Journaling",
-    level: "advanced",
+    title: "Behavioral Finance",
+    level: "intermediate",
     module_number: 8,
     lesson_number: 8,
-    content: "A trading journal records all trades with entry/exit points, reasoning, emotions, and outcomes. It's essential for identifying patterns, improving decision-making, and learning from mistakes. Journal should include both quantitative data (prices, sizes) and qualitative observations (emotions, market conditions). Regular review helps refine strategy and psychology.",
-    examples: JSON.stringify([
-      "Recording: date, symbol, entry/exit, size, reason, emotion, outcome",
-      "Weekly review identifying recurring mistakes",
-      "Tracking emotional state and its impact on performance",
-      "Analyzing which setups work best for your style"
-    ]),
-    practice_problems: JSON.stringify([
-      "Design comprehensive trading journal format",
-      "Develop habit of consistent journal entries",
-      "Analyze journal data for improvement opportunities"
-    ]),
-    estimated_time: 19,
+    content: "Behavioral finance is the study of how psychological factors and cognitive biases affect financial decision-making and market prices. While traditional finance theory assumes investors are perfectly rational, behavioral finance recognizes that humans are systematically irrational in predictable ways. Understanding these biases is crucial because they cause even knowledgeable investors to make poor decisions.\n\nLoss aversion is perhaps the most powerful bias: people feel the pain of a loss approximately twice as intensely as the pleasure of an equivalent gain. This leads investors to hold losing positions too long (hoping to break even) and sell winning positions too early (locking in gains before they disappear). The net result is a portfolio of losers and premature profit-taking. Nobel laureate Daniel Kahneman documented this in his landmark work on Prospect Theory.\n\nConfirmation bias leads investors to seek out information that confirms their existing beliefs about a stock while ignoring or dismissing contrary evidence. An investor who loves Tesla will read bullish Tesla articles and dismiss bear cases, creating a distorted picture that keeps them overallocated in a position they should evaluate objectively. Overconfidence bias causes most investors to overestimate their ability to pick stocks and time markets — studies show even professional fund managers rarely outperform simple index funds long-term.\n\nHerding is the tendency to follow the crowd rather than independent analysis. When everyone is buying, buying feels safe and comfortable — which is often precisely when prices are most expensive. When everyone is selling in panic, selling feels rational — which is often when prices are most attractively valued. Contrarians exploit this tendency by going against consensus.\n\nAncoring bias causes investors to fixate on an arbitrary reference price — often the price at which they bought a stock. Holding a stock at $30 that was originally bought at $60 because you want to get back to $60 before selling is anchoring — the $60 purchase price has no relevance to whether the stock is worth buying today at $30.\n\nThe solution to behavioral biases is structure: written investment plans, pre-defined rules, automatic rebalancing, and commitment devices that remove emotional decision-making from the investment process.",
+    examples: JSON.stringify(["Loss aversion example: investor buys stock at $80, it falls to $50; refuses to sell, waiting for it to return to $80 while it falls to $10 — classic loss aversion", "Confirmation bias: GameStop investor in early 2021 reads only bullish social media posts, dismisses fundamental analysis showing the company is struggling", "Overconfidence: survey finds 80% of drivers think they are above-average drivers; similar bias in investing — most believe they can beat the market", "Herding in 2021: retail investors piled into meme stocks, SPACs, and crypto at peak valuations because everyone else was doing it", "Disposition effect: Terrance Odean research showing investors sell winning stocks too quickly (locking gains) and hold losers too long — opposite of optimal behavior", "Mental accounting: treating different pots of money differently — spending a tax refund freely as found money but being frugal with salary dollars"]),
+    practice_problems: JSON.stringify(["Describe loss aversion. How does it lead to the disposition effect in investing? What rule would you set to counteract it?", "You own a stock that has fallen 40% from your purchase price. The fundamentals have significantly deteriorated. What biases might prevent you from selling it? How do you overcome them?", "Research shows professional fund managers rarely beat index funds consistently. What behavioral and structural factors explain this?", "Design three specific rules for your investment process that would counteract common behavioral biases."]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What's the main purpose of a trading journal?",
-        options: ["Tax records", "Learning and improvement", "Bragging rights", "Regulatory compliance"],
-        correct_answer: 1
-      }
+      { question: "What does loss aversion describe?", options: ["The tendency to avoid all investments with any risk of loss", "People feeling the pain of losses about twice as intensely as the pleasure of equivalent gains", "Selling investments immediately after any decline", "The behavior of avoiding short selling"], correct_answer: 1 },
+      { question: "What is confirmation bias in investing?", options: ["Confirming trades by double-checking order details", "Seeking information that confirms existing beliefs while dismissing contrary evidence", "Getting a second opinion from another investor", "Confirming a stock's value with multiple analysts"], correct_answer: 1 },
+      { question: "What is herding behavior in financial markets?", options: ["Diversifying across many similar assets", "Following the crowd rather than doing independent analysis — buying when everyone buys, selling when everyone sells", "A systematic investment strategy based on market trends", "Institutional investors coordinating their trades"], correct_answer: 1 },
+      { question: "What is anchoring bias in the context of a stock you own?", options: ["Using technical support levels to set entry prices", "Fixating on your purchase price as a reference point when making sell decisions", "Anchoring your portfolio to a benchmark index", "Using an analyst price target as your sell point"], correct_answer: 1 },
+      { question: "What is the best defense against behavioral investing biases?", options: ["Reading more financial news", "Creating written rules and automated processes that remove emotional decision-making", "Only investing in index funds", "Consulting a financial advisor for every trade"], correct_answer: 1 }
     ]
   },
   {
-    title: "Consistency Over Big Wins",
-    level: "advanced",
+    title: "Trading Psychology",
+    level: "intermediate",
     module_number: 8,
     lesson_number: 9,
-    content: "Consistent small gains compound better than sporadic large wins followed by large losses. Consistency comes from disciplined execution of proven strategies, proper risk management, and emotional control. Avoid the temptation to 'swing for the fences' - steady, consistent returns with controlled risk build wealth more reliably than boom-bust cycles.",
-    examples: JSON.stringify([
-      "1% monthly return = 12.7% annually compounded",
-      "Boom-bust: +50%, -30%, +20%, -40% = poor long-term results",
-      "Consistent trader: steady 15% annual returns for decades",
-      "Tortoise vs hare: steady wins the race"
-    ]),
-    practice_problems: JSON.stringify([
-      "Calculate compound returns of consistent vs volatile strategies",
-      "Develop systems for consistent execution",
-      "Focus on process over individual trade outcomes"
-    ]),
-    estimated_time: 21,
+    content: "Trading psychology refers to the emotional and mental aspects of making investment and trading decisions. Successful investing and trading require not just analytical skills but also emotional discipline — the ability to follow your strategy when it feels uncomfortable, cut losses decisively, and avoid letting greed or fear override your judgment. For many market participants, psychology is the primary differentiator between success and failure.\n\nFear and greed are the two dominant emotions in markets. Greed drives investors to buy aggressively at market tops — when assets are most expensive and optimism is euphoric. Fear drives panic selling at market bottoms — when assets are cheapest and pessimism is at its peak. The famous investor Warren Buffett articulated the antidote: be fearful when others are greedy, and greedy when others are fearful. This contrarian principle requires resisting powerful emotional currents.\n\nFOMO (Fear of Missing Out) is a particularly dangerous psychological trap in investing. When a stock, crypto, or sector is rising rapidly and everyone around you seems to be making easy money, the psychological pressure to join is intense. FOMO investors typically buy at the top of speculative manias, just before reversals. The dot-com bubble, 2017 Bitcoin rally, and 2021 meme stock frenzy all saw massive retail investor inflows at the peaks.\n\nRevenge trading — entering larger-than-normal positions after a loss to try to win back the money quickly — is one of the most destructive psychological patterns in active trading. It combines anger, impatience, and poor risk management into a single bad decision. Experienced traders emphasize the importance of having hard rules about position sizing and never increasing risk after a losing period.\n\nBuilding psychological resilience requires practice and preparation. A written trading plan that defines entry criteria, exit criteria, and position sizing removes the need for real-time decisions under pressure. Journaling trades — recording not just the mechanics but the emotions and thought process — reveals patterns in your decision-making that are invisible without documentation.",
+    examples: JSON.stringify(["Market top greed: retail investor participation peaked in January 2000 (dot-com top) and November 2021 — record new brokerage accounts opened at market peaks", "Market bottom fear: March 2009 (Great Recession bottom) and March 2020 (COVID bottom) both saw maximum fear; ideal buying opportunities in hindsight", "FOMO Bitcoin: retail investors piled into Bitcoin in November-December 2021 as it approached $69,000; many bought at the top before it fell 75%", "Revenge trading: trader loses $2,000 on a bad trade; immediately doubles position size to make it back; loses additional $4,000 — pattern of escalating losses", "Warren Buffett market timing quote: Berkshire Hathaway held $147 billion in cash in 2023 while waiting for fearful market conditions to deploy capital", "Trading journal insight: reviewing 6 months of trades reveals pattern of taking profits too early on winners while ignoring stops on losers — behavioral insight that improves strategy"]),
+    practice_problems: JSON.stringify(["Describe FOMO in investing. Give a specific historical example and explain why investors acted irrationally despite evidence of overvaluation.", "Explain the greed-fear cycle in markets. How does this cycle create opportunities for disciplined contrarian investors?", "What is revenge trading and why is it so psychologically compelling and financially destructive?", "Design a personal trading plan for yourself. What would you define as your entry criteria, exit criteria, maximum position size, and maximum daily loss limit?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "Why is consistency important in trading?",
-        options: ["It's boring", "Small consistent gains compound better than volatile results", "Regulators require it", "It's easier"],
-        correct_answer: 1
-      }
+      { question: "What does Warren Buffett mean by being greedy when others are fearful?", options: ["Taking bigger risks than other investors", "Buying when markets are down and investor sentiment is most negative — when prices are most attractive", "Ignoring all market news and sentiment", "Selling investments when the market is happy"], correct_answer: 1 },
+      { question: "What is FOMO in investing?", options: ["A financial metric for opportunity cost", "Fear Of Missing Out — buying aggressively when prices are rising because others are making money", "A type of options strategy", "A fundamental analysis indicator"], correct_answer: 1 },
+      { question: "What is revenge trading?", options: ["Short selling a stock after it rises against you", "Entering larger positions after a loss to quickly recoup the money — combines anger and poor risk management", "Trading the same stock repeatedly for consistency", "Getting revenge on market makers by trading large volumes"], correct_answer: 1 },
+      { question: "When does retail investor participation historically peak?", options: ["During market bottoms when sentiment is most negative", "At market tops when optimism and recent gains are highest", "During stable, low-volatility sideways markets", "When interest rates are rising"], correct_answer: 1 },
+      { question: "What is the purpose of maintaining a trading journal?", options: ["For tax reporting purposes only", "To track and identify patterns in your emotional decision-making that are invisible without documentation", "To show your performance to other investors", "To fulfill brokerage account requirements"], correct_answer: 1 }
     ]
-  },
-  {
-    title: "When Not to Trade",
-    level: "advanced",
-    module_number: 8,
-    lesson_number: 10,
-    content: "Knowing when not to trade is as important as knowing when to trade. Avoid trading when emotional, during low-probability setups, in choppy markets, or when distracted. Sometimes the best trade is no trade. Patience and selectivity improve results. Having cash available for great opportunities is better than being fully invested in mediocre ones.",
-    examples: JSON.stringify([
-      "Avoiding revenge trading after losses",
-      "Staying out during unclear market conditions",
-      "Not trading when personally stressed or distracted",
-      "Waiting for high-probability setups instead of forcing trades"
-    ]),
-    practice_problems: JSON.stringify([
-      "Identify personal situations when you shouldn't trade",
-      "Develop criteria for market conditions to avoid",
-      "Practice patience and selectivity"
-    ]),
-    estimated_time: 18,
-    quiz: [
-      {
-        question: "When should you avoid trading?",
-        options: ["Never", "When emotional or during low-probability setups", "Only on weekends", "When winning"],
-        correct_answer: 1
-      }
-    ]
-  }
-,
-  // Module 9: Market Behavior & Psychology (Advanced) - 10 lessons
-  {
-    title: "Institutional vs Retail Traders",
+  },  {
+    title: "Market Cycles",
     level: "advanced",
     module_number: 9,
     lesson_number: 1,
-    content: "Institutional traders (banks, hedge funds, pension funds) have advantages including better information, advanced technology, lower costs, and professional research teams. Retail traders are individual investors with smaller accounts and fewer resources. Understanding institutional behavior helps retail traders avoid being on the wrong side of major moves. Institutions often move markets, while retail traders react to moves.",
-    examples: JSON.stringify([
-      "Hedge fund with $1B+ assets vs individual with $10k account",
-      "Institutional access to company management and research",
-      "High-frequency trading algorithms vs manual retail orders",
-      "Institutional block trades moving stock prices"
-    ]),
-    practice_problems: JSON.stringify([
-      "Identify signs of institutional activity in stocks",
-      "Understand how to position alongside institutional flows",
-      "Recognize retail trader disadvantages and advantages"
-    ]),
-    estimated_time: 24,
+    content: "Markets do not move in straight lines — they move in cycles. Understanding market cycles allows investors to position their portfolios more appropriately at different stages, though precisely timing cycles is notoriously difficult even for professionals. The economic cycle and the market cycle are related but not identical — markets are forward-looking and typically turn before the economy does.\n\nThe economic business cycle has four phases. Expansion is the growth phase: GDP rising, employment growing, consumer spending strong, corporate earnings increasing. Peak is when growth peaks and begins to slow. Contraction (recession) is when GDP declines for two or more consecutive quarters — unemployment rises, corporate earnings fall, consumer confidence weakens. Trough is the lowest point before recovery begins. Each phase has characteristic investment implications.\n\nMarket cycles typically lead economic cycles by 6-12 months. Stock markets often start declining before official recession is declared and start recovering before the recession ends. The March 2020 COVID market bottom came just weeks into the actual recession; by August 2020 the stock market had fully recovered while the economy was still suffering. This lead-lag relationship makes market timing difficult — by the time recession is obvious, markets have often already priced much of the damage.\n\nCredit cycles overlay the economic cycle. Easy credit conditions allow businesses and consumers to borrow freely, fueling expansion. As lending standards tighten (often forced by rising defaults or rising interest rates), credit contractions occur. The 2008 financial crisis was fundamentally a credit cycle turning point — the contraction in mortgage credit triggered a collapse in housing, banking, and the broader economy.\n\nThe presidential cycle is a pattern some analysts observe: US markets have historically performed best in the third year of a presidential term (pre-election spending) and weakest in the first year (unpopular policies). While interesting, this pattern is not reliable enough to trade on, and structural factors dominate over any political cycle effects.",
+    examples: JSON.stringify(["2009-2020 expansion: one of the longest economic expansions on record; stock market rose over 400% from 2009 trough to 2020 peak", "COVID contraction and recovery: record-fast recession in early 2020 followed by record-fast stock market recovery — atypical cycle driven by massive monetary stimulus", "Credit cycle 2004-2008: easy mortgage lending enabled unsustainable housing boom; credit tightening in 2007-2008 triggered collapse of housing and financial system", "Market leading economic cycle: S&P 500 began falling in October 2007; official recession declared December 2007; market troughed March 2009, economy troughed June 2009", "Sector rotation within cycle: consumer discretionary and technology lead early cycle; energy and materials lead late cycle; utilities and healthcare defensive in recession", "Commodity cycle: commodity supercycles last 15-20 years; 2000-2008 was driven by Chinese industrialization demand"]),
+    practice_problems: JSON.stringify(["Map the four phases of the economic business cycle. What assets tend to perform best and worst in each phase?", "Why do stock markets typically turn before the official economic cycle? What does this imply about using current economic data to time stock investments?", "Research the 2008 financial crisis. Identify where the credit cycle, economic cycle, and market cycle turned. How did they interact?", "Why is it so difficult for even sophisticated investors to successfully time market cycles?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What's a key advantage institutions have over retail traders?",
-        options: ["Luck", "Better information and resources", "Government support", "Guaranteed profits"],
-        correct_answer: 1
-      }
+      { question: "What are the four phases of the economic business cycle?", options: ["Bull, bear, sideways, volatile", "Expansion, peak, contraction, trough", "Growth, stable, declining, crisis", "Early, middle, late, recession"], correct_answer: 1 },
+      { question: "How does the stock market cycle relate to the economic cycle?", options: ["They move in perfect synchronization", "The stock market typically leads the economic cycle by 6-12 months", "The stock market always lags the economic cycle", "They are completely unrelated"], correct_answer: 1 },
+      { question: "What is a credit cycle?", options: ["The time between credit card billing cycles", "The alternation between periods of easy credit (expansion) and tight credit (contraction)", "The cycle of interest rate changes by the Fed", "The time it takes to repair bad credit"], correct_answer: 1 },
+      { question: "What investment sectors are typically considered defensive during economic contractions?", options: ["Technology and consumer discretionary", "Energy and materials", "Utilities, consumer staples, and healthcare", "Financials and industrials"], correct_answer: 2 },
+      { question: "Why is precisely timing market cycles so difficult?", options: ["Markets only cycle every 50 years", "Markets are forward-looking, cycle lengths vary unpredictably, and economists cannot reliably call turning points in advance", "Cycle analysis is illegal in most countries", "Markets no longer cycle due to central bank intervention"], correct_answer: 1 }
     ]
   },
   {
-    title: "Liquidity Explained",
+    title: "Bull vs Bear Markets",
     level: "advanced",
     module_number: 9,
     lesson_number: 2,
-    content: "Liquidity is the ease of buying or selling an asset without significantly affecting its price. High liquidity means tight bid-ask spreads and ability to trade large quantities quickly. Low liquidity leads to wider spreads and price impact from trades. Liquidity varies by asset, time of day, and market conditions. Understanding liquidity helps with trade execution and risk management.",
-    examples: JSON.stringify([
-      "Apple stock: highly liquid, tight spreads",
-      "Small-cap stock: less liquid, wider spreads",
-      "After-hours trading: reduced liquidity",
-      "Market crisis: liquidity dries up across assets"
-    ]),
-    practice_problems: JSON.stringify([
-      "Assess liquidity of different assets",
-      "Understand bid-ask spreads and market impact",
-      "Plan trade execution considering liquidity"
-    ]),
-    estimated_time: 22,
+    content: "Bull markets and bear markets are the two primary states of the stock market. A bull market is broadly defined as a sustained rise in stock prices of 20% or more from a low. A bear market is a decline of 20% or more from a recent high. These thresholds are somewhat arbitrary but widely used. The terms originate from the way these animals attack: a bull thrusts its horns upward; a bear swipes its paws downward.\n\nBull markets are characterized by rising prices, growing investor confidence, strong economic fundamentals, increasing corporate earnings, and positive market sentiment. They tend to last longer than bear markets — the average bull market has lasted approximately 3.8 years with an average gain of 167%. The 2009-2020 bull market was the longest in US history, lasting nearly 11 years and gaining over 400%.\n\nBear markets are characterized by falling prices, pessimism, rising unemployment, weak corporate earnings, and heightened fear. The average bear market has lasted approximately 9.6 months with an average loss of 36%. Some bear markets are brief and sharp (2020 COVID: -34% in 33 days then recovery); others are prolonged and grinding (2000-2002 dot-com bust: -49% over 2.5 years; 2008-2009: -57% over 17 months).\n\nInvestors react differently to bull and bear markets based on psychology. In bull markets, complacency grows — investors assume the good times will continue, take on more risk, and may neglect diversification. In bear markets, panic overcomes rational analysis — investors sell at exactly the wrong time and miss subsequent recoveries. The DALBAR study consistently shows that the average investor significantly underperforms the market itself because of poorly timed entry and exit.\n\nFor long-term investors, bear markets are buying opportunities. Every bear market in US history has eventually recovered and gone on to new highs. The key is having the financial stability (emergency fund, no need for the money short-term) and psychological resilience to hold or add during declines rather than selling.",
+    examples: JSON.stringify(["2009-2020 bull market: S&P 500 rose from 666 to 3,386 — a 408% gain over 11 years; longest US bull market on record", "2000-2002 bear market: NASDAQ fell 78% from peak to trough, many dot-com stocks went to zero; took 15 years to recover previous high", "2008-2009 bear market: S&P 500 fell 57% peak to trough; financial crisis wiped out trillions in wealth; market recovered fully by 2013", "COVID bear market: fastest bear market in history (-34% in 33 days) followed by fastest recovery — investors who sold locked in losses; holders were whole by August 2020", "DALBAR study: average equity fund investor earned 3.0% annually over 20 years ending 2021 vs 7.5% for S&P 500 — poor market timing cost nearly 4.5% per year", "Bull market psychology: margin debt hit all-time highs in late 2021 near the market peak — classic late-bull-market complacency and excessive risk-taking"]),
+    practice_problems: JSON.stringify(["If you had $100,000 in an S&P 500 index fund at the peak before the 2008-2009 bear market, how much would it have been worth at the trough? When would it have fully recovered?", "Explain the DALBAR study finding. Why do average investors earn significantly less than the market return?", "Compare the 2020 COVID bear market to the 2008-2009 bear market in terms of depth, duration, and recovery speed. What drove the difference?", "What is the long-term investor's best strategy during a bear market? Why is this psychologically difficult to execute?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What indicates high liquidity?",
-        options: ["Wide bid-ask spreads", "Tight bid-ask spreads and easy trading", "High volatility", "Low volume"],
-        correct_answer: 1
-      }
+      { question: "How is a bear market typically defined?", options: ["When any stock falls 20% from its high", "A decline of 20% or more in a broad market index from a recent high", "When the economy enters recession", "Any month with negative stock returns"], correct_answer: 1 },
+      { question: "How long does the average bull market last?", options: ["About 6 months", "About 1 year", "About 3.8 years", "About 10 years"], correct_answer: 2 },
+      { question: "What does the DALBAR study consistently show about average investors?", options: ["Average investors outperform the S&P 500 through active management", "Average investors significantly underperform the market due to poorly timed entry and exit decisions", "Buy-and-hold investors underperform active traders", "Index fund investors underperform active stock pickers"], correct_answer: 1 },
+      { question: "What is the historical track record of S&P 500 recoveries after bear markets?", options: ["The market has recovered from about 50% of bear markets", "Every bear market in US history has eventually recovered and gone on to new highs", "Recovery takes an average of 25 years", "Most bear markets lead to permanent capital loss"], correct_answer: 1 },
+      { question: "What is the recommended strategy for long-term investors during a bear market?", options: ["Sell everything to avoid further losses", "Move entirely to cash and wait for recovery", "Hold or add to positions if financially able — bear markets are eventual buying opportunities", "Switch from index funds to actively managed funds"], correct_answer: 2 }
     ]
   },
   {
-    title: "Stop Hunts (Reality vs Myth)",
+    title: "Market Bubbles and Crashes",
     level: "advanced",
     module_number: 9,
     lesson_number: 3,
-    content: "Stop hunting refers to price movements designed to trigger stop-loss orders before reversing direction. While deliberate manipulation is rare in large, liquid markets, natural price action often tests obvious support/resistance levels where stops cluster. Understanding this helps with better stop placement and avoiding obvious levels where many traders place stops.",
-    examples: JSON.stringify([
-      "Price briefly breaking below support to trigger stops",
-      "Round number levels where stops cluster",
-      "Previous highs/lows attracting stop orders",
-      "Market makers providing liquidity, not hunting stops"
-    ]),
-    practice_problems: JSON.stringify([
-      "Identify where stops likely cluster",
-      "Develop better stop-loss placement strategies",
-      "Distinguish between manipulation and natural price action"
-    ]),
-    estimated_time: 21,
+    content: "A market bubble occurs when asset prices rise far above their intrinsic value driven by irrational exuberance, excessive speculation, easy credit, and self-reinforcing narratives. Bubbles are characterized by parabolic price rises, mainstream media attention, speculative retail participation, and dismissal of traditional valuation metrics. They inevitably burst when the gap between price and fundamental value becomes unsustainable.\n\nThe anatomy of a bubble follows a consistent pattern documented by economist Hyman Minsky. The displacement phase begins when a new technology, financial innovation, or economic development creates a genuine opportunity. The boom phase sees early investors profit, attracting more capital and higher prices. The euphoria phase is when valuations become extreme, caution is dismissed, and everyone believes prices will continue rising indefinitely. The financial distress phase starts when the first insiders begin selling and prices start to crack. The revulsion phase is the crash — panic selling, forced liquidations, and a complete reversal of the narrative.\n\nHistorical bubbles include: the Dutch Tulip Mania (1636-1637), the South Sea Bubble (1720), the 1929 US stock market crash, the dot-com bubble (1996-2000), the US housing bubble (2003-2008), and the cryptocurrency mania of 2017-2018 and 2020-2021. Each had different underlying assets but the same psychological pattern. Each ended in severe losses for those who bought near the peak.\n\nIdentifying bubbles in real time is famously difficult. The dot-com bubble was identified by many economists including Robert Shiller (whose 1996 warning of irrational exuberance preceded the peak by four years). The challenge is that asset prices can remain elevated far longer than rational analysis suggests they should. As John Maynard Keynes observed, markets can remain irrational longer than you can remain solvent.\n\nFor investors, the practical response to potential bubbles: avoid speculative assets without genuine cash flow or intrinsic value; maintain diversification; never invest money you cannot afford to lose in speculative positions; and be skeptical when narratives replace traditional valuation.",
+    examples: JSON.stringify(["Dot-com bubble: Cisco Systems reached $80 per share in 2000 at a P/E of 200+; fell to $8 by 2002 and took 20 years to recover its peak", "US housing bubble 2003-2008: US home prices rose 80%+ nationally with many markets up 100-200%; collapsed 30%+ nationally from 2006-2012", "Tulip mania 1636-1637: single tulip bulbs sold for 10x a skilled craftsman's annual salary; collapsed virtually overnight", "2017 crypto bubble: Bitcoin rose from $1,000 to $20,000 in 12 months; fell 84% over following 12 months", "Minsky moment: the point when a speculative boom turns into a bust — named after Hyman Minsky's financial instability hypothesis", "2021 SPAC bubble: hundreds of blank-check companies raised billions; most SPACs that completed mergers traded below $5 within two years"]),
+    practice_problems: JSON.stringify(["Describe Minsky's five stages of a bubble. Apply this framework to either the 2017 cryptocurrency bubble or the 2021 meme stock bubble.", "Why is it so difficult to identify and profit from shorting bubbles? What risk did John Maynard Keynes warn about?", "Compare the dot-com bubble to the 2021 tech stock valuations. What similarities and differences do you see in terms of valuation metrics and investor behavior?", "What personal financial rules would you follow to protect yourself from bubble losses while still participating in genuine market opportunities?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "Why do prices often test obvious support/resistance levels?",
-        options: ["Pure manipulation", "Natural clustering of stop orders", "Government intervention", "Random chance"],
-        correct_answer: 1
-      }
+      { question: "What is a market bubble?", options: ["A brief one-day spike in stock prices", "When asset prices rise far above intrinsic value driven by speculation and irrational exuberance", "When markets become very volatile but don't change direction", "Any stock market gain exceeding 50% in a year"], correct_answer: 1 },
+      { question: "What is Minsky's financial instability hypothesis?", options: ["Markets are always efficient and bubbles are impossible", "Financial systems naturally oscillate from stability to fragility, with speculative booms creating eventual busts", "Central banks can prevent all market bubbles", "Only cryptocurrency markets form speculative bubbles"], correct_answer: 1 },
+      { question: "What famous warning about market irrationality did Keynes make?", options: ["Markets always reflect fundamental value in the long run", "Markets can remain irrational longer than you can remain solvent", "Bubbles are good for economic growth", "Short sellers always profit from bubbles"], correct_answer: 1 },
+      { question: "Which of the following is NOT a historical example of a market bubble?", options: ["Dutch Tulip Mania 1636", "Dot-com bubble 1996-2000", "2017 Bitcoin rally", "S&P 500 returns from 2012-2014"], correct_answer: 3 },
+      { question: "What typically happens to assets that were most speculative during a bubble after it bursts?", options: ["They quickly recover to peak prices", "Many lose 70-90%+ of their value and some go to zero", "They become stable dividend-paying investments", "Government intervention prevents losses"], correct_answer: 1 }
     ]
   },
   {
-    title: "News vs Price Action",
+    title: "The Role of the Federal Reserve",
     level: "advanced",
     module_number: 9,
     lesson_number: 4,
-    content: "Price action often anticipates news, and markets frequently move opposite to what news suggests they should. 'Buy the rumor, sell the news' reflects how markets discount future events. Price action provides more reliable signals than trying to interpret news impact. Focus on how markets react to news rather than the news itself - the reaction reveals market sentiment and positioning.",
-    examples: JSON.stringify([
-      "Stock rises on bad earnings (expectations were worse)",
-      "Market falls on good economic news (already priced in)",
-      "Price action leading earnings announcements",
-      "Unexpected market reaction revealing hidden sentiment"
-    ]),
-    practice_problems: JSON.stringify([
-      "Analyze how markets react to different types of news",
-      "Practice reading price action over news interpretation",
-      "Understand market expectations vs reality"
-    ]),
-    estimated_time: 23,
+    content: "The Federal Reserve (the Fed) is the central bank of the United States. Created by Congress in 1913 after a series of banking panics, the Fed\'s mandate is to promote maximum employment, stable prices (targeting 2% inflation), and moderate long-term interest rates. It exercises its mandate primarily through controlling monetary policy — the supply of money and the cost of borrowing — which makes it the single most influential institution in global financial markets.\n\nThe Fed\'s primary tool is the federal funds rate — the interest rate at which banks lend reserves to each other overnight. When the Fed raises this rate, borrowing costs rise throughout the entire economy: mortgage rates, car loan rates, credit card rates, and corporate borrowing costs all increase. Higher borrowing costs slow spending and investment, cooling economic growth and reducing inflation. When the Fed cuts rates, borrowing becomes cheaper, stimulating economic activity.\n\nQuantitative Easing (QE) is a non-traditional monetary policy tool the Fed uses when interest rates approach zero. The Fed buys large quantities of Treasury bonds and mortgage-backed securities from financial institutions, injecting cash into the banking system and pushing down long-term interest rates. QE was deployed extensively after the 2008 financial crisis and again during COVID. Quantitative Tightening (QT) is the reverse — selling assets to remove money from the system.\n\nThe Fed\'s rate decisions move financial markets immediately and dramatically. When the Fed signals rate hikes, growth stocks (whose distant future earnings are more heavily discounted) tend to fall. When the Fed cuts rates, stocks typically rally. Bond prices move inversely to rates — rising rates push existing bond prices down, falling rates push them up. In 2022, the Fed\'s most aggressive rate hiking cycle in 40 years caused stocks to fall 18% and bonds to fall 13% — unusually, both fell simultaneously.\n\nThe Fed\'s independence from political control is considered essential for its credibility. If politicians controlled monetary policy, they would likely keep rates artificially low to stimulate short-term growth, ultimately creating destructive inflation. Fed Chair decisions and FOMC (Federal Open Market Committee) meeting statements are therefore among the most closely watched communications in global finance.",
+    examples: JSON.stringify(["2022 Fed rate hike cycle: Fed raised federal funds rate from 0.25% to 5.50% in 11 months — fastest hiking cycle in 40 years — caused significant market decline", "Post-2008 QE: Fed's balance sheet grew from $900 billion to $4.5 trillion by 2014 through quantitative easing; kept long-term interest rates near zero", "Fed pivot effect: when Fed Chair Powell signaled potential rate cuts in November 2023, S&P 500 rallied 9% in a single month", "Historical rate comparison: federal funds rate reached 20% in 1981 under Fed Chair Paul Volcker to defeat 14% inflation; extreme medicine for extreme disease", "Forward guidance power: the mere suggestion of future rate changes by Fed officials moves markets — language analyzed word by word by traders", "FOMC meeting schedule: the Federal Open Market Committee meets 8 times per year; each meeting's statement and press conference moves markets globally"]),
+    practice_problems: JSON.stringify(["Explain the Fed's dual mandate. How do the goals of maximum employment and price stability sometimes conflict?", "How does a Federal Reserve rate hike affect: (a) mortgage rates, (b) growth stocks, (c) bond prices, (d) the US dollar?", "Explain quantitative easing. What problem is it designed to solve and what are the potential long-term risks?", "In 2022, both stocks and bonds fell significantly. Why did bonds typically fail to provide protection during this market decline?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What does 'buy the rumor, sell the news' mean?",
-        options: ["Always buy on rumors", "Markets often anticipate and discount future events", "News is always wrong", "Rumors are more reliable"],
-        correct_answer: 1
-      }
+      { question: "What is the Federal Reserve's primary mandate?", options: ["To maximize government revenue through taxes", "To promote maximum employment, stable prices (2% inflation target), and moderate long-term interest rates", "To control the US stock market", "To manage the national debt"], correct_answer: 1 },
+      { question: "What happens when the Federal Reserve raises the federal funds rate?", options: ["Borrowing becomes cheaper throughout the economy", "Borrowing costs rise economy-wide, cooling economic activity and reducing inflation", "Stock prices automatically rise", "Bond prices rise proportionally"], correct_answer: 1 },
+      { question: "What is Quantitative Easing (QE)?", options: ["Reducing government spending to control inflation", "The Fed buying large quantities of bonds to inject money into the banking system and lower long-term rates", "Setting maximum interest rate caps for banks", "Requiring banks to hold more reserves"], correct_answer: 1 },
+      { question: "Why did both stocks AND bonds fall in 2022, which was unusual?", options: ["The stock market and bond market are always correlated", "The Fed's aggressive rate hikes from near zero caused both to re-price simultaneously — rising rates hurt both", "A natural disaster affected both markets", "Government regulation forced both markets lower"], correct_answer: 1 },
+      { question: "Why is the Federal Reserve's independence from political control important?", options: ["To prevent banks from going bankrupt", "Without independence, politicians would keep rates artificially low, eventually causing destructive inflation", "Federal law requires all central banks to be independent", "To allow the Fed to own private companies"], correct_answer: 1 }
     ]
   },
   {
-    title: "Market Regimes",
+    title: "Macroeconomic Indicators",
     level: "advanced",
     module_number: 9,
     lesson_number: 5,
-    content: "Market regimes are distinct periods characterized by different behaviors, volatility patterns, and correlations. Bull markets, bear markets, high volatility, low volatility, trending, and range-bound are different regimes. Strategies that work in one regime may fail in another. Successful traders adapt their approach based on current market regime rather than using the same strategy always.",
-    examples: JSON.stringify([
-      "2010-2020: low volatility, trending bull market",
-      "2008-2009: high volatility, bear market",
-      "2000-2002: bear market in tech, sideways overall",
-      "1970s: high inflation, volatile markets"
-    ]),
-    practice_problems: JSON.stringify([
-      "Identify current market regime characteristics",
-      "Adapt strategies to different market regimes",
-      "Understand how regimes affect asset correlations"
-    ]),
-    estimated_time: 25,
+    content: "Macroeconomic indicators are statistical data points that provide insight into the health and direction of the overall economy. Investors and analysts use these indicators to understand where we are in the business cycle, anticipate central bank policy, and position portfolios accordingly. Indicators are classified as leading (predict future economic activity), coincident (confirm current economic state), or lagging (confirm trends after they have already occurred).\n\nGross Domestic Product (GDP) is the total monetary value of all goods and services produced within a country in a given period. GDP is the broadest measure of economic activity. Real GDP growth (adjusted for inflation) of 2-3% is considered healthy in developed economies. Two consecutive quarters of negative real GDP growth is the informal definition of recession. GDP is a lagging indicator — it is reported with a significant delay.\n\nThe unemployment rate measures the percentage of the labor force actively seeking work but unable to find it. Low unemployment (below 4% in the US) suggests a strong economy; high unemployment signals economic weakness. The unemployment rate is a lagging indicator — it typically peaks after recessions have already ended, as companies are slow to rehire. The non-farm payrolls report, released monthly by the Bureau of Labor Statistics, is one of the most market-moving economic data releases.\n\nInflation indicators — CPI (Consumer Price Index) and PCE (Personal Consumption Expenditures) — measure price changes and directly drive Federal Reserve policy decisions. The Federal Reserve studies inflation data more closely than nearly any other economic metric.\n\nLeading indicators often predict market turns before they occur. The yield curve (difference between 10-year and 2-year Treasury yields) is one of the most reliable recession predictors — an inverted yield curve (short-term rates higher than long-term) has preceded most US recessions. Other leading indicators include building permits, new orders in manufacturing, and consumer confidence indexes.",
+    examples: JSON.stringify(["GDP report: US GDP grew 2.5% annualized in Q3 2023 — stronger than expected, suggesting economy avoiding recession", "Non-farm payrolls: February 2023 report showed 517,000 jobs added vs 185,000 expected — blowout number caused Fed to signal more rate hikes", "Yield curve inversion: 2-year/10-year yield curve inverted in July 2022 — historically has preceded recession by 12-18 months", "CPI report: June 2022 CPI hit 9.1% — highest in 40 years; confirmed Fed needed aggressive action and markets sold off sharply", "LEI (Leading Economic Index): Conference Board LEI declined for 24 consecutive months through 2023 — historically reliable recession signal, yet recession had not occurred by end of 2023", "Jobs Friday: non-farm payrolls released first Friday of each month; significant surprise in either direction typically moves S&P 500 0.5-1%"]),
+    practice_problems: JSON.stringify(["Classify each indicator as leading, coincident, or lagging: GDP growth, unemployment rate, yield curve, stock prices, CPI. Explain your reasoning.", "The yield curve has inverted. What does this historically signal? Why does it predict recessions?", "Non-farm payrolls came in far above expectations. How might this affect: (a) Fed rate expectations, (b) stock prices, (c) bond prices?", "Research the current state of three major economic indicators. Based on the data, where do you believe we are in the business cycle?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "Why is understanding market regimes important?",
-        options: ["It's not important", "Strategies need to adapt to different market conditions", "All regimes are the same", "Only for day traders"],
-        correct_answer: 1
-      }
+      { question: "What is GDP?", options: ["Government Debt Payment — the annual federal budget deficit", "Gross Domestic Product — the total value of all goods and services produced in a country", "General Distribution Plan — the Fed's monetary policy framework", "The Growth Dividend Price — a stock valuation method"], correct_answer: 1 },
+      { question: "What is a leading economic indicator?", options: ["An indicator that measures current economic conditions", "An indicator that lags economic changes by several months", "An indicator that tends to predict future economic activity before it occurs", "The most important economic indicator"], correct_answer: 2 },
+      { question: "What does an inverted yield curve historically signal?", options: ["A strong economic expansion ahead", "Banks will increase lending significantly", "A recession is likely within the next 12-18 months", "The Fed will immediately cut interest rates"], correct_answer: 2 },
+      { question: "What is the informal definition of a recession?", options: ["A stock market decline of 20% or more", "Two consecutive quarters of negative real GDP growth", "Unemployment above 6%", "Inflation above 5% for six months"], correct_answer: 1 },
+      { question: "Why is the unemployment rate considered a lagging indicator?", options: ["It is reported with less accuracy than GDP", "Companies are slow to hire after recessions end, so unemployment peaks after the economy has already begun recovering", "Employment data takes 2 years to compile", "Unemployment never falls before GDP recovers"], correct_answer: 1 }
     ]
   },
   {
-    title: "CPI & Economic Events",
+    title: "Investor Sentiment",
     level: "advanced",
     module_number: 9,
     lesson_number: 6,
-    content: "Consumer Price Index (CPI) measures inflation and significantly impacts markets. Other key economic indicators include GDP, employment data, Fed meetings, and earnings seasons. These events create volatility and trend changes. Understanding economic calendar and market expectations helps anticipate volatility and position appropriately. Markets often move more on surprises than absolute numbers.",
-    examples: JSON.stringify([
-      "Higher than expected CPI causing bond yields to spike",
-      "Fed meeting outcomes affecting entire market direction",
-      "Employment data influencing Fed policy expectations",
-      "Earnings season creating sector rotations"
-    ]),
-    practice_problems: JSON.stringify([
-      "Track economic calendar and market reactions",
-      "Understand how different data affects various assets",
-      "Position for volatility around major events"
-    ]),
-    estimated_time: 22,
+    content: "Investor sentiment measures the overall attitude of market participants — the aggregate mood of fear or confidence across all investors. Sentiment is a powerful short-term market driver that can push prices above or below fundamental value for extended periods. Understanding and measuring sentiment helps contrarian investors identify potential turning points and avoid the crowd\'s worst mistakes.\n\nThe CBOE Volatility Index (VIX) is the most widely used measure of market fear. It measures the implied volatility of S&P 500 options — essentially, how much volatility the market is pricing in for the next 30 days. A low VIX (below 15) indicates complacency and calm; a high VIX (above 30) indicates fear and uncertainty; VIX above 40 represents extreme panic. VIX typically spikes sharply during market crises: it reached 80 in 2008 and 66 in March 2020. Historically, extremely high VIX readings have marked major market lows — the point of maximum fear often aligns with attractive buying opportunities.\n\nThe American Association of Individual Investors (AAII) weekly sentiment survey asks members whether they are bullish, neutral, or bearish on the market over the next six months. Contrarians treat extreme readings as contrary indicators — when 60%+ of respondents are bullish, the market is often near a top; when 60%+ are bearish, a bottom may be near. The survey has historically predicted reversals more reliably than trends.\n\nThe Put/Call ratio measures the volume of put options traded relative to call options. High put/call ratios indicate investors are buying more downside protection (fear-driven hedging); low ratios indicate complacency. Extremely high readings often correlate with market bottoms; extremely low readings with tops.\n\nWarren Buffett\'s market valuation indicator — the ratio of total US stock market capitalization to GDP — is used as a long-term sentiment and valuation gauge. When market cap exceeds 150% of GDP (as it did in 2021), historical returns over the next decade tend to be below average. Below 70-80% GDP, future returns have historically been strong.",
+    examples: JSON.stringify(["VIX spike March 2020: VIX hit 66 on March 16, 2020 — extreme fear reading; S&P 500 formed its bottom on March 23, 2020 just days later", "AAII survey extreme: in October 2022, 60%+ of respondents were bearish — historically extreme; S&P 500 troughed that same month and rallied significantly", "Put/Call ratio at 2022 bottom: extremely elevated put/call ratios in September-October 2022 marked the correction low", "Buffett indicator at 2021 peak: total US stock market cap reached 205% of GDP in November 2021 — historically extreme; S&P 500 peaked shortly after", "VIX and insurance: buying VIX call options when VIX is low provides cheap portfolio insurance — strategy used by professional risk managers", "Fear and Greed Index: CNN's composite sentiment index combining VIX, momentum, put/call ratio, and other measures ranges from 0 (extreme fear) to 100 (extreme greed)"]),
+    practice_problems: JSON.stringify(["What is the VIX and how does it measure investor fear? Why do extremely high VIX readings often mark market bottoms?", "Explain the contrarian interpretation of the AAII sentiment survey. Why do extreme readings of bullishness or bearishness often precede reversals?", "Research the current VIX level, AAII sentiment reading, and Buffett indicator. What do they collectively suggest about current market conditions?", "Why does investor sentiment sometimes drive market prices far above or below fundamental value for extended periods?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What does CPI measure?",
-        options: ["Stock prices", "Inflation", "Employment", "GDP growth"],
-        correct_answer: 1
-      }
+      { question: "What does the VIX measure?", options: ["The total trading volume on the NYSE", "The implied volatility of S&P 500 options — a measure of market fear or complacency", "The Federal Reserve's inflation target gap", "The average P/E ratio of the S&P 500"], correct_answer: 1 },
+      { question: "A VIX reading above 40 typically indicates:", options: ["Market complacency and low volatility ahead", "Extreme fear and panic in the market — historically near market lows", "A bull market is beginning", "The Fed is cutting interest rates"], correct_answer: 1 },
+      { question: "How do contrarians use the AAII sentiment survey?", options: ["Buying when the majority are bullish", "Treating extreme bullishness as a sell signal and extreme bearishness as a buy signal", "Always following the majority's view", "Using it to predict GDP growth"], correct_answer: 1 },
+      { question: "What does a high put/call ratio indicate?", options: ["Investors are heavily buying call options — bullish sentiment", "Investors are heavily buying put options — fear-driven hedging — often a contrary bullish signal", "Options volume is below average", "The stock market is overvalued"], correct_answer: 1 },
+      { question: "What does the Buffett Indicator measure?", options: ["Warren Buffett's portfolio performance vs the S&P 500", "Total US stock market capitalization as a percentage of GDP — a long-term valuation and sentiment gauge", "The ratio of value stocks to growth stocks", "Cash holdings of all US hedge funds"], correct_answer: 1 }
     ]
   },
   {
-    title: "Emotional Trading Cycles",
+    title: "Institutional vs Retail Investors",
     level: "advanced",
     module_number: 9,
     lesson_number: 7,
-    content: "Traders go through predictable emotional cycles: optimism, excitement, euphoria, anxiety, denial, fear, desperation, panic, capitulation, despondency, depression, hope, relief, and back to optimism. Understanding these cycles helps recognize when emotions are driving decisions rather than logic. The best trades often feel uncomfortable and go against prevailing emotions.",
-    examples: JSON.stringify([
-      "Euphoria at market tops leading to poor decisions",
-      "Panic at market bottoms creating selling opportunities",
-      "FOMO during bull runs causing overextension",
-      "Despair during bear markets preventing good purchases"
-    ]),
-    practice_problems: JSON.stringify([
-      "Identify your current position in emotional cycle",
-      "Develop strategies to counteract emotional extremes",
-      "Use emotional extremes as contrarian indicators"
-    ]),
+    content: "Financial markets are participated in by two broad categories: institutional investors and retail investors. Understanding the differences in their scale, resources, time horizons, and motivations helps individual investors navigate markets more effectively and avoid being systematically disadvantaged.\n\nInstitutional investors include mutual funds, pension funds, insurance companies, hedge funds, sovereign wealth funds, and endowments. They manage trillions of dollars — the top 500 institutional investors globally manage over $100 trillion in assets. Their scale gives them advantages: access to company management (through private meetings and calls), teams of full-time analysts, sophisticated trading technology, and the ability to negotiate better prices for large transactions. Institutions drive approximately 70-80% of daily US stock market volume.\n\nRetail investors are individuals investing their own money through brokerage accounts. They typically operate with smaller capital, less information access, and less sophisticated technology than institutions. However, retail investors have structural advantages that institutions lack. They have no career risk from unconventional positions, no pressure to match quarterly benchmarks, no restrictions on certain investments, and the ability to invest in very small or thinly traded companies that institutions cannot touch without moving the market.\n\nDark pools are private trading venues where institutional investors trade large blocks of shares anonymously without impacting public market prices. High-frequency trading (HFT) firms use ultra-fast computers to execute trades in microseconds, often acting as market makers or arbitrageurs. Understanding these market structures helps retail investors recognize that they are competing in a market designed primarily for institutional participants.\n\nThe practical implications for retail investors: competing with institutions on information and analytical sophistication is futile for most. The optimal strategy is to stop trying to beat institutions at their own game (short-term active trading) and instead use the structural advantages you have: patient long-term holding, index fund investing, and focusing on small, under-researched companies where institutional coverage is thin.",
+    examples: JSON.stringify(["Blackrock manages over $10 trillion in assets — the largest asset manager globally; its trading decisions can move markets", "Pension fund mandate: CalPERS (California Public Employees Retirement System) manages $450 billion with a mandate for long-term returns to fund retirement benefits", "13F filings: institutional investors managing $100M+ must publicly disclose their holdings quarterly — Berkshire Hathaway's 13F is one of the most analyzed filings", "Retail investor Reddit revolution: r/WallStreetBets coordinated buying in GameStop highlighted retail investors' ability to collectively influence even heavily-shorted institutional positions", "Analyst coverage gap: small-cap stocks under $500M market cap receive limited institutional analyst coverage — greater potential for retail investors to find informational edge", "Institutional index rebalancing: when S&P 500 adds a new company, index funds must buy it regardless of valuation — retail investors can sometimes buy before the announcement"]),
+    practice_problems: JSON.stringify(["What structural advantages do institutional investors have over retail investors? What structural advantages do retail investors have over institutions?", "Why can retail investors often find better opportunities in small-cap stocks than in large-cap stocks? What limits institutional participation in small companies?", "Explain 13F filings. How can retail investors use information from institutional holdings disclosures?", "If institutional investors are smarter and better-resourced, why does the evidence show most of them underperform simple index funds over time?"]),
     estimated_time: 20,
     quiz: [
-      {
-        question: "When do the best trading opportunities often occur?",
-        options: ["During euphoria", "When everyone is optimistic", "During emotional extremes like panic", "Never"],
-        correct_answer: 2
-      }
+      { question: "What is an institutional investor?", options: ["An individual investor with more than $100,000 in savings", "Large organizations managing money on behalf of others — mutual funds, pension funds, hedge funds, insurance companies", "Any investor who uses a financial advisor", "Investors who only trade on institutional exchanges"], correct_answer: 1 },
+      { question: "What advantage do retail investors have over institutional investors?", options: ["More analytical resources and better information", "No career risk from unconventional positions and ability to invest in very small companies institutions cannot touch", "Faster trade execution technology", "Better access to company management"], correct_answer: 1 },
+      { question: "What is a dark pool in financial markets?", options: ["An illegal trading venue", "A private trading platform where institutions trade large blocks without public price impact", "A market that only operates at night", "A fund that invests only in depressed stocks"], correct_answer: 1 },
+      { question: "What information do 13F filings provide?", options: ["The Fed's monetary policy decisions", "Institutional investors' quarterly portfolio holdings — required for managers with $100M+ in qualifying assets", "A company's quarterly earnings report", "Tax filings of all investment accounts"], correct_answer: 1 },
+      { question: "Why does competing with institutions on short-term active trading rarely work for retail investors?", options: ["Retail investors are not legally allowed to active trade", "Institutions have superior information, technology, and execution that is nearly impossible to match", "Active trading requires $1 million minimum", "Retail investors pay too much in taxes to be profitable"], correct_answer: 1 }
     ]
   },
   {
-    title: "Overconfidence Bias",
+    title: "High-Frequency Trading",
     level: "advanced",
     module_number: 9,
     lesson_number: 8,
-    content: "Overconfidence bias causes traders to overestimate their abilities, knowledge, and chances of success. It leads to excessive trading, inadequate risk management, and ignoring contrary evidence. Successful periods often increase overconfidence, leading to larger positions and more risk-taking. Maintaining humility and systematic approach helps combat overconfidence.",
-    examples: JSON.stringify([
-      "Winning streak leading to larger, riskier positions",
-      "Ignoring stop-losses due to overconfidence in analysis",
-      "Trading outside areas of expertise",
-      "Dismissing risk management as unnecessary"
-    ]),
-    practice_problems: JSON.stringify([
-      "Identify signs of overconfidence in your trading",
-      "Develop systems to maintain discipline during winning streaks",
-      "Practice intellectual humility about market predictions"
-    ]),
-    estimated_time: 19,
+    content: "High-frequency trading (HFT) is a form of algorithmic trading that uses powerful computers to execute a large number of orders at extremely fast speeds — often in microseconds (millionths of a second). HFT firms exploit tiny price discrepancies across exchanges, act as electronic market makers, and use statistical patterns in order flow to generate profits. They represent a significant portion of daily equity market volume and have fundamentally changed how markets operate.\n\nHFT firms exploit several structural advantages. Co-location means placing their servers physically next to exchange servers — shaving microseconds off data transmission times. Direct market data feeds give HFT firms faster access to order information than public consolidated feeds. Advanced algorithms identify patterns in order flow that predict short-term price movements faster than any human could react.\n\nMarket making is the most common HFT strategy — continuously posting both buy and sell orders for thousands of securities, earning the bid-ask spread as profit. HFT market makers have largely replaced traditional human floor traders and dramatically narrowed bid-ask spreads, reducing trading costs for all investors. A spread that might have been $0.125 in 1998 might be $0.01 today — a genuine cost reduction benefiting ordinary investors.\n\nControversially, some HFT strategies are predatory. Front-running occurs when HFT firms detect large institutional orders and buy shares ahead of them, then sell to the institution at a slightly higher price. Flash crashes — sudden extreme market movements that rapidly reverse — are partly attributed to HFT algorithms removing liquidity simultaneously during volatile moments. The 2010 Flash Crash saw the Dow Jones fall 1,000 points in minutes before recovering.\n\nFor retail investors making occasional trades, HFT has generally been a net positive — tighter spreads mean better prices. The concerns about HFT primarily affect institutional investors whose large orders can be detected and traded against.",
+    examples: JSON.stringify(["HFT speed: top HFT firms execute trades in under 1 microsecond; light travels only 300 meters in 1 microsecond — physical proximity to exchanges matters", "Bid-ask spread reduction: in 1998, average NYSE spread was $0.125; after HFT market-making became dominant, average spread fell to pennies — saves investors billions annually", "Flash crash 2010: Dow Jones fell nearly 1,000 points (9%) in minutes then recovered — HFT algorithms withdrew liquidity simultaneously, exacerbating the decline", "Co-location revenue: NYSE and NASDAQ charge HFT firms millions for rack space next to their matching engines — physical proximity equals trading advantage", "Michael Lewis book Flash Boys (2014): exposed HFT front-running practices and launched debate about market fairness", "IEX exchange: created a 38-mile fiber cable delay (350 microseconds) to neutralize HFT speed advantages — speed bump that levels the playing field"]),
+    practice_problems: JSON.stringify(["What are the legitimate benefits HFT market-making provides to ordinary investors? How have transaction costs changed since HFT became dominant?", "Explain how front-running works in HFT. Why is this controversial even if technically legal?", "What is a flash crash? What role did HFT algorithms play in the 2010 Flash Crash?", "IEX Exchange created a deliberate 350-microsecond delay on all orders. Why did this reduce HFT front-running? What was the tradeoff?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What's a common result of overconfidence bias?",
-        options: ["Better performance", "Excessive risk-taking and poor decisions", "More careful analysis", "Lower returns"],
-        correct_answer: 1
-      }
+      { question: "What is high-frequency trading (HFT)?", options: ["Trading stocks more than 100 times per day by humans", "Algorithmic trading using powerful computers to execute orders in microseconds, often acting as market makers", "Illegal insider trading using computer algorithms", "Any computerized stock trading system"], correct_answer: 1 },
+      { question: "What is co-location in HFT?", options: ["Multiple HFT firms sharing office space", "Physically placing servers next to exchange servers to minimize data transmission delays", "Trading the same securities on multiple exchanges simultaneously", "Coordinating trades between HFT firms"], correct_answer: 1 },
+      { question: "How has HFT market-making BENEFITED ordinary retail investors?", options: ["It has increased retail trading profits", "It has dramatically narrowed bid-ask spreads, reducing transaction costs for everyone", "It prevents market crashes", "It provides retail investors with the same data as institutions"], correct_answer: 1 },
+      { question: "What happened during the 2010 Flash Crash?", options: ["A major company went bankrupt unexpectedly", "HFT algorithms simultaneously withdrew liquidity, causing the Dow Jones to fall nearly 1,000 points in minutes before recovering", "The NYSE was hacked by foreign attackers", "The Fed unexpectedly raised interest rates by 2%"], correct_answer: 1 },
+      { question: "What was the IEX Exchange's solution to HFT front-running?", options: ["Banning HFT firms from the exchange entirely", "Creating a 350-microsecond deliberate delay on all orders to eliminate speed advantages", "Charging HFT firms much higher fees", "Requiring manual approval for all orders over 1,000 shares"], correct_answer: 1 }
     ]
   },
   {
-    title: "Discipline Systems",
+    title: "Global Markets and Geopolitics",
     level: "advanced",
     module_number: 9,
     lesson_number: 9,
-    content: "Discipline systems are rules and processes that help maintain consistent behavior regardless of emotions or market conditions. They include position sizing rules, entry/exit criteria, risk management protocols, and review processes. Written rules remove emotion from decisions. Systematic approaches outperform discretionary trading for most people because they eliminate behavioral biases.",
-    examples: JSON.stringify([
-      "Written trading plan with specific entry/exit rules",
-      "Position sizing formula based on account size and risk",
-      "Daily/weekly review process for continuous improvement",
-      "Checklist approach to ensure all criteria are met"
-    ]),
-    practice_problems: JSON.stringify([
-      "Develop comprehensive trading discipline system",
-      "Create written rules for all trading decisions",
-      "Implement systematic review and improvement process"
-    ]),
-    estimated_time: 21,
+    content: "Financial markets do not operate in geographic isolation. Global markets are deeply interconnected — events in one country can rapidly propagate through global capital flows, commodity prices, currency markets, and supply chains to affect investors worldwide. Understanding geopolitical risks and their market implications is essential for sophisticated portfolio construction.\n\nThe global financial system revolves around the US dollar as the world\'s reserve currency. Countries and companies worldwide hold dollar reserves, most commodity contracts are priced in dollars, and dollar-denominated debt is the dominant form of international borrowing. When the dollar strengthens, commodity prices (priced in dollars) fall — benefiting commodity importers like China and Japan; hurting commodity exporters like Brazil and Australia. US multinational companies earn revenues in foreign currencies — a stronger dollar reduces the dollar value of those earnings.\n\nGeopolitical events create both risks and opportunities for investors. Wars disrupt supply chains and commodity markets — Russia\'s 2022 invasion of Ukraine triggered a global energy and grain supply shock. Elections alter trade policies, tax regimes, and regulations. Sanctions create immediate dislocations — Russian stocks became untradeable for Western investors overnight in February 2022. Trade disputes between the US and China affect technology supply chains, affecting companies from Apple to TSMC.\n\nEmerging market investing offers higher potential returns but comes with specific risks. Political instability, currency devaluation, corruption, expropriation of assets, capital controls (preventing money from leaving the country), and less developed legal systems all create risks not present in developed markets. Despite these risks, emerging markets like India, China, Vietnam, and Indonesia represent the fastest-growing economies globally.\n\nInternational diversification remains valuable for long-term portfolios even though markets have become more correlated globally. US stocks represent roughly 60% of total global market capitalization — owning only US stocks leaves 40% of global opportunities unexplored. Over various 10-20 year periods, international stocks have significantly outperformed US stocks (1970s, 1980s, 2000-2010) even though US stocks dominated 2010-2020.",
+    examples: JSON.stringify(["Russia-Ukraine war 2022: wheat and natural gas prices surged 50-100%; Russian stocks fell to near zero for Western investors; European energy crisis ensued", "Dollar strength impact: when the US Dollar Index (DXY) rose 15% in 2022, US multinationals reported significantly weaker foreign earnings in dollar terms", "China tech crackdown 2021: Chinese government regulation of technology companies like Alibaba and Didi caused those stocks to fall 50-80% — regulatory risk materialized suddenly", "India as emerging market: India's economy expected to be third largest by 2030; Nifty 50 index has delivered strong returns but with higher volatility than US markets", "International diversification cycle: MSCI EAFE (international developed market) outperformed S&P 500 by significant margins in 2000-2010 decade; reversed in 2010-2020", "Taiwan semiconductor risk: TSMC manufactures 92% of the world's most advanced chips; any conflict with China would disrupt global technology supply chains"]),
+    practice_problems: JSON.stringify(["Why is the US dollar's status as the world reserve currency important? How does dollar strength affect global commodity prices and US multinational earnings?", "Research three geopolitical risks currently in financial headlines. For each, explain the potential market impact on specific sectors or countries.", "Compare the risk-return profile of investing in emerging market stocks versus US large-cap stocks. What additional risks does an emerging market investor accept?", "Why should a US investor consider holding some international stocks even though US markets have outperformed over the past decade?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "Why are discipline systems important in trading?",
-        options: ["They guarantee profits", "They remove emotion from decisions", "They're required by law", "They impress others"],
-        correct_answer: 1
-      }
+      { question: "Why is the US dollar's role as the world's reserve currency important for global markets?", options: ["It means US investors pay no taxes on foreign investments", "Most commodities, international debt, and trade are priced in dollars — dollar movements affect global asset prices and flows", "It guarantees US stock market outperformance", "It prevents inflation in the United States"], correct_answer: 1 },
+      { question: "How did Russia's 2022 invasion of Ukraine immediately impact global markets?", options: ["It caused the S&P 500 to rise due to defense spending", "Energy and grain prices surged, and Russian stocks became untradeable for Western investors", "It had no impact on Western financial markets", "It caused the Federal Reserve to cut interest rates"], correct_answer: 1 },
+      { question: "What is an emerging market?", options: ["A newly created stock exchange", "A developing economy with rapidly growing GDP but additional risks like political instability and currency volatility", "Any country with lower stock market valuations than the US", "A market that has recently emerged from a recession"], correct_answer: 1 },
+      { question: "What percentage of total global stock market capitalization do US stocks represent?", options: ["20-25%", "40-45%", "Approximately 60%", "Over 90%"], correct_answer: 2 },
+      { question: "During which decade did international developed market stocks (EAFE) significantly OUTPERFORM US stocks?", options: ["1990-2000", "2010-2020", "2000-2010", "1980-1990"], correct_answer: 2 }
     ]
-  },
-  {
-    title: "Long-Term Mindset",
-    level: "advanced",
-    module_number: 9,
-    lesson_number: 10,
-    content: "Long-term mindset focuses on process over outcomes, understanding that short-term results are largely random while long-term results reflect skill and strategy. It involves patience, continuous learning, and adaptation. Long-term thinking reduces emotional stress, improves decision-making, and allows compound returns to work. Success in markets requires thinking in decades, not days.",
-    examples: JSON.stringify([
-      "Warren Buffett's decades-long investment approach",
-      "Focusing on 5-year returns rather than daily fluctuations",
-      "Building skills and knowledge over years",
-      "Allowing compound returns to build wealth over time"
-    ]),
-    practice_problems: JSON.stringify([
-      "Develop long-term perspective on market participation",
-      "Focus on process improvement over short-term results",
-      "Create systems for continuous learning and adaptation"
-    ]),
-    estimated_time: 18,
-    quiz: [
-      {
-        question: "What's a key benefit of long-term mindset in trading?",
-        options: ["Guaranteed quick profits", "Reduced emotional stress and better decisions", "No need for analysis", "Avoiding all losses"],
-        correct_answer: 1
-      }
-    ]
-  }
-,
-  // Module 10: Personal Wealth & Life Finance (Advanced / Premium) - 10 lessons
-  {
-    title: "Taxes Basics (High-Level)",
+  },  {
+    title: "Retirement Planning",
     level: "advanced",
     module_number: 10,
     lesson_number: 1,
-    content: "Understanding taxes is crucial for wealth building as it's not what you earn but what you keep after taxes that matters. Key concepts include ordinary income vs capital gains, tax-deferred vs tax-free accounts, and tax-loss harvesting. Long-term capital gains (held >1 year) are taxed more favorably than short-term gains. Tax planning should be integrated with investment strategy.",
-    examples: JSON.stringify([
-      "Long-term capital gains: 0%, 15%, or 20% vs ordinary income rates",
-      "401(k) contributions reducing current taxable income",
-      "Roth IRA: pay taxes now, withdraw tax-free later",
-      "Tax-loss harvesting: selling losses to offset gains"
-    ]),
-    practice_problems: JSON.stringify([
-      "Calculate tax impact of different investment strategies",
-      "Understand your marginal vs effective tax rate",
-      "Plan investment timing for tax efficiency"
-    ]),
-    estimated_time: 26,
+    content: "Retirement planning is the process of determining how much money you need to sustain your lifestyle in retirement, and creating a strategy to accumulate and preserve that wealth. Given that most people will spend 20-30 years in retirement, and given that Social Security alone provides only a modest income floor, personal retirement savings are essential for most Americans.\n\nThe first step is estimating your retirement income need. A common rule of thumb is the 70-80% rule: you will need approximately 70-80% of your pre-retirement income in retirement because work-related expenses fall, mortgages may be paid off, and you are no longer saving for retirement. A person earning $80,000 pre-retirement might need $56,000-$64,000 per year in retirement.\n\nThe 4% rule is a widely used guideline for sustainable retirement withdrawals. Research by William Bengen (1994) found that withdrawing 4% of your portfolio annually (adjusted for inflation each year) historically sustained a 30-year retirement in nearly all market scenarios. A $1 million portfolio supports approximately $40,000 per year in withdrawals. To find the portfolio size you need, divide your annual income need by 4%: needing $60,000 per year requires a $1.5 million portfolio.\n\nSocial Security provides a base income floor. Your benefit amount depends on your 35 highest-earning years and when you claim. You can claim as early as age 62 (with permanently reduced benefits) or delay until age 70 (with permanently increased benefits — approximately 8% more for each year you delay after full retirement age). Delaying until 70 can increase lifetime benefits by 30-40% for people who live to average life expectancy.\n\nRetirement planning should address longevity risk (outliving your money), sequence of returns risk (poor returns in early retirement permanently damage the portfolio), inflation risk (rising costs eroding fixed income), and healthcare costs (which often double in later years of retirement).",
+    examples: JSON.stringify(["4% rule: $1.5 million portfolio x 4% = $60,000 annual withdrawal — historically sustainable for 30 years based on US market history", "Social Security delay: claiming at 62 might provide $1,800/month; waiting until 70 provides $3,200/month — $1,400/month more for rest of life", "Sequence of returns risk: retiring in 2000 with 100% stocks and 4% withdrawal rate — poor early returns from dot-com crash significantly impaired portfolio longevity", "Healthcare costs: Fidelity estimates average couple needs $315,000 saved specifically for healthcare expenses in retirement (2023 estimate)", "Tax diversification: having money in both pre-tax 401(k) and post-tax Roth gives flexibility to manage taxable income in retirement", "Inflation impact: $60,000 per year in retirement at 3% inflation becomes $107,000 needed per year in 20 years — portfolio must keep growing"]),
+    practice_problems: JSON.stringify(["Using the 4% rule, calculate the portfolio size needed to fund your estimated retirement income. Research average annual healthcare costs in retirement and add that to your estimate.", "Compare claiming Social Security at 62, 67 (full retirement age), and 70. What are the monthly benefit amounts for each and what is the break-even age?", "Explain sequence of returns risk. Why does a 50% market decline in the first year of retirement cause much more permanent damage than the same decline 10 years into retirement?", "What is the difference between longevity risk and sequence of returns risk? How do annuities address one but not the other?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "How are long-term capital gains taxed compared to ordinary income?",
-        options: ["Same rate", "Higher rate", "Lower rate", "Not taxed"],
-        correct_answer: 2
-      }
+      { question: "What does the 4% rule state?", options: ["Save 4% of your income every year for retirement", "Invest 4% of your portfolio in bonds each year", "Withdrawing 4% of your portfolio annually has historically sustained a 30-year retirement", "Retire when your savings rate reaches 4x your annual expenses"], correct_answer: 2 },
+      { question: "Using the 4% rule, what portfolio size is needed to withdraw $50,000 per year?", options: ["$500,000", "$750,000", "$1,000,000", "$1,250,000"], correct_answer: 3 },
+      { question: "What happens to Social Security benefits if you delay claiming from age 62 to age 70?", options: ["Benefits decrease because you collect for fewer years", "Benefits increase approximately 8% per year of delay after full retirement age — roughly 30-40% more monthly", "Benefits stay the same regardless of when you claim", "You must repay any early Social Security payments"], correct_answer: 1 },
+      { question: "What is sequence of returns risk?", options: ["The risk that investment returns vary randomly", "The risk that poor returns in early retirement permanently damage a portfolio that is simultaneously being drawn down", "The risk that all your returns come from dividends", "The sequential order in which you withdraw from different accounts"], correct_answer: 1 },
+      { question: "What is longevity risk in retirement planning?", options: ["The risk of dying too early to collect benefits", "The risk of outliving your retirement savings because you live longer than expected", "The risk that inflation outlasts your savings", "The risk of leaving too little to your heirs"], correct_answer: 1 }
     ]
   },
   {
-    title: "Tax-Advantaged Accounts (401k, Roth IRA)",
+    title: "Tax Strategies for Investors",
     level: "advanced",
     module_number: 10,
     lesson_number: 2,
-    content: "Tax-advantaged accounts like 401(k), traditional IRA, and Roth IRA provide significant benefits for long-term wealth building. Traditional accounts offer current tax deductions but taxable withdrawals. Roth accounts use after-tax dollars but provide tax-free growth and withdrawals. 401(k) plans often include employer matching - free money that should always be captured.",
-    examples: JSON.stringify([
-      "401(k): $22,500 contribution limit (2023), plus $7,500 catch-up if 50+",
-      "Employer match: 50% of first 6% = 3% free money",
-      "Roth IRA: $6,500 limit, income restrictions apply",
-      "Traditional vs Roth: current deduction vs future tax-free"
-    ]),
-    practice_problems: JSON.stringify([
-      "Calculate optimal contribution strategy across accounts",
-      "Understand income limits and eligibility rules",
-      "Compare traditional vs Roth for your situation"
-    ]),
-    estimated_time: 24,
+    content: "Taxes are one of the largest costs investors face, and thoughtful tax planning can significantly improve long-term wealth accumulation. Unlike investment returns (which are uncertain), tax savings are certain — reducing your tax liability is a guaranteed improvement in your net returns. Understanding the major tax strategies available to investors is essential for sophisticated financial planning.\n\nCapital gains tax treatment creates powerful incentives for long-term investing. Short-term capital gains (assets held 12 months or less) are taxed at your ordinary income tax rate — potentially 32-37% for high earners. Long-term capital gains (held more than 12 months) are taxed at 0%, 15%, or 20% based on income. For most middle-income investors, this difference is enormous: a $50,000 gain taxed at 22% short-term versus 15% long-term saves $3,500 in taxes on a single transaction.\n\nTax-loss harvesting is the strategy of selling investments that are down to realize a capital loss, then using that loss to offset capital gains elsewhere in your portfolio. If you have $20,000 in realized gains and $15,000 in realized losses, you only owe tax on the net $5,000 in gains. Losses beyond gains can offset up to $3,000 in ordinary income per year, with excess losses carried forward to future years. The wash-sale rule prohibits repurchasing the same or substantially identical security within 30 days of harvesting a loss.\n\nAsset location — placing investments in the most tax-efficient account type — can meaningfully improve after-tax returns. Tax-inefficient assets (high-yield bonds, REITs, actively traded funds that generate capital gains distributions) should generally go in tax-advantaged accounts (401k, IRA) where they generate no annual tax. Tax-efficient assets (broad index funds, growth stocks) work well in taxable accounts because they generate minimal annual income distributions and benefit from long-term capital gains rates when sold.\n\nCharitable giving strategies offer tax advantages. Donating appreciated securities directly to charity (rather than selling and donating cash) avoids capital gains tax while getting a full fair-market-value deduction. Donor-Advised Funds allow you to take a large upfront deduction by contributing securities in a high-income year while distributing the charitable grants over time.",
+    examples: JSON.stringify(["Long vs short-term gains: selling stock for $30,000 profit after 14 months at 15% rate = $4,500 tax; selling after 11 months at 32% rate = $9,600 tax — $5,100 more in taxes for same gain", "Tax-loss harvesting: year-end losses of $12,000 offset $12,000 in realized gains — tax savings of $1,800 at 15% long-term rate", "Asset location: high-yield bond fund generating 6% income in taxable account vs Roth IRA — in Roth all income is tax-free; in taxable account the 6% is taxed annually", "Wash sale trap: sell ETF for loss, immediately buy very similar ETF — avoid buying substantially identical security within 30 days", "Donating appreciated stock: donate Apple stock with $10,000 cost basis now worth $50,000 — deduct $50,000, avoid $40,000 capital gain, save $6,000+ in taxes", "Roth conversion ladder: convert Traditional IRA to Roth during low-income years (retirement before Social Security) at low tax rates to reduce future required minimum distributions"]),
+    practice_problems: JSON.stringify(["You sold investments this year with $25,000 in capital gains. You also have positions showing $18,000 in unrealized losses. How much tax can you save by harvesting those losses, assuming a 15% long-term gains rate?", "Compare holding a bond fund paying 5% yield in a Roth IRA versus a taxable account, assuming a 24% marginal tax rate. What is the after-tax annual difference on a $100,000 position?", "Explain the wash-sale rule. How would you harvest a tax loss on your S&P 500 ETF without violating the wash-sale rule?", "What is a Roth conversion ladder and why might it benefit someone who retires at 50 with mostly pre-tax 401(k) funds?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What's the main advantage of a Roth IRA?",
-        options: ["Current tax deduction", "Tax-free growth and withdrawals", "Higher contribution limits", "No income limits"],
-        correct_answer: 1
-      }
+      { question: "What is the long-term capital gains tax rate for most middle-income investors?", options: ["The same as ordinary income tax rate", "0% for all investors", "15% (for middle-income investors)", "25% flat rate"], correct_answer: 2 },
+      { question: "What is tax-loss harvesting?", options: ["Selling investments at the end of each year regardless of performance", "Selling losing investments to realize losses that can offset capital gains and reduce taxes", "Holding investments in a tax-free account", "Donating losing investments to charity"], correct_answer: 1 },
+      { question: "What is the wash-sale rule?", options: ["A rule limiting total capital losses per year to $3,000", "A prohibition on repurchasing the same or substantially identical security within 30 days of harvesting a loss", "A rule requiring annual portfolio rebalancing", "A limit on the number of tax-loss harvests per year"], correct_answer: 1 },
+      { question: "What is the optimal asset location strategy for tax-inefficient investments like REITs?", options: ["Keep them in taxable accounts for easy access", "Place them in tax-advantaged accounts (401k, IRA) where income is sheltered from annual tax", "Sell them before year-end annually", "REITs are always tax-efficient regardless of account type"], correct_answer: 1 },
+      { question: "What is the tax advantage of donating appreciated securities to charity versus donating cash?", options: ["No tax advantage — both are treated the same", "You avoid paying capital gains tax on the appreciation and still get a full fair-market-value deduction", "Appreciated securities donations are deductible at double their value", "Only cash donations are tax-deductible"], correct_answer: 1 }
     ]
   },
   {
-    title: "Inflation-Proofing Wealth",
+    title: "Estate Planning Basics",
     level: "advanced",
     module_number: 10,
     lesson_number: 3,
-    content: "Inflation erodes purchasing power over time, making inflation protection essential for long-term wealth preservation. Strategies include owning assets that appreciate with inflation (stocks, real estate), Treasury Inflation-Protected Securities (TIPS), commodities, and avoiding long-term fixed-rate debt. Diversification across asset classes provides natural inflation hedging.",
-    examples: JSON.stringify([
-      "Stocks historically outpacing inflation over long periods",
-      "Real estate values and rents rising with inflation",
-      "TIPS adjusting principal based on CPI changes",
-      "Fixed-rate mortgage becoming cheaper with inflation"
-    ]),
-    practice_problems: JSON.stringify([
-      "Build portfolio with inflation protection in mind",
-      "Understand which assets benefit from inflation",
-      "Calculate inflation's impact on fixed income over time"
-    ]),
-    estimated_time: 22,
+    content: "Estate planning is the process of arranging for the transfer of your assets to your heirs and beneficiaries in the most efficient and intentional way possible. Without proper estate planning, your assets may pass through probate (a public, time-consuming, and expensive court process), be distributed according to state law rather than your wishes, or be significantly reduced by estate taxes. Estate planning is not just for the wealthy — everyone needs basic documents in place.\n\nThe foundation of any estate plan is a will. A will is a legal document that specifies how you want your assets distributed after death, names guardians for minor children, and designates an executor to carry out your wishes. Without a will, you die intestate — your assets are distributed according to state law, which may not reflect your intentions at all. Probate with a clear will is generally faster; dying without a will can make probate significantly longer and more contentious.\n\nTrusts are legal entities that hold and distribute assets according to specific instructions. A revocable living trust allows you to transfer assets into the trust while you are alive, remaining in control, and specifying exactly how and when beneficiaries receive assets — all while avoiding probate. Irrevocable trusts (once established, cannot be changed) can remove assets from your taxable estate, protecting them from estate taxes and creditors.\n\nBeneficiary designations on retirement accounts (401k, IRA), life insurance policies, and some bank accounts (payable on death) transfer directly to named beneficiaries outside of probate — these designations supersede your will. Keeping beneficiary designations updated (especially after marriage, divorce, or a beneficiary\'s death) is critically important.\n\nThe federal estate tax exemption is $13.6 million per person in 2024 ($27.2 million for married couples), meaning most Americans will not owe federal estate tax. However, many states have lower exemption thresholds. The exemption is currently set to decrease to approximately $7 million in 2026 when current tax law expires, which may affect more estates.",
+    examples: JSON.stringify(["Intestate example: person dies without a will; state law distributes estate — may not align with their wishes, especially for unmarried partners", "Revocable living trust: avoids probate, allows assets to pass directly to beneficiaries per trust instructions without court involvement", "Beneficiary designation override: person updates will to leave everything to new spouse but forgets to update 401(k) beneficiary from ex-spouse — 401(k) goes to ex-spouse per designation", "Estate tax planning: couple with $30M estate uses gifting strategies and irrevocable trusts to reduce taxable estate below federal exemption", "Healthcare directive: legal document specifying medical treatment preferences if incapacitated — essential companion to will", "529 superfunding: contribute 5 years of annual gift exclusion ($90,000 per person, $180,000 per couple) into 529 college savings plan at once"]),
+    practice_problems: JSON.stringify(["What documents comprise a basic estate plan? Why does everyone need them regardless of asset level?", "Explain the difference between a will and a revocable living trust. What problem does the trust solve that a will alone cannot?", "A person has a $500,000 IRA with their parent named as beneficiary, but their will leaves everything to their spouse. Who inherits the IRA? Why?", "At what net worth does estate planning become especially important for minimizing estate taxes? What strategies are available?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "Which assets typically provide inflation protection?",
-        options: ["Cash and bonds", "Stocks and real estate", "CDs only", "Government bonds only"],
-        correct_answer: 1
-      }
+      { question: "What happens if you die without a will (intestate)?", options: ["Your spouse automatically inherits everything", "Your assets are distributed according to state intestacy law, which may not reflect your wishes", "Assets go to the government", "Your estate enters a 10-year waiting period"], correct_answer: 1 },
+      { question: "What is the primary benefit of a revocable living trust over a will?", options: ["Trusts reduce income taxes", "A trust avoids probate, allowing assets to pass directly to beneficiaries without court involvement", "Trusts provide asset protection from lawsuits", "Trusts allow you to leave money to more beneficiaries than a will"], correct_answer: 1 },
+      { question: "What happens to beneficiary designations on retirement accounts and life insurance?", options: ["They are overridden by the will", "They transfer directly to named beneficiaries outside of probate, superseding the will", "They expire after 10 years and must be renewed", "They are split equally among all heirs named in the will"], correct_answer: 1 },
+      { question: "What is the 2024 federal estate tax exemption per person?", options: ["$1 million", "$5 million", "$13.6 million", "$50 million"], correct_answer: 2 },
+      { question: "Why should you review beneficiary designations after a major life event like marriage or divorce?", options: ["It is required by law annually", "Outdated beneficiaries will inherit assets regardless of your current wishes, potentially leaving assets to unintended recipients", "Tax rates change based on beneficiary relationship", "Beneficiary designations affect your credit score"], correct_answer: 1 }
     ]
   },
   {
-    title: "Passive vs Active Income",
+    title: "Insurance in Financial Planning",
     level: "advanced",
     module_number: 10,
     lesson_number: 4,
-    content: "Active income requires ongoing work (salary, wages, business income), while passive income generates money with minimal ongoing effort (dividends, rental income, royalties). Building passive income streams creates financial freedom and reduces dependence on active work. The goal is to eventually have passive income cover living expenses, achieving financial independence.",
-    examples: JSON.stringify([
-      "Active: $100k salary requiring 40 hours/week",
-      "Passive: $50k annual dividends from $1.25M portfolio",
-      "Rental property generating $500/month after expenses",
-      "Royalties from book, patent, or creative work"
-    ]),
-    practice_problems: JSON.stringify([
-      "Calculate passive income needed for financial independence",
-      "Identify potential passive income streams",
-      "Plan transition from active to passive income"
-    ]),
-    estimated_time: 21,
+    content: "Insurance is a fundamental pillar of comprehensive financial planning. Its purpose is to transfer catastrophic financial risk to an insurance company in exchange for a predictable premium. Without proper insurance, a single unexpected event — a serious illness, disability, death, lawsuit, or property loss — can wipe out years or decades of accumulated wealth. The goal of insurance is not to profit but to prevent financial ruin.\n\nLife insurance is essential for anyone with financial dependents — a spouse, children, or parents who depend on your income. Term life insurance provides a death benefit for a specified period (10, 20, or 30 years) at a fixed premium. It is pure protection with no investment component and is by far the most cost-effective form of life insurance for most people. A healthy 30-year-old can purchase $500,000 of 20-year term life for roughly $25-30 per month. Whole life and universal life combine life insurance with a cash value investment component — they are significantly more expensive and generally recommended only for specific estate planning needs.\n\nDisability insurance is arguably more important than life insurance for working-age adults. The probability of becoming disabled for an extended period is significantly higher than dying prematurely. Long-term disability insurance typically replaces 60-70% of your income if illness or injury prevents you from working for an extended period. Many employers offer group disability coverage, but the benefits are often insufficient — individual policies provide better and more portable coverage.\n\nHealth insurance protects against catastrophic medical costs, which are the leading cause of personal bankruptcy in the United States. Homeowners and auto insurance protect physical assets and liability. An umbrella liability policy provides additional protection above auto and homeowner liability limits — important as your net worth grows.\n\nThe key insurance philosophy: buy insurance for catastrophic, unrecoverable events. Self-insure (don\'t buy insurance) for events you could recover from financially — low deductibles on car insurance, extended warranties, and other small-ticket insurance products are generally poor value. The higher your deductible, the lower your premium and the more you are effectively self-insuring routine costs.",
+    examples: JSON.stringify(["Term life insurance: 35-year-old non-smoker, $1M 20-year term policy costs roughly $50-60 per month — inexpensive protection for dependents during peak earning years", "Disability insurance: 40-year-old doctor earning $300,000 per year; long-term disability covers $15,000/month if unable to practice medicine — protects human capital", "Medical bankruptcy: study found 66.5% of personal bankruptcies in the US are tied to medical issues — health insurance prevents this catastrophic outcome", "Umbrella policy: $1 million umbrella policy costs $150-300 per year; provides liability protection above auto and homeowners limits — essential once net worth exceeds $500,000", "Self-insurance calculation: $500 deductible vs $1,000 deductible on car insurance — if premium savings exceed $100/year, take the higher deductible for most drivers", "Whole life vs term: $500,000 whole life policy might cost $350/month vs $25/month for term; investing the $325 difference in an index fund typically creates far more wealth"]),
+    practice_problems: JSON.stringify(["Compare term life insurance and whole life insurance. For a 30-year-old with two young children, which typically makes more sense? Show the math.", "Why is disability insurance often considered more important than life insurance for a 35-year-old professional?", "Calculate the umbrella liability insurance cost for $2 million in coverage. At what net worth level does umbrella insurance become essential?", "Explain the self-insurance concept. Apply it to the decision between a $250 deductible and $1,500 deductible on car insurance."]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What characterizes passive income?",
-        options: ["Requires full-time work", "Generates money with minimal ongoing effort", "Only from employment", "Always guaranteed"],
-        correct_answer: 1
-      }
+      { question: "What is the primary purpose of insurance in financial planning?", options: ["To generate investment returns through cash value accumulation", "To transfer catastrophic financial risk to an insurer in exchange for a predictable premium, preventing financial ruin", "To reduce your income taxes", "To guarantee wealth transfer to heirs"], correct_answer: 1 },
+      { question: "What is term life insurance?", options: ["Life insurance that covers you for your entire life", "Pure death benefit coverage for a specified period with no investment component — the most cost-effective form", "Life insurance combined with an investment account", "Insurance that pays out monthly instead of a lump sum"], correct_answer: 1 },
+      { question: "Why is disability insurance considered critical for working-age professionals?", options: ["It is required by law for all employees", "The probability of extended disability is significantly higher than premature death, and loss of income is catastrophic", "Disability insurance always pays more than life insurance", "It is the cheapest form of insurance available"], correct_answer: 1 },
+      { question: "What is an umbrella liability policy?", options: ["Insurance that covers all types of risks in one policy", "Additional liability coverage above auto and homeowners limits — protects against large lawsuits", "Life insurance that covers the entire family", "Coverage for rare and unusual risks"], correct_answer: 1 },
+      { question: "What is the self-insurance principle in insurance planning?", options: ["Not buying any insurance to save money", "Choosing higher deductibles for routine losses you can absorb — saving premiums for catastrophic coverage", "Only buying insurance through your employer", "Investing insurance premiums yourself instead of paying insurers"], correct_answer: 1 }
     ]
   },
   {
-    title: "Salary vs Equity",
+    title: "College Funding Strategies",
     level: "advanced",
     module_number: 10,
     lesson_number: 5,
-    content: "Salary provides immediate, predictable income, while equity compensation (stock options, restricted stock) offers potential for significant wealth creation but with risk. Equity aligns your interests with company success and can create life-changing wealth in successful companies. Understanding vesting schedules, tax implications, and diversification needs is crucial when receiving equity compensation.",
-    examples: JSON.stringify([
-      "Tech employee receiving stock options worth millions",
-      "Startup equity becoming valuable after IPO",
-      "Vesting schedule: 25% per year over 4 years",
-      "Tax implications: ISO vs NSO stock options"
-    ]),
-    practice_problems: JSON.stringify([
-      "Evaluate equity compensation offers",
-      "Understand vesting and tax implications",
-      "Plan diversification strategy for concentrated equity"
-    ]),
-    estimated_time: 23,
+    content: "College education costs have risen dramatically — average annual all-in costs at a four-year public university now exceed $28,000; private universities average $60,000 or more per year. Funding a child\'s college education requires strategic planning starting early, ideally from birth. The right savings vehicles, combined with time and compound growth, can make college funding manageable without jeopardizing parents\' retirement savings.\n\nThe 529 College Savings Plan is the premier college funding vehicle. Contributions are made with after-tax dollars, but the money grows completely tax-free and withdrawals for qualified education expenses (tuition, fees, room, board, books) are also tax-free — essentially a Roth IRA for education. Many states also offer a state income tax deduction for contributions. Funds can be used at any accredited US college or university, and up to $10,000 per year can be used for private K-12 tuition. If the beneficiary doesn\'t use the funds, you can change the beneficiary to another family member or roll excess funds to a Roth IRA (new law effective 2024, up to $35,000 lifetime).\n\nThe math of early saving is powerful. Investing $200 per month from birth to age 18 at 7% annual return accumulates approximately $81,000 by college age — with only $43,200 in actual contributions. Starting at age 10 instead and making the same monthly contribution accumulates only about $27,000 — dramatically less despite similar contribution effort. Time is the critical variable.\n\nFinancial Aid considerations matter for high-income families. The FAFSA (Free Application for Federal Student Aid) determines eligibility for federal grants, subsidized loans, and work-study programs. Assets in the parent\'s name are assessed at a lower rate than student assets for financial aid purposes. 529 plans are counted as parent assets (favorable), while student custodial accounts (UGMA/UTMA) are counted at the higher student asset rate.\n\nStrategic use of student loans can sometimes make sense — federal student loans have relatively low fixed rates and income-driven repayment options. The critical principle: parents should not sacrifice retirement savings for college funding. Prioritize retirement (where no loans exist) over college funding (where borrowing options exist).",
+    examples: JSON.stringify(["529 growth: $200/month from birth at 7% = $81,000 at age 18; $400/month = $162,000 — tax-free withdrawal for qualified expenses", "Superfunding a 529: contribute $90,000 at once ($18,000 annual gift exclusion x 5 years elected) into child's 529 immediately after birth — maximizes compound growth", "State 529 deduction: Illinois allows $10,000 deduction per taxpayer per year; saving $800 in state taxes on contributions", "Federal student loan rates: undergraduate federal loans currently at 5.50% fixed — relatively predictable cost if needed", "529 Roth rollover: child earns full scholarship; excess 529 funds up to $35,000 can now roll to the beneficiary's Roth IRA (Secure Act 2.0)", "Community college strategy: starting at community college ($3,000-5,000/year) then transferring to a 4-year university can reduce total costs by $40,000-$60,000"]),
+    practice_problems: JSON.stringify(["Calculate the 529 account balance at age 18 if you invest $300 per month from birth at 7% annual return. How much of the ending balance is contributions and how much is growth?", "A family has $30,000 available. Should they put it in a 529 plan for their 10-year-old or pay off a 6% mortgage? What factors matter?", "Compare the FAFSA treatment of assets in a 529 plan (parent asset) versus a UGMA custodial account (student asset). Which is more favorable for financial aid?", "When should parents prioritize retirement savings over college funding for their children? What is the fundamental reasoning?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What's the main advantage of equity compensation?",
-        options: ["Guaranteed income", "Potential for significant wealth creation", "No risk", "Immediate cash"],
-        correct_answer: 1
-      }
+      { question: "What is the tax advantage of a 529 College Savings Plan?", options: ["Contributions are tax-deductible at the federal level always", "Growth is tax-free and qualified withdrawals for education expenses are also tax-free", "All contributions are matched by the government", "529 gains are taxed at half the regular capital gains rate"], correct_answer: 1 },
+      { question: "What is 529 superfunding?", options: ["Contributing the maximum each year for 20 years", "Contributing 5 years of annual gift exclusions ($90,000) at once to maximize early compound growth", "Investing 529 funds in aggressive growth funds only", "Transferring 529 funds from one child to another"], correct_answer: 1 },
+      { question: "What happened to excess 529 funds under the Secure Act 2.0 (2024)?", options: ["They are forfeited if not used for education", "Up to $35,000 lifetime can be rolled to the beneficiary's Roth IRA", "They can be withdrawn tax-free for any purpose after age 59.5", "The funds automatically convert to a regular investment account"], correct_answer: 1 },
+      { question: "Why should parents generally prioritize retirement savings over college funding?", options: ["College education isn't worth the cost", "Retirement has no loan options; college can be funded with borrowing at manageable rates — you cannot borrow for retirement", "Retirement savings grow faster than 529 plans", "College funding provides no tax advantages"], correct_answer: 1 },
+      { question: "How are 529 plans treated in the FAFSA financial aid calculation?", options: ["As student assets (high assessment rate)", "As parent assets (lower assessment rate) — more favorable for financial aid eligibility", "They are completely excluded from FAFSA calculations", "They increase financial aid eligibility"], correct_answer: 1 }
     ]
   },
   {
-    title: "Insurance Basics",
+    title: "Real Estate as Wealth Building",
     level: "advanced",
     module_number: 10,
     lesson_number: 6,
-    content: "Insurance protects against catastrophic financial losses that could derail wealth building. Essential coverage includes health, disability, liability, and life insurance. Term life insurance is usually better than whole life for most people. Disability insurance protects your ability to earn income. Adequate liability coverage protects assets from lawsuits. Insurance is risk management, not investment.",
-    examples: JSON.stringify([
-      "Term life insurance: $1M coverage for $50/month",
-      "Disability insurance: 60% of income if unable to work",
-      "Umbrella policy: $1M liability coverage for $200/year",
-      "Health insurance: protecting against medical bankruptcy"
-    ]),
-    practice_problems: JSON.stringify([
-      "Assess your insurance needs and coverage gaps",
-      "Compare term vs whole life insurance",
-      "Calculate appropriate coverage amounts"
-    ]),
+    content: "Real estate has been one of the most reliable wealth-building vehicles throughout human history. Owning property creates wealth through four simultaneous mechanisms: appreciation (property values rising over time), equity building through mortgage paydown, leverage (using other people\'s money to control a larger asset), and cash flow (rental income exceeding expenses). Understanding how these work together explains why real estate has created more millionaires than nearly any other asset class.\n\nLeverage is the most powerful wealth-building mechanism in real estate. A 20% down payment on a $300,000 property means you control $300,000 in assets with $60,000 of your own money. If the property appreciates 5% to $315,000, your $60,000 investment has earned a $15,000 return — a 25% return on your own capital despite a 5% appreciation rate. This amplification works both ways — depreciation also affects the full property value, not just your equity.\n\nRental property investment requires analyzing cash flow carefully. The cap rate (capitalization rate) is the annual net operating income divided by property value — it tells you the unlevered yield. A $300,000 property earning $18,000 in net operating income has a 6% cap rate. Cash-on-cash return measures the annual cash flow divided by your actual cash invested. After accounting for the mortgage payment, a 6% cap rate property with 5% mortgage rate generates positive cash flow.\n\nThe BRRRR strategy (Buy, Rehab, Rent, Refinance, Repeat) is popular for building real estate portfolios: buy an undervalued property, renovate to force appreciation, rent it out, refinance based on the new higher value to pull out your initial capital, then repeat the process with the same capital. Done correctly, this strategy allows investors to scale portfolios without continuously requiring new capital.\n\nReal estate disadvantages include illiquidity, management burden, concentration risk (one property represents a large percentage of net worth), and the leverage risk if property values decline. Real estate is not passive unless you hire professional management — managing tenants, maintenance, and vacancies is a significant time commitment.",
+    examples: JSON.stringify(["Leverage example: buy $400,000 property with $80,000 down; property appreciates 10% to $440,000; return on equity is $40,000 / $80,000 = 50% ROE vs 10% property appreciation", "Cap rate analysis: $250,000 rental property with $15,000 annual net operating income = 6% cap rate; reasonable in most markets", "Equity building: $300,000 mortgage at 7% over 30 years — first payment is mostly interest; after 10 years, roughly $40,000 of principal paid down just through scheduled payments", "BRRRR example: buy distressed property for $150,000, spend $30,000 renovating, value increases to $230,000; refinance at 75% LTV to pull out $172,500 — recoup $180,000 initial investment", "Home equity as forced savings: homeowner after 20 years has accumulated $200,000+ in equity through appreciation and mortgage paydown — wealth invisible month-to-month", "1031 exchange: sell investment property and defer capital gains tax by rolling proceeds into a new investment property of equal or greater value"]),
+    practice_problems: JSON.stringify(["Calculate the return on equity for buying a $350,000 property with 20% down ($70,000) that appreciates 8% in one year. Compare this to just investing the $70,000 in the stock market at 8%.", "Analyze whether a rental property makes financial sense: purchase price $280,000, monthly rent $1,800, expenses (taxes, insurance, maintenance, vacancy) $600/month, mortgage payment $1,200/month.", "Explain the BRRRR strategy. What risk does each step carry? At what point in the strategy could things go wrong?", "Compare owning rental real estate versus owning REITs for a working professional with a demanding career. What are the trade-offs?"]),
     estimated_time: 20,
     quiz: [
-      {
-        question: "What's the primary purpose of insurance?",
-        options: ["Investment returns", "Protect against catastrophic financial losses", "Tax benefits", "Guaranteed profits"],
-        correct_answer: 1
-      }
+      { question: "What are the four wealth-building mechanisms in real estate?", options: ["Location, timing, leverage, tax breaks", "Appreciation, equity building through mortgage paydown, leverage, and cash flow", "Rental income, depreciation, tax deduction, and sale profit", "Down payment, interest rate, appreciation, and rental yield"], correct_answer: 1 },
+      { question: "What is a cap rate in real estate?", options: ["The maximum loan amount for a property", "Annual net operating income divided by property value — an unlevered yield measure", "The capitalization gains from property sale", "The percentage of property value borrowed"], correct_answer: 1 },
+      { question: "How does leverage amplify real estate returns?", options: ["Leverage reduces risk by spreading costs", "A small down payment controls a large asset — property appreciation applies to full value, dramatically increasing return on equity", "Leverage guarantees positive cash flow", "Using a mortgage eliminates all property taxes"], correct_answer: 1 },
+      { question: "What does BRRRR stand for in real estate investing?", options: ["Buy, Rent, Raise rates, Repeat, Rebalance", "Buy, Rehab, Rent, Refinance, Repeat", "Build, Renovate, Raise, Refinance, Reinvest", "Buy, Resell, Refinance, Return, Reinvest"], correct_answer: 1 },
+      { question: "What is a 1031 exchange in real estate?", options: ["A government subsidy for first-time homebuyers", "A tax provision allowing deferral of capital gains tax when selling investment property and buying another of equal or greater value", "A mortgage refinancing rule for investment properties", "The maximum leverage allowed on investment real estate"], correct_answer: 1 }
+    ]
+  },
+  {
+    title: "Building Multiple Income Streams",
+    level: "advanced",
+    module_number: 10,
+    lesson_number: 7,
+    content: "Financial resilience and the path to financial independence both benefit from having multiple income streams. Relying solely on a single employer for 100% of your income creates significant vulnerability — job loss, disability, or company failure can be financially devastating. Building additional income streams reduces this dependence, accelerates wealth accumulation, and eventually creates the option of financial freedom.\n\nIncome streams fall into three categories: active income (requiring your direct time and labor), semi-passive income (requiring initial effort then ongoing minimal maintenance), and passive income (requiring little to no ongoing work). Active income is your job or freelance work — it is the foundation for most people. Semi-passive income includes rental income (requiring some management), a business where you have hired staff, or a course you created that continues to sell. True passive income includes dividends, bond interest, and index fund distributions.\n\nDividend investing is one of the most accessible paths to passive income. Building a diversified portfolio of dividend-paying stocks or funds that generates $1,000, $3,000, or $10,000 per month in dividends requires significant capital — at a 3% average yield, $4,000 per month requires $1.6 million in dividend-paying investments. This is why starting early and reinvesting dividends matters so much.\n\nDigital income streams have become increasingly accessible. Creating online courses, writing books or e-books, building a YouTube channel, or developing a software tool can create income that flows in with minimal ongoing effort. These require significant upfront investment of time but can generate income for years after the initial work.\n\nReal estate, covered in detail in the previous lesson, is a classic multiple income stream vehicle. A rental property generating $500/month in net cash flow after all expenses and mortgage provides a tangible income stream uncorrelated with stock market performance. Starting small (a single-family rental or a duplex) and reinvesting cash flow to acquire additional properties is a time-tested path.",
+    examples: JSON.stringify(["Dividend income: $500,000 portfolio in dividend stocks averaging 4% yield generates $20,000/year passively — requires no additional work after investment", "Rental property income: duplex purchased for $300,000 with $60,000 down generates $800/month net cash flow after mortgage and expenses", "Online course income: financial educator creates a $200 course; sells 50 per month = $10,000/month semi-passive income with only customer service maintenance", "Index fund distributions: $1 million in Vanguard Total Market ETF generates roughly $15,000-$18,000 per year in dividends — grows with market returns", "High-yield savings: $100,000 emergency/short-term fund in 5% HYSA generates $5,000/year in interest — small but risk-free income stream", "Business equity income: employee becomes part-owner of growing company; receives profit distributions in addition to salary — income tied to business success"]),
+    practice_problems: JSON.stringify(["Design a plan to build $3,000 per month in passive income within 15 years. What combination of dividend investing, real estate, and other streams would you use? Show the numbers.", "Calculate the capital required to generate $5,000 per month in dividend income at a 3.5% average yield. How much would you need to save per month starting today to reach this in 25 years at 8% return?", "Compare the time investment required to build passive income through index fund dividends versus online course creation versus rental real estate. What are the trade-offs?", "Why does having multiple income streams reduce financial anxiety and risk even when the additional streams are small?"]),
+    estimated_time: 20,
+    quiz: [
+      { question: "What is the key difference between active and passive income?", options: ["Passive income is always higher than active income", "Active income requires direct ongoing time and labor; passive income flows in with little or no ongoing effort", "Active income comes from employment; passive income comes only from investments", "Passive income is tax-free; active income is fully taxed"], correct_answer: 1 },
+      { question: "At a 3% dividend yield, how much capital is needed to generate $30,000 per year in dividend income?", options: ["$300,000", "$500,000", "$1,000,000", "$3,000,000"], correct_answer: 2 },
+      { question: "What makes digital income streams (online courses, software, books) appealing as a secondary income source?", options: ["They always generate more than a full-time salary", "They require significant upfront effort but can generate income for years after initial creation with minimal maintenance", "They are guaranteed to grow without any ongoing work", "They are risk-free and always profitable"], correct_answer: 1 },
+      { question: "Why do financial experts recommend building multiple income streams?", options: ["One income stream is always insufficient legally", "Multiple streams reduce dependence on any single source, increasing financial resilience and accelerating wealth building", "Tax laws require multiple income sources for all working adults", "Multiple income streams eliminate the need for insurance"], correct_answer: 1 },
+      { question: "What category of income does a rental property generating $600/month net cash flow represent?", options: ["Active income — requires full-time management", "Semi-passive income — requires initial investment and some ongoing management but less than a full-time job", "True passive income requiring zero effort", "Speculative income — cannot be relied upon"], correct_answer: 1 }
     ]
   },
   {
     title: "Financial Independence (FIRE)",
     level: "advanced",
     module_number: 10,
-    lesson_number: 7,
-    content: "Financial Independence, Retire Early (FIRE) involves saving and investing aggressively to achieve financial independence much earlier than traditional retirement age. The basic formula is saving 25x annual expenses and withdrawing 4% annually. Variations include Lean FIRE (minimal expenses), Fat FIRE (higher lifestyle), and Coast FIRE (enough saved to grow to retirement needs).",
-    examples: JSON.stringify([
-      "$40k annual expenses × 25 = $1M needed for FIRE",
-      "50% savings rate can achieve FIRE in 15-17 years",
-      "Geographic arbitrage: earning in high-cost, living in low-cost area",
-      "Side hustles and optimization accelerating FIRE timeline"
-    ]),
-    practice_problems: JSON.stringify([
-      "Calculate your FIRE number and timeline",
-      "Identify strategies to increase savings rate",
-      "Plan for healthcare and other considerations in early retirement"
-    ]),
-    estimated_time: 25,
-    quiz: [
-      {
-        question: "What's the basic FIRE formula?",
-        options: ["Save 10x expenses", "Save 25x annual expenses", "Save 50x expenses", "Save $1 million"],
-        correct_answer: 1
-      }
-    ]
-  },
-  {
-    title: "Risk Management for Life",
-    level: "advanced",
-    module_number: 10,
     lesson_number: 8,
-    content: "Life risk management goes beyond investment risk to include career, health, family, and economic risks. Strategies include diversifying income sources, maintaining emergency funds, having appropriate insurance, continuous skill development, and building strong relationships. The goal is protecting and enhancing your ability to generate income and build wealth over decades.",
-    examples: JSON.stringify([
-      "Multiple income streams reducing career risk",
-      "Emergency fund covering 6-12 months expenses",
-      "Continuous learning maintaining career relevance",
-      "Strong professional network providing opportunities"
-    ]),
-    practice_problems: JSON.stringify([
-      "Assess various life risks and mitigation strategies",
-      "Build comprehensive risk management plan",
-      "Regularly review and update risk management approach"
-    ]),
-    estimated_time: 22,
+    content: "Financial Independence, Retire Early (FIRE) is a movement built on the idea that extreme saving and investing in your 30s and 40s can accumulate enough wealth to retire decades before the traditional age 65. The FIRE philosophy is essentially a mathematical framework: if you can live on a small fraction of your income, you need to accumulate far less wealth, and you can reach financial independence much faster.\n\nThe mathematical foundation of FIRE is the savings rate. A person saving 10% of their income (the average American) would need roughly 40 years to retire. A person saving 50% would need only 17 years. A person saving 75% could retire in 7 years. The key insight from Mr. Money Mustache (a popular FIRE blogger) is that what matters is not how much you earn but how large the gap is between income and spending.\n\nThe 4% rule (covered in the Retirement Planning lesson) is central to FIRE: you need 25 times your annual expenses in invested assets to retire. If you live on $40,000 per year, you need $1,000,000 to retire ($40,000 / 4% = $1,000,000). If you reduce your annual expenses to $30,000, you only need $750,000. Every dollar of reduced spending reduces your target portfolio by $25 and accelerates your path to FIRE.\n\nFIRE has several variants. Traditional FIRE targets complete retirement with a full portfolio. Lean FIRE involves retiring on minimal expenses — often $20,000-$30,000 per year — requiring a smaller portfolio. Fat FIRE involves accumulating $2-5 million or more to retire with a comfortable, non-frugal lifestyle. Coast FIRE means accumulating enough that the existing portfolio will grow to your full retirement target without any additional contributions — you only need to earn enough for current expenses.\n\nFIRE requires genuine sacrifices: extreme frugality during working years, geographic flexibility, career focus on high-earning skills, and the psychological discipline to delay gratification. Critics argue early retirees underestimate sequence of returns risk over a 50+ year retirement, healthcare costs before Medicare eligibility, and the risk of underestimating expenses or facing unexpected life events.",
+    examples: JSON.stringify(["Savings rate math: person earning $100,000 saves $60,000 (60% savings rate); needs $40,000 per year in retirement; needs $1M (25x); reaches $1M in approximately 12 years at 7% return", "Lean FIRE: couple in rural area living on $25,000/year needs only $625,000 to retire; achievable with relatively modest income and high savings", "Fat FIRE: tech professional accumulating $4 million; spending $120,000/year in retirement without frugality; 4% rule provides $160,000/year — buffer above spending", "Coast FIRE example: at 35, accumulate $250,000; at 7% growth with no additional contributions, grows to $1.35 million by age 65 — already have enough; only need to cover current expenses", "Healthcare before Medicare: retiring at 45 means 20 years of private health insurance before Medicare eligibility at 65 — can cost $15,000-$25,000+ per year for a family", "Geographic arbitrage: FIRE achiever moves from San Francisco ($80,000 annual expenses) to Portugal ($30,000 annual expenses) — same lifestyle, vastly different retirement requirement"]),
+    practice_problems: JSON.stringify(["If you save 50% of your $90,000 income ($45,000 saved, living on $45,000), using the 4% rule, what is your FIRE number? At 8% annual return, how many years until you reach it?", "Compare Lean FIRE ($30,000/year spending) versus Fat FIRE ($100,000/year spending). Calculate the required portfolio for each. Which is more achievable and what are the lifestyle trade-offs?", "What is Coast FIRE? At 32, you have $150,000 invested. At 7% return, what will this grow to by age 62 without additional contributions? If you need $1.2 million to retire, have you already reached Coast FIRE?", "What are the three most significant risks of retiring very early (age 40-45) that traditional retirement planning does not face?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "What's included in comprehensive life risk management?",
-        options: ["Only investment risk", "Career, health, family, and economic risks", "Only insurance", "Only emergency funds"],
-        correct_answer: 1
-      }
+      { question: "What is FIRE?", options: ["A strategy of investing in energy stocks", "Financial Independence, Retire Early — building enough wealth to retire decades before traditional retirement age", "A portfolio allocation model using fixed income, real estate, and equities", "A tax strategy for high-income earners"], correct_answer: 1 },
+      { question: "Using the 4% rule, what is the FIRE number (portfolio needed) to retire on $48,000 per year?", options: ["$480,000", "$960,000", "$1,200,000", "$2,400,000"], correct_answer: 2 },
+      { question: "What is Coast FIRE?", options: ["Retiring in a coastal city for lower costs", "Having accumulated enough that the portfolio will grow to your full retirement target without additional contributions", "Investing in REITs and coastal real estate", "A FIRE variant that requires working part-time indefinitely"], correct_answer: 1 },
+      { question: "What is the most significant financial risk unique to FIRE compared to traditional retirement at 65?", options: ["Investing too conservatively", "A 50+ year retirement horizon with much higher sequence of returns risk and healthcare costs for 20+ years before Medicare", "Not enough time to accumulate sufficient wealth", "Overpaying taxes on early withdrawals"], correct_answer: 1 },
+      { question: "According to FIRE math, which factor MOST reduces how many years you need to work?", options: ["Earning a higher income", "Choosing better investments", "Increasing your savings rate — the gap between income and spending", "Retiring to a lower cost country"], correct_answer: 2 }
     ]
   },
   {
-    title: "Net Worth Tracking",
+    title: "Creating a Personal Financial Plan",
     level: "advanced",
     module_number: 10,
     lesson_number: 9,
-    content: "Net worth is total assets minus total liabilities - the true measure of financial progress. Regular tracking helps identify trends, motivate continued progress, and guide financial decisions. Assets include investments, real estate, and valuable possessions. Liabilities include mortgages, loans, and credit card debt. Focus on increasing assets and reducing liabilities over time.",
-    examples: JSON.stringify([
-      "Assets: $500k investments + $300k home = $800k",
-      "Liabilities: $200k mortgage + $10k car loan = $210k",
-      "Net worth: $800k - $210k = $590k",
-      "Monthly tracking showing steady progress over time"
-    ]),
-    practice_problems: JSON.stringify([
-      "Calculate your current net worth",
-      "Set up system for regular net worth tracking",
-      "Identify strategies to increase net worth faster"
-    ]),
-    estimated_time: 19,
+    content: "A personal financial plan is a comprehensive, written document that maps your current financial situation, defines your financial goals, and outlines the specific strategies and steps to achieve those goals. It integrates all aspects of personal finance — budgeting, debt management, insurance, investing, tax planning, and retirement — into a coherent whole. Having a written financial plan dramatically increases the probability of achieving financial goals.\n\nA complete personal financial plan has seven components. First, a net worth statement — list all assets (savings, investments, retirement accounts, property, cars) and subtract all liabilities (mortgage, student loans, car loans, credit card debt) to determine your current financial position. Second, a cash flow analysis — calculate monthly income versus expenses and your current savings rate. Third, financial goals — specific, measurable, time-bound goals: pay off $25,000 in student loans by December 2026, accumulate $500,000 in retirement accounts by age 50, purchase a home by age 35.\n\nFourth, a debt management strategy — prioritize debts by interest rate (avalanche method: pay highest rate first) or by balance (snowball method: pay smallest balance first for psychological wins). Fifth, an insurance review — ensure adequate life, disability, health, and liability coverage. Sixth, an investment strategy — define asset allocation, account types, specific funds, and contribution targets. Seventh, an estate plan — ensure basic documents (will, beneficiaries, power of attorney, healthcare directive) are in place.\n\nThe financial planning process is iterative. Major life events — marriage, children, job change, inheritance, divorce, death of a spouse — require plan updates. Annual reviews ensure the plan remains aligned with current circumstances and goals. Market changes may require rebalancing; tax law changes may create new opportunities.\n\nProfessional financial planners can be valuable — look for fee-only Certified Financial Planners (CFP) who are fiduciaries (legally required to act in your interest, not earn commissions). For those with straightforward finances, free tools and the knowledge from a curriculum like this one provide sufficient guidance. The key is not the complexity of the plan but the consistency of execution.",
+    examples: JSON.stringify(["Net worth calculation: assets ($450,000 home equity, $120,000 retirement accounts, $15,000 savings) minus liabilities ($180,000 mortgage, $22,000 car loan, $8,000 credit card) = $375,000 net worth", "SMART goal example: save $6,500 per month for 18 months to accumulate $117,000 down payment for first home by March 2026", "Debt avalanche: $8,000 credit card at 22% APR, $15,000 student loan at 5.5%, $18,000 car loan at 7% — attack 22% card first, then 7% car, then 5.5% student loan", "Annual plan review: received $30,000 raise — update contributions to maximize 401(k), increase taxable investing, reassess goals", "Fee-only CFP: certified financial planner who charges hourly or flat fee rather than earning commissions — aligned incentives with client", "Life event trigger: marriage requires updating beneficiaries, combining or separating finances, reviewing insurance needs, and tax planning for married filing jointly"]),
+    practice_problems: JSON.stringify(["Calculate your current net worth. List all assets at current market value and all liabilities at current payoff amounts. What is your number?", "Set three SMART financial goals — one short-term (1 year), one medium-term (3-5 years), and one long-term (10+ years). For each, specify the exact dollar amount, the deadline, and the monthly savings or action required.", "Build a simple one-page financial plan. Include: net worth, monthly cash flow, top financial priority, investment allocation, and one insurance gap to address.", "What is the difference between a fee-only financial planner and a commission-based advisor? Why does this distinction matter for the advice you receive?"]),
+    estimated_time: 20,
     quiz: [
-      {
-        question: "How is net worth calculated?",
-        options: ["Assets only", "Assets minus liabilities", "Income minus expenses", "Investments only"],
-        correct_answer: 1
-      }
+      { question: "What is a net worth statement?", options: ["Your annual income minus annual taxes", "Total assets minus total liabilities — your overall financial position at a point in time", "The value of your investment portfolio only", "Your savings rate expressed as a percentage"], correct_answer: 1 },
+      { question: "What is the debt avalanche method?", options: ["Paying the smallest debt first regardless of interest rate", "Paying the highest interest rate debt first to minimize total interest paid", "Paying all debts equally each month", "Refinancing all debts to a single lower rate"], correct_answer: 1 },
+      { question: "What does SMART stand for in goal-setting?", options: ["Strategic, Meaningful, Achievable, Relevant, Tested", "Specific, Measurable, Achievable, Relevant, Time-bound", "Savings, Management, Allocation, Return, Tracking", "Simple, Motivating, Actionable, Realistic, Timed"], correct_answer: 1 },
+      { question: "What is a fiduciary financial advisor?", options: ["An advisor who earns commissions on products sold", "An advisor who is legally required to act in the client's best interest rather than earn commissions", "An advisor who specializes in estate planning", "An advisor with a minimum of 20 years experience"], correct_answer: 1 },
+      { question: "When should you update your personal financial plan?", options: ["Only once at age 65 before retirement", "After major life events and annually to ensure it remains aligned with current circumstances and goals", "Every five years minimum", "Only when your net worth doubles"], correct_answer: 1 }
     ]
   },
-  {
-    title: "Building Wealth Over Decades",
-    level: "advanced",
-    module_number: 10,
-    lesson_number: 10,
-    content: "Building significant wealth requires decades of consistent saving, investing, and compound growth. Key principles include starting early, living below your means, investing in appreciating assets, avoiding lifestyle inflation, and staying disciplined through market cycles. The combination of time, compound returns, and consistent contributions creates extraordinary wealth over 30-40 year periods.",
-    examples: JSON.stringify([
-      "$500/month from age 25-65 = $1.37M at 8% return",
-      "Starting at 35 instead of 25 cuts final amount nearly in half",
-      "Lifestyle inflation preventing wealth accumulation",
-      "Staying invested through multiple market cycles"
-    ]),
-    practice_problems: JSON.stringify([
-      "Model wealth building scenarios over different timeframes",
-      "Identify and avoid wealth-destroying behaviors",
-      "Create long-term wealth building plan and stick to it"
-    ]),
-    estimated_time: 24,
-    quiz: [
-      {
-        question: "What's the most important factor in building wealth over decades?",
-        options: ["Perfect market timing", "Starting early and staying consistent", "High-risk investments", "Avoiding all investments"],
-        correct_answer: 1
-      }
-    ]
-  }
 ];
