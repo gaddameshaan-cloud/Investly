@@ -41,30 +41,18 @@ function QuizView({ user }) {
       setLesson(lessonResponse.data);
       setQuiz(quizResponse.data);
       
-      // Parse quiz questions
+      // Parse quiz questions (may already be array or a JSON string)
       let quizQuestions = [];
       try {
-        quizQuestions = JSON.parse(quizResponse.data.questions || '[]');
+        const raw = quizResponse.data.questions;
+        if (Array.isArray(raw)) {
+          quizQuestions = raw;
+        } else {
+          quizQuestions = JSON.parse(raw || '[]');
+        }
       } catch (e) {
         console.error('Error parsing quiz questions:', e);
-        // Fallback to sample questions
-        quizQuestions = [
-          {
-            question: "What is the primary function of money?",
-            options: ["Store of value", "Medium of exchange", "Unit of account", "All of the above"],
-            correct_answer: 3
-          },
-          {
-            question: "What does compound interest mean?",
-            options: ["Interest on principal only", "Interest on interest", "Fixed interest rate", "Variable interest rate"],
-            correct_answer: 1
-          },
-          {
-            question: "What is diversification?",
-            options: ["Putting all money in one stock", "Spreading investments across different assets", "Only investing in bonds", "Avoiding the stock market"],
-            correct_answer: 1
-          }
-        ];
+        quizQuestions = [];
       }
       
       setQuestions(quizQuestions);
@@ -72,25 +60,6 @@ function QuizView({ user }) {
     } catch (error) {
       console.error('Error fetching quiz data:', error);
       setError(error.response?.data?.error || 'Failed to load quiz');
-      
-      // Set fallback questions if API fails
-      setQuestions([
-        {
-          question: "What is the primary function of money?",
-          options: ["Store of value", "Medium of exchange", "Unit of account", "All of the above"],
-          correct_answer: 3
-        },
-        {
-          question: "What does compound interest mean?",
-          options: ["Interest on principal only", "Interest on interest", "Fixed interest rate", "Variable interest rate"],
-          correct_answer: 1
-        },
-        {
-          question: "What is diversification?",
-          options: ["Putting all money in one stock", "Spreading investments across different assets", "Only investing in bonds", "Avoiding the stock market"],
-          correct_answer: 1
-        }
-      ]);
     } finally {
       setLoading(false);
     }
