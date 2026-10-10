@@ -59,18 +59,18 @@ function LessonView({ user }) {
     const token = localStorage.getItem('token');
 
     try {
-      await axios.post('/api/progress', {
-        lesson_id: id,
+      await axios.post(`/api/progress/lesson/${id}`, {
         completed: true,
         time_spent: timeSpent
       }, {
         headers: { Authorization: `Bearer ${token}` }
       });
-
-      navigate(`/quiz/${id}`);
     } catch (error) {
       console.error('Error saving progress:', error);
+      // Don't block navigation even if progress save fails
     }
+
+    navigate(`/quiz/${id}`);
   };
 
   if (loading) {
