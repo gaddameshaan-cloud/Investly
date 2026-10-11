@@ -165,7 +165,7 @@ function AuthPage({ onLogin }) {
                     fontFamily: 'Space Grotesk, sans-serif',
                     color: '#1e293b'
                   }}>
-                    500+ Lessons
+                    80+ Lessons
                   </h3>
                   <p style={{ 
                     color: '#64748b', 
