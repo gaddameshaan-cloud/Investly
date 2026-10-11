@@ -6,13 +6,14 @@ import { dirname, join } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Load environment variables FIRST before importing anything else
-const result = dotenv.config({ path: join(__dirname, '../../.env') });
-
-if (result.error) {
-  console.error('❌ Error loading .env file:', result.error);
-} else {
-  console.log('✅ .env file loaded successfully');
+// Load environment variables - only needed locally (Vercel injects them automatically)
+if (process.env.VERCEL !== '1') {
+  const result = dotenv.config({ path: join(__dirname, '../../.env') });
+  if (result.error) {
+    console.error('❌ Error loading .env file:', result.error);
+  } else {
+    console.log('✅ .env file loaded successfully');
+  }
 }
 
 import express from 'express';
