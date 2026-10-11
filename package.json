@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.89.0",
+    "@vitejs/plugin-react": "^4.2.1",
     "axios": "^1.6.2",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
@@ -30,12 +31,11 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.0",
     "recharts": "^2.10.3",
-    "sqlite3": "^5.1.6"
+    "sqlite3": "^5.1.6",
+    "vite": "^5.0.8"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.2.1",
     "concurrently": "^8.2.2",
-    "nodemon": "^3.0.2",
-    "vite": "^5.0.8"
+    "nodemon": "^3.0.2"
   }
 }
