@@ -30,7 +30,7 @@ function LandingPage() {
   ];
 
   const stats = [
-    { number: "500+", label: "Expert Lessons", icon: BookOpen, color: "#3b82f6" },
+    { number: "80+", label: "Expert Lessons", icon: BookOpen, color: "#3b82f6" },
     { number: "24/7", label: "AI Support", icon: Brain, color: "#8b5cf6" },
     { number: "100%", label: "Free Access", icon: Shield, color: "#22c55e" },
     { number: "95%", label: "Success Rate", icon: Trophy, color: "#f59e0b" }
@@ -357,22 +357,6 @@ function LandingPage() {
                 display: 'flex',
                 alignItems: 'center',
                 gap: '8px',
-                background: 'rgba(34, 197, 94, 0.1)',
-                padding: '8px 16px',
-                borderRadius: '20px',
-                fontSize: '13px',
-                color: '#059669',
-                fontWeight: '700',
-                border: '1px solid rgba(34, 197, 94, 0.2)',
-                boxShadow: '0 4px 15px rgba(34, 197, 94, 0.1)'
-              }}>
-                <Shield size={14} />
-                Trusted by Hundreds
-              </div>
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
                 background: 'rgba(59, 130, 246, 0.1)',
                 padding: '8px 16px',
                 borderRadius: '20px',
@@ -494,7 +478,7 @@ function LandingPage() {
                   color: '#3b82f6',
                   fontFamily: 'Space Grotesk, sans-serif',
                   marginBottom: '4px'
-                }}>500+</div>
+                }}>80+</div>
                 <div style={{ fontSize: '14px', color: '#64748b', fontWeight: '600' }}>Expert Lessons</div>
               </div>
               <div>
@@ -767,7 +751,7 @@ function LandingPage() {
             {[
               {
                 icon: BookOpen,
-                title: '500+ Expert Lessons',
+                title: '80+ Expert Lessons',
                 description: 'Comprehensive curriculum from budgeting basics to advanced investment strategies, crafted by financial experts',
                 color: '#3b82f6',
                 gradient: 'linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(56, 189, 248, 0.02) 100%)',
@@ -893,344 +877,6 @@ function LandingPage() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Enhanced Testimonials Section */}
-      <div style={{
-        background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)',
-        padding: '100px 0',
-        position: 'relative',
-        zIndex: 1
-      }}>
-        <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 40px', textAlign: 'center' }}>
-          <div className="scroll-animate" style={{
-            marginBottom: '60px',
-            opacity: 0,
-            transform: 'translateY(40px)',
-            transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)'
-          }}>
-            <h2 style={{
-              fontSize: '48px',
-              fontWeight: '900',
-              color: '#1e293b',
-              marginBottom: '16px',
-              fontFamily: 'Space Grotesk, sans-serif'
-            }}>
-              What Our Students Say
-            </h2>
-            <p style={{
-              fontSize: '18px',
-              color: '#64748b',
-              maxWidth: '500px',
-              margin: '0 auto'
-            }}>
-              Real stories from students who transformed their financial future
-            </p>
-          </div>
-
-          {/* Testimonial Card */}
-          <div className="scroll-animate" style={{
-            background: 'white',
-            borderRadius: '24px',
-            padding: '48px',
-            boxShadow: '0 20px 60px rgba(0, 0, 0, 0.1)',
-            position: 'relative',
-            overflow: 'hidden',
-            opacity: 0,
-            transform: 'translateY(40px)',
-            transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s'
-          }}>
-            <Quote size={40} style={{ 
-              color: '#3b82f6', 
-              marginBottom: '24px',
-              opacity: 0.3
-            }} />
-            
-            <p style={{
-              fontSize: '20px',
-              color: '#1e293b',
-              lineHeight: '1.6',
-              marginBottom: '32px',
-              fontStyle: 'italic',
-              fontWeight: '500'
-            }}>
-              "{testimonials[currentTestimonial].content}"
-            </p>
-
-            <div style={{
-              display: 'flex',
-              justifyContent: 'center',
-              marginBottom: '20px'
-            }}>
-              {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                <Star key={i} size={20} style={{ color: '#f59e0b', fill: '#f59e0b' }} />
-              ))}
-            </div>
-
-            <div>
-              <div style={{
-                fontSize: '18px',
-                fontWeight: '700',
-                color: '#1e293b',
-                marginBottom: '4px'
-              }}>
-                {testimonials[currentTestimonial].name}
-              </div>
-              <div style={{
-                fontSize: '14px',
-                color: '#64748b',
-                fontWeight: '500'
-              }}>
-                {testimonials[currentTestimonial].role}
-              </div>
-            </div>
-
-            {/* Testimonial indicators */}
-            <div style={{
-              display: 'flex',
-              justifyContent: 'center',
-              gap: '8px',
-              marginTop: '32px'
-            }}>
-              {testimonials.map((_, idx) => (
-                <div key={idx} style={{
-                  width: '8px',
-                  height: '8px',
-                  borderRadius: '50%',
-                  background: idx === currentTestimonial ? '#3b82f6' : '#cbd5e1',
-                  transition: 'all 0.3s ease'
-                }}></div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Testimonials Section */}
-      <div style={{ 
-        background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)',
-        padding: '100px 0',
-        position: 'relative',
-        overflow: 'hidden'
-      }}>
-        {/* Background Pattern */}
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundImage: `radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
-                           radial-gradient(circle at 75% 75%, rgba(139, 92, 246, 0.05) 0%, transparent 50%)`,
-          pointerEvents: 'none'
-        }}></div>
-
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 40px', position: 'relative', zIndex: 1 }}>
-          <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-            <h2 style={{
-              fontSize: '56px',
-              fontWeight: '950',
-              color: '#1e293b',
-              marginBottom: '20px',
-              fontFamily: 'Space Grotesk, sans-serif',
-              letterSpacing: '-2px'
-            }}>
-              What Students Say
-            </h2>
-            <p style={{
-              fontSize: '18px',
-              color: '#64748b',
-              maxWidth: '500px',
-              margin: '0 auto'
-            }}>
-              Real stories from students who transformed their financial future
-            </p>
-          </div>
-
-          {/* Testimonials Grid */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-            gap: '32px',
-            marginBottom: '60px'
-          }}>
-            {[
-              {
-                name: "Sarah Chen",
-                role: "Marketing Manager",
-                content: "Investly transformed my understanding of investing. The AI tutor made complex concepts so easy to grasp!",
-                rating: 5,
-                avatar: "SC"
-              },
-              {
-                name: "Michael Rodriguez",
-                role: "Software Engineer", 
-                content: "Finally, a platform that explains finance in plain English. I went from zero to confident investor in 3 months.",
-                rating: 5,
-                avatar: "MR"
-              },
-              {
-                name: "Emily Johnson",
-                role: "Teacher",
-                content: "The structured curriculum and progress tracking kept me motivated. Best investment in my financial education!",
-                rating: 5,
-                avatar: "EJ"
-              }
-            ].map((testimonial, idx) => (
-              <div key={idx} style={{
-                background: 'white',
-                padding: '32px',
-                borderRadius: '20px',
-                boxShadow: '0 12px 40px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(226, 232, 240, 0.6)',
-                position: 'relative',
-                transition: 'all 0.3s ease',
-                animation: `slideInUp 0.8s ease-out ${idx * 0.2}s both`
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-8px)';
-                e.currentTarget.style.boxShadow = '0 20px 60px rgba(0, 0, 0, 0.15)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.08)';
-              }}>
-                
-                {/* Quote Icon */}
-                <div style={{
-                  position: 'absolute',
-                  top: '20px',
-                  right: '20px',
-                  width: '40px',
-                  height: '40px',
-                  background: 'linear-gradient(135deg, #3b82f6 0%, #38bdf8 100%)',
-                  borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  opacity: 0.1
-                }}>
-                  <Quote size={20} style={{ color: 'white' }} />
-                </div>
-
-                {/* Rating Stars */}
-                <div style={{ display: 'flex', gap: '4px', marginBottom: '16px' }}>
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} size={16} style={{ color: '#fbbf24', fill: '#fbbf24' }} />
-                  ))}
-                </div>
-
-                {/* Content */}
-                <p style={{
-                  fontSize: '16px',
-                  color: '#374151',
-                  lineHeight: '1.7',
-                  marginBottom: '24px',
-                  fontStyle: 'italic'
-                }}>
-                  "{testimonial.content}"
-                </p>
-
-                {/* Author */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <div style={{
-                    width: '48px',
-                    height: '48px',
-                    background: 'linear-gradient(135deg, #3b82f6 0%, #38bdf8 100%)',
-                    borderRadius: '50%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'white',
-                    fontWeight: '700',
-                    fontSize: '16px'
-                  }}>
-                    {testimonial.avatar}
-                  </div>
-                  <div>
-                    <div style={{
-                      fontSize: '16px',
-                      fontWeight: '700',
-                      color: '#1e293b',
-                      marginBottom: '2px'
-                    }}>
-                      {testimonial.name}
-                    </div>
-                    <div style={{
-                      fontSize: '14px',
-                      color: '#64748b'
-                    }}>
-                      {testimonial.role}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Trust Stats */}
-          <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '60px',
-            flexWrap: 'wrap'
-          }}>
-            <div style={{ textAlign: 'center' }}>
-              <div style={{
-                fontSize: '36px',
-                fontWeight: '900',
-                color: '#3b82f6',
-                fontFamily: 'Space Grotesk, sans-serif',
-                marginBottom: '8px'
-              }}>
-                4.9/5
-              </div>
-              <div style={{
-                fontSize: '14px',
-                color: '#64748b',
-                fontWeight: '600'
-              }}>
-                Average Rating
-              </div>
-            </div>
-            <div style={{ textAlign: 'center' }}>
-              <div style={{
-                fontSize: '36px',
-                fontWeight: '900',
-                color: '#22c55e',
-                fontFamily: 'Space Grotesk, sans-serif',
-                marginBottom: '8px'
-              }}>
-                500+
-              </div>
-              <div style={{
-                fontSize: '14px',
-                color: '#64748b',
-                fontWeight: '600'
-              }}>
-                Happy Students
-              </div>
-            </div>
-            <div style={{ textAlign: 'center' }}>
-              <div style={{
-                fontSize: '36px',
-                fontWeight: '900',
-                color: '#8b5cf6',
-                fontFamily: 'Space Grotesk, sans-serif',
-                marginBottom: '8px'
-              }}>
-              95%
-              </div>
-              <div style={{
-                fontSize: '14px',
-                color: '#64748b',
-                fontWeight: '600'
-              }}>
-                Success Rate
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -1609,7 +1255,7 @@ function LandingPage() {
                 flexWrap: 'wrap'
               }}>
                 {[
-                  { icon: BookOpen, text: '500+ Expert Lessons', color: '#3b82f6' },
+                  { icon: BookOpen, text: '80+ Expert Lessons', color: '#3b82f6' },
                   { icon: Brain, text: 'AI-Powered Tutoring', color: '#8b5cf6' },
                   { icon: BarChart3, text: 'Progress Tracking', color: '#22c55e' }
                 ].map((feature, idx) => (
