@@ -159,9 +159,7 @@ function ContactPage() {
         display: 'flex',
         alignItems: 'center',
         gap: '32px',
-        transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
-        opacity: 0,
-        transform: 'translateX(-50%) translateY(-100px)'
+        transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <div style={{
