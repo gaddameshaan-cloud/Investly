@@ -63,9 +63,13 @@ app.use('/api/analytics', analyticsRoutes);
 app.use('/api/conversations', conversationsRoutes);
 app.use('/api/contact', contactRoutes);
 
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`);
-  console.log(`📊 Database: Supabase PostgreSQL`);
-  console.log(`✅ All data stored in cloud database`);
-  console.log(`🔗 Health check: http://localhost:${PORT}/health`);
-});
+if (process.env.VERCEL !== '1') {
+  app.listen(PORT, () => {
+    console.log(`🚀 Server running on port ${PORT}`);
+    console.log(`📊 Database: Supabase PostgreSQL`);
+    console.log(`✅ All data stored in cloud database`);
+    console.log(`🔗 Health check: http://localhost:${PORT}/health`);
+  });
+}
+
+export default app;
