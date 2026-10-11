@@ -1,26 +1,13 @@
 import express from 'express';
 import OpenAI from 'openai';
-import db from '../database/db.js';
+import { supabaseAdmin } from '../database/supabase.js';
 import { authenticateToken } from '../middleware/auth.js';
 
 const router = express.Router();
 
-// Initialize OpenAI - hardcode temporarily to test
+// Initialize OpenAI from environment variable only
 let openai = null;
-
-// Try to get from environment first
-let apiKey = process.env.OPENAI_API_KEY;
-
-// If not in environment, use hardcoded (temporary for testing)
-if (!apiKey || apiKey === 'your_openai_api_key_here') {
-  apiKey = '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';
-  console.log('⚠️ Using hardcoded API key (env not loaded)');
-}
-
-console.log('🔑 Checking OpenAI API Key...');
-console.log('API Key exists:', !!apiKey);
-console.log('API Key length:', apiKey?.length || 0);
-console.log('API Key starts with sk-:', apiKey?.startsWith('sk-'));
+const apiKey = process.env.OPENAI_API_KEY;
 
 if (apiKey && apiKey.startsWith('sk-')) {
   try {
@@ -126,14 +113,13 @@ Always be accurate, helpful, and age-appropriate for students aged 12-18.`;
     const response = completion.choices[0].message.content;
     console.log('✅ OpenAI API response received');
 
-    // Save interaction to database
-    db.run(
-      'INSERT INTO ai_interactions (user_id, question, response, context) VALUES (?, ?, ?, ?)',
-      [req.user.id, message, response, null],
-      (err) => {
-        if (err) console.error('Database error:', err);
-      }
-    );
+    // Save interaction to Supabase (best effort — don't block response)
+    supabaseAdmin.from('ai_interactions').insert({
+      user_id: req.user.id,
+      question: message,
+      response,
+      context: null
+    }).then(() => {}).catch(err => console.error('DB error:', err));
 
     res.json({ response });
 
@@ -158,23 +144,24 @@ Always be accurate, helpful, and age-appropriate for students aged 12-18.`;
 });
 
 router.post('/analyze-performance', authenticateToken, async (req, res) => {
-  db.all(
-    `SELECT qa.score, qa.completed_at, l.title, l.level 
-     FROM quiz_attempts qa 
-     JOIN quizzes q ON qa.quiz_id = q.id 
-     JOIN lessons l ON q.lesson_id = l.id 
-     WHERE qa.user_id = ? 
-     ORDER BY qa.completed_at DESC LIMIT 10`,
-    [req.user.id],
-    async (err, attempts) => {
-      if (err) {
-        return res.status(500).json({ error: 'Database error' });
-      }
+  const { data: attempts, error } = await supabaseAdmin
+    .from('quiz_attempts')
+    .select(`score, completed_at, quizzes(lesson_id, lessons(title, level))`)
+    .eq('user_id', req.user.id)
+    .order('completed_at', { ascending: false })
+    .limit(10);
 
-      const analysis = generatePerformanceAnalysis(attempts);
-      res.json({ analysis });
-    }
-  );
+  if (error) return res.status(500).json({ error: 'Database error' });
+
+  const flat = (attempts || []).map(a => ({
+    score: a.score,
+    completed_at: a.completed_at,
+    title: a.quizzes?.lessons?.title || 'Unknown',
+    level: a.quizzes?.lessons?.level || 'beginner'
+  }));
+
+  const analysis = generatePerformanceAnalysis(flat);
+  res.json({ analysis });
 });
 
 function generatePerformanceAnalysis(attempts) {

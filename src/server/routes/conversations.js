@@ -1,182 +1,140 @@
 import express from 'express';
-import db from '../database/db.js';
+import { supabaseAdmin } from '../database/supabase.js';
 import { authenticateToken } from '../middleware/auth.js';
 
 const router = express.Router();
 
 // Get all conversations for a user
-router.get('/', authenticateToken, (req, res) => {
-  db.all(
-    `SELECT c.*, 
-      (SELECT content FROM conversation_messages 
-       WHERE conversation_id = c.id 
-       ORDER BY created_at ASC LIMIT 1) as first_message,
-      (SELECT COUNT(*) FROM conversation_messages 
-       WHERE conversation_id = c.id) as message_count
-     FROM conversations c 
-     WHERE c.user_id = ? 
-     ORDER BY c.updated_at DESC`,
-    [req.user.id],
-    (err, conversations) => {
-      if (err) {
-        return res.status(500).json({ error: 'Failed to fetch conversations' });
-      }
-      res.json(conversations);
-    }
-  );
+router.get('/', authenticateToken, async (req, res) => {
+  try {
+    const { data, error } = await supabaseAdmin
+      .from('conversations')
+      .select(`*, conversation_messages(count)`)
+      .eq('user_id', req.user.id)
+      .order('updated_at', { ascending: false });
+
+    if (error) return res.status(500).json({ error: 'Failed to fetch conversations' });
+    res.json(data || []);
+  } catch (err) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
 });
 
 // Get a specific conversation with all messages
-router.get('/:id', authenticateToken, (req, res) => {
-  const conversationId = req.params.id;
+router.get('/:id', authenticateToken, async (req, res) => {
+  try {
+    const { data: conversation, error } = await supabaseAdmin
+      .from('conversations')
+      .select('*')
+      .eq('id', req.params.id)
+      .eq('user_id', req.user.id)
+      .single();
 
-  // First verify the conversation belongs to the user
-  db.get(
-    'SELECT * FROM conversations WHERE id = ? AND user_id = ?',
-    [conversationId, req.user.id],
-    (err, conversation) => {
-      if (err || !conversation) {
-        return res.status(404).json({ error: 'Conversation not found' });
-      }
+    if (error || !conversation) return res.status(404).json({ error: 'Conversation not found' });
 
-      // Get all messages for this conversation
-      db.all(
-        'SELECT * FROM conversation_messages WHERE conversation_id = ? ORDER BY created_at ASC',
-        [conversationId],
-        (err, messages) => {
-          if (err) {
-            return res.status(500).json({ error: 'Failed to fetch messages' });
-          }
+    const { data: messages } = await supabaseAdmin
+      .from('conversation_messages')
+      .select('*')
+      .eq('conversation_id', req.params.id)
+      .order('created_at', { ascending: true });
 
-          res.json({
-            ...conversation,
-            messages: messages
-          });
-        }
-      );
-    }
-  );
+    res.json({ ...conversation, messages: messages || [] });
+  } catch (err) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
 });
 
 // Create a new conversation
-router.post('/', authenticateToken, (req, res) => {
-  const { title, firstMessage } = req.body;
+router.post('/', authenticateToken, async (req, res) => {
+  try {
+    const { title, firstMessage } = req.body;
 
-  db.run(
-    'INSERT INTO conversations (user_id, title) VALUES (?, ?)',
-    [req.user.id, title || 'New Conversation'],
-    function(err) {
-      if (err) {
-        return res.status(500).json({ error: 'Failed to create conversation' });
-      }
+    const { data: conversation, error } = await supabaseAdmin
+      .from('conversations')
+      .insert({ user_id: req.user.id, title: title || 'New Conversation' })
+      .select()
+      .single();
 
-      const conversationId = this.lastID;
+    if (error) return res.status(500).json({ error: 'Failed to create conversation' });
 
-      // Add the first message if provided
-      if (firstMessage) {
-        db.run(
-          'INSERT INTO conversation_messages (conversation_id, role, content) VALUES (?, ?, ?)',
-          [conversationId, 'user', firstMessage],
-          (err) => {
-            if (err) console.error('Error adding first message:', err);
-          }
-        );
-      }
-
-      res.json({
-        id: conversationId,
-        user_id: req.user.id,
-        title: title || 'New Conversation',
-        created_at: new Date().toISOString(),
-        updated_at: new Date().toISOString()
+    if (firstMessage) {
+      await supabaseAdmin.from('conversation_messages').insert({
+        conversation_id: conversation.id,
+        role: 'user',
+        content: firstMessage
       });
     }
-  );
+
+    res.json(conversation);
+  } catch (err) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
 });
 
 // Add a message to a conversation
-router.post('/:id/messages', authenticateToken, (req, res) => {
-  const conversationId = req.params.id;
-  const { role, content } = req.body;
+router.post('/:id/messages', authenticateToken, async (req, res) => {
+  try {
+    const { role, content } = req.body;
 
-  // Verify conversation belongs to user
-  db.get(
-    'SELECT * FROM conversations WHERE id = ? AND user_id = ?',
-    [conversationId, req.user.id],
-    (err, conversation) => {
-      if (err || !conversation) {
-        return res.status(404).json({ error: 'Conversation not found' });
-      }
+    const { data: conversation, error: convError } = await supabaseAdmin
+      .from('conversations')
+      .select('id')
+      .eq('id', req.params.id)
+      .eq('user_id', req.user.id)
+      .single();
 
-      // Add the message
-      db.run(
-        'INSERT INTO conversation_messages (conversation_id, role, content) VALUES (?, ?, ?)',
-        [conversationId, role, content],
-        function(err) {
-          if (err) {
-            return res.status(500).json({ error: 'Failed to add message' });
-          }
+    if (convError || !conversation) return res.status(404).json({ error: 'Conversation not found' });
 
-          // Update conversation's updated_at timestamp
-          db.run(
-            'UPDATE conversations SET updated_at = CURRENT_TIMESTAMP WHERE id = ?',
-            [conversationId]
-          );
+    const { data: message, error } = await supabaseAdmin
+      .from('conversation_messages')
+      .insert({ conversation_id: req.params.id, role, content })
+      .select()
+      .single();
 
-          res.json({
-            id: this.lastID,
-            conversation_id: conversationId,
-            role,
-            content,
-            created_at: new Date().toISOString()
-          });
-        }
-      );
-    }
-  );
+    if (error) return res.status(500).json({ error: 'Failed to add message' });
+
+    await supabaseAdmin
+      .from('conversations')
+      .update({ updated_at: new Date().toISOString() })
+      .eq('id', req.params.id);
+
+    res.json(message);
+  } catch (err) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
 });
 
 // Update conversation title
-router.patch('/:id', authenticateToken, (req, res) => {
-  const conversationId = req.params.id;
-  const { title } = req.body;
+router.patch('/:id', authenticateToken, async (req, res) => {
+  try {
+    const { title } = req.body;
+    const { error } = await supabaseAdmin
+      .from('conversations')
+      .update({ title, updated_at: new Date().toISOString() })
+      .eq('id', req.params.id)
+      .eq('user_id', req.user.id);
 
-  db.run(
-    'UPDATE conversations SET title = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ? AND user_id = ?',
-    [title, conversationId, req.user.id],
-    function(err) {
-      if (err) {
-        return res.status(500).json({ error: 'Failed to update conversation' });
-      }
-
-      if (this.changes === 0) {
-        return res.status(404).json({ error: 'Conversation not found' });
-      }
-
-      res.json({ success: true });
-    }
-  );
+    if (error) return res.status(500).json({ error: 'Failed to update conversation' });
+    res.json({ success: true });
+  } catch (err) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
 });
 
 // Delete a conversation
-router.delete('/:id', authenticateToken, (req, res) => {
-  const conversationId = req.params.id;
+router.delete('/:id', authenticateToken, async (req, res) => {
+  try {
+    const { error } = await supabaseAdmin
+      .from('conversations')
+      .delete()
+      .eq('id', req.params.id)
+      .eq('user_id', req.user.id);
 
-  db.run(
-    'DELETE FROM conversations WHERE id = ? AND user_id = ?',
-    [conversationId, req.user.id],
-    function(err) {
-      if (err) {
-        return res.status(500).json({ error: 'Failed to delete conversation' });
-      }
-
-      if (this.changes === 0) {
-        return res.status(404).json({ error: 'Conversation not found' });
-      }
-
-      res.json({ success: true });
-    }
-  );
+    if (error) return res.status(500).json({ error: 'Failed to delete conversation' });
+    res.json({ success: true });
+  } catch (err) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
 });
 
 export default router;
