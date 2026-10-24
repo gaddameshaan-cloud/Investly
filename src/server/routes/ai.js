@@ -5,19 +5,19 @@ import { authenticateToken } from '../middleware/auth.js';
 
 const router = express.Router();
 
-// Initialize OpenAI from environment variable only
-let openai = null;
-const apiKey = process.env.OPENAI_API_KEY;
-
-if (apiKey && apiKey.startsWith('sk-')) {
-  try {
-    openai = new OpenAI({ apiKey });
-    console.log('✅ OpenAI initialized successfully');
-  } catch (error) {
-    console.error('❌ Failed to initialize OpenAI:', error.message);
+// Initialize OpenAI lazily per-request so module load never crashes the function
+function getOpenAIClient() {
+  const apiKey = process.env.OPENAI_API_KEY;
+  if (apiKey && apiKey.startsWith('sk-')) {
+    try {
+      return new OpenAI({ apiKey });
+    } catch (error) {
+      console.error('❌ Failed to initialize OpenAI:', error.message);
+      return null;
+    }
   }
-} else {
   console.log('⚠️ OpenAI API key not configured properly');
+  return null;
 }
 
 // Intelligent fallback responses
@@ -52,12 +52,16 @@ router.post('/chat', authenticateToken, async (req, res) => {
   }
 
   try {
+    const openai = getOpenAIClient();
+
     if (!openai) {
-      console.log('⚠️ OpenAI not configured');
+      console.log('⚠️ OpenAI not configured — returning demo response');
       return res.json({ 
-        response: `⚠️ **AI Tutor in Demo Mode**\n\nTo enable full AI capabilities, add your OpenAI API key to the .env file.\n\nHere's a helpful response:\n\n${getIntelligentResponse(message)}`
+        response: `⚠️ **AI Tutor in Demo Mode**\n\nTo enable full AI capabilities, add your OpenAI API key to the environment variables.\n\nHere's a helpful response:\n\n${getIntelligentResponse(message)}`
       });
     }
+
+    console.log('✅ OpenAI initialized successfully');
 
     const systemPrompt = `You are an expert finance tutor helping students learn about personal finance, investing, and economics. 
 
