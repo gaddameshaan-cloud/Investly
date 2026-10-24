@@ -1,246 +1,185 @@
-# Investly
+﻿# Investly
 
-A finance education platform for students. Learn personal finance, investing, and economics through structured lessons, AI-powered tutoring, quizzes, and an analytics dashboard.
+Investly is a finance education website for students, with lessons on personal finance, investing, and economics, quizzes, progress analytics, and an AI finance tutor.
 
-**Live Demo:** [https://investly-cyan.vercel.app](https://investly-cyan.vercel.app)
-
----
+**Live website:** [investlyeducation.org](https://investlyeducation.org)
 
 ## Features
 
-- **80+ lessons** across 10 modules covering budgeting, investing, stock markets, retirement accounts, and more
-- **5-question quizzes** at the end of every lesson to reinforce learning
-- **AI Tutor** powered by OpenAI GPT-3.5-turbo — ask any finance question in plain English
-- **Analytics dashboard** with visual progress tracking (charts via Recharts)
-- **JWT authentication** — register, login, forgot/reset password, email verification
-- **Onboarding questionnaire** to personalise the learning experience
-- **Progress tracking** — lessons completed, quiz scores, streaks
-- **Dark / light theme** toggle
-- **Contact page** with a backend-handled contact form
-- **Terms of Service and Privacy Policy** pages
-- Deployed as a **Vercel serverless function** (zero-config, no separate server)
+- Lessons organized into modules, with examples and practice material.
+- Lesson quizzes, saved attempts, and completion tracking.
+- Dashboard and analytics for learning progress.
+- AI Tutor powered by OpenAI `gpt-6-luna`, with conversation history, saved chats, and chat deletion.
+- Account registration and login using JWTs and bcrypt password hashing.
+- Onboarding questionnaire, profile settings, and password changes.
+- Light and dark themes.
+- Contact form, Terms of Service, and Privacy Policy pages.
 
----
+## Technology
 
-## Tech Stack
-
-| Layer | Technology |
-|-------|-----------|
+| Area | Technology |
+| --- | --- |
 | Frontend | React 18, Vite 5, React Router 6 |
-| UI / Charts | Lucide React, Recharts |
-| Backend | Express.js (served via Vercel serverless) |
-| Database | Supabase (PostgreSQL) |
-| Auth | JWT (`jsonwebtoken`), bcryptjs |
-| AI | OpenAI API (GPT-3.5-turbo) |
-| Deployment | Vercel |
+| Icons and charts | Lucide React, Recharts |
+| Backend | Express 4, JavaScript ES modules |
+| Active database | Supabase PostgreSQL |
+| Authentication | JSON Web Tokens and bcryptjs |
+| AI | OpenAI Chat Completions API, `gpt-6-luna` |
+| Hosting | Vercel static frontend and serverless API |
 
----
+The active Express app mounts the Supabase route implementations. Older SQLite helpers and alternate route files remain in the repository; they are not the database setup for the current website.
 
-## Local Development Setup
+## Local development
 
-### Prerequisites
+Use Node.js 22 (the version used for local verification), npm, a configured Supabase project, and an OpenAI API key for live tutoring.
 
-- Node.js v18+
-- npm
-- A [Supabase](https://supabase.com) project
-- An [OpenAI](https://platform.openai.com) API key
-
-### Steps
-
-1. **Clone the repo**
-
-   ```bash
-   git clone https://github.com/gaddameshaan-cloud/Investly.git
-   cd "investly development"
-   ```
-
-2. **Install dependencies**
-
-   ```bash
-   npm install
-   ```
-
-3. **Configure environment variables**
-
-   Copy `.env.example` to `.env` and fill in the values (see the table below).
-
-   ```bash
-   cp .env.example .env
-   ```
-
-4. **Set up the Supabase schema**
-
-   Run the SQL files in the `migrations/` folder against your Supabase project (via the Supabase SQL editor or the CLI).
-
-5. **Seed the curriculum**
-
-   ```bash
-   npm run seed-supabase
-   ```
-
-6. **Start the dev servers**
-
-   ```bash
-   npm run dev
-   ```
-
-   This starts:
-   - Frontend at `http://localhost:3000` (Vite)
-   - Backend at `http://localhost:3003` (Express via nodemon)
-
----
-
-## Environment Variables
-
-Copy `.env.example` to `.env` and set the following:
-
-| Variable | Description |
-|----------|-------------|
-| `PORT` | Port for the local Express server |
-| `JWT_SECRET` | Secret key used to sign JWT tokens |
-| `OPENAI_API_KEY` | OpenAI API key for the AI Tutor |
-| `NODE_ENV` | Runtime environment (`development` or `production`) |
-| `SUPABASE_URL` | Your Supabase project URL |
-| `SUPABASE_ANON_KEY` | Supabase anonymous (public) key |
-| `SUPABASE_SERVICE_ROLE_KEY` | Supabase service role key (used server-side only) |
-| `VITE_SUPABASE_URL` | Supabase URL exposed to the Vite client build |
-| `VITE_SUPABASE_ANON_KEY` | Supabase anon key exposed to the Vite client build |
-
-> **Never commit `.env` to version control.** Add your production values in the Vercel project dashboard under Settings → Environment Variables.
-
----
-
-## Project Structure
-
-```
-investly development/
-├── api/
-│   └── index.js              # Vercel serverless entry point (re-exports Express app)
-├── src/
-│   ├── client/               # React frontend
-│   │   ├── components/       # Shared UI components (Navigation, Footer, ThemeWrapper…)
-│   │   ├── context/          # ThemeContext
-│   │   ├── hooks/            # useSupabaseAuth, useOptimizedAuth
-│   │   ├── pages/            # Route-level page components
-│   │   │   ├── LandingPage.jsx
-│   │   │   ├── AuthPage.jsx
-│   │   │   ├── Dashboard.jsx
-│   │   │   ├── LessonView.jsx
-│   │   │   ├── ModuleView.jsx
-│   │   │   ├── QuizView.jsx
-│   │   │   ├── Analytics.jsx
-│   │   │   ├── AITutor.jsx
-│   │   │   ├── Settings.jsx
-│   │   │   ├── ContactPage.jsx
-│   │   │   ├── OnboardingQuestionnaire.jsx
-│   │   │   ├── ForgotPassword.jsx
-│   │   │   ├── ResetPassword.jsx
-│   │   │   ├── VerifyEmail.jsx
-│   │   │   ├── PrivacyPolicy.jsx
-│   │   │   └── TermsOfService.jsx
-│   │   ├── App.jsx
-│   │   ├── main.jsx
-│   │   └── index.css
-│   ├── lib/
-│   │   └── supabase.js       # Supabase client initialisation
-│   └── server/               # Express backend
-│       ├── routes/           # API route handlers (auth, lessons, quizzes, progress, ai, analytics, contact…)
-│       ├── middleware/       # JWT auth middleware
-│       ├── data/             # Curriculum data files
-│       ├── database/         # DB helpers / migration scripts
-│       ├── services/         # Business logic services
-│       ├── utils/            # Shared utilities
-│       └── index.js          # Express app setup
-├── migrations/               # SQL migration files for Supabase
-├── public/                   # Static assets
-├── vercel.json               # Vercel routing config
-├── vite.config.js            # Vite config with API proxy for local dev
-├── package.json
-└── .env.example
+```bash
+git clone --branch master https://github.com/gaddameshaan-cloud/Investly.git
+cd Investly
+npm ci
 ```
 
----
+Copy `.env.example` to `.env`:
 
-## API Endpoints
+```powershell
+# PowerShell
+Copy-Item .env.example .env
+```
 
-### Authentication — `/api/auth`
+```bash
+# macOS / Linux
+cp .env.example .env
+```
 
-| Method | Path | Description |
-|--------|------|-------------|
-| POST | `/register` | Create a new account |
-| POST | `/login` | Login and receive a JWT |
-| POST | `/forgot-password` | Request a password reset email |
-| POST | `/reset-password` | Set a new password via reset token |
-| GET | `/verify-email` | Verify email address |
-| GET | `/me` | Get the authenticated user's profile |
+Replace the placeholders and set **`PORT=3003`**. The example currently uses port 3001, but the Vite API proxy targets port 3003.
 
-### Lessons — `/api/lessons`
+```bash
+npm run dev
+```
 
-| Method | Path | Description |
-|--------|------|-------------|
-| GET | `/` | List all lessons (filter by module via query param) |
-| GET | `/:id` | Get a single lesson |
+- Frontend: http://localhost:3000
+- Backend: http://localhost:3003
+- Backend health check: http://localhost:3003/health
 
-### Quizzes — `/api/quizzes`
+`npm run dev` starts Vite and the Express server together. Restart it after changing `.env`. The local backend uses the Supabase project configured in that file, so use a development project when testing changes to stored data.
 
-| Method | Path | Description |
-|--------|------|-------------|
-| GET | `/lesson/:lessonId` | Get the quiz for a lesson |
-| POST | `/submit` | Submit quiz answers and receive a score |
-| GET | `/attempts` | Get the authenticated user's quiz history |
+### Environment variables
 
-### Progress — `/api/progress`
+| Variable | Purpose |
+| --- | --- |
+| `PORT` | Set to `3003` for local development to match `vite.config.js`. |
+| `JWT_SECRET` | Private signing secret for application login tokens. |
+| `OPENAI_API_KEY` | Server-side key for live AI Tutor responses. |
+| `NODE_ENV` | `development` locally; `production` in production. |
+| `SUPABASE_URL` | Supabase project URL. |
+| `SUPABASE_SERVICE_ROLE_KEY` | Private server-side Supabase service role key. |
+| `SUPABASE_ANON_KEY` | Supabase public client key used by the server's regular client. |
+| `VITE_SUPABASE_URL` | Supabase URL for frontend client configuration. |
+| `VITE_SUPABASE_ANON_KEY` | Public Supabase client key for the frontend build. |
+| `APP_URL` | Base URL for links generated by email helpers; defaults to `http://localhost:3000`. |
 
-| Method | Path | Description |
-|--------|------|-------------|
-| GET | `/` | Get the authenticated user's overall progress |
-| POST | `/` | Mark a lesson as complete |
+Keep `.env` out of version control. Never put the OpenAI key, service role key, or JWT secret in a `VITE_` variable: Vite exposes those variables to the browser.
 
-### AI Tutor — `/api/ai`
+### Database setup
 
-| Method | Path | Description |
-|--------|------|-------------|
-| POST | `/chat` | Send a message to the AI tutor |
+Use a Supabase database with the schema required by the mounted routes, including users, lessons, quizzes, quiz attempts, lesson progress, conversations, conversation messages, and onboarding responses. Quiz submission also calls the PostgreSQL function `submit_quiz_and_progress`.
 
-### Analytics — `/api/analytics`
+This repository does **not** include a complete fresh Supabase schema or a `migrations/` directory. The root SQL files are incremental changes for onboarding, date of birth, and terms acceptance; inspect them against your existing schema before applying them. The SQLite migration command does not initialize Supabase.
 
-| Method | Path | Description |
-|--------|------|-------------|
-| GET | `/dashboard` | Get aggregated analytics for the dashboard |
+Some legacy npm scripts (`setup-supabase`, `seed-supabase`, and `migrate-to-supabase`) reference files that are not tracked in this checkout. They are not a supported fresh-install workflow. Database provisioning and curriculum loading require the existing project's schema and data setup.
 
-### Other
+## AI Tutor behavior
 
-| Method | Path | Description |
-|--------|------|-------------|
-| POST | `/api/contact` | Submit the contact form |
-| GET | `/api/user/profile` | Get / update user profile settings |
-| GET | `/health` | Health check |
+`src/server/routes/ai.js` initializes the OpenAI client per request using `OPENAI_API_KEY`. Chat uses `gpt-6-luna`, the last ten history messages, `reasoning_effort: "none"`, temperature `0.8`, and an 800-token completion limit.
 
----
+Without a configured API key, chat returns a labeled demo response. API failures can return built-in educational fallback responses. AI interactions are saved to Supabase on a best-effort basis, and the frontend saves chat history through the conversations API. Performance analysis and study-plan endpoints generate responses in application code.
 
-## Vercel Deployment
+## Application routes
 
-The project is configured for zero-config Vercel deployment:
+Public pages include `/`, `/auth`, `/contact`, `/forgot-password`, `/reset-password`, `/verify-email`, `/terms-of-service`, and `/privacy-policy`.
 
-- **Build command:** `npm run build` (Vite produces `dist/`)
-- **Output directory:** `dist`
-- **Framework:** Vite (detected automatically)
-- **API routing:** `vercel.json` rewrites all `/api/*` and `/health` requests to `api/index.js`, which runs as a serverless function
-- All environment variables must be added in the **Vercel project dashboard** (Settings → Environment Variables) — do not commit `.env`
+Signed-in pages include `/dashboard`, `/module/:moduleNumber`, `/lesson/:id`, `/quiz/:lessonId`, `/analytics`, `/ai-tutor`, and `/settings`. Users who need onboarding see the questionnaire before the main application.
 
-To deploy manually:
+## API routes
+
+Protected endpoints require `Authorization: Bearer <token>`. Paths below include their mounted prefixes.
+
+| Method | Path | Purpose |
+| --- | --- | --- |
+| POST | `/api/auth/register` | Register an account. |
+| POST | `/api/auth/login` | Sign in and receive a JWT. |
+| GET | `/api/auth/me` | Read the current user's profile. |
+| POST | `/api/auth/logout` | Logout endpoint; the frontend also clears local credentials. |
+| POST | `/api/auth/forgot-password` | Generate a password reset token. |
+| POST | `/api/auth/reset-password` | Reset a password using a token. |
+| POST | `/api/user/onboarding` | Save onboarding responses. |
+| GET | `/api/user/onboarding-status` | Check onboarding completion. |
+| PUT | `/api/user/profile` | Update profile settings. |
+| PUT | `/api/user/password` | Change the current password. |
+| GET | `/api/lessons` | List lessons. |
+| GET | `/api/lessons/module/:moduleNumber` | List a module's lessons. |
+| GET | `/api/lessons/:id` | Read a lesson. |
+| GET | `/api/quizzes/lesson/:lessonId` | Read a lesson quiz. |
+| POST | `/api/quizzes/attempt` | Record a quiz attempt and progress. |
+| GET | `/api/quizzes/attempts` | List quiz attempts. |
+| GET | `/api/quizzes/attempts/quiz/:quizId` | List attempts for a quiz. |
+| GET | `/api/progress` | Read learning progress. |
+| GET, POST | `/api/progress/lesson/:lessonId` | Read or update lesson progress. |
+| POST | `/api/ai/chat` | Chat with the AI Tutor. |
+| POST | `/api/ai/analyze-performance` | Generate a performance analysis. |
+| POST | `/api/ai/study-plan` | Generate a study plan. |
+| GET | `/api/analytics/dashboard` | Read dashboard analytics. |
+| GET, POST | `/api/conversations` | List or create chats. |
+| GET, PATCH, DELETE | `/api/conversations/:id` | Read, rename, or delete a chat. |
+| POST | `/api/conversations/:id/messages` | Save a chat message. |
+| POST | `/api/contact` | Submit contact form details to the email helper. |
+| GET | `/health` | Check that the Express app responds. |
+
+A legacy `POST /api/lessons/seed` endpoint also exists. It replaces curriculum data and should not be used as a routine health or setup check.
+
+### Email delivery status
+
+The email helpers in `src/server/utils/email.js` currently log verification links, reset links, and contact messages. They do not send email through a production email provider. Although a verification page exists, the mounted Supabase auth router does not expose a `/verify-email` endpoint. These flows need additional implementation before being described as complete email delivery or verification features.
+
+## Project structure
+
+```text
+Investly/
+  api/index.js                 Vercel entry point exporting the Express app
+  src/client/
+    App.jsx                    Frontend routes and login/onboarding flow
+    pages/                     Website pages
+    components/                Shared UI
+    context/                   Theme state
+    hooks/                     Frontend hooks
+  src/lib/                     Supabase frontend helper
+  src/server/
+    index.js                   Express setup and mounted API routers
+    routes/                    API handlers, including active Supabase routes
+    middleware/                JWT verification
+    database/                  Supabase clients and legacy SQLite helpers
+    data/                      Curriculum definitions
+    services/                  Application services
+    utils/                     Email helpers
+  public/                      Static assets
+  .env.example                 Environment variable template
+  vercel.json                  Build settings and API rewrites
+  vite.config.js               Frontend server and local API proxy
+```
+
+## Build and deployment
 
 ```bash
 npm run build
-vercel --prod
+npm run preview
 ```
 
----
+The build creates `dist/`. Preview serves the built frontend; run the backend separately when testing API functionality.
 
-## License
+Vercel is configured with the Vite framework, `npm run build`, and the `dist` output directory. Requests to `/api/*` and `/health` are rewritten to `api/index.js`, which exports the Express app. The app skips its local listener when `VERCEL=1`.
 
-MIT
+The current website source is on **`master`**. Configure the Vercel project's production branch accordingly and verify that the deployment assigned to `investlyeducation.org` matches the desired commit. A successful preview deployment does not by itself update the production domain.
 
----
+Set production environment variables in Vercel's project settings, then redeploy to apply changes. Frontend `VITE_` values are embedded during the build.
 
-*Built for financial education.*
+There is no automated test script in `package.json`. `npm run build` checks that the frontend compiles; login, Supabase operations, and AI replies also need testing with valid environment configuration.
