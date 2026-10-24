@@ -13,53 +13,59 @@ if (process.env.VERCEL !== '1') {
 
 const supabaseUrl = process.env.SUPABASE_URL
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
+const supabaseAnonKey = process.env.SUPABASE_ANON_KEY
 
-// Server-side client with service role key for admin operations (optimized)
-export const supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey, {
-  auth: {
-    autoRefreshToken: false,
-    persistSession: false
-  },
-  db: {
-    schema: 'public'
-  },
-  global: {
-    headers: {
-      'Connection': 'keep-alive',
-      'Cache-Control': 'no-cache'
-    }
-  },
-  realtime: {
-    params: {
-      eventsPerSecond: 10
-    }
-  }
-})
+if (!supabaseUrl || !supabaseServiceKey) {
+  console.error('❌ Missing Supabase env vars: SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY not set')
+}
 
-// Regular client for user operations (optimized)
-export const supabase = createClient(
-  supabaseUrl, 
-  process.env.SUPABASE_ANON_KEY,
-  {
-    auth: {
-      autoRefreshToken: false,
-      persistSession: false
-    },
-    global: {
-      headers: {
-        'Connection': 'keep-alive'
+// Server-side admin client — guarded so missing env vars don't crash the module on load
+export const supabaseAdmin = (supabaseUrl && supabaseServiceKey)
+  ? createClient(supabaseUrl, supabaseServiceKey, {
+      auth: {
+        autoRefreshToken: false,
+        persistSession: false
+      },
+      db: {
+        schema: 'public'
+      },
+      global: {
+        headers: {
+          'Connection': 'keep-alive',
+          'Cache-Control': 'no-cache'
+        }
+      },
+      realtime: {
+        params: {
+          eventsPerSecond: 10
+        }
       }
-    },
-    realtime: {
-      params: {
-        eventsPerSecond: 10
+    })
+  : null
+
+// Regular client for user operations
+export const supabase = (supabaseUrl && supabaseAnonKey)
+  ? createClient(supabaseUrl, supabaseAnonKey, {
+      auth: {
+        autoRefreshToken: false,
+        persistSession: false
+      },
+      global: {
+        headers: {
+          'Connection': 'keep-alive'
+        }
+      },
+      realtime: {
+        params: {
+          eventsPerSecond: 10
+        }
       }
-    }
-  }
-)
+    })
+  : null
 
 // Helper function to get user ID from auth user ID
 export const getUserIdFromAuth = async (authUserId) => {
+  if (!supabaseAdmin) return null
   const { data, error } = await supabaseAdmin
     .from('users')
     .select('id')
@@ -76,7 +82,7 @@ export const getUserIdFromAuth = async (authUserId) => {
 
 // Helper function to ensure user exists
 export const ensureUserExists = async (authUser) => {
-  if (!authUser) return null
+  if (!authUser || !supabaseAdmin) return null
   
   // Check if user already exists
   const { data: existingUser } = await supabaseAdmin
