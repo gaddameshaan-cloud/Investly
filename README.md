@@ -1,329 +1,185 @@
-# Investly - Finance Education Platform
+# Investly
 
-A comprehensive, scalable web and mobile finance education platform designed for middle school students and beyond. Learn personal finance, investing, and economics through structured curriculum, AI-powered tutoring, and interactive assessments.
+Investly is a finance education website for students, with lessons on personal finance, investing, and economics, quizzes, progress analytics, and an AI finance tutor.
 
-## 🎯 Features
+**Live website:** [investlyeducation.org](https://investlyeducation.org)
 
-### Comprehensive Curriculum
-- **170+ Lessons** across three difficulty levels
-- **Beginner Level (40 lessons)**: Money basics, saving, budgeting, banking, credit, interest rates
-- **Intermediate Level (70 lessons)**: Stock market, bonds, ETFs, retirement accounts, compound interest, economic cycles
-- **Advanced Level (60 lessons)**: Technical analysis, options, futures, real estate, algorithmic trading, behavioral finance
+## Features
 
-### AI-Powered Learning
-- **Personal AI Tutor**: Get instant answers to finance questions
-- **Performance Analysis**: AI analyzes quiz results and identifies weaknesses
-- **Personalized Study Plans**: Custom learning paths based on goals and time availability
-- **Adaptive Difficulty**: Content adjusts based on user progress
+- Lessons organized into modules, with examples and practice material.
+- Lesson quizzes, saved attempts, and completion tracking.
+- Dashboard and analytics for learning progress.
+- AI Tutor powered by OpenAI `gpt-6-luna`, with conversation history, saved chats, and chat deletion.
+- Account registration and login using JWTs and bcrypt password hashing.
+- Onboarding questionnaire, profile settings, and password changes.
+- Light and dark themes.
+- Contact form, Terms of Service, and Privacy Policy pages.
 
-### Progress Tracking & Analytics
-- **Detailed Dashboard**: Track lessons completed, quiz scores, and time spent
-- **Visual Analytics**: Charts and graphs showing progress by level
-- **Achievement System**: Earn badges and milestones
-- **Performance Insights**: Identify strengths and areas for improvement
+## Technology
 
-### Interactive Assessments
-- **Quizzes**: Test knowledge after each lesson
-- **Scenario-Based Tasks**: Apply concepts to real-world situations
-- **Instant Feedback**: Get immediate results and explanations
-- **Progress Requirements**: 70% passing score to advance
+| Area | Technology |
+| --- | --- |
+| Frontend | React 18, Vite 5, React Router 6 |
+| Icons and charts | Lucide React, Recharts |
+| Backend | Express 4, JavaScript ES modules |
+| Active database | Supabase PostgreSQL |
+| Authentication | JSON Web Tokens and bcryptjs |
+| AI | OpenAI Chat Completions API, `gpt-6-luna` |
+| Hosting | Vercel static frontend and serverless API |
 
-## 🚀 Getting Started
+The active Express app mounts the Supabase route implementations. Older SQLite helpers and alternate route files remain in the repository; they are not the database setup for the current website.
 
-### Prerequisites
-- Node.js (v16 or higher)
-- npm or yarn
+## Local development
 
-### Installation
+Use Node.js 22 (the version used for local verification), npm, a configured Supabase project, and an OpenAI API key for live tutoring.
 
-1. **Clone the repository**
 ```bash
-git clone <repository-url>
-cd investly
+git clone --branch master https://github.com/gaddameshaan-cloud/Investly.git
+cd Investly
+npm ci
 ```
 
-2. **Install dependencies**
+Copy `.env.example` to `.env`:
+
+```powershell
+# PowerShell
+Copy-Item .env.example .env
+```
+
 ```bash
-npm install
+# macOS / Linux
+cp .env.example .env
 ```
 
-3. **Set up environment variables**
-Create a `.env` file in the root directory:
-```
-PORT=3001
-JWT_SECRET=your_secure_jwt_secret_key_here
-OPENAI_API_KEY=your_openai_api_key_here
-NODE_ENV=development
-```
+Replace the placeholders and set **`PORT=3003`**. The example currently uses port 3001, but the Vite API proxy targets port 3003.
 
-4. **Initialize the database**
-```bash
-npm run migrate
-```
-
-5. **Seed the curriculum**
-After starting the server, make a POST request to:
-```
-POST http://localhost:3001/api/lessons/seed
-```
-
-6. **Start the development servers**
 ```bash
 npm run dev
 ```
 
-This will start:
-- Backend server on `http://localhost:3001`
-- Frontend development server on `http://localhost:3000`
+- Frontend: http://localhost:3000
+- Backend: http://localhost:3003
+- Backend health check: http://localhost:3003/health
 
-## 📁 Project Structure
+`npm run dev` starts Vite and the Express server together. Restart it after changing `.env`. The local backend uses the Supabase project configured in that file, so use a development project when testing changes to stored data.
 
+### Environment variables
+
+| Variable | Purpose |
+| --- | --- |
+| `PORT` | Set to `3003` for local development to match `vite.config.js`. |
+| `JWT_SECRET` | Private signing secret for application login tokens. |
+| `OPENAI_API_KEY` | Server-side key for live AI Tutor responses. |
+| `NODE_ENV` | `development` locally; `production` in production. |
+| `SUPABASE_URL` | Supabase project URL. |
+| `SUPABASE_SERVICE_ROLE_KEY` | Private server-side Supabase service role key. |
+| `SUPABASE_ANON_KEY` | Supabase public client key used by the server's regular client. |
+| `VITE_SUPABASE_URL` | Supabase URL for frontend client configuration. |
+| `VITE_SUPABASE_ANON_KEY` | Public Supabase client key for the frontend build. |
+| `APP_URL` | Base URL for links generated by email helpers; defaults to `http://localhost:3000`. |
+
+Keep `.env` out of version control. Never put the OpenAI key, service role key, or JWT secret in a `VITE_` variable: Vite exposes those variables to the browser.
+
+### Database setup
+
+Use a Supabase database with the schema required by the mounted routes, including users, lessons, quizzes, quiz attempts, lesson progress, conversations, conversation messages, and onboarding responses. Quiz submission also calls the PostgreSQL function `submit_quiz_and_progress`.
+
+This repository does **not** include a complete fresh Supabase schema or a `migrations/` directory. The root SQL files are incremental changes for onboarding, date of birth, and terms acceptance; inspect them against your existing schema before applying them. The SQLite migration command does not initialize Supabase.
+
+Some legacy npm scripts (`setup-supabase`, `seed-supabase`, and `migrate-to-supabase`) reference files that are not tracked in this checkout. They are not a supported fresh-install workflow. Database provisioning and curriculum loading require the existing project's schema and data setup.
+
+## AI Tutor behavior
+
+`src/server/routes/ai.js` initializes the OpenAI client per request using `OPENAI_API_KEY`. Chat uses `gpt-6-luna`, the last ten history messages, `reasoning_effort: "none"`, temperature `0.8`, and an 800-token completion limit.
+
+Without a configured API key, chat returns a labeled demo response. API failures can return built-in educational fallback responses. AI interactions are saved to Supabase on a best-effort basis, and the frontend saves chat history through the conversations API. Performance analysis and study-plan endpoints generate responses in application code.
+
+## Application routes
+
+Public pages include `/`, `/auth`, `/contact`, `/forgot-password`, `/reset-password`, `/verify-email`, `/terms-of-service`, and `/privacy-policy`.
+
+Signed-in pages include `/dashboard`, `/module/:moduleNumber`, `/lesson/:id`, `/quiz/:lessonId`, `/analytics`, `/ai-tutor`, and `/settings`. Users who need onboarding see the questionnaire before the main application.
+
+## API routes
+
+Protected endpoints require `Authorization: Bearer <token>`. Paths below include their mounted prefixes.
+
+| Method | Path | Purpose |
+| --- | --- | --- |
+| POST | `/api/auth/register` | Register an account. |
+| POST | `/api/auth/login` | Sign in and receive a JWT. |
+| GET | `/api/auth/me` | Read the current user's profile. |
+| POST | `/api/auth/logout` | Logout endpoint; the frontend also clears local credentials. |
+| POST | `/api/auth/forgot-password` | Generate a password reset token. |
+| POST | `/api/auth/reset-password` | Reset a password using a token. |
+| POST | `/api/user/onboarding` | Save onboarding responses. |
+| GET | `/api/user/onboarding-status` | Check onboarding completion. |
+| PUT | `/api/user/profile` | Update profile settings. |
+| PUT | `/api/user/password` | Change the current password. |
+| GET | `/api/lessons` | List lessons. |
+| GET | `/api/lessons/module/:moduleNumber` | List a module's lessons. |
+| GET | `/api/lessons/:id` | Read a lesson. |
+| GET | `/api/quizzes/lesson/:lessonId` | Read a lesson quiz. |
+| POST | `/api/quizzes/attempt` | Record a quiz attempt and progress. |
+| GET | `/api/quizzes/attempts` | List quiz attempts. |
+| GET | `/api/quizzes/attempts/quiz/:quizId` | List attempts for a quiz. |
+| GET | `/api/progress` | Read learning progress. |
+| GET, POST | `/api/progress/lesson/:lessonId` | Read or update lesson progress. |
+| POST | `/api/ai/chat` | Chat with the AI Tutor. |
+| POST | `/api/ai/analyze-performance` | Generate a performance analysis. |
+| POST | `/api/ai/study-plan` | Generate a study plan. |
+| GET | `/api/analytics/dashboard` | Read dashboard analytics. |
+| GET, POST | `/api/conversations` | List or create chats. |
+| GET, PATCH, DELETE | `/api/conversations/:id` | Read, rename, or delete a chat. |
+| POST | `/api/conversations/:id/messages` | Save a chat message. |
+| POST | `/api/contact` | Submit contact form details to the email helper. |
+| GET | `/health` | Check that the Express app responds. |
+
+A legacy `POST /api/lessons/seed` endpoint also exists. It replaces curriculum data and should not be used as a routine health or setup check.
+
+### Email delivery status
+
+The email helpers in `src/server/utils/email.js` currently log verification links, reset links, and contact messages. They do not send email through a production email provider. Although a verification page exists, the mounted Supabase auth router does not expose a `/verify-email` endpoint. These flows need additional implementation before being described as complete email delivery or verification features.
+
+## Project structure
+
+```text
+Investly/
+  api/index.js                 Vercel entry point exporting the Express app
+  src/client/
+    App.jsx                    Frontend routes and login/onboarding flow
+    pages/                     Website pages
+    components/                Shared UI
+    context/                   Theme state
+    hooks/                     Frontend hooks
+  src/lib/                     Supabase frontend helper
+  src/server/
+    index.js                   Express setup and mounted API routers
+    routes/                    API handlers, including active Supabase routes
+    middleware/                JWT verification
+    database/                  Supabase clients and legacy SQLite helpers
+    data/                      Curriculum definitions
+    services/                  Application services
+    utils/                     Email helpers
+  public/                      Static assets
+  .env.example                 Environment variable template
+  vercel.json                  Build settings and API rewrites
+  vite.config.js               Frontend server and local API proxy
 ```
-investly/
-├── src/
-│   ├── client/              # React frontend
-│   │   ├── pages/           # Page components
-│   │   │   ├── LandingPage.jsx
-│   │   │   ├── AuthPage.jsx
-│   │   │   ├── Dashboard.jsx
-│   │   │   ├── LessonView.jsx
-│   │   │   ├── QuizView.jsx
-│   │   │   ├── Analytics.jsx
-│   │   │   └── AITutor.jsx
-│   │   ├── App.jsx
-│   │   ├── main.jsx
-│   │   └── index.css
-│   │
-│   └── server/              # Express backend
-│       ├── routes/          # API routes
-│       │   ├── auth.js
-│       │   ├── lessons.js
-│       │   ├── progress.js
-│       │   ├── quizzes.js
-│       │   ├── ai.js
-│       │   └── analytics.js
-│       ├── database/        # Database setup
-│       │   ├── db.js
-│       │   └── migrate.js
-│       ├── data/            # Curriculum data
-│       │   ├── curriculum.js
-│       │   ├── beginner-curriculum.js
-│       │   ├── intermediate-curriculum.js
-│       │   └── advanced-curriculum.js
-│       ├── middleware/      # Auth middleware
-│       │   └── auth.js
-│       └── index.js
-│
-├── package.json
-├── vite.config.js
-└── README.md
-```
 
-## 🎓 Curriculum Overview
+## Build and deployment
 
-### Beginner Level (40 Lessons)
-Topics include:
-- What is money and currency history
-- Earning money and income types
-- Needs vs wants
-- Saving strategies and compound interest
-- Budgeting and expense tracking
-- Bank accounts (checking and savings)
-- Credit cards and debit cards
-- Understanding interest rates
-- Good debt vs bad debt
-- Introduction to investing
-- Risk vs reward
-- Inflation and cost of living
-- Taxes basics
-- Financial institutions
-- Building good financial habits
-
-### Intermediate Level (70 Lessons)
-Topics include:
-- Stock market fundamentals
-- How stocks work and stock indices
-- Bonds and bond types
-- ETFs and mutual funds
-- Diversification and asset allocation
-- Understanding risk and return
-- Retirement accounts (401k, IRA, Roth)
-- Economic cycles and market phases
-- Reading financial statements
-- Key financial ratios
-- Dividend investing
-- Growth vs value investing
-- Index fund investing
-- Dollar-cost averaging
-- Rebalancing portfolios
-- Tax-advantaged investing
-- Capital gains taxes
-- Market volatility management
-- Portfolio construction strategies
-- Expense ratios and fees
-- Active vs passive investing
-- Sector and international investing
-- Market orders and trading
-- Beta and volatility
-- Correlation and diversification
-- Risk-adjusted returns
-- Sequence of returns risk
-- The 4% rule
-- HSA, 529, and brokerage accounts
-- Bond investing strategies
-- Yield curves and interest rate risk
-- Lifecycle investing
-- Financial independence milestones
-- Side hustles and income growth
-- Salary negotiation
-- Stock options and RSUs
-- Career planning
-- Market efficiency
-- Behavioral biases
-- Investment policy statements
-- Cryptocurrency basics
-- Alternative investments
-- Estate planning basics
-- Insurance and risk management
-- Fraud protection
-- Building wealth through consistency
-
-### Advanced Level (60 Lessons)
-Topics include:
-- Technical analysis fundamentals
-- Fundamental analysis deep dive
-- Options trading basics and strategies
-- Options Greeks and implied volatility
-- Futures and derivatives
-- Commodities and forex trading
-- Quantitative analysis
-- Statistical arbitrage
-- High-frequency trading concepts
-- Machine learning in finance
-- Portfolio optimization theory
-- Risk parity strategies
-- Real estate valuation and financing
-- Commercial real estate
-- Real estate syndication
-- Tax strategies for real estate
-- Merger and convertible arbitrage
-- Fixed income arbitrage
-- Distressed debt investing
-- Private equity fundamentals
-- Venture capital investing
-- Hedge fund strategies
-- Global macro investing
-- Market neutral strategies
-- Behavioral finance applications
-- Sentiment analysis
-- Market microstructure
-- International portfolio management
-- Emerging and frontier markets
-- Currency risk management
-- Interest rate derivatives
-- Credit default swaps
-- Structured products
-- Asset-backed securities
-- CDOs
-- Tax-loss harvesting strategies
-- Asset location optimization
-- Roth conversion strategies
-- Mega backdoor Roth
-- Donor-advised funds
-- Qualified charitable distributions
-- Trust structures
-- Family office strategies
-- Concentrated stock positions
-- Alternative minimum tax planning
-- Retirement income planning
-- Social Security optimization
-- Annuities in retirement
-
-## 🤖 AI Integration
-
-The platform uses OpenAI's GPT-4 for:
-- **Natural Language Q&A**: Ask any finance question in plain English
-- **Performance Analysis**: AI reviews quiz history and provides insights
-- **Study Plan Generation**: Creates personalized learning schedules
-- **Concept Explanations**: Breaks down complex topics for students
-
-## 📊 API Endpoints
-
-### Authentication
-- `POST /api/auth/register` - Create new account
-- `POST /api/auth/login` - Login to existing account
-
-### Lessons
-- `GET /api/lessons` - Get all lessons (optional: ?level=beginner)
-- `GET /api/lessons/:id` - Get specific lesson
-- `POST /api/lessons/seed` - Seed curriculum data
-
-### Progress
-- `GET /api/progress` - Get user progress
-- `POST /api/progress` - Save lesson completion
-- `GET /api/progress/achievements` - Get user achievements
-
-### Quizzes
-- `GET /api/quizzes/lesson/:lessonId` - Get quiz for lesson
-- `POST /api/quizzes/submit` - Submit quiz answers
-- `GET /api/quizzes/attempts` - Get quiz history
-
-### AI Tutor
-- `POST /api/ai/chat` - Chat with AI tutor
-- `POST /api/ai/analyze-performance` - Get performance analysis
-- `POST /api/ai/study-plan` - Generate study plan
-
-### Analytics
-- `GET /api/analytics/dashboard` - Get comprehensive analytics
-
-## 🎨 Design Philosophy
-
-- **Clean & Minimalist**: Distraction-free learning environment
-- **Mobile-First**: Responsive design works on all devices
-- **Accessible**: Designed for younger users (ages 12+)
-- **Engaging**: Gamification elements keep students motivated
-- **Data-Driven**: Visual analytics show progress clearly
-
-## 🔒 Security
-
-- JWT-based authentication
-- Password hashing with bcrypt
-- Protected API routes
-- CORS configuration
-- Input validation
-
-## 🚀 Deployment
-
-### Production Build
 ```bash
 npm run build
+npm run preview
 ```
 
-### Environment Variables for Production
-```
-PORT=3001
-JWT_SECRET=<strong-secret-key>
-OPENAI_API_KEY=<your-api-key>
-NODE_ENV=production
-```
+The build creates `dist/`. Preview serves the built frontend; run the backend separately when testing API functionality.
 
-## 📈 Future Enhancements
+Vercel is configured with the Vite framework, `npm run build`, and the `dist` output directory. Requests to `/api/*` and `/health` are rewritten to `api/index.js`, which exports the Express app. The app skips its local listener when `VERCEL=1`.
 
-- Mobile apps (iOS/Android)
-- Social features (study groups, leaderboards)
-- More quiz types (multiple choice, fill-in-blank, scenarios)
-- Video lessons
-- Interactive simulations (stock market simulator)
-- Parent/teacher dashboard
-- Certification system
-- Multi-language support
-- Offline mode
-- Push notifications for study reminders
+The current website source is on **`master`**. Configure the Vercel project's production branch accordingly and verify that the deployment assigned to `investlyeducation.org` matches the desired commit. A successful preview deployment does not by itself update the production domain.
 
-## 👥 Support
+Set production environment variables in Vercel's project settings, then redeploy to apply changes. Frontend `VITE_` values are embedded during the build.
 
-For questions or support, please open an issue on GitHub.
-
----
-
-**Built with ❤️ for financial education**
+There is no automated test script in `package.json`. `npm run build` checks that the frontend compiles; login, Supabase operations, and AI replies also need testing with valid environment configuration.
