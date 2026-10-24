@@ -164,9 +164,11 @@ function AITutor({ user }) {
       }
     } catch (error) {
       console.error('Chat error:', error);
+      // Use the fallback response the server includes in error payloads if available
+      const fallback = error.response?.data?.response;
       setMessages(prev => [...prev, { 
         role: 'assistant', 
-        content: 'Sorry, I encountered an error. Please try again.' 
+        content: fallback || 'Sorry, I encountered an error. Please try again.' 
       }]);
     } finally {
       setLoading(false);

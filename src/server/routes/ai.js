@@ -102,7 +102,7 @@ Always be accurate, helpful, and age-appropriate for students aged 12-18.`;
     messages.push({ role: "user", content: message });
 
     const completion = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo",
+      model: "gpt-4o-mini",
       messages: messages,
       temperature: 0.8,
       max_tokens: 800,
@@ -135,9 +135,12 @@ Always be accurate, helpful, and age-appropriate for students aged 12-18.`;
         response: `⚠️ **Rate Limit Reached**\n\nToo many requests. Please try again in a moment.\n\nHere's a helpful response:\n\n${getIntelligentResponse(message)}`
       });
     }
-    
-    res.status(500).json({ 
-      error: 'Failed to process message',
+
+    // For all other errors (403 billing/region block, 5xx from OpenAI, network errors
+    // where error.status is undefined, etc.) return 200 with the intelligent fallback
+    // so the client never hits its generic "Sorry" catch block.
+    console.error('OpenAI API Error details:', error.status, error.code);
+    return res.json({ 
       response: getIntelligentResponse(message)
     });
   }
