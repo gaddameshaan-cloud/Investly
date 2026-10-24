@@ -401,6 +401,23 @@ function AITutor({ user }) {
           </span>
         </div>
 
+        <div
+          role="status"
+          style={{
+            margin: '16px 24px 0',
+            padding: '14px 18px',
+            background: darkMode ? '#422006' : '#fffbeb',
+            color: darkMode ? '#fde68a' : '#92400e',
+            border: `1px solid ${darkMode ? '#854d0e' : '#fcd34d'}`,
+            borderRadius: '10px',
+            fontSize: '14px',
+            lineHeight: 1.6,
+            flexShrink: 0
+          }}
+        >
+          AI Tutor is currently offline for system maintenance and performance upgrades. Thank you for your patience—we will be back online soon!
+        </div>
+
         {/* Messages Area */}
         <div style={{ 
           flex: 1, 

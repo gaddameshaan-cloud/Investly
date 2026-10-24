@@ -108,10 +108,9 @@ Always be accurate, helpful, and age-appropriate for students aged 12-18.`;
     const completion = await openai.chat.completions.create({
       model: "gpt-6-luna",
       messages: messages,
+      reasoning_effort: "none",
       temperature: 0.8,
-      max_tokens: 800,
-      presence_penalty: 0.6,
-      frequency_penalty: 0.3
+      max_completion_tokens: 800
     });
 
     const response = completion.choices[0].message.content;
